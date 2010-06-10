@@ -19,20 +19,34 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
         <property name="mappings">
             <props>
                 <prop key="index.htm">indexController</prop>
+                <prop key="login.htm">loginController</prop>
+                <prop key="usuarios_mantener.htm">usuariosController</prop>
             </props>
         </property>
     </bean>
     
-    <bean id="viewResolver"
-          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"
           p:suffix=".jsp" />
     
     <!--
     The index controller.
     -->
-    <bean name="indexController"
-          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+    <bean name="indexController" class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
-    
+    <bean id="LoginController" class="ProyectoWeb.LoginController">
+    </bean>
+
+
+    <bean id="UsuariosController" class="ProyectoWeb.UsuariosController">
+        <property name="methodNameResolver">
+            <ref bean="paramResolver"/>
+        </property>
+    </bean>
+    <bean id="paramResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+        <property name="defaultMethodName" value="index"/>
+        <property name="paramName">
+            <value>metodo</value>
+        </property>
+    </bean>
 </beans>
