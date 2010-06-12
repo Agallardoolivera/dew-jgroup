@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Prueba
-    Created on : 12/06/2010, 05:12:54 PM
+    Document   : Prueba02
+    Created on : 12/06/2010, 05:17:34 PM
     Author     : Andrea
 --%>
 
@@ -13,7 +13,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-
     <body>
         <h1>Hello World!</h1>
     </body>
