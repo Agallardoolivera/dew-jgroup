@@ -1,3 +1,5 @@
+package Proyecto.Entidades;
+
 
 public class CriterioCotizacion {
 
