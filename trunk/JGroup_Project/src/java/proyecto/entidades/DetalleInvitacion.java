@@ -1,3 +1,5 @@
+package proyecto.entidades;
+
 
 public class DetalleInvitacion {
 
