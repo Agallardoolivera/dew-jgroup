@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--!DOCTYPE TypeManagement 
+[
+	<!ELEMENT TypeManagement (Types?, Locations?, IrresolvableTypes?)>
+	<!ATTLIST TypeManagement projectID ID #REQUIRED>
+
+	<!ELEMENT Locations (Location*)>
+	<!ATTLIST Locations
+			nextID CDATA #IMPLIED >
+
+	<!ELEMENT Location ANY>
+	<!ATTLIST Location
+			locID ID #IMPLIED
+			href CDATA #IMPLIED
+			importProjectLoc CDATA #IMPLIED
+			importProjID CDATA #IMPLIED >
+
+	<!ELEMENT Types (Type*)>
+	<!ELEMENT Type ANY>
+	<!ATTLIST Type
+			id ID #IMPLIED
+			location IDREF #IMPLIED
+			name CDATA #IMPLIED >
+
+	<!ELEMENT IrresolvableTypes (Irresolvable*)>
+	<!ELEMENT Irresolvable ANY>
+	<!ATTLIST Irresolvable 
+		   id CDATA #IMPLIED >
+]--><TypeManagement projectID="DCE.BEFE38BF-A121-C52A-107E-763217FE5224">
+	<Locations nextID="2">
+	<Location locID="T.0" href=".\UMLJGroup.etup"/><Location locID="T.1" href="..\Desktop\UPC\2010-1\entorno web\semana 4\lab4\lab4_uml\lab4_uml.etd"/></Locations>
+
+   <Types>
+   <Type id="DCE.793F08B1-F00C-45AA-08EE-E0C7C937CCA5" location="T.0" name="Unnamed"/><Type id="DCE.53486240-2857-8A90-AD89-8E4D84B1DD80" location="T.1" name="Empleado"/></Types>
+
+	<IrresolvableTypes>
+	</IrresolvableTypes>
+
+</TypeManagement>
