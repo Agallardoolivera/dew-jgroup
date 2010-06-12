@@ -1,3 +1,5 @@
+package Proyecto.Entidades;
+
 import java.util.ArrayList; 
 
 public class Proveedor {
