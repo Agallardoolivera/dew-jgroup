@@ -1,0 +1,72 @@
+yuiextdlg {
+	VISIBILITY: hidden; POSITION: absolute; TOP: 0px
+}
+.ypod {
+	Z-INDEX: 1; OVERFLOW: hidden
+}
+.ypod .ypod-hd {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; BACKGROUND: url(../images/hd-sprite_flex.gif) repeat-x 0px -82px; PADDING-BOTTOM: 5px; FONT: bold 12px "sans serif", tahoma, verdana, helvetica; OVERFLOW: hidden; COLOR: #fff; PADDING-TOP: 5px
+}
+.ypod .ypod-hd-left {
+	PADDING-LEFT: 3px; BACKGROUND: url(../images/hd-sprite_flex.gif) no-repeat 0px -41px; MARGIN: 0px
+}
+.ypod .ypod-hd-right {
+	PADDING-RIGHT: 3px; BACKGROUND: url(../images/hd-sprite_flex.gif) no-repeat right 0px
+}
+.ypod .ypod-bgcolor-hd {
+	PADDING-LEFT: 3px; PADDING-BOTTOM: 5px; FONT: bold 12px "sans serif", tahoma, verdana, helvetica; COLOR: #fff
+}
+.ypod .ypod-dlg-body {
+	BORDER-RIGHT: #c1ccd0 3px solid; PADDING-RIGHT: 10px; BORDER-TOP: 0px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; BORDER-LEFT: #c1ccd0 3px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #c1ccd0 3px solid; BACKGROUND-COLOR: white
+}
+DIV.autosuggest {
+	FLOAT: left; POSITION: relative
+}
+INPUT.autosuggestinput {
+	
+}
+DIV.autosuggestcontainer {
+	WIDTH: 100%; POSITION: absolute; TOP: 1.5em
+}
+DIV.autosuggestcontainer .yui-ac-content {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; Z-INDEX: 9050; BACKGROUND: #fff; OVERFLOW: hidden; BORDER-LEFT: #cccccc 1px solid; WIDTH: 100%; BORDER-BOTTOM: #cccccc 1px solid; POSITION: absolute
+}
+DIV.autosuggestcontainer .yui-ac-shadow {
+	Z-INDEX: 9049; BACKGROUND: #cccccc; MARGIN: 0.3em; WIDTH: 100%; POSITION: absolute
+}
+DIV.autosuggestcontainer UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px
+}
+DIV.autosuggestcontainer LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; CURSOR: default; PADDING-TOP: 0px; WHITE-SPACE: nowrap
+}
+DIV.autosuggestcontainer LI.yui-ac-highlight {
+	BACKGROUND: #7fcdfe
+}
+DIV.autosuggestcontainer LI.yui-ac-prehighlight {
+	BACKGROUND: #aadeff
+}
+INPUT.datefieldinput {
+	
+}
+.ytoolbar .cftoolbarbutton {
+	WIDTH: 100%
+}
+B.corner {
+	DISPLAY: block; BACKGROUND: none transparent scroll repeat 0% 0%
+}
+B.corner B {
+	DISPLAY: block; BACKGROUND: none transparent scroll repeat 0% 0%; OVERFLOW: hidden; HEIGHT: 1px
+}
+B.filler1 {
+	MARGIN: 0px 5px
+}
+B.filler2 {
+	MARGIN: 0px 3px
+}
+B.filler3 {
+	MARGIN: 0px 2px
+}
+B.corner B.filler4 {
+	MARGIN: 0px 1px; HEIGHT: 2px
+}
