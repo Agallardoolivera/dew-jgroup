@@ -17,11 +17,21 @@ public class UsuarioDAO {
     private Collection<Usuario> usuarios;
 
     public UsuarioDAO() {
-        Usuario u = new Usuario();
+        Usuario u ;
+        usuarios = new ArrayList<Usuario>();
+
+        u = new Usuario();
         u.setIdUsuario("jperez");
         u.setClave("patito");
         u.setNombres("Juan Perez");
-        usuarios = new ArrayList<Usuario>();
+        u.setArea("Gerencia");
+        usuarios.add(u);
+
+        u = new Usuario();
+        u.setIdUsuario("david");
+        u.setClave("java");
+        u.setNombres("david rodrigues");
+        u.setArea("Auditoria");
         usuarios.add(u);
     }
 
