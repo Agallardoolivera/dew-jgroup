@@ -38,10 +38,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
           p:viewName="index" />
 
 
-    <bean id="loginController" class="proyecto.web.LoginController">
-
-    </bean>
-
+    <bean id="loginController" class="proyecto.web.LoginController"></bean>
 
     <bean id="usuariosController" class="proyecto.web.UsuariosController">
         <property name="methodNameResolver">

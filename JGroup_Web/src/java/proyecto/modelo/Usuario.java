@@ -13,6 +13,18 @@ public class Usuario {
     private String idUsuario;
     private String clave;
     private String nombres;
+    private String area;
+
+    public Usuario(){}
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
 
     public String getClave() {
         return clave;
