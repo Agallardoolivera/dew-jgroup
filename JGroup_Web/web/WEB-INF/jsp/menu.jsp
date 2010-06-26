@@ -6,7 +6,11 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <head>
+
+      
+
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <title>::- Sistema de Pedidos On Line -::</title>
         <link type="image/x-icon" href="../favicon.ico" rel="icon" />
@@ -43,6 +47,9 @@
         <script language="JavaScript" src="../js/funcion_cont.js"></script>
     </head>
     <body topmargin="0" leftmargin="0" rightmargin="0">
+      
+
+
         <input type="hidden" name="idusuario" id="idusuario" value="" />
         <input type="hidden" name="idempresa" id="idempresa" value="" />
         <input type="hidden" name="idarea" id="idarea" value="" />
@@ -126,7 +133,12 @@
                                 <td width="8%"><div align="center"><a href="registrar.php"><img src="../images/kate.gif"male.gif" width="26" height="16" border="0" align="middle" title="Usuario"/></a></div></td>
                             </tr>
                             <tr>
-                                <td><div align="left">Proveedor</div></td>
+                                <td><div align="left">Proveedor <br>
+                                       <!-- Objeto Usuario -->
+                                        <c:out value="${user.nombres}"/>
+                                        <c:out value="${user.area}"/>
+
+                                    </div></td>
                                 <td><div align="center"><a href="regis_tienda.php"><img src="../images/women.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr><td><div align="left">Usuario</div></td>
@@ -356,5 +368,6 @@
                     ColdFusion.Event.registerOnLoad(_cf_window_init_1214415540790);
                 </script>
 
+              
                 </body>
                 </html>
