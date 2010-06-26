@@ -32,7 +32,6 @@ public class LoginController extends SimpleFormController {
     protected void doSubmitAction(Object command) throws Exception {
         throw new UnsupportedOperationException("Not yet implemented");
     }
-
     //Use onSubmit instead of doSubmitAction 
     //when you need access to the Request, Response, or BindException objects
     /*
@@ -47,49 +46,43 @@ public class LoginController extends SimpleFormController {
     return mv;
     }
      */
+    private UsuarioDAO UsuarioDAO;
+
+    public UsuarioDAO getUsuarioDAO() {
+        return UsuarioDAO;
+    }
+
+    public void setUsuarioDAO(UsuarioDAO usuarioDAO) {
+        this.UsuarioDAO = usuarioDAO;
+    }
+
     public ModelAndView handleRequestInternal(HttpServletRequest request,
             HttpServletResponse response) {
 
         UsuarioDAO uDao;
         Collection<Usuario> usuarios_lista;
 
-        uDao=new UsuarioDAO();
+        uDao = new UsuarioDAO();
 
         String u = request.getParameter("idUsuario");
         String p = request.getParameter("clave");
 
-        usuarios_lista =  uDao.listar();
-       
-        for(Usuario user:usuarios_lista  ){
-            System.out.println("ID = "+ user.getIdUsuario());
-            System.out.println("Nombres = "+ user.getNombres());
-            System.out.println("Clave = "+ user.getClave());
-            System.out.println("Area = "+ user.getArea());
+        usuarios_lista = uDao.listar();
+
+        for (Usuario user : usuarios_lista) {
+            System.out.println("ID = " + user.getIdUsuario());
+            System.out.println("Nombres = " + user.getNombres());
+            System.out.println("Clave = " + user.getClave());
+            System.out.println("Area = " + user.getArea());
 
             if (user.getIdUsuario().equals(u) && user.getClave().equals(p)) {
-                return new ModelAndView("menu");
+                /*request.setAttribute("usuario", user.getNombres());
+                return new ModelAndView("menuPrueba", "usuario", user.getNombres());*/
+                request.setAttribute("user", user);
+                return new ModelAndView("menu", "user", user);
             }
+
         }
         return new ModelAndView("error");
     }
-    /*
-      public ModelAndView handleRequest(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        String accion = req.getParameter("accion");
-        System.out.println("accion: " + accion);
-        ModelAndView miModelAndView = new ModelAndView();
-        if (accion.equals("elegirProceso")) {
-            miModelAndView = elegirProceso(req, resp);
-        } else if (accion.equals("loginVotacion")) {
-            miModelAndView = loginVotacion(req, resp);
-        } else if (accion.equals("logueoVotacion")) {
-            miModelAndView = logueoVotacion(req, resp);
-        } else if (accion.equals("cedulaVotacion")) {
-            miModelAndView = cedulaVotacion(req, resp);
-        } else if (accion.equals("votar")) {
-            miModelAndView = votar(req, resp);
-        } else if (accion.equals("confirmar")) {
-            miModelAndView = confirmar(req, resp);
-        }
-        return miModelAndView;
-    }*/
 }
