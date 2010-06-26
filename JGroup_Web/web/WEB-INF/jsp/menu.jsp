@@ -149,8 +149,14 @@
                                 <td><div align="center"><a href="visualizacion.php?txtauto=<? echo $txtauto;?>" style="visibility:<? echo $visible;?>"><img src="../images/Avance.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr>
-                                <td><div align="left">Reporte Gerencia </div></td>
-                                <td><div align="center"><a href="consolida_cant.php" style="visibility:<? echo $visible;?>"><img src="../images/Busqueda.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <c:set var="area" value="${user.area}"/>
+                                <c:if test='${area=="Gerencia"}'>
+                                        <td><div align="left">Reporte Gerencia </div></td>
+                                        <td><div align="center"><a href="consolida_cant.php" style="visibility:<? echo $visible;?>">
+                                                    <img src="../images/Busqueda.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a>
+                                            </div>
+                                        </td>   
+                                </c:if>
                             </tr>
                             <tr>
 
