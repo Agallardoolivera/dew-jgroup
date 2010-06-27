@@ -40,6 +40,12 @@ public class AccesosMenuP extends MultiActionController {
         return new ModelAndView("Articulo");
     }
 
+    public ModelAndView Invitacion(HttpServletRequest request, HttpServletResponse response) {
+        return new ModelAndView("Invitacion");
+    }
+ public ModelAndView Analisis(HttpServletRequest request, HttpServletResponse response) {
+        return new ModelAndView("Analisis Cotizaciones");
+    }
 
 
     protected void doSubmitAction(Object command) throws Exception {
