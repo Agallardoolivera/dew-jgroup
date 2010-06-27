@@ -24,6 +24,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                 <prop key="articulo.htm">accesomenuP</prop>
                 <prop key="invitacion.htm">accesomenuP</prop>
                  <prop key="analisis.htm">accesomenuP</prop>
+                 <prop key="retornaMenu.htm">accesomenuP</prop>
             </props>
         </property>
     </bean>
