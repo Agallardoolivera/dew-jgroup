@@ -46,7 +46,9 @@ public class AccesosMenuP extends MultiActionController {
  public ModelAndView Analisis(HttpServletRequest request, HttpServletResponse response) {
         return new ModelAndView("Analisis Cotizaciones");
     }
-
+public ModelAndView Menu(HttpServletRequest request, HttpServletResponse response) {
+        return new ModelAndView("menu");
+    }
 
     protected void doSubmitAction(Object command) throws Exception {
         throw new UnsupportedOperationException("Not yet implemented");

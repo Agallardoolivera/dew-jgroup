@@ -72,7 +72,7 @@
                                 &nbsp;industriales</span><br /><br />
                             <span class="textlogo" style="font-size:11px;">Soluciones integrales de Abastecimiento</span>
                         </td>
-                        <td width="10%"><p align="center"><a href="index.php"><img src="<%=request.getContextPath()%>/images/Browser History.png" width="49" height="40" border="0" align="middle" title="Usuario"/></a></p>
+                        <td width="10%"><p align="center"><a href="retornaMenu.htm?metodo=Menu"><img src="<%=request.getContextPath()%>/images/Browser History.png" width="49" height="40" border="0" align="middle" title="Usuario"/></a></p>
                             <p align="center" class="Estilo3">Retornar al Men&uacute; </p></td>
                         <td width="0%" style=" text-align:left;">
 
