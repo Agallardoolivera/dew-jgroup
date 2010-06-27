@@ -130,7 +130,7 @@
                                     <p class="Estilo2">Sistemas de Cotizaciones </p></td>
                                 <td width="17%" rowspan="3"><img src="../images/Menu.png" width="75" height="68" border="0" title="Mantenimientos"/></td>
                                 <td width="26%"><div align="left">Articulos</div></td>
-                                <td width="8%"><div align="center"><a href="registrar.php"><img src="../images/kate.gif"male.gif" width="26" height="16" border="0" align="middle" title="Usuario"/></a></div></td>
+                                <td width="8%"><div align="center"><a href="articulo.htm?metodo=Articulo"><img src="../images/kate.gif"male.gif" width="26" height="16" border="0" align="middle" title="Usuario"/></a></div></td>
                             </tr>
                             <tr>
                                 <td><div align="left">Proveedor <br>

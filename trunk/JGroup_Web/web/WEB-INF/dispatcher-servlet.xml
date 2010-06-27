@@ -21,6 +21,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                 <prop key="index.htm">indexController</prop>
                 <prop key="menu.htm">loginController</prop>
                 <prop key="usuarios_mantener.htm">usuariosController</prop>
+                <prop key="articulo.htm">accesomenuP</prop>
             </props>
         </property>
     </bean>
@@ -41,6 +42,15 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
         <bean id="loginController" class="proyecto.web.LoginController">
             <property name="usuarioDAO" ref="usuarioDAO"/>
         </bean>
+
+
+  <bean id="accesomenuP" class="proyecto.web.AccesosMenuP">
+            <property name="methodNameResolver">
+                <ref bean="paramResolver"/>
+            </property>
+        </bean>
+
+
 
 
         <bean id="usuariosController" class="proyecto.web.UsuariosController">
