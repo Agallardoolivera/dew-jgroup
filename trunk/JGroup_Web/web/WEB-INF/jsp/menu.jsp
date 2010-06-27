@@ -164,11 +164,11 @@
                             <tr>
                                 <td rowspan="3"><img src="../images/AreaRango.png" width="75" height="68" border="0" title="Delimitacion" /></td>
                                 <td><div align="left">Invitacion</div></td>
-                                <td><div align="center"><a href="area_rango.php" style="visibility:<? echo $visible;?>"><img src="Images/Rangos.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <td><div align="center"><a href="invitacion.htm?metodo=Invitacion" style="visibility:<? echo $visible;?>"><img src="Images/Rangos.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr>
                                 <td><div align="left">Analisis de Cotizacion </div></td>
-                                <td><div align="center"><a href="area_rango.php" style="visibility:<? echo $visible;?>"><img src="Images/Rangos.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <td><div align="center"><a href="analisis.htm?metodo=Invitacion"" style="visibility:<? echo $visible;?>"><img src="Images/Rangos.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr>
                                 <td><div align="left">Ofertas</div></td>

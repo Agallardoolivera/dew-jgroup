@@ -22,6 +22,8 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                 <prop key="menu.htm">loginController</prop>
                 <prop key="usuarios_mantener.htm">usuariosController</prop>
                 <prop key="articulo.htm">accesomenuP</prop>
+                <prop key="invitacion.htm">accesomenuP</prop>
+                 <prop key="analisis.htm">accesomenuP</prop>
             </props>
         </property>
     </bean>
