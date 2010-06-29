@@ -30,10 +30,10 @@ function xGetContextPath() {
     return context;
 }
 function usuarioInsertar(){
-    var idUsuario = document.getElementById("idUsuario").value;
-    var clave = document.getElementById("clave").value;
-    var nombres = document.getElementById("nombres").value;
-    var cadena ="metodo=doInsertar2&idUsuario="+idUsuario+"&clave"+clave+"=&nombres="+nombres;
+    var txt_nom = document.getElementById("txt_nom").value;
+    var txt_ape = document.getElementById("txt_ape").value;
+    var txt_dni = document.getElementById("txt_dni").value;
+    var cadena ="metodo=doInsertar2&txt_nom="+txt_nom+"&txt_ape"+txt_ape+"=&txt?dni="+txt_dni;
     var ajax = nuevoAjax();
     ajax.open("POST", xGetContextPath()+"/usuarios_mantener.htm", true);
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
