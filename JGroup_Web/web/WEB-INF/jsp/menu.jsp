@@ -1,9 +1,3 @@
-<%-- 
-    Document   : menu
-    Created on : 17/06/2010, 02:32:03 AM
-    Author     : Oscar
---%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
      <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -172,7 +166,7 @@
                             </tr>
                             <tr>
                                 <td><div align="left">Ofertas</div></td>
-                                <td><div align="center"><a href="area_rango.php" style="visibility:<? echo $visible;?>"><img src="Images/Rangos.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <td><div align="center"><a href="listadoOfertas.htm?metodo=ListadoOfertas"" style="visibility:<? echo $visible;?>"><img src="Images/Rangos.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr>
                                 <td rowspan="3"><img src="../images/Reportes.png" width="75" height="68" title="Reportes" /></td>
