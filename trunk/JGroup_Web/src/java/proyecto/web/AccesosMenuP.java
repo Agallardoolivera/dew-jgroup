@@ -39,6 +39,9 @@ public class AccesosMenuP extends MultiActionController {
     public ModelAndView Proveedor(HttpServletRequest request, HttpServletResponse response) {
         return new ModelAndView("Proveedor");
     }
+    public ModelAndView ListadoOfertas(HttpServletRequest request, HttpServletResponse response) {
+        return new ModelAndView("ListadoOfertas");
+    }
     public ModelAndView Invitacion(HttpServletRequest request, HttpServletResponse response) {
         return new ModelAndView("Invitacion");
     }
