@@ -180,7 +180,7 @@
                             <tr>
                                 <td rowspan="3"><img src="<%=request.getContextPath()%>/images/Reportes.png" width="75" height="68" title="Reportes" /></td>
                                 <td><div align="left">Orden de Compra </div></td>
-                                <td><div align="center"><a href="" style="visibility:<? echo $visible;?>"><img src="<%=request.getContextPath()%>/images/Diferencias.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <td><div align="center"><a href="ordenCompra.htm?metodo=OrdenCompra" style="visibility:<? echo $visible;?>"><img src="Images/Diferencias.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr>
                                 <td><div align="left">Cotizacion</div></td>
