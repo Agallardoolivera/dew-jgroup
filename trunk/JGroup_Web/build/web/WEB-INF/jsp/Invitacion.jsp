@@ -121,6 +121,8 @@
             <div id="basemedio">
                 <div id="contenido" align="center">
                     <div style="height:350px;">
+                      <p>&nbsp;</p>
+                      <hr />
                       <table width="784" border="0">
                         <tr>
                           <td width="21">&nbsp;</td>
@@ -145,6 +147,7 @@
                           <td>&nbsp;</td>
                         </tr>
                       </table>
+                      <p>&nbsp;</p>
                       <table width="785" border="1">
                         <tr>
                           <th width="53" scope="col">Item</th>
