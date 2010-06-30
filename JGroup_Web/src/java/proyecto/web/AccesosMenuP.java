@@ -72,6 +72,12 @@ public ModelAndView Ofertas(HttpServletRequest request, HttpServletResponse resp
  public ModelAndView ListaOferta(HttpServletRequest request, HttpServletResponse response) {
         return new ModelAndView("ListadoTodasOfertas");
     }
+  public ModelAndView ReporteG(HttpServletRequest request, HttpServletResponse response) {
+        return new ModelAndView("ReporteGerencial");
+    }
+    public ModelAndView Auditoria(HttpServletRequest request, HttpServletResponse response) {
+        return new ModelAndView("Auditoria");
+    }
     //Use onSubmit instead of doSubmitAction
     //when you need access to the Request, Response, or BindException objects
     /*
