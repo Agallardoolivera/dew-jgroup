@@ -53,7 +53,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
             <property name="methodNameResolver">
                 <ref bean="paramResolver"/>
             </property>
-        </bean>
+        </bean>    
 
         <bean id="usuariosController" class="proyecto.web.UsuariosController">
             <property name="methodNameResolver">
