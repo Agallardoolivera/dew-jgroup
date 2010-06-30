@@ -127,7 +127,7 @@
                                     <p class="Estilo1"><em>DE </em></p>
                                     <p class="Estilo1"><em>SISTEMA</em></p>
                                     <p class="Estilo2">Sistemas de Cotizaciones </p></td>
-                            <p class="Estilo2">
+                           
                                 <td width="17%" rowspan="3"><img src="<%=request.getContextPath()%>/images/Menu.png" width="75" height="68" border="0" title="Mantenimientos"/></td>
                                 <td width="26%"><div align="left">Articulos</div></td>
                                 <td width="8%"><div align="center"><a href="articulo.htm?metodo=Articulo"><img src="../images/kate.gif"male.gif" width="26" height="16" border="0" align="middle" title="Usuario"/></a></div></td>
@@ -136,9 +136,8 @@
                                 <td><div align="left">Proveedor <br>
                                        <!-- Objeto Usuario -->
                                        
-
                                     </div></td>
-                                <td><div align="center"><a href="regis_tienda.php"><img src="../images/women.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <td><div align="center"><a href="proveedor.htm?metodo=Proveedor"><img src="../images/women.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr><td><div align="left">Usuario</div></td>
                                 <td><div align="center"><a href="usuarios_mantener.htm"><img src="../images/male.gif" width="26" height="16" border="0" align="middle" title="Usuario"/></a></div></td></tr>

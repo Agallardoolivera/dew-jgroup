@@ -49,14 +49,10 @@
                     <tr>
                         <td colspan="2" valign="top" align="center">
                             <fieldset style="background:#FFFFFF;">
-                                <input type="hidden" name="idempresa" id="idempresa" value="" />
                                 <input type="hidden" name="idarea" id="idarea" value="" />
                                 <input type="hidden" name="idusuario" id="idusuario" value="" />
                                 <table border="0" cellpadding="3" cellspacing="3" width="250px">
-                                    <tr>
-                                        <td align="right">Empresa</td>
-                                        <td><input type="text" name="idorg" id="idorg" style="width:100px;" class="cajatexto" onkeypress="press_acceso(event);" /></td>
-                                    </tr>
+                                    
                                     <tr>
                                         <td align="right">Usuario</td>
                                         <td><input type="text" name="idUsuario" id="idUsuario" style="width:100px;" class="cajatexto"/></td>

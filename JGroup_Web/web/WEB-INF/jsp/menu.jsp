@@ -137,7 +137,7 @@
                                        <!-- Objeto Usuario -->
                                        
                                     </div></td>
-                                <td><div align="center"><a href="regis_tienda.php"><img src="../images/women.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <td><div align="center"><a href="proveedor.htm?metodo=Proveedor"><img src="../images/women.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr><td><div align="left">Usuario</div></td>
                                 <td><div align="center"><a href="usuarios_mantener.htm"><img src="../images/male.gif" width="26" height="16" border="0" align="middle" title="Usuario"/></a></div></td></tr>
