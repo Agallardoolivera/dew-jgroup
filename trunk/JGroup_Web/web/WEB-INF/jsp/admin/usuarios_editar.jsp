@@ -96,7 +96,7 @@
              <input type="hidden" name="metodo" value="doInsertar"/>
                         <table width="450" border="1" align="center">
                             <tr><td width="127" align="left"><span class="Estilo3">Ingrese Nombres</span></td>
-                                <td colspan="3" align="left"><input type="text" name="txt_nom" id="txt_nom" value="document.getElementById(nombre)" size="40"/></td>
+                                <td colspan="3" align="left"><input type="text" name="txt_nom" id="txt_nom" size="40"/></td>
                             <tr><td align="left"><span class="Estilo3">Ingrese Apellidos</span></td>
     <td colspan="3" align="left"><input type="text" name="txt_ape" id="txt_ape" size="40"/></td>
 <tr><td align="left"><span class="Estilo3">Ingrese DNI</span></td>
