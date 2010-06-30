@@ -155,7 +155,7 @@
                                         <td><div align="center"><a href="consolida_cant.php" style="">
                                                     <img src="../images/Busqueda.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a>
                                             </div>                                        </td>   
-                                </c:if>
+                                <%-- </c:if>--%>
                             </tr>
                             <tr>                            </tr>
                             <tr>
@@ -166,7 +166,7 @@
                                 --%>
                                 <td><div align="left">Invitacion</div></td>
                                 <td><div align="center"><a href="invitacion.htm?metodo=Invitacion" style="visibility:<? echo $visible;?>"><img src="Images/Rangos.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
-                             </c:if>
+                           <%--   </c:if>--%>
                                 </tr>
                             
                             <tr>
