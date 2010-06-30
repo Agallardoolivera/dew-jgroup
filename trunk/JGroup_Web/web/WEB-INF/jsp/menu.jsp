@@ -146,7 +146,7 @@
                                 <c:set var="area" value="${user.area}"/>
                                 <c:if test='${area=="Gerencia"}'>
                                         <td><div align="left">Reporte Gerencia </div></td>
-                                        <td><div align="center"><a href="consolida_cant.php" style="visibility:<? echo $visible;?>">
+                                        <td><div align="center"><a href="reporteGerencial.htm?metodo=ReporteGerencial" style="visibility:<? echo $visible;?>">
                                                     <img src="../images/Busqueda.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a>
                                             </div>
                                         </td>   
