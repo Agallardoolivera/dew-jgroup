@@ -44,11 +44,7 @@
         <script language="JavaScript" src="../js/funcion_cont.js"></script>
     </head>
     <body topmargin="0" leftmargin="0" rightmargin="0">
-      
-
-
         <input type="hidden" name="idusuario" id="idusuario" value="" />
-        <input type="hidden" name="idempresa" id="idempresa" value="" />
         <input type="hidden" name="idarea" id="idarea" value="" />
         <div id="basecont">
             <div id="header">
@@ -116,7 +112,7 @@
                     </tr>
                 </table>
             </div>
-            <div style="background:#99CC33;">&nbsp;<?php //include("menu.php");?></div>
+            <div style="background:#99CC33;"></div>
             <div id="basemedio">
                 <div id="contenido" align="center">
                     <div style="height:350px;">
@@ -130,28 +126,28 @@
                            
                                 <td width="17%" rowspan="3"><img src="<%=request.getContextPath()%>/images/Menu.png" width="75" height="68" border="0" title="Mantenimientos"/></td>
                                 <td width="26%"><div align="left">Articulos</div></td>
-                                <td width="8%"><div align="center"><a href="articulo.htm?metodo=Articulo"><img src="../images/kate.gif"male.gif" width="26" height="16" border="0" align="middle" title="Usuario"/></a></div></td>
+                                <td width="8%"><div align="center"><a href="articulo.htm?metodo=Articulo"><img src="<%=request.getContextPath()%>/images/kate.gif"male.gif" width="26" height="16" border="0" align="middle" title="Usuario"/></a></div></td>
                             </tr>
                             <tr>
                                 <td><div align="left">Proveedor <br>
                                        <!-- Objeto Usuario -->
                                        
                                     </div></td>
-                                <td><div align="center"><a href="proveedor.htm?metodo=Proveedor"><img src="../images/women.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <td><div align="center"><a href="regis_tienda.php"><img src="<%=request.getContextPath()%>/images/women.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr><td><div align="left">Usuario</div></td>
-                                <td><div align="center"><a href="usuarios_mantener.htm"><img src="../images/male.gif" width="26" height="16" border="0" align="middle" title="Usuario"/></a></div></td></tr>
+                                <td><div align="center"><a href="usuarios_mantener.htm"><img src="<%=request.getContextPath()%>/images/male.gif" width="26" height="16" border="0" align="middle" title="Usuario"/></a></div></td></tr>
                             <tr>
                                 <td rowspan="3"><img src="<%=request.getContextPath()%>/images/Visualizacion.png" width="75" height="68" title="Visualizacion"/></td>
                                 <td><div align="left">Auditoria</div></td>
-                                <td><div align="center"><a href="visualizacion.php?txtauto=<? echo $txtauto;?>" style="visibility:<? echo $visible;?>"><img src="../images/Avance.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <td><div align="center"><a href="visualizacion.jsp?txtauto=<? echo $txtauto;?>" style="visibility:<? echo $visible;?>"><img src="<%=request.getContextPath()%>/images/Avance.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr>
                                 <c:set var="area" value="${user.area}"/>
                                 <c:if test='${area=="Gerencia"}'>
                                         <td><div align="left">Reporte Gerencia </div></td>
-                                        <td><div align="center"><a href="consolida_cant.php" style="">
-                                                    <img src="../images/Busqueda.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a>
+                                        <td><div align="center"><a href="consolida_cant.jsp" style="">
+                                                    <img src="<%=request.getContextPath()%>/images/Busqueda.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a>
                                             </div>
                                         </td>   
                                 </c:if>
@@ -164,25 +160,25 @@
                                  <c:set var="area" value="${user.area}"/>
                                 <c:if test='${area=="Gerencia"}'>
                                 <td><div align="left">Invitacion</div></td>
-                                <td><div align="center"><a href="invitacion.htm?metodo=Invitacion" style="visibility:<? echo $visible;?>"><img src="Images/Rangos.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <td><div align="center"><a href="invitacion.htm?metodo=Invitacion"><img src="<%=request.getContextPath()%>/images/Foto.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                              </c:if>
                                 </tr>
                             <tr>
                                 <td><div align="left">Analisis de Cotizacion </div></td>
-                                <td><div align="center"><a href="analisis.htm?metodo=Invitacion"" style="visibility:<? echo $visible;?>"><img src="Images/Rangos.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <td><div align="center"><a href="analisis.htm?metodo=Invitacion"><img src="<%=request.getContextPath()%>/images/Rangos.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr>
                                 <td><div align="left">Ofertas</div></td>
-                                <td><div align="center"><a href="area_rango.php" style="visibility:<? echo $visible;?>"><img src="Images/Rangos.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <td><div align="center"><a href="area_rango.php"><img src="<%=request.getContextPath()%>/images/Rangos.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr>
                                 <td rowspan="3"><img src="<%=request.getContextPath()%>/images/Reportes.png" width="75" height="68" title="Reportes" /></td>
                                 <td><div align="left">Orden de Compra </div></td>
-                                <td><div align="center"><a href="" style="visibility:<? echo $visible;?>"><img src="Images/Diferencias.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <td><div align="center"><a href=""><img src="Images/Diferencias.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr>
                                 <td><div align="left">Cotizacion</div></td>
-                                <td><div align="center"><a href="" style="visibility:<? echo $visible;?>"><img src="Images/Diferencias.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <td><div align="center"><a href=""><img src="Images/Diferencias.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr>
                             </tr>
@@ -205,7 +201,7 @@
             <div class="container">
                 <div class="header">Cargando, espere un momento por favor...</div>
                 <div class="body">
-                    <img src="../images/activity.gif">
+                    <img src="<%=request.getContextPath()%>/images/activity.gif">
                 </div>
             </div>
         </div>
@@ -376,4 +372,5 @@
 
               
                 </body>
+
                 </html>

@@ -68,6 +68,10 @@ public class UsuariosController extends MultiActionController {
         return new ModelAndView("/admin/usuarios_mantener");
     }
 
+     public ModelAndView editar(HttpServletRequest request, HttpServletResponse response) {
+        return new ModelAndView("/admin/usuarios_editar");
+    }
+
     public ModelAndView doInsertar(HttpServletRequest request, HttpServletResponse response) {
         Usuario vo = new Usuario();
         vo.setTxt_nom(request.getParameter("txt_nom"));

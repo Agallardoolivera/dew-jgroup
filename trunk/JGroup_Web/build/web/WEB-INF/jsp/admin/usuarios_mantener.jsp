@@ -117,7 +117,6 @@
 </table>
             <table width="450" border="1" align="center">
 <tr><td width="260" align="center"><input type="button" value="Insertar" onclick="usuarioInsertar();"/></td>
-    <td width="260" align="center"><input type="button" value="Editar" onclick="usuarioEditar();"/></td>
 <td width="224" align="center"><input type="submit" name="btn_canc" value="Cancelar" /></td></tr>
 </table>
 
@@ -130,7 +129,8 @@
                 <td width="50">Dni</td>
                 <td width="93">Usuario</td>
                 <td width="93">Password</td>
-               
+                <td width="93">Editar</td>
+                <td width="93">Eliminar</td>
             </tr>
             <tr>
                 <td width="93"><div id="tablanombre"></td>
@@ -138,6 +138,8 @@
                 <td width="20"><div id="tabladni"></td>
                 <td width="93"><div id="tablausu"></td>
                 <td width="93"><div id="tablacontra"></td>
+                <td><div><a href='usuarios_editar.htm?metodo=editar'>Editar</a></div></td>
+                <td><a href="usuarios_eliminar.htm">Eliminar</a></td>
                
             </tr>
         </table>
