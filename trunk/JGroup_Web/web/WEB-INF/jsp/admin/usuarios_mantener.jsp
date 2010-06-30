@@ -138,7 +138,7 @@
                 <td width="20"><div id="tabladni"></td>
                 <td width="93"><div id="tablausu"></td>
                 <td width="93"><div id="tablacontra"></td>
-                <td><a href='usuarios_editar.htm?metodo=editar>Editar</a></td>
+                <td><div><a href='usuarios_editar.htm?metodo=editar'>Editar</a></div></td>
                 <td><a href="usuarios_eliminar.htm">Eliminar</a></td>
                
             </tr>
