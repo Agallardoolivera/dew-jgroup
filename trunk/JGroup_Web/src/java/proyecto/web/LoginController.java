@@ -12,13 +12,11 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 import proyecto.dao.UsuarioDAO;
 import proyecto.modelo.Usuario;
-
 /** 
  *
  * @author pcsidrod
  */
 public class LoginController extends SimpleFormController {
-
     public LoginController() {
         //Initialize controller properties here or 
         //in the Web Application Context
@@ -47,9 +45,8 @@ public class LoginController extends SimpleFormController {
     }
      */
     private UsuarioDAO UsuarioDAO;
-
     public UsuarioDAO getUsuarioDAO() {
-        return UsuarioDAO;
+    return UsuarioDAO;
     }
 
     public void setUsuarioDAO(UsuarioDAO usuarioDAO) {
@@ -58,23 +55,19 @@ public class LoginController extends SimpleFormController {
 
     public ModelAndView handleRequestInternal(HttpServletRequest request,
             HttpServletResponse response) {
-
         UsuarioDAO uDao;
         Collection<Usuario> usuarios_lista;
-
         uDao = new UsuarioDAO();
-
         String u = request.getParameter("idUsuario");
         String p = request.getParameter("clave");
-
+        System.out.println(u);
+        System.out.println(p);
         usuarios_lista = uDao.listar();
-
         for (Usuario user : usuarios_lista) {
             System.out.println("ID = " + user.getIdUsuario());
             System.out.println("Nombres = " + user.getNombres());
             System.out.println("Clave = " + user.getClave());
             System.out.println("Area = " + user.getArea());
-
             if (user.getIdUsuario().equals(u) && user.getClave().equals(p)) {
                 /*request.setAttribute("usuario", user.getNombres());
                 return new ModelAndView("menuPrueba", "usuario", user.getNombres());*/
