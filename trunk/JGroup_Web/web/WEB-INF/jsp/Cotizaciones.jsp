@@ -26,7 +26,7 @@
         <script language="JavaScript" src="../js/jquery.numeric.pack.js"></script>
         <script language="JavaScript" src="../js/jquery.floatnumber.js"></script>
         <script language="JavaScript" src="../js/jquery.tablehover.js"></script>
-        <style type="text/css">
+<style type="text/css">
         <!--
         .Estilo1 {font-size: 24px}
         .Estilo2 {
@@ -121,41 +121,41 @@
             <div id="basemedio">
                 <div id="contenido" align="center">
                     <div style="height:350px;">
-                      <p>&nbsp;</p>
-                      <hr />
-                      <table width="784" border="0">
+                      <table width="792" border="0">
                         <tr>
-                          <td width="21">&nbsp;</td>
-                          <td width="146">N&uacute;mero</td>
-                          <td width="385"><form action="" method="post" name="form1" id="form1">
-                              <input type="text" name="Tx_NumInvitacion" />
-                          </form></td>
-                          <td width="204"><!-- BeginDate format:fcSw1 Monday, 7 June, 2010 EndDate --></td>
+                          <td width="96" height="38"><span class="Estilo11">N&uacute;mero</span></td>
+                          <td width="144"><input type="text" name="Tx_NumCot" /></td>
+                          <td width="299">&nbsp;</td>
+                          <td colspan="2"><!-- #BeginDate format:fcSw1a -->Tuesday, 29 June, 2010 11:54 PM<!-- #EndDate --></td>
                         </tr>
                         <tr>
-                          <td>&nbsp;</td>
-                          <td>Descripci&oacute;n Corta </td>
-                          <td><form action="" method="post" name="form2" id="form2">
-                              <input name="Tx_DesCorta" type="text" size="62" />
-                          </form></td>
-                          <td>&nbsp;</td>
+                          <td height="34" class="Estilo11">Invitaci&oacute;n</td>
+                          <td><input type="text" name="Tx_NumInvitacion" /></td>
+                          <td colspan="2"><input name="Tx_DesCortaInv" type="text" size="50" /></td>
+                          <td width="223">&nbsp;</td>
+                        </tr>
+                      </table>
+                      <table width="787" border="0">
+                        <tr>
+                          <td class="Estilo11">Proveedor</td>
+                          <td bordercolor="0"><input name="Tx_NomProveedor" type="text" size="75" /></td>
                         </tr>
                         <tr>
-                          <td>&nbsp;</td>
-                          <td>Observaciones</td>
-                          <td><textarea name="Tx_Observacion" cols="60" rows="6"></textarea></td>
-                          <td>&nbsp;</td>
+                          <td width="94" class="Estilo11">Observaci&oacute;n</td>
+                          <td width="683" bordercolor="0"><form id="form1" name="form1" method="post" action="">
+                              <textarea name="Tx_ObsCotizacion" cols="72.5" wrap="soft"></textarea>
+                          </form></td>
                         </tr>
                       </table>
                       <p>&nbsp;</p>
-                      <table width="785" border="1">
+                      <table width="640" border="1">
                         <tr>
                           <th width="53" scope="col">Item</th>
                           <th width="79" scope="col">Codigo</th>
                           <th width="269" scope="col">Descripci&oacute;n del Articulo </th>
                           <th width="47" scope="col">UM</th>
                           <th width="68" scope="col">Cant</th>
-                          <th width="229" scope="col">Observaci&oacute;n</th>
+                          <th width="84" scope="col">Precio</th>
                         </tr>
                         <tr>
                           <th scope="row">&nbsp;</th>
@@ -191,14 +191,15 @@
                         </tr>
                       </table>
                       <p>&nbsp;</p>
-                      <table width="514" border="0">
+                      <table width="686" border="0">
                         <tr>
                           <td width="102"><form action="" method="post" name="form3" id="form3">
                               <input name="Cmd_NuevoItem" type="button" value=" Nuevo Item" size="" />
                           </form></td>
                           <td width="101"><input name="Cmd_Grabar" type="button" value="Grabar Item" size="" /></td>
                           <td width="116"><input name="Cmd_Modificar" type="button" value=" Modificar Item" size="" /></td>
-                          <td width="167"><input name="Cmd_Eliminar" type="button" value=" Eliminar Item" size="" /></td>
+                          <td width="82"><input name="Cmd_Eliminar" type="button" value=" Eliminar Item" size="" /></td>
+                          <td width="83"><input name="Cmd_AgregarCriterio" type="button" value="Agregar Criterio" size="" /></td>
                         </tr>
                       </table>
                       <p>&nbsp;</p>

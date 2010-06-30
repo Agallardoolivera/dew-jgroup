@@ -48,13 +48,18 @@ public class AccesosMenuP extends MultiActionController {
     public ModelAndView Invitacion(HttpServletRequest request, HttpServletResponse response) {
         return new ModelAndView("Invitacion");
     }
+ public ModelAndView Cotizaciones(HttpServletRequest request, HttpServletResponse response) {
+        return new ModelAndView("Cotizaciones");
+    }
  public ModelAndView Analisis(HttpServletRequest request, HttpServletResponse response) {
-        return new ModelAndView("Analisis Cotizaciones");
+        return new ModelAndView("Cotizaciones");
     }
 public ModelAndView Menu(HttpServletRequest request, HttpServletResponse response) {
         return new ModelAndView("menu");
     }
-
+public ModelAndView Ofertas(HttpServletRequest request, HttpServletResponse response) {
+        return new ModelAndView("ListadoOfertas");
+    }
     protected void doSubmitAction(Object command) throws Exception {
         throw new UnsupportedOperationException("Not yet implemented");
     }
