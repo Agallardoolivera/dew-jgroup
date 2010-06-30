@@ -26,7 +26,7 @@
         <script language="JavaScript" src="../js/jquery.numeric.pack.js"></script>
         <script language="JavaScript" src="../js/jquery.floatnumber.js"></script>
         <script language="JavaScript" src="../js/jquery.tablehover.js"></script>
-        <style type="text/css">
+<style type="text/css">
         <!--
         .Estilo1 {font-size: 24px}
         .Estilo2 {
@@ -72,8 +72,8 @@
                                 &nbsp;industriales</span><br /><br />
                             <span class="textlogo" style="font-size:11px;">Soluciones integrales de Abastecimiento</span>
                         </td>
-                        <td width="10%"><p align="center"><a href="retornaMenu.htm?metodo=Menu"><img src="<%=request.getContextPath()%>/images/Browser History.png" width="49" height="40" border="0" align="middle" title="Usuario"/></a></p>
-                            <p align="center" class="Estilo3">Retornar al Men&uacute; </p></td>
+                        <td width="10%"><p align="center"><a href="analisis.htm?metodo=Analisis"><img src="<%=request.getContextPath()%>/images/Browser History.png" width="49" height="40" border="0" align="middle" title="Usuario"/></a></p>
+                            <p align="center" class="Estilo3">Regresar</p></td>
                         <td width="0%" style=" text-align:left;">
 
                             <!--<img src="../iconos/nombrepeq.gif" />
@@ -121,32 +121,45 @@
             <div id="basemedio">
                 <div id="contenido" align="center">
                     <div style="height:350px;">
+                      <table width="792" border="0">
+                        <tr>
+                          <td width="96" height="38"><span class="Estilo11">N&uacute;mero</span></td>
+                          <td width="144"><input type="text" name="Tx_NumCot" /></td>
+                          <td width="299">&nbsp;</td>
+                          <td colspan="2"><!-- #BeginDate format:fcSw1a -->Wednesday, 30 June, 2010 1:13 AM<!-- #EndDate --></td>
+                        </tr>
+                        <tr>
+                          <td height="34" class="Estilo11">Invitaci&oacute;n</td>
+                          <td><input type="text" name="Tx_NumInvitacion" /></td>
+                          <td colspan="2"><input name="Tx_DesCortaInv" type="text" size="50" /></td>
+                          <td width="223">&nbsp;</td>
+                        </tr>
+                      </table>
+                      <table width="787" border="0">
+                        <tr>
+                          <td class="Estilo11">Proveedor</td>
+                          <td bordercolor="0"><input name="Tx_NomProveedor" type="text" size="75" /></td>
+                        </tr>
+                        <tr>
+                          <td width="94" class="Estilo11">Observaci&oacute;n</td>
+                          <td width="683" bordercolor="0"><form id="form1" name="form1" method="post" action="">
+                              <textarea name="Tx_ObsCotizacion" cols="72.5" wrap="soft"></textarea>
+                          </form></td>
+                        </tr>
+                      </table>
                       <p>&nbsp;</p>
-                      <hr />
-                      <table width="749" border="0">
+                      <table width="640" border="1">
                         <tr>
-                          <td>N&uacute;mero Invitaci&oacute;n </td>
-                          <td><form action="" method="post" name="form1" id="form1">
-                              <input type="text" name="Tx_NumInvitacion2" />
-                          </form></td>
-                          <td><input name="Cmd_Analizar3" type="button" value="Iniciar An&aacute;lisis" size="" /></td>
-                        </tr>
-                        <tr>
-                          <td width="146">&nbsp;</td>
-                          <td width="385">&nbsp;</td>
-                          <td width="204">&nbsp;</td>
-                        </tr>
-                      </table>
-                      <table width="738" border="1">
-                        <tr>
-                          <th width="65" scope="col">Ubicaci&oacute;n</th>
-                          <th width="84" scope="col">Cotizaci&oacute;n</th>
-                          <th width="398" scope="col">Proveedor</th>
-                          <th width="68" scope="col">Puntaje</th>
-                          <th width="89" scope="col">Criterios Registrado </th>
+                          <th width="53" scope="col">Item</th>
+                          <th width="79" scope="col">Codigo</th>
+                          <th width="269" scope="col">Descripci&oacute;n del Articulo </th>
+                          <th width="47" scope="col">UM</th>
+                          <th width="68" scope="col">Cant</th>
+                          <th width="84" scope="col">Precio</th>
                         </tr>
                         <tr>
                           <th scope="row">&nbsp;</th>
+                          <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
@@ -158,12 +171,6 @@
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">&nbsp;</th>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
                           <td>&nbsp;</td>
                         </tr>
                         <tr>
@@ -172,36 +179,18 @@
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
-                        </tr>
-                      </table>
-                      <table width="749" border="0">
-                        <tr>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
                           <td>&nbsp;</td>
                         </tr>
                         <tr>
-                          <td width="146">&nbsp;</td>
-                          <td width="385"><form action="" method="post" name="form1" id="form1">
-                          </form></td>
-                          <td width="204">&nbsp;</td>
+                          <th scope="row">&nbsp;</th>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
                         </tr>
                       </table>
-                      <table width="749" border="0">
-                        <tr>
-                          <td width="146"><p align="center"><a href="consultacotizacion.htm?metodo=ConsultaCotizacion"><img src="<%=request.getContextPath()%>/imagesmostrar.png" alt="" width="49" height="40" border="0" align="middle" title="Ver detalle"/></a></p>
-                              <p align="center" class="Estilo3">Ver detalle</p></td>
-                          <td width="385"><p align="center"><a href="listaofertas.htm?metodo=ListaOferta"><img src="<%=request.getContextPath()%>/imagesmostrar.png" alt="" width="49" height="40" border="0" align="middle" title="Ver ofertas registradas"/></a></p>
-                          <p align="center" class="Estilo3">Ver Todas Ofertas</p></td>
-                          <td width="204">&nbsp;</td>
-                        </tr>
-                      </table>
-                      <h1>&nbsp;                      </h1>
-                      <h1>
-                        <p id="cmdDetalle" onclick="consultacotizacion.html?metodo=ConsultaCotizacion">&nbsp;</p>
-                        <td colspan="2">&nbsp;</td>
-                        </td>
-                      </h1>
+                      <p>&nbsp;</p>
                       <p>&nbsp;</p>
                       <div align="justify"></div>
                     </div>

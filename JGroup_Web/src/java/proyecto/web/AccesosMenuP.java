@@ -63,7 +63,13 @@ public ModelAndView Ofertas(HttpServletRequest request, HttpServletResponse resp
     protected void doSubmitAction(Object command) throws Exception {
         throw new UnsupportedOperationException("Not yet implemented");
     }
-    //Use onSubmit instead of doSubmitAction 
+ public ModelAndView ConsultaCotizacion(HttpServletRequest request, HttpServletResponse response) {
+        return new ModelAndView("Cotizaciones_consulta");
+    }
+ public ModelAndView ListaOferta(HttpServletRequest request, HttpServletResponse response) {
+        return new ModelAndView("ListadoTodasOfertas");
+    }
+    //Use onSubmit instead of doSubmitAction
     //when you need access to the Request, Response, or BindException objects
     /*
     @Override
