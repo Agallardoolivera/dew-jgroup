@@ -26,7 +26,7 @@
         <script language="JavaScript" src="../js/jquery.numeric.pack.js"></script>
         <script language="JavaScript" src="../js/jquery.floatnumber.js"></script>
         <script language="JavaScript" src="../js/jquery.tablehover.js"></script>
-        <style type="text/css">
+<style type="text/css">
         <!--
         .Estilo1 {font-size: 24px}
         .Estilo2 {
@@ -72,8 +72,8 @@
                                 &nbsp;industriales</span><br /><br />
                             <span class="textlogo" style="font-size:11px;">Soluciones integrales de Abastecimiento</span>
                         </td>
-                        <td width="10%"><p align="center"><a href="retornaMenu.htm?metodo=Menu"><img src="<%=request.getContextPath()%>/images/Browser History.png" width="49" height="40" border="0" align="middle" title="Usuario"/></a></p>
-                            <p align="center" class="Estilo3">Retornar al Men&uacute; </p></td>
+                        <td width="10%"><p align="center"><a href="ofertas.htm?metodo=Ofertas"><img src="<%=request.getContextPath()%>/images/Browser History.png" width="49" height="40" border="0" align="middle" title="Usuario"/></a></p>
+                            <p align="center" class="Estilo3">Regresar</p></td>
                         <td width="0%" style=" text-align:left;">
 
                             <!--<img src="../iconos/nombrepeq.gif" />
@@ -120,71 +120,77 @@
             <div style="background:#99CC33;">&nbsp;<?php //include("menu.php");?></div>
             <div id="basemedio">
                 <div id="contenido" align="center">
-                    <div style="height:450px;">
+                    <div style="height:350px;">
+                      <table width="792" border="0">
+                        <tr>
+                          <td width="96" height="38"><span class="Estilo11">N&uacute;mero</span></td>
+                          <td width="144"><input type="text" name="Tx_NumCot" /></td>
+                          <td width="299">&nbsp;</td>
+                          <td colspan="2"><!-- #BeginDate format:fcSw1a -->Wednesday, 30 June, 2010 1:38 AM<!-- #EndDate --></td>
+                        </tr>
+                        <tr>
+                          <td height="34" class="Estilo11">Invitaci&oacute;n</td>
+                          <td><input type="text" name="Tx_NumInvitacion" /></td>
+                          <td colspan="2"><input name="Tx_DesCortaInv" type="text" size="50" /></td>
+                          <td width="223">&nbsp;</td>
+                        </tr>
+                      </table>
+                      <table width="787" border="0">
+                        <tr>
+                          <td class="Estilo11">Proveedor</td>
+                          <td bordercolor="0"><input name="Tx_NomProveedor" type="text" size="75" /></td>
+                        </tr>
+                        <tr>
+                          <td width="94" class="Estilo11">Observaci&oacute;n</td>
+                          <td width="683" bordercolor="0"><form id="form1" name="form1" method="post" action="">
+                              <textarea name="Tx_ObsCotizacion" cols="72.5" wrap="soft"></textarea>
+                          </form></td>
+                        </tr>
+                      </table>
                       <p>&nbsp;</p>
-                      <hr />
-                      <br />
-                      <br />
-                      <form id="OfertaProveedor" name="OfertaProveedor" method="post" action="">
-                        <table width="423" border="1" bordercolor="#FFFFFF">
-                          <tr>
-                            <td width="126">Codigo Proveedor </td>
-                            <td width="191"><label>
-                              <input name="codigoProveedor" type="text" id="codigoProveedor" />
-                              </label>
-                            </td>
-                            <td width="84"><label>
-                              <input name="Aceptar" type="submit" id="Aceptar" value="Aceptar" />
-                            </label></td>
-                          </tr>
-                        </table>
-                      </form>
-                      <br />
-                      <table width="419" border="1">
+                      <table width="640" border="1">
                         <tr>
-                          <th width="97" scope="col">Codigo Oferta </th>
-                          <th width="169" scope="col">Descripcion Oferta </th>
-                          <th width="131" scope="col">Estado</th>
+                          <th width="53" scope="col">Item</th>
+                          <th width="79" scope="col">Codigo</th>
+                          <th width="269" scope="col">Descripci&oacute;n del Articulo </th>
+                          <th width="47" scope="col">UM</th>
+                          <th width="68" scope="col">Cant</th>
+                          <th width="84" scope="col">Precio</th>
                         </tr>
                         <tr>
+                          <th scope="row">&nbsp;</th>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                         </tr>
                         <tr>
+                          <th scope="row">&nbsp;</th>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                         </tr>
                         <tr>
+                          <th scope="row">&nbsp;</th>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                         </tr>
                         <tr>
+                          <th scope="row">&nbsp;</th>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                         </tr>
                       </table>
-                      <form id="Salir" name="Salir" method="post" action="">
-                        <label> </label>
-                        <table width="421" border="1" bordercolor="#FFFFFF">
-                          <tr bordercolor="#FFFFFF">
-                            <td width="352">&nbsp;</td>
-                            <td width="53">&nbsp;</td>
-                          </tr>
-                        </table>
-                        <label></label>
-                      </form>
-                      <table width="749" border="0">
-                        <tr>
-                          <td width="146"><p align="center">&nbsp;</p></td>
-                          <td width="385"><p align="center"><a href="consultacotizacion3.htm?metodo=ConsultaCotizacion3"><img src="<%=request.getContextPath()%>/imagesmostrar.png" alt="a" width="49" height="40" border="0" align="middle" title="Ver ofertas registradas"/></a></p>
-                              <p align="center" class="Estilo3">Ver cotizacion</p></td>
-                          <td width="204">&nbsp;</td>
-                        </tr>
-                      </table>
+                      <p>&nbsp;</p>
                       <p>&nbsp;</p>
                       <div align="justify"></div>
                     </div>
