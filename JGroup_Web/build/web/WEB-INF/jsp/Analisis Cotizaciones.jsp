@@ -187,11 +187,19 @@
                           <td width="204">&nbsp;</td>
                         </tr>
                       </table>
+                      <table width="749" border="0">
+                        <tr>
+                          <td width="146"><p align="center"><a href="consultacotizacion.htm?metodo=ConsultaCotizacion"><img src="<%=request.getContextPath()%>/imagesmostrar.png" alt="" width="49" height="40" border="0" align="middle" title="Ver detalle"/></a></p>
+                              <p align="center" class="Estilo3">Ver detalle</p></td>
+                          <td width="385"><p align="center"><a href="listaofertas.htm?metodo=ListaOferta"><img src="<%=request.getContextPath()%>/imagesmostrar.png" alt="" width="49" height="40" border="0" align="middle" title="Ver ofertas registradas"/></a></p>
+                          <p align="center" class="Estilo3">Ver Todas Ofertas</p></td>
+                          <td width="204">&nbsp;</td>
+                        </tr>
+                      </table>
+                      <h1>&nbsp;                      </h1>
                       <h1>
-                        <p id="cmdDetalle" onclick="fn_CargarPagina('ConsultaCotizacion.html','Contenedor','Consulta de Cotizaciones')">
-                          <input type="button" name="cmdDetalle" value="Ver Detalle" />
-                        </p>
-                        <input type="button" name="cmdTodas" value="Ver Todas" />
+                        <p id="cmdDetalle" onclick="consultacotizacion.html?metodo=ConsultaCotizacion">&nbsp;</p>
+                        <td colspan="2">&nbsp;</td>
                         </td>
                       </h1>
                       <p>&nbsp;</p>

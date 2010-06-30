@@ -24,9 +24,18 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                 <prop key="usuarios_editar.htm">usuariosController</prop>
                 <prop key="articulo.htm">accesomenuP</prop>
                 <prop key="invitacion.htm">accesomenuP</prop>
+                 <prop key="cotizaciones.htm">accesomenuP</prop>
                  <prop key="analisis.htm">accesomenuP</prop>
                  <prop key="retornaMenu.htm">accesomenuP</prop>
                   <prop key="proveedor.htm">accesomenuP</prop>
+                  <prop key="ofertas.htm">accesomenuP</prop>
+                   <prop key="consultacotizacion.htm">accesomenuP</prop>
+                   <prop key="ordenCompra.htm">accesomenuP</prop>
+                   <prop key="consultacotizacion2.htm">accesomenuP</prop>
+                   <prop key="consultacotizacion3.htm">accesomenuP</prop>
+                   <prop key="listaofertas.htm">accesomenuP</prop>
+                   <prop key="reporteg.htm">accesomenuP</prop>
+                    <prop key="auditoria.htm">accesomenuP</prop>
             </props>
         </property>
     </bean>
