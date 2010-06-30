@@ -52,7 +52,7 @@ public class AccesosMenuP extends MultiActionController {
         return new ModelAndView("Cotizaciones");
     }
  public ModelAndView Analisis(HttpServletRequest request, HttpServletResponse response) {
-        return new ModelAndView("Cotizaciones");
+        return new ModelAndView("Analisis Cotizaciones");
     }
 public ModelAndView Menu(HttpServletRequest request, HttpServletResponse response) {
         return new ModelAndView("menu");
