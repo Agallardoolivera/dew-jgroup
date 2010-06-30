@@ -1,23 +1,17 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage=""%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
-
 <html>
     <head>
-
         <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/efc.css"/>
         <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/cf.css"/>
-
-
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Welcome to Spring Web MVC project</title>
     </head>
-
   <body>
        <form action="menu.htm" method="post">
 <!--<script language="JavaScript" src="<%=request.getContextPath()%>/js/jquery-1.2.3.js"></script>
 <script language="JavaScript" src="<%=request.getContextPath()%>/js/jquery.maskedinput-1.1.2.pack.js"></script>-->
-
 <script>
     $(document).ready(function(){
         $('#idorg').focus();
