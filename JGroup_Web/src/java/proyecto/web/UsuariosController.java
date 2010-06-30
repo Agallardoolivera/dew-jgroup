@@ -60,19 +60,21 @@ public class UsuariosController extends MultiActionController {
     }
 
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
-        request.setAttribute("usuarios", usuarioDAO.listar());
+        request.setAttribute("Usuarios", usuarioDAO.listar());
         return new ModelAndView("/admin/usuarios_mantener");
     }
 
     public ModelAndView insertar(HttpServletRequest request, HttpServletResponse response) {
-        return new ModelAndView("/admin/usuarios_insertar");
+        return new ModelAndView("/admin/usuarios_mantener");
     }
 
     public ModelAndView doInsertar(HttpServletRequest request, HttpServletResponse response) {
         Usuario vo = new Usuario();
-        vo.setIdUsuario(request.getParameter("idUsuario"));
-        vo.setClave(request.getParameter("clave"));
-        vo.setNombres(request.getParameter("nombres"));
+        vo.setTxt_nom(request.getParameter("txt_nom"));
+        vo.setTxt_ape(request.getParameter("txt_ape"));
+        vo.setTxt_dni(request.getParameter("txt_dni"));
+        vo.setTxt_ape(request.getParameter("txt_usu"));
+        vo.setTxt_dni(request.getParameter("txt_contra"));
 
         usuarioDAO.insertar(vo);
 
@@ -82,13 +84,19 @@ public class UsuariosController extends MultiActionController {
     public ModelAndView doInsertar2(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("doInsertar2...");
         Usuario vo = new Usuario();
-        vo.setIdUsuario(request.getParameter("idUsuario"));
-        vo.setClave(request.getParameter("clave"));
-        vo.setNombres(request.getParameter("nombres"));
+        vo.setTxt_nom(request.getParameter("txt_nom"));
+        vo.setTxt_ape(request.getParameter("txt_ape"));
+        vo.setTxt_dni(request.getParameter("txt_dni"));
+        vo.setTxt_ape(request.getParameter("txt_usu"));
+        vo.setTxt_dni(request.getParameter("txt_contra"));
         usuarioDAO.insertar(vo);
         try {
             PrintWriter out = response.getWriter();
-            out.println("Se insert&oacute; correctamente");
+            out.println(request.getParameter("txt_nom"));
+            out.println(request.getParameter("txt_ape"));
+            out.println(request.getParameter("txt_dni"));
+            out.println(request.getParameter("txt_usu"));
+            out.println(request.getParameter("txt_contra"));
             out.close();
         } catch (IOException ex) {
             Logger.getLogger(UsuariosController.class.getName()).log(Level.SEVERE,

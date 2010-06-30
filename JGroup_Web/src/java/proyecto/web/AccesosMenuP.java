@@ -33,7 +33,7 @@ public class AccesosMenuP extends MultiActionController {
 
     }
 
-    public ModelAndView Articulo(HttpServletRequest request, HttpServletResponse response) {
+  public ModelAndView Articulo(HttpServletRequest request, HttpServletResponse response) {
         return new ModelAndView("Articulo");
     }
     public ModelAndView Proveedor(HttpServletRequest request, HttpServletResponse response) {
@@ -54,6 +54,7 @@ public class AccesosMenuP extends MultiActionController {
 public ModelAndView Menu(HttpServletRequest request, HttpServletResponse response) {
         return new ModelAndView("menu");
     }
+
     protected void doSubmitAction(Object command) throws Exception {
         throw new UnsupportedOperationException("Not yet implemented");
     }
@@ -71,4 +72,10 @@ public ModelAndView Menu(HttpServletRequest request, HttpServletResponse respons
     return mv;
     }
      */
+
+
+ public ModelAndView Usuarios_mantener(HttpServletRequest request, HttpServletResponse response) {
+        return new ModelAndView("Usuarios_mantener");
+    }
+
 }
