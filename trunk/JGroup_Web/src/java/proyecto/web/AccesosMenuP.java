@@ -66,6 +66,9 @@ public ModelAndView Ofertas(HttpServletRequest request, HttpServletResponse resp
  public ModelAndView ConsultaCotizacion(HttpServletRequest request, HttpServletResponse response) {
         return new ModelAndView("Cotizaciones_consulta");
     }
+  public ModelAndView ConsultaCotizacion2(HttpServletRequest request, HttpServletResponse response) {
+        return new ModelAndView("Cotizaciones_consulta2");
+    }
  public ModelAndView ListaOferta(HttpServletRequest request, HttpServletResponse response) {
         return new ModelAndView("ListadoTodasOfertas");
     }
