@@ -137,14 +137,14 @@
                                        <!-- Objeto Usuario -->
                                        
                                     </div></td>
-                                <td><div align="center"><a href="proveedor.htm?metodo=Proveedor"><img src="../images/women.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <td><div align="center"><a href="proveedor.htm?metodo=Proveedor"><img src="<%=request.getContextPath()%>/images/women.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr><td><div align="left">Usuario</div></td>
-                                <td><div align="center"><a href="usuarios_mantener.htm"><img src="../images/male.gif" width="26" height="16" border="0" align="middle" title="Usuario"/></a></div></td></tr>
+                                <td><div align="center"><a href="usuarios_mantener.htm"><img src="<%=request.getContextPath()%>/images/male.gif" width="26" height="16" border="0" align="middle" title="Usuario"/></a></div></td></tr>
                             <tr>
                                 <td rowspan="3"><img src="<%=request.getContextPath()%>/images/Visualizacion.png" width="75" height="68" title="Visualizacion"/></td>
                                 <td><div align="left">Auditoria</div></td>
-                                <td><div align="center"><a href="auditoria.htm?metodo=Auditoria" style="visibility:<? echo $visible;?>"><img src="../images/Avance.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <td><div align="center"><a href="auditoria.htm?metodo=Auditoria" style="visibility:<? echo $visible;?>"><img src="<%=request.getContextPath()%>/images/Avance.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr>
                                  <%--
@@ -153,7 +153,7 @@
                                   --%>
                                         <td><div align="left">Reporte Gerencia </div></td>
                                         <td><div align="center"><a href="reporteg.htm?metodo=ReporteG" style="">
-                                                    <img src="../images/Busqueda.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a>
+                                                    <img src="<%=request.getContextPath()%>/images/Busqueda.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a>
                                             </div>                                        </td>   
                                 <%-- </c:if>--%>
                             </tr>
@@ -165,26 +165,26 @@
                                 <c:if test='${area=="Gerencia"}'>
                                 --%>
                                 <td><div align="left">Invitacion</div></td>
-                                <td><div align="center"><a href="invitacion.htm?metodo=Invitacion" style="visibility:<? echo $visible;?>"><img src="Images/Rangos.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <td><div align="center"><a href="invitacion.htm?metodo=Invitacion" style="visibility:<? echo $visible;?>"><img src="<%=request.getContextPath()%>/images/Vista.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                            <%--   </c:if>--%>
                                 </tr>
                             
                             <tr>
                               <td><div align="left">Analisis de Cotizacion </div></td>
-                              <td><div align="center"><a href="analisis.htm?metodo=Analisis"" style="visibility:<? echo $visible;?>"><img src="Images/Rangos.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                              <td><div align="center"><a href="analisis.htm?metodo=Analisis"" style="visibility:<? echo $visible;?>"><img src="<%=request.getContextPath()%>/images/Vista.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr>
                                 <td><div align="left">Ofertas</div></td>
-                                <td><div align="center"><a href="ofertas.htm?metodo=Ofertas" style="visibility:<? echo $visible;?>"><img src="Images/Rangos.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <td><div align="center"><a href="ofertas.htm?metodo=Ofertas" style="visibility:<? echo $visible;?>"><img src="<%=request.getContextPath()%>/images/Vista.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr>
                                 <td rowspan="3"><img src="<%=request.getContextPath()%>/images/Reportes.png" width="75" height="68" title="Reportes" /></td>
                                 <td><div align="left">Orden de Compra </div></td>
-                                <td><div align="center"><a href="" style="visibility:<? echo $visible;?>"><img src="Images/Diferencias.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <td><div align="center"><a href="" style="visibility:<? echo $visible;?>"><img src="<%=request.getContextPath()%>/images/Diferencias.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr>
                                 <td><div align="left">Cotizacion</div></td>
-                                <td><div align="center"><a href="cotizaciones.htm?metodo=Cotizaciones" style="visibility:<? echo $visible;?>"><img src="Images/Diferencias.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                                <td><div align="center"><a href="cotizaciones.htm?metodo=Cotizaciones" style="visibility:<? echo $visible;?>"><img src="<%=request.getContextPath()%>/images/Diferencias.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr>                            </tr>
                             <tr> </tr>
@@ -206,7 +206,7 @@
             <div class="container">
                 <div class="header">Cargando, espere un momento por favor...</div>
                 <div class="body">
-                    <img src="../images/activity.gif">
+                    <img src="<%=request.getContextPath()%>/images/activity.gif">
                 </div>
             </div>
         </div>
