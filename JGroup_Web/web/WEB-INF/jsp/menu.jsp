@@ -147,8 +147,10 @@
                                 <td><div align="center"><a href="visualizacion.php?txtauto=<? echo $txtauto;?>" style="visibility:<? echo $visible;?>"><img src="../images/Avance.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr>
+                                 <%--
                                 <c:set var="area" value="${user.area}"/>
                                 <c:if test='${area=="Gerencia"}'>
+                                  --%>
                                         <td><div align="left">Reporte Gerencia </div></td>
                                         <td><div align="center"><a href="consolida_cant.php" style="">
                                                     <img src="../images/Busqueda.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a>
@@ -158,8 +160,10 @@
                             <tr>                            </tr>
                             <tr>
                                 <td rowspan="3"><img src="<%=request.getContextPath()%>/images/AreaRango.png" width="75" height="68" border="0" title="Delimitacion" /></td>
-                                 <c:set var="area" value="${user.area}"/>
+                                 
+                                <%-- <c:set var="area" value="${user.area}"/>
                                 <c:if test='${area=="Gerencia"}'>
+                                --%>
                                 <td><div align="left">Invitacion</div></td>
                                 <td><div align="center"><a href="invitacion.htm?metodo=Invitacion" style="visibility:<? echo $visible;?>"><img src="Images/Rangos.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                              </c:if>
