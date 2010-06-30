@@ -167,7 +167,7 @@
                             
                             <tr>
                               <td><div align="left">Analisis de Cotizacion </div></td>
-                              <td><div align="center"><a href="analisis.htm?metodo=Invitacion"" style="visibility:<? echo $visible;?>"><img src="Images/Rangos.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
+                              <td><div align="center"><a href="analisis.htm?metodo=Analisis"" style="visibility:<? echo $visible;?>"><img src="Images/Rangos.gif" width="26" height="16" border="0" align="middle" title="Usuario" /></a></div></td>
                             </tr>
                             <tr>
                                 <td><div align="left">Ofertas</div></td>

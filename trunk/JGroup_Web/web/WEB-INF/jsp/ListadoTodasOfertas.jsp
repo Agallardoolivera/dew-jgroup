@@ -123,85 +123,60 @@
                     <div style="height:350px;">
                       <p>&nbsp;</p>
                       <hr />
-                      <table width="749" border="0">
+                      <br />
+                      <br />
+                      <form id="OfertaProveedor" name="OfertaProveedor" method="post" action="">
+                        <p align="left">&nbsp;</p>
+                        <p align="left">&nbsp;</p>
+                        <table width="615" border="1" bgcolor="#FFFFFF">
+                          <tr>
+                            <td width="133">Invitacion N&deg; </td>
+                            <td width="466">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td>Descripci&oacute;n: </td>
+                            <td>&nbsp;</td>
+                          </tr>
+                        </table>
+                      </form>
+                      <br />
+                      <table width="419" border="1">
                         <tr>
-                          <td>N&uacute;mero Invitaci&oacute;n </td>
-                          <td><form action="" method="post" name="form1" id="form1">
-                              <input type="text" name="Tx_NumInvitacion2" />
-                          </form></td>
-                          <td><input name="Cmd_Analizar3" type="button" value="Iniciar An&aacute;lisis" size="" /></td>
+                          <th width="97" scope="col">Codigo Oferta </th>
+                          <th width="169" scope="col">Descripcion Oferta </th>
+                          <th width="131" scope="col">Estado</th>
                         </tr>
                         <tr>
-                          <td width="146">&nbsp;</td>
-                          <td width="385">&nbsp;</td>
-                          <td width="204">&nbsp;</td>
-                        </tr>
-                      </table>
-                      <table width="738" border="1">
-                        <tr>
-                          <th width="65" scope="col">Ubicaci&oacute;n</th>
-                          <th width="84" scope="col">Cotizaci&oacute;n</th>
-                          <th width="398" scope="col">Proveedor</th>
-                          <th width="68" scope="col">Puntaje</th>
-                          <th width="89" scope="col">Criterios Registrado </th>
-                        </tr>
-                        <tr>
-                          <th scope="row">&nbsp;</th>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">&nbsp;</th>
-                          <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                         </tr>
                         <tr>
-                          <th scope="row">&nbsp;</th>
-                          <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                         </tr>
                         <tr>
-                          <th scope="row">&nbsp;</th>
                           <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                        </tr>
+                        <tr>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                         </tr>
                       </table>
-                      <table width="749" border="0">
-                        <tr>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                          <td width="146">&nbsp;</td>
-                          <td width="385"><form action="" method="post" name="form1" id="form1">
-                          </form></td>
-                          <td width="204">&nbsp;</td>
-                        </tr>
-                      </table>
-                      <table width="749" border="0">
-                        <tr>
-                          <td width="146"><p align="center"><a href="consultacotizacion.htm?metodo=ConsultaCotizacion"><img src="<%=request.getContextPath()%>/imagesmostrar.png" alt="" width="49" height="40" border="0" align="middle" title="Ver detalle"/></a></p>
-                              <p align="center" class="Estilo3">Ver detalle</p></td>
-                          <td width="385"><p align="center"><a href="listaofertas.htm?metodo=ListaOferta"><img src="<%=request.getContextPath()%>/imagesmostrar.png" alt="" width="49" height="40" border="0" align="middle" title="Ver ofertas registradas"/></a></p>
-                          <p align="center" class="Estilo3">Ver Todas Ofertas</p></td>
-                          <td width="204">&nbsp;</td>
-                        </tr>
-                      </table>
-                      <h1>&nbsp;                      </h1>
-                      <h1>
-                        <p id="cmdDetalle" onclick="consultacotizacion.html?metodo=ConsultaCotizacion">&nbsp;</p>
-                        <td colspan="2">&nbsp;</td>
-                        </td>
-                      </h1>
+                      <form id="Salir" name="Salir" method="post" action="">
+                        <label> </label>
+                        <table width="421" border="1" bordercolor="#FFFFFF">
+                          <tr bordercolor="#FFFFFF">
+                            <td width="352">&nbsp;</td>
+                            <td width="53">&nbsp;</td>
+                          </tr>
+                        </table>
+                        <label></label>
+                      </form>
                       <p>&nbsp;</p>
                       <div align="justify"></div>
                     </div>
