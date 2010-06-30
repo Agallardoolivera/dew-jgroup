@@ -1,0 +1,93 @@
+/*
+ * Menús Simples con CSS
+ * Autor: Braulio Andrés Soncco Pimentel <braulio@buayacorp.com>
+ * http://www.buayacorp.com/
+ * 
+ * Esta hoja está bajo licencia de Creative Commons 
+ * http://creativecommons.org/licenses/by/2.0/
+ */
+
+
+/*
+	Menu Vertical
+*/
+#menuv {
+	border: 1px solid #ACCFE8;
+	border-width: 1px 1px 0 1px;
+	width: 150px;
+	font: 80% "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+#menuv ul, li {
+	list-style-type: none;
+}
+
+#menuv ul {
+	margin: 0;
+	padding: 0;
+}
+
+#menuv li {
+	border-bottom: 1px solid #ACCFE8;
+}
+
+#menuv a {
+	text-decoration: none;
+	color: #3366CC;
+	background: #F0F7FC;
+	display: block;
+	padding: 3px 6px;
+	width: 138px;
+}
+
+#menuv a:hover {
+	background: #DBEBF6;
+}
+
+/*
+	Menu Horizontal
+*/
+#menuh {
+	font: 100% "Trebuchet MS", Arial, Helvetica, sans-serif;
+	margin-top: 0px;
+	background:#99CC00;
+	width:100%;
+}
+
+#menuh ul, li {
+	/*list-style-type: none;*/
+}
+
+#menuh ul {
+	margin: 0;
+	padding: 0;
+}
+
+#menuh li {
+	float: left;
+}
+
+#menuh a {
+	text-decoration: none;
+	color: #FFFFFF;
+	display: block;
+	padding: 3px 10px;
+	text-align: center;
+	/*border: 1px solid #1AAA21;*/
+	border-width: 1px 1px 1px 0;
+	font-size:12px;
+	font-weight:bold;
+}
+
+#menuh a#primero {
+	border-left: 1px solid #ACCFE8;
+}
+
+#menuh a:hover {
+	background:#00CC00;
+	color:#000000;
+}
+#menuh a:active {
+	background:#00CC00;
+	color:#000000;
+}
