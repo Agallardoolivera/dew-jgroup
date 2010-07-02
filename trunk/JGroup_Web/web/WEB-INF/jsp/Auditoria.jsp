@@ -117,42 +117,30 @@
                     </tr>
                 </table>
             </div>
-            <div style="background:#99CC33;">&nbsp;<?php //include("menu.php");?></div>
+                            <br>
             <div id="basemedio">
                 <div id="contenido" align="center">
-                    <div style="height:350px;">
-                      <p>&nbsp;</p>
-
-                      <table width="905" border="0">
+                    <div style="height:450px;">
+                      <table border="1" align="center">
                         <tr align="center">
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                        </tr>
-                        <tr align="center">
-                          <td width="309" align="right">Proceso</td>
-                          <td width="51">&nbsp;</td>
-                          <td width="289" align="left"><label for="procesos"></label>
+                            <td width="120" align="left">Proceso</td>
+                          <td align="left"><label for="procesos"></label>
                               <select name="procesos" id="procesos">
+                                  <option>--Seleccione Proceso--</option>
                                 <option>Articulos Mecanicos</option>
                                 <option>Articulos Electricos</option>
                               </select>
                           </td>
                         </tr>
+                        
                         <tr align="center">
-                          <td colspan="3">&nbsp;</td>
-                        </tr>
-                        <tr align="center">
-                          <td colspan="3"><input type="submit" name="lProcesos" id="lProcesos" value="Detalle" />
+                          <td colspan="2"><input type="submit" name="lProcesos" id="lProcesos" value="Detalle" />
                           </td>
                         </tr>
-                        <tr>
-                          <td colspan="3">&nbsp;</td>
-                        </tr>
-                        <tr>
-                          <td colspan="3" align="center"><table width="946" height="170" border="1">
+                         <tr>
+                              <table border="1">
                               <tr>
-                                <td width="50" align="center">Articulo</td>
+                                <td align="center">Articulo</td>
                                 <td width="126" align="center">Proveedor Ganador</td>
                                 <td width="113" align="center">Orden de compra</td>
                                 <td width="141" align="center">Fecha de Convocatoria</td>
@@ -173,7 +161,7 @@
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                               </tr>
-                          </table></td>
+                          </table>
                         </tr>
                       </table>
                       </form>

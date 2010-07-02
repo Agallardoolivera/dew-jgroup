@@ -117,31 +117,23 @@
                     </tr>
                 </table>
             </div>
-            <div style="background:#99CC33;">&nbsp;<?php //include("menu.php");?></div>
+            <div style="background:#99CC33;"></div>
             <div id="basemedio">
                 <div id="contenido" align="center">
-                    <div style="height:350px;">
+                    <div style="height:450px;">
                       <p>&nbsp;</p>
                       <hr />
-                      <table width="719" border="0">
-                        <tr>
-                          <td width="154" height="21"><label></label></td>
-                          <td width="367">&nbsp;</td>
-                          <td width="184">&nbsp;</td>
-                        </tr>
+                      <table width="719" border="1">
                         <tr>
                           <td><label>C&oacute;digo</label></td>
                           <td><form id="form1" name="form1" method="post" action="">
                               <label></label>
                               <input name="Tx_Codart" type="text" size="15" />
                           </form></td>
-                          <td>&nbsp;</td>
                         </tr>
                         <tr>
                           <td><label>Descripci&oacute;n</label>
-                            &nbsp;</td>
                           <td><input name="Tx_Desart" type="text" size="50" /></td>
-                          <td>&nbsp;</td>
                         </tr>
                         <tr>
                           <td><label>Unidad de Medida </label></td>
@@ -158,29 +150,24 @@
                                 <option value="CTO">CTO</option>
                               </select>
                           </form></td>
-                          <td>&nbsp;</td>
+                         
                         </tr>
                         <tr>
                           <td>Descripci&oacute;n Larga </td>
                           <td><form id="form3" name="form3" method="post" action="">
                               <textarea name="textarea" cols="50" rows="10"></textarea>
                           </form></td>
-                          <td>&nbsp;</td>
-                        </tr>
+                           </tr>
                         <tr>
                           <td>&nbsp;</td>
                           <td><form id="form4" name="form4" method="post" action="">
                               <table width="367" border="0">
                                 <tr>
-                                  <td width="84">&nbsp;</td>
                                   <td width="84"><input type="button" name="Cmd_Grabar" value="  Grabar  " /></td>
-                                  <td width="91">&nbsp;</td>
-                                  <td width="90">&nbsp;</td>
                                 </tr>
                               </table>
                           </form></td>
-                          <td>&nbsp;</td>
-                        </tr>
+                         </tr>
                       </table>
                       <p>&nbsp;</p>
                       <div align="justify"></div>

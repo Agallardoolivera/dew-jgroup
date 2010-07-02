@@ -117,18 +117,27 @@
                     </tr>
                 </table>
             </div>
-            <div style="background:#99CC33;">&nbsp;<?php //include("menu.php");?></div>
             <div id="basemedio">
                 <div id="contenido" align="center">
-                    <div style="height:350px;">
-                      <p>&nbsp;</p>
-                      <hr />
-                      <form id="registroProveedor" name="registroProveedor" method="post" action="">
-                        <p>&nbsp;</p>
-                        <div align="left">
+                    <div style="height:450px;">
+                      <form action="" method="post" name="buscarProveedor" id="buscarProveedor">
+                        <div align="center">
+                          <p>BUSCAR PROVEEDOR </p>
+                        </div>
+                        <table width="273" border="1" align="center">
+                          <tr>
+                            <td width="102">Codigo</td>
+                            <td><input name="Co_Proveedor" type="text" id="Co_Proveedor" /></td>
+                            <td width="66"><input name="Buscar" type="button" id="Buscar" value="Buscar" /></td>
+                          </tr>
+                        </table>
+                      </form>
+                      
+                        <form id="registroProveedor" name="registroProveedor" method="post" action="">
+                        <div align="center">
                           <p>INGRESO DE PROVEEDOR </p>
                         </div>
-                        <table width="356" border="1" align="left" bordercolor="#FFFFFF">
+                        <table width="356" border="1" align="center">
                           <tr>
                             <td width="150">Raz&oacute;n Social </td>
                             <td width="190"><input name="ruc" type="text" id="ruc" /></td>
@@ -154,67 +163,18 @@
                             <td><input name="contacto2" type="text" id="contacto2" /></td>
                           </tr>
                           <tr>
-                            <td>&nbsp;</td>
-                            <td><label>
-                              <input name="Limpiar" type="reset" id="Limpiar" value="Limpiar" />
-                              </label>
-                                <input name="registrar" type="button" value="Registrar" />
+                              <td align="center"><input name="Limpiar" type="reset" id="Limpiar" value="Limpiar"/></td>
+                              <td align="center">
+                                <input name="registrar" type="button" value="Registrar"/>
                             </td>
                           </tr>
                         </table>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                        <p><br />
-                        </p>
                       </form>
-                      <form action="" method="post" name="buscarProveedor" id="buscarProveedor">
-                        <div align="left">
-                          <p>&nbsp;</p>
-                          <p>BUSCAR PROVEEDOR </p>
-                        </div>
-                        <table width="273" border="1" align="left">
-                          <tr>
-                            <td width="102">Codigo</td>
-                            <td width="155"><label>
-                              <input name="Co_Proveedor" type="text" id="Co_Proveedor" />
-                            </label></td>
-                          </tr>
-                        </table>
-                        <p>&nbsp;</p>
-                        <table width="274" align="left">
-                          <tr>
-                            <td width="196">&nbsp;</td>
-                            <td width="66"><input name="Buscar" type="button" id="Buscar" value="Buscar" /></td>
-                          </tr>
-                        </table>
-                        <p>&nbsp;</p>
-                      </form>
-                      <form id="StatusProveedor" name="StatusProveedor" method="get" action="" >
-                        <div align="left">
-                          <p>&nbsp;</p>
-                          <p>STATUS PROVEEDOR </p>
-                        </div>
-                        <table border="1" align="left">
-                          <tr>
-                            <td width="164"><div align="left"> Estado de Proveedor </div></td>
-                            <td width="221"><label>
-                              <input name="estado" type="text" id="estado" value="" />
-                            </label></td>
-                          </tr>
-                        </table>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                      </form>
-                      <p>&nbsp;</p>
-                      <form id="DatosProveedor" name="DatosProveedor" method="get" action="">
-                        <div align="left">
-                          <p>&nbsp;</p>
+                       <form id="DatosProveedor" name="DatosProveedor" method="get" action="">
+                        <div align="center">
                           <p>DATOS PROVEEDOR </p>
                         </div>
-                        <table width="1093" border="1" align="left">
+                        <table width="1093" border="1" align="center">
                           <tr>
                             <th width="47" scope="col">Codigo</th>
                             <th width="212" scope="col">Razon Social </th>
@@ -233,26 +193,17 @@
                             <td>&nbsp;</td>
                             <td>&nbsp;</td>
                           </tr>
-                          <br />
                         </table>
-                        <div align="center">
-                          <p><br />
-                          </p>
-                          <table width="1095" align="left">
+                           <table width="245" align="center" border="1">
                             <tr>
-                              <td width="1015">&nbsp;</td>
+                              
                               <td width="65"><input name="Modificar" type="submit" id="Modificar" value="Modificar" />
                               </td>
                               <td width="65"><input name="Eliminar" type="submit" id="Eliminar" value="Eliminar" /></td>
                               <td width="65"><input name="Aceptar4" type="submit" id="Aceptar4" value="Aceptar" /></td>
                             </tr>
                           </table>
-                          <p>&nbsp;</p>
-                          <p></p>
-                        </div>
                       </form>
-                      <p>&nbsp;</p>
-                      <div align="justify"></div>
                     </div>
               </div>
             </div>

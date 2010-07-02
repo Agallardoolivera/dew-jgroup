@@ -117,38 +117,39 @@
                     </tr>
                 </table>
             </div>
-            <div style="background:#99CC33;">&nbsp;<?php //include("menu.php");?></div>
+                            <BR>
             <div id="basemedio">
                 <div id="contenido" align="center">
-                    <div style="height:350px;">
-                      <p>&nbsp;</p>
-                      <hr />
-                      <table width="784" border="0">
+                    <div style="height:450px;">
+                      <table width="784" border="1">
                         <tr>
-                          <td width="21">&nbsp;</td>
                           <td width="146">N&uacute;mero</td>
                           <td width="385"><form action="" method="post" name="form1" id="form1">
                               <input type="text" name="Tx_NumInvitacion" />
                           </form></td>
-                          <td width="204"><!-- BeginDate format:fcSw1 Monday, 7 June, 2010 EndDate --></td>
                         </tr>
                         <tr>
-                          <td>&nbsp;</td>
                           <td>Descripci&oacute;n Corta </td>
                           <td><form action="" method="post" name="form2" id="form2">
                               <input name="Tx_DesCorta" type="text" size="62" />
                           </form></td>
-                          <td>&nbsp;</td>
                         </tr>
                         <tr>
-                          <td>&nbsp;</td>
                           <td>Observaciones</td>
                           <td><textarea name="Tx_Observacion" cols="60" rows="6"></textarea></td>
-                          <td>&nbsp;</td>
                         </tr>
                       </table>
-                      <p>&nbsp;</p>
-                      <table width="785" border="1">
+                      <table width="514" border="1">
+                        <tr>
+                            <td width="100" align="center">
+                              <input name="Cmd_NuevoItem" type="button" value=" Nuevo Item" size="" />
+                            </td>
+                            <td width="100" align="center"><input name="Cmd_Grabar" type="button" value="Grabar Item" size="" /></td>
+                            <td width="100" align="center"><input name="Cmd_Modificar" type="button" value=" Modificar Item" size="" /></td>
+                            <td width="100" align="center"><input name="Cmd_Eliminar" type="button" value=" Eliminar Item" size="" /></td>
+                        </tr>
+                      </table>
+                        <table width="785" border="1">
                         <tr>
                           <th width="53" scope="col">Item</th>
                           <th width="79" scope="col">Codigo</th>
@@ -190,18 +191,7 @@
                           <td>&nbsp;</td>
                         </tr>
                       </table>
-                      <p>&nbsp;</p>
-                      <table width="514" border="0">
-                        <tr>
-                          <td width="102"><form action="" method="post" name="form3" id="form3">
-                              <input name="Cmd_NuevoItem" type="button" value=" Nuevo Item" size="" />
-                          </form></td>
-                          <td width="101"><input name="Cmd_Grabar" type="button" value="Grabar Item" size="" /></td>
-                          <td width="116"><input name="Cmd_Modificar" type="button" value=" Modificar Item" size="" /></td>
-                          <td width="167"><input name="Cmd_Eliminar" type="button" value=" Eliminar Item" size="" /></td>
-                        </tr>
-                      </table>
-                      <p>&nbsp;</p>
+                      
                       <div align="justify"></div>
                     </div>
               </div>
