@@ -117,13 +117,12 @@
                     </tr>
                 </table>
             </div>
-            <div style="background:#99CC33;">&nbsp;<?php //include("menu.php");?></div>
             <div id="basemedio">
                 <div id="contenido" align="center">
-                    <div style="height:350px;">
+                    <div style="height:450px;">
                       <p>&nbsp;</p>
                       <hr />
-                      <table width="749" border="0">
+                      <table width="700" border="1">
                         <tr>
                           <td>N&uacute;mero Invitaci&oacute;n </td>
                           <td><form action="" method="post" name="form1" id="form1">
@@ -131,13 +130,9 @@
                           </form></td>
                           <td><input name="Cmd_Analizar3" type="button" value="Iniciar An&aacute;lisis" size="" /></td>
                         </tr>
-                        <tr>
-                          <td width="146">&nbsp;</td>
-                          <td width="385">&nbsp;</td>
-                          <td width="204">&nbsp;</td>
-                        </tr>
+                     
                       </table>
-                      <table width="738" border="1">
+                      <table width="700" border="1">
                         <tr>
                           <th width="65" scope="col">Ubicaci&oacute;n</th>
                           <th width="84" scope="col">Cotizaci&oacute;n</th>
@@ -187,14 +182,13 @@
                           <td width="204">&nbsp;</td>
                         </tr>
                       </table>
-                      <table width="749" border="0">
+                      <table width="700" border="1">
                         <tr>
-                          <td width="146"><p align="center"><a href="consultacotizacion.htm?metodo=ConsultaCotizacion"><img src="<%=request.getContextPath()%>/imagesmostrar.png" alt="" width="49" height="40" border="0" align="middle" title="Ver detalle"/></a></p>
+                          <td width="200" align="center"><a href="consultacotizacion.htm?metodo=ConsultaCotizacion"><img src="<%=request.getContextPath()%>/imagesmostrar.png" alt="" width="49" height="40" border="0" align="middle" title="Ver detalle"/></a></p>
                               <p align="center" class="Estilo3">Ver detalle</p></td>
-                          <td width="385"><p align="center"><a href="listaofertas.htm?metodo=ListaOferta"><img src="<%=request.getContextPath()%>/imagesmostrar.png" alt="" width="49" height="40" border="0" align="middle" title="Ver ofertas registradas"/></a></p>
+                          <td width="200"><p align="center"><a href="listaofertas.htm?metodo=ListaOferta"><img src="<%=request.getContextPath()%>/imagesmostrar.png" alt="" width="49" height="40" border="0" align="middle" title="Ver ofertas registradas"/></a></p>
                           <p align="center" class="Estilo3">Ver Todas Ofertas</p></td>
-                          <td width="204">&nbsp;</td>
-                        </tr>
+                          </tr>
                       </table>
                       <h1>&nbsp;                      </h1>
                       <h1>

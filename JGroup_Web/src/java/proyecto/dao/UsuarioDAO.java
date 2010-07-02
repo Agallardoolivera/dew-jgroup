@@ -28,8 +28,8 @@ public class UsuarioDAO {
         usuarios.add(u);
 
         u = new Usuario();
-        u.setIdUsuario("david");
-        u.setClave("java");
+        u.setIdUsuario("admin");
+        u.setClave("admin");
         u.setNombres("david rodrigues");
         u.setArea("Auditoria");
         usuarios.add(u);
