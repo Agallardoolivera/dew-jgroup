@@ -10,17 +10,17 @@
     
     <!--bean id="propertyConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
-          p:location="/WEB-INF/jdbc.properties" />
+          p:location="/WEB-INF/jdbc.properties" />-->
     
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource"
-          p:driverClassName="${jdbc.driverClassName}"
-          p:url="${jdbc.url}"
-          p:username="${jdbc.username}"
-          p:password="${jdbc.password}" /-->
+          p:driverClassName="com.mysql.jdbc.Driver"
+          p:url="jdbc:mysql://localhost:3306/jgroup"
+          p:username="root"
+          p:password="rootroot" />
     
-    <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
-
+  
+    
 
     <bean id="usuarioDAO" class="proyecto.dao.UsuarioDAO"/>
 
