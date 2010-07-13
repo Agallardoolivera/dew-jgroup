@@ -6,7 +6,7 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <title>::- Sistema de Pedidos On Line -::</title>
@@ -24,19 +24,19 @@
         <script language="JavaScript" src="../js/jquery.floatnumber.js"></script>
         <script language="JavaScript" src="../js/jquery.tablehover.js"></script>
         <style type="text/css">
-        <!--
-        .Estilo1 {font-size: 24px}
-        .Estilo2 {
+            <!--
+            .Estilo1 {font-size: 24px}
+            .Estilo2 {
                 font-size: 16px;
                 font-style: italic;
                 color: #000033;
-        }
-        .Estilo3 {
+            }
+            .Estilo3 {
                 font-size: 12px;
                 font-style: italic;
                 font-weight: bold;
-        }
-        -->
+            }
+            -->
         </style>
         -
         <script language="JavaScript" src="../js/graphs.js"></script>
@@ -70,10 +70,10 @@
                             <span class="textlogo" style="font-size:11px;">Soluciones integrales de Abastecimiento</span>
                         </td>
 
-             <td width="10%"><p align="center"><a href="retornaMenu.htm?metodo=Menu"><img src="<%=request.getContextPath()%>/images/Browser History.png" alt="" width="49" height="40" border="0" align="middle" title="Usuario"/></a></p>
-                    <p align="center" class="Estilo31">Retornar al Men&uacute; </p></td>
+                        <td width="10%"><p align="center"><a href="retornaMenu.htm?metodo=Menu"><img src="<%=request.getContextPath()%>/images/Browser History.png" alt="" width="49" height="40" border="0" align="middle" title="Usuario"/></a></p>
+                            <p align="center" class="Estilo31">Retornar al Men&uacute; </p></td>
                         <td width="0%" style=" text-align:left;">
- </td>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -92,33 +92,33 @@
                 </div>
             </div>
             <table width="500" border="1" align="center">
-	<tr><td width="127"><span class="Estilo1">Ingrese Nombres</span></td>
-	<td colspan="3"><input type="text" name="txt_nom" value=""/></td>
-<tr><td><span class="Estilo1">Ingrese Apellidos</span></td>
-	<td colspan="3"><input type="text" name="txt_ape" value="" /></td>
-<tr><td><span class="Estilo1">Ingrese DNI</span></td>
-	<td colspan="3"><input type="text" name="txt_dni" maxlength="8" value="" /></td>
-<tr><td><span class="Estilo1">Ingrese Usuario</span></td>
-	<td colspan="3"><input type="text" name="txt_usu" value="" maxlength="20" /></td>
-<tr><td><span class="Estilo1">Ingrese Contrasena</span></td>
-	<td colspan="3"><input type="password" name="txt_contra" size="15" value="" maxlength="20"/>
-	  <span class="Estilo1">Confirma: </span>
-	  <input type="password" name="password2" size="20" maxlength="15" value="" /></td>
-<tr><td><span class="Estilo1">Tipo Usuario</span></td>
-	<td width="114">Administrador:
-	  <input name="rbttipusu" type="radio" value="1"/>
-</td>
-	<td width="101">Avanzado:
-  <input name="rbttipusu" type="radio" value="2" />
-</td>
-<td width="104">Usuario:
-  <input name="rbttipusu" type="radio" value="3" checked="checked"/>
-</td>
-</table>
+                <tr><td width="127"><span class="Estilo1">Ingrese Nombres</span></td>
+                    <td colspan="3"><input type="text" name="txt_nom" value=""/></td>
+                <tr><td><span class="Estilo1">Ingrese Apellidos</span></td>
+                    <td colspan="3"><input type="text" name="txt_ape" value="" /></td>
+                <tr><td><span class="Estilo1">Ingrese DNI</span></td>
+                    <td colspan="3"><input type="text" name="txt_dni" maxlength="8" value="" /></td>
+                <tr><td><span class="Estilo1">Ingrese Usuario</span></td>
+                    <td colspan="3"><input type="text" name="txt_usu" value="" maxlength="20" /></td>
+                <tr><td><span class="Estilo1">Ingrese Contrasena</span></td>
+                    <td colspan="3"><input type="password" name="txt_contra" size="15" value="" maxlength="20"/>
+                        <span class="Estilo1">Confirma: </span>
+                        <input type="password" name="password2" size="20" maxlength="15" value="" /></td>
+                <tr><td><span class="Estilo1">Tipo Usuario</span></td>
+                    <td width="114">Administrador:
+                        <input name="rbttipusu" type="radio" value="1"/>
+                    </td>
+                    <td width="101">Avanzado:
+                        <input name="rbttipusu" type="radio" value="2" />
+                    </td>
+                    <td width="104">Usuario:
+                        <input name="rbttipusu" type="radio" value="3" checked="checked"/>
+                    </td>
+            </table>
             <table width="500" border="1" align="center">
-<tr><td width="260" align="center"><input type="submit" name="btn_grab" value="Registrar"/></td>
-<td width="224" align="center"><input type="submit" name="btn_canc" value="Cancelar" /></td></tr>
-</table>
+                <tr><td width="260" align="center"><input type="submit" name="btn_grab" value="Registrar"/></td>
+                    <td width="224" align="center"><input type="submit" name="btn_canc" value="Cancelar" /></td></tr>
+            </table>
             <div id="foot">
                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                     <tr>

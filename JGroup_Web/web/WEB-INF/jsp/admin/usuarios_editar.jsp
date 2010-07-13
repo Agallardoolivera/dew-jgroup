@@ -126,6 +126,8 @@
     <c:forEach items="${usuarios}" var="u">
         ${u.nombres} <br/>
     </c:forEach>
+    <% String dni = request.getParameter("dni");
+         out.println(dni);%>
 
 </body>
 </html>

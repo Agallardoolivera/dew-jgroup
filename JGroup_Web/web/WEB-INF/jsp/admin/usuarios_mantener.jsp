@@ -30,19 +30,19 @@
         <script language="JavaScript" src="../js/jquery.floatnumber.js"></script>
         <script language="JavaScript" src="../js/jquery.tablehover.js"></script>
         <style type="text/css">
-        <!--
-        .Estilo1 {font-size: 24px}
-        .Estilo2 {
+            <!--
+            .Estilo1 {font-size: 24px}
+            .Estilo2 {
                 font-size: 16px;
                 font-style: italic;
                 color: #000033;
-        }
-        .Estilo3 {
+            }
+            .Estilo3 {
                 font-size: 12px;
                 font-style: italic;
                 font-weight: bold;
-        }
-        -->
+            }
+            -->
         </style>
         -
         <script language="JavaScript" src="../js/graphs.js"></script>
@@ -80,7 +80,7 @@
                         <td width="10%"><p align="center"><a href="retornaMenu.htm?metodo=Menu"><img src="<%=request.getContextPath()%>/images/Browser History.png" width="49" height="40" border="0" align="middle" title="Usuario"/></a></p>
                             <p align="center" class="Estilo3">Retornar al Men&uacute; </p></td>
                         <td width="0%" style=" text-align:left;">
- </td>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -88,64 +88,64 @@
             <div id="basemedio">
                 <div id="contenido" align="center">
                     <div style="height:450px;">
-    </head>
-    <body>
-        <h1>Usuarios mantener</h1>
-        <form method="post" action="usuarios_mantener.htm?metodo=insertar">
-             <input type="hidden" name="metodo" value="doInsertar"/>
-                        <table width="450" border="1" align="center">
-                            <tr><td width="127" align="left"><span class="Estilo3">Ingrese Nombres</span></td>
-                                <td colspan="3" align="left"><input type="text" name="txt_nom" id="txt_nom" size="40"/></td>
-                            <tr><td align="left"><span class="Estilo3">Ingrese Apellidos</span></td>
-    <td colspan="3" align="left"><input type="text" name="txt_ape" id="txt_ape" size="40"/></td>
-<tr><td align="left"><span class="Estilo3">Ingrese DNI</span></td>
-    <td colspan="3" align="left"><input type="text" name="txt_dni" id="txt_dni" maxlength="8"/></td>
-<tr><td align="left"><span class="Estilo3">Ingrese Usuario</span></td>
-    <td colspan="3" align="left"><input type="text" name="txt_usu" id="txt_usu" maxlength="20"/></td>
-<tr><td align="left"><span class="Estilo3">Ingrese Contrasena</span></td>
-    <td colspan="3" align="left"><input type="password" name="txt_contra" id="txt_contra" maxlength="20"/></td>
-<tr><td align="left"><span class="Estilo3">Tipo Usuario</span></td>
-	<td width="114">Administrador:
-	  <input name="rbttipusu" type="radio" value="1"/>
-</td>
-	<td width="101">Avanzado:
-  <input name="rbttipusu" type="radio" value="2" />
-</td>
-<td width="104">Usuario:
-  <input name="rbttipusu" type="radio" value="3" checked="checked"/>
-</td>
-</table>
-            <table width="450" border="1" align="center">
-<tr><td width="260" align="center"><input type="button" value="Insertar" onclick="usuarioInsertar();"/></td>
-<td width="224" align="center"><input type="submit" name="btn_canc" value="Cancelar" /></td></tr>
-</table>
+                        </head>
+                        <body>
+                            <h1>Usuarios mantener</h1>
+                            <form method="post" action="usuarios_mantener.htm?metodo=insertar">
+                                <input type="hidden" name="metodo" value="doInsertar"/>
+                                <table width="450" border="1" align="center">
+                                    <tr><td width="127" align="left"><span class="Estilo3">Ingrese Nombres</span></td>
+                                        <td colspan="3" align="left"><input type="text" name="txt_nom" id="txt_nom" size="40"/></td>
+                                    <tr><td align="left"><span class="Estilo3">Ingrese Apellidos</span></td>
+                                        <td colspan="3" align="left"><input type="text" name="txt_ape" id="txt_ape" size="40"/></td>
+                                    <tr><td align="left"><span class="Estilo3">Ingrese DNI</span></td>
+                                        <td colspan="3" align="left"><input type="text" name="txt_dni" id="txt_dni" maxlength="8"/></td>
+                                    <tr><td align="left"><span class="Estilo3">Ingrese Usuario</span></td>
+                                        <td colspan="3" align="left"><input type="text" name="txt_usu" id="txt_usu" maxlength="20"/></td>
+                                    <tr><td align="left"><span class="Estilo3">Ingrese Contrasena</span></td>
+                                        <td colspan="3" align="left"><input type="password" name="txt_contra" id="txt_contra" maxlength="20"/></td>
+                                    <tr><td align="left"><span class="Estilo3">Tipo Usuario</span></td>
+                                        <td width="114">Administrador:
+                                            <input name="rbttipusu" type="radio" value="1"/>
+                                        </td>
+                                        <td width="101">Avanzado:
+                                            <input name="rbttipusu" type="radio" value="2" />
+                                        </td>
+                                        <td width="104">Usuario:
+                                            <input name="rbttipusu" type="radio" value="3" checked="checked"/>
+                                        </td>
+                                </table>
+                                <table width="450" border="1" align="center">
+                                    <tr><td width="260" align="center"><input type="button" value="Insertar" onclick="usuarioInsertar();"/></td>
+                                        <td width="224" align="center"><input type="submit" name="btn_canc" value="Cancelar" /></td></tr>
+                                </table>
 
-            
-        </form>
-        <table border="1" width="450" class="subtitleing">
-            <tr class="Estilo3">
-                <td width="93">Nombres</td>
-                <td width="93">Apellidos</td>
-                <td width="50">Dni</td>
-                <td width="93">Usuario</td>
-                <td width="93">Password</td>
-                <td width="93">Editar</td>
-                <td width="93">Eliminar</td>
-            </tr>
-            <tr>
-                <td width="93"><div id="tablanombre"></td>
-                <td width="93"><div id="tablaapellido"></td>
-                <td width="20"><div id="tabladni"></td>
-                <td width="93"><div id="tablausu"></td>
-                <td width="93"><div id="tablacontra"></td>
-                <td><div><a href='usuarios_editar.htm?metodo=editar'>Editar</a></div></td>
-                <td><a href="usuarios_eliminar.htm">Eliminar</a></td>
-               
-            </tr>
-        </table>
-    <c:forEach items="${usuarios}" var="u">
-        ${u.nombres} <br/>
-    </c:forEach>
-        
-</body>
-</html>
+
+                            </form>
+                            <table border="1" width="450" class="subtitleing">
+                                <tr class="Estilo3">
+                                    <td width="93">Nombres</td>
+                                    <td width="93">Apellidos</td>
+                                    <td width="50">Dni</td>
+                                    <td width="93">Usuario</td>
+                                    <td width="93">Password</td>
+                                    <td width="93">Editar</td>
+                                    <td width="93">Eliminar</td>
+                                </tr>
+                                <tr>
+                                    <td width="93"><div id="tablanombre"></td>
+                                    <td width="93"><div id="tablaapellido"></td>
+                                    <td width="20"><div id="tabladni"></td>
+                                    <td width="93"><div id="tablausu"></td>
+                                    <td width="93"><div id="tablacontra"></td>
+                                    <td><div><a href='usuarios_editar.htm?metodo=editar&dni=txt_dni'>Editar</a></div></td>
+                                    <td><a href="usuarios_eliminar.htm">Eliminar</a></td>
+
+                                </tr>
+                            </table>
+                            <c:forEach items="${usuarios}" var="u">
+                                ${u.nombres} <br/>
+                            </c:forEach>
+
+                        </body>
+                        </html>
