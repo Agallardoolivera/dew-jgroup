@@ -19,10 +19,11 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
         <property name="mappings">
             <props>
                 <prop key="index.htm">indexController</prop>
-                <prop key="menu.htm">loginController</prop>
+                <prop key="login.htm">loginController</prop>
+                <prop key="portada.htm">portadaController</prop>
                 <prop key="usuarios_mantener.htm">usuariosController</prop>
                 <prop key="usuarios_editar.htm">usuariosController</prop>
-                <prop key="articulo.htm">accesomenuP</prop>
+                <prop key="articulo.htm">articuloController</prop>
                 <prop key="invitacion.htm">accesomenuP</prop>
                  <prop key="cotizaciones.htm">accesomenuP</prop>
                  <prop key="analisis.htm">accesomenuP</prop>
@@ -54,9 +55,12 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
 
 
         <bean id="loginController" class="proyecto.web.LoginController">
-            <property name="usuarioDAO" ref="usuarioDAO"/>
+            <property name="usuarioService" ref="usuarioService"/>
         </bean>
 
+ <bean id="portadaController" class="proyecto.web.PortadaController">
+
+    </bean>
 
   <bean id="accesomenuP" class="proyecto.web.AccesosMenuP">
             <property name="methodNameResolver">
@@ -67,8 +71,16 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
             <property name="methodNameResolver">
                 <ref bean="paramResolver"/>
             </property>
-            <property name="usuarioDAO" ref="usuarioDAO"/>
+            
+            <property name="usuarioService" ref="usuarioService"/>
         </bean>
+
+ <bean id="articuloController" class="proyecto.web.ArticuloController">
+        <property name="methodNameResolver">
+            <ref bean="paramResolver"/>
+        </property>
+       <property name="articuloService" ref="articuloService"/>
+    </bean>
 
         <bean id="paramResolver"
           class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
