@@ -10,7 +10,7 @@ package proyecto.modelo;
  */
 public class Usuario {
 
-    private String idUsuario;
+    private int co_Usuario;
     private String clave;
     private String nombres;
     private String area;
@@ -37,12 +37,12 @@ public class Usuario {
         this.clave = clave;
     }
 
-    public String getIdUsuario() {
-        return idUsuario;
+    public int getCo_Usuario() {
+        return co_Usuario;
     }
 
-    public void setIdUsuario(String idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setCo_Usuario(int co_Usuario) {
+        this.co_Usuario = co_Usuario;
     }
 
     public String getNombres() {

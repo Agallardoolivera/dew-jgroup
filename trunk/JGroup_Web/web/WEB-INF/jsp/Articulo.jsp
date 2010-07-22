@@ -76,43 +76,6 @@
                             <p align="center" class="Estilo3">Retornar al Men&uacute; </p></td>
                         <td width="0%" style=" text-align:left;">
 
-                            <!--<img src="../iconos/nombrepeq.gif" />
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-            	<tr>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">Datos de Usuario</td>
-                                </tr>
-                                <tr>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;"></td>
-                                </tr>
-                                <tr>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                                </tr>
-                            </table>
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                <tr>
-                	<td style="text-align:right; width:10px;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                	<td style="text-align:rleft; color:#FFFFFF; font-weight:bold;">Datos de Empresa</td>
-                	<td style="text-align:right; color:#FFFFFF; width:70px; font-weight:bold;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                                </tr>
-            	<tr>
-                	<td style="text-align:right; width:10px;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                	<td style="text-align:left; color:#FFFFFF;">Raz.Soc: </td>
-                                    <td style="text-align:right; color:#FFFFFF; width:70px; font-weight:bold;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                                </tr>
-                                <tr>
-                	<td style="text-align:right; width:10px;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                	<td style="text-align:left; color:#FFFFFF;">Direcci&oacute;n: </td>
-                                    <td style="text-align:right; color:#FFFFFF; width:70px; font-weight:bold;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                                </tr>
                             </table>-->            </td>
                     </tr>
                 </table>
@@ -126,13 +89,14 @@
                       <table width="719" border="1">
                         <tr>
                           <td><label>C&oacute;digo</label></td>
-                          <td><form id="form1" name="form1" method="post" action="">
+                          <td><form id="form1" method="post" action="form1">
                               <label></label>
                               <input name="Tx_Codart" type="text" size="15" />
                           </form></td>
                         </tr>
                         <tr>
                           <td><label>Descripci&oacute;n</label>
+                               <input type="hidden" name="metodo" value="buscar"/>
                           <td><input name="Tx_Desart" type="text" size="50" /></td>
                         </tr>
                         <tr>
@@ -149,7 +113,24 @@
                                 <option value="MLL">MLL</option>
                                 <option value="CTO">CTO</option>
                               </select>
-                          </form></td>
+                          </form>
+                          <table width="100%" border="1">
+  <tr>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Descripci&oacute;n</th>
+    <th>Acciones</th>
+  </tr>
+  <c:forEach items="${categorias}" var="c">
+  <tr>
+    <td>${c.Co_Usuario}</td>
+    <td>${c.nombres}</td>
+    <td><a href="articulo.htm?metodo=obtener&Co_Usuario=${c.Co_Usuario}">Editar</a> - <a href="categorias_mantener.htm?metodo=eliminar&idCategoria=${c.idCategoria}">Eliminar</a> </td>
+  </tr>
+</c:forEach>
+</table>
+
+                          </td>
                          
                         </tr>
                         <tr>

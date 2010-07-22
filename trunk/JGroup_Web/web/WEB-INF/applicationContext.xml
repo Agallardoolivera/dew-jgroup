@@ -19,7 +19,7 @@
           p:username="root"
           p:password="123456" />
 
-         <bean id="usuarioDAO" class="proyecto.dao.UsuarioDAOImpl">
+ <bean id="ArticuloDAO" class="proyecto.dao.ArticuloDAOImpl">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
@@ -27,12 +27,12 @@
         <property name="usuarioDAO" ref="usuarioDAO"/>
     </bean>
 
- <bean id="ArticuloDAO" class="proyecto.dao.ArticuloDAOImpl">
-        <property name="dataSource" ref="dataSource"/>
+ <bean id="articuloService" class="proyecto.service.ArticuloServiceImpl">
+        <property name="articuloDAO" ref="ArticuloDAO"/>
     </bean>
 
-    <bean id="articuloService" class="proyecto.service.ArticuloServiceImpl">
-        <property name="articuloDAO" ref="ArticuloDAO"/>
+ <bean id="usuarioDAO" class="proyecto.dao.UsuarioDAOImpl">
+        <property name="dataSource" ref="dataSource"/>
     </bean>
 
 
