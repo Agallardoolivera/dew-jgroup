@@ -14,10 +14,6 @@ private int Co_Articulo;
 private String No_Articulo;
 private String UM;
 
-    public Articulo (){
-
-    }
-
     public int getCo_Articulo() {
         return Co_Articulo;
     }
@@ -41,4 +37,5 @@ private String UM;
     public void setUM(String UM) {
         this.UM = UM;
     }
+     
 }

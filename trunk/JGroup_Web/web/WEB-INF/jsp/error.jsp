@@ -14,6 +14,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h4>Usuario y/o claves incorrectos</h4>
+        <h4> <SCRIPT LANGUAGE="javascript">
+       			alert("Usuario y/o claves incorrectos");
+				location.href = "index.htm";
+			</SCRIPT></h4>
     </body>
 </html>
