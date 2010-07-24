@@ -10,7 +10,7 @@
     </head>
  <body>
        <form action="login.htm" method="post">
-            Usuario: <input type="text" name="Co_Usuario"/> <br/>
+            Usuario: <input type="text" name="Co_Usuario" onkeypress="if (event.keyCode < 47 || event.keyCode > 57) event.returnValue = false;"  />/> <br/>
             Clave: <input type="password" name="clave"/><br/>
             <input type="submit" value="Iniciar sesión"/>
 
