@@ -23,7 +23,7 @@ public class ArticuloController extends MultiActionController {
     }
 
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
-         return new ModelAndView("/admin/Articulo");
+         return new ModelAndView("Articulo");
     }
 
    
