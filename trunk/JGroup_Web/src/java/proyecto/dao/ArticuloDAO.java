@@ -8,5 +8,7 @@ public interface ArticuloDAO {
 
     public Collection<Articulo> buscarPorNombre(String nombre) throws DAOExcepcion;
 
+    public Articulo insertar(Articulo vo) throws DAOExcepcion;
+
     public Collection<Articulo> listar() throws DAOExcepcion;
 }

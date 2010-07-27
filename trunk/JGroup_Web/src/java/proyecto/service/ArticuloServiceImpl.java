@@ -17,6 +17,10 @@ public class ArticuloServiceImpl implements ArticuloService {
         this.articuloDAO = articuloDAO;
     }
 
+    public Articulo insertar(Articulo vo) throws DAOExcepcion {
+        return articuloDAO.insertar(vo);
+    }
+
     public Collection<Articulo> buscarPorNombre(String nombre) throws DAOExcepcion {
         return articuloDAO.buscarPorNombre(nombre);
     }

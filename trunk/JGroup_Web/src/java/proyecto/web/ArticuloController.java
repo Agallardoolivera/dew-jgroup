@@ -26,5 +26,17 @@ public class ArticuloController extends MultiActionController {
          return new ModelAndView("Articulo");
     }
 
+        public ModelAndView insertar(HttpServletRequest request, HttpServletResponse response) {
+        Articulo vo = new Articulo();
+        vo.setCo_Articulo(Integer.parseInt(request.getParameter("codigo")));
+        vo.setNo_Articulo(request.getParameter("nombre"));
+        vo.setUM(request.getParameter("UM"));
+        try {
+            articuloService.insertar(vo);
+        } catch (DAOExcepcion e) {
+            System.err.println(e.toString());
+        }
+        return new ModelAndView("redirect:/articulo.htm");
+    }
    
 }

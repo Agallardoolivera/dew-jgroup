@@ -17,15 +17,7 @@
           p:driverClassName="com.mysql.jdbc.Driver"
           p:url="jdbc:mysql://localhost:3306/jgroup"
           p:username="root"
-          p:password="rootroot" />
-
- <bean id="articuloDAO" class="proyecto.dao.ArticuloDAOImpl">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
-
-<bean id="articuloService" class="proyecto.service.ArticuloServiceImpl">
-        <property name="articuloDAO" ref="articuloDAO"/>
-    </bean>
+          p:password="root" />
 
     <bean id="usuarioService" class="proyecto.service.UsuarioServiceImpl">
         <property name="usuarioDAO" ref="usuarioDAO"/>
@@ -35,5 +27,12 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
+     <bean id="articuloDAO" class="proyecto.dao.ArticuloDAOImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+<bean id="articuloService" class="proyecto.service.ArticuloServiceImpl">
+        <property name="articuloDAO" ref="articuloDAO"/>
+    </bean>
 
 </beans>
