@@ -1,14 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package proyecto.modelo;
 
-/**
- *
- * @author Angela
- */
 public class Articulo {
 private int Co_Articulo;
 private String No_Articulo;

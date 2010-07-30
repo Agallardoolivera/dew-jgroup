@@ -38,5 +38,57 @@ public class ArticuloController extends MultiActionController {
         }
         return new ModelAndView("redirect:/articulo.htm");
     }
+
+        public ModelAndView buscar(HttpServletRequest request, HttpServletResponse response) {
+        String nombres = request.getParameter("nombre");
+        try {
+            Collection<Articulo> articulos = articuloService.buscarPorNombre(nombres);
+            System.out.println(articulos);
+            request.setAttribute("articulos", articulos);
+        } catch (DAOExcepcion ex) {
+            System.err.println(ex.toString());
+        }
+        return new ModelAndView("/articulo");
+    }
+
+    public ModelAndView nuevo(HttpServletRequest request, HttpServletResponse response) {
+        return new ModelAndView("/articulo");
+    }
+
+    public ModelAndView eliminar(HttpServletRequest request, HttpServletResponse response) {
+        String codigo = request.getParameter("codigo");
+        try {
+            articuloService.eliminar(Integer.parseInt(codigo));
+        } catch (DAOExcepcion ex) {
+            System.err.println(ex.toString());
+        }
+        return new ModelAndView("redirect:/articulo.htm");
+    }
+
+    public ModelAndView obtener(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("codigo"));
+        Articulo vo;
+        try {
+            vo = articuloService.obtener(id);
+            request.setAttribute("Articulo", vo);
+        } catch (DAOExcepcion e) {
+            System.err.println("Error");
+        }
+        return new ModelAndView("/articulo");
+    }
+
+    public ModelAndView actualizar(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("codigo"));
+        Articulo vo = new Articulo();
+        vo.setCo_Articulo(id);
+        vo.setNo_Articulo(request.getParameter("nombre"));
+        vo.setUM(request.getParameter("UM"));
+        try {
+            articuloService.actualizar(vo);
+        } catch (DAOExcepcion e) {
+            System.err.println("Error");
+        }
+        return new ModelAndView("redirect:/articulo.htm");
+    }
    
 }

@@ -21,12 +21,24 @@ public class ArticuloServiceImpl implements ArticuloService {
         return articuloDAO.insertar(vo);
     }
 
-    public Collection<Articulo> buscarPorNombre(String nombre) throws DAOExcepcion {
-        return articuloDAO.buscarPorNombre(nombre);
+    public Collection<Articulo> buscarPorNombre(String No_Articulo) throws DAOExcepcion {
+        return articuloDAO.buscarPorNombre(No_Articulo);
     }
 
     public Collection<Articulo> listar() throws DAOExcepcion {
         return articuloDAO.listar();
     }
-   
+    
+    public Articulo obtener(int Co_Articulo) throws DAOExcepcion {
+        return articuloDAO.obtener(Co_Articulo);
+    }
+
+    public void eliminar(int Co_Articulo) throws DAOExcepcion {
+        articuloDAO.eliminar(Co_Articulo);
+    }
+
+    public Articulo actualizar(Articulo vo) throws DAOExcepcion {
+        return articuloDAO.actualizar(vo);
+    }
+  
 }
