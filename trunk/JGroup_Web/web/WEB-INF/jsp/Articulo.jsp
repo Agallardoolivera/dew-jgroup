@@ -54,5 +54,32 @@
                 </tr>
             </table>
         </form>
+
+        <form name="busqueda" method="post" action="articulo.htm">
+    <input type="hidden" name="metodo" value="buscar"/>
+  Buscar:
+  <label>
+        <input name="nombre" type="text" id="nombre">
+  </label>
+  <label>
+        <input name="btnenviar" type="submit" id="btnenviar" value="Buscar">
+  </label>
+</form>
+<table width="100%" border="1">
+  <tr>
+    <th>Codigo</th>
+    <th>Nombre</th>
+    <th>Unidad de Medida</th>
+    <th>Acciones</th>
+  </tr>
+  <c:forEach items="${articulos}" var="c">
+  <tr>
+    <td>${c.codigo}</td>
+    <td>${c.nombre}</td>
+    <td>${c.UM}</td>
+    <td><a href="articulo.htm?metodo=obtener&codigo=${c.codigo}">Editar</a> - <a href="articulo.htm?metodo=eliminar&codigo=${c.codigo}">Eliminar</a> </td>
+  </tr>
+</c:forEach>
+</table>
     </body>
 </html>

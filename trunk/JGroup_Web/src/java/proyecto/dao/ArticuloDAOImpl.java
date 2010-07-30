@@ -22,9 +22,9 @@ public class ArticuloDAOImpl extends BaseDAO implements ArticuloDAO {
         this.dataSource = dataSource;
     }
 
-    public Collection<Articulo> buscarPorNombre(String nombre)
+    public Collection<Articulo> buscarPorNombre(String No_Articulo)
             throws DAOExcepcion {
-        String query = "select Co_Articulo, No_Articulo, UM from Articulo where No_Articulo like ?";
+        String query = "select Co_Articulo, No_Articulo, UM from articulo where No_Articulo like ?";
         Collection<Articulo> lista = new ArrayList<Articulo>();
         Connection con = null;
         PreparedStatement stmt = null;
@@ -32,7 +32,7 @@ public class ArticuloDAOImpl extends BaseDAO implements ArticuloDAO {
         try {
             con = dataSource.getConnection();
             stmt = con.prepareStatement(query);
-            stmt.setString(1, "%" + nombre + "%");
+            stmt.setString(1, "%" + No_Articulo + "%");
             rs = stmt.executeQuery();
             while (rs.next()) {
                 Articulo vo = new Articulo();
@@ -92,6 +92,7 @@ public class ArticuloDAOImpl extends BaseDAO implements ArticuloDAO {
             stmt.setInt(1, vo.getCo_Articulo());
             stmt.setString(2, vo.getNo_Articulo());
             stmt.setString(3, vo.getUM());
+            
             int i = stmt.executeUpdate();
             if (i != 1) {
                 throw new SQLException("No se pudo insertar");
@@ -107,6 +108,78 @@ public class ArticuloDAOImpl extends BaseDAO implements ArticuloDAO {
             }
             vo.setCo_Articulo(id);
 */
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            throw new DAOExcepcion(e.getMessage());
+        } finally {
+            this.cerrarResultSet(rs);
+            this.cerrarStatement(stmt);
+            this.cerrarConexion(con);
+        }
+        return vo;
+    }
+
+        public Articulo actualizar(Articulo vo) throws DAOExcepcion {
+        String query = "update articulo set No_Articulo=?,UM=? where Co_Articulo=?";
+        Connection con = null;
+        PreparedStatement stmt = null;
+        try {
+            con = dataSource.getConnection();
+            stmt = con.prepareStatement(query);
+            stmt.setInt(1, vo.getCo_Articulo());
+            stmt.setString(2, vo.getNo_Articulo());
+            stmt.setString(3, vo.getUM());
+            int i = stmt.executeUpdate();
+            if (i != 1) {
+                throw new SQLException("No se pudo actualizar");
+            }
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            throw new DAOExcepcion(e.getMessage());
+        } finally {
+            this.cerrarStatement(stmt);
+            this.cerrarConexion(con);
+        }
+        return vo;
+    }
+
+    public void eliminar(int Co_Articulo) throws DAOExcepcion {
+        String query = "DELETE FROM articulo WHERE Co_Articulo=?";
+        Connection con = null;
+        PreparedStatement stmt = null;
+        try {
+            con = dataSource.getConnection();
+            stmt = con.prepareStatement(query);
+            stmt.setInt(1, Co_Articulo);
+            int i = stmt.executeUpdate();
+            if (i != 1) {
+                throw new SQLException("No se pudo eliminar");
+            }
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            throw new DAOExcepcion(e.getMessage());
+        } finally {
+            this.cerrarStatement(stmt);
+            this.cerrarConexion(con);
+        }
+    }
+
+        public Articulo obtener(int Co_Articulo) throws DAOExcepcion {
+        Articulo vo = new Articulo();
+        Connection con = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            String query = "select Co_Articulo, No_Articulo, UM from articulo where Co_Articulo=?";
+            con = dataSource.getConnection();
+            stmt = con.prepareStatement(query);
+            stmt.setInt(1, Co_Articulo);
+            rs = stmt.executeQuery();
+            if (rs.next()) {
+                vo.setCo_Articulo(rs.getInt("codigo"));
+                vo.setNo_Articulo(rs.getString("nombre"));
+                vo.setUM(rs.getString("UM"));
+            }
         } catch (SQLException e) {
             System.err.println(e.getMessage());
             throw new DAOExcepcion(e.getMessage());
