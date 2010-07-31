@@ -56,34 +56,31 @@
         </form>
 
   <form name="form1" method="post" action="articulo.htm">
-    <input type="hidden" name="metodo" value="buscar"/>
-  Buscar:
-  <label>
-  <input name="nombre" type="text" id="nombre">
-  </label>
-  <label>
-  <input name="btnenviar" type="submit" id="btnenviar" value="Buscar">
-  </label>
-  <label>
-  <input name="btnnuevo" type="button" id="btnnuevo" value="Regresar" onclick="window.location='portada.htm'">
-  </label>
+            <input type="hidden" name="metodo" value="buscar"/>
+            Buscar:
+            <label>
+                <input name="nombre" type="text" id="nombre">
+            </label>
+            <label>
+                <input name="btnenviar" type="submit" id="btnenviar" value="Buscar">
+            </label>
+        </form>
+        <table width="100%" border="1">
+            <tr>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Unidad de Medida</th>
+                <th>Acciones</th>
+            </tr>
+            <c:forEach items="${articulos}" var="c">
+                <tr>
+                    <td>${c.codigo}</td>
+                    <td>${c.nombre}</td>
+                    <td>${c.UM}</td>
+                    <td><a href="articulo.htm?metodo=obtener&codigo=${c.codigo}">Editar</a> - <a href="articulo.htm?metodo=eliminar&codigo=${c.codigo}">Eliminar</a> </td>
+                </tr>
+            </c:forEach>
+        </table>
 
-</form>
-<table width="100%" border="1">
-  <tr>
-    <th>Codigo</th>
-    <th>Nombre</th>
-    <th>Unidad de Medida</th>
-    <th>Acciones</th>
-  </tr>
-  <c:forEach items="${articulos}" var="c">
-  <tr>
-    <td>${c.Co_Articulo}</td>
-    <td>${c.No_Articulo}</td>
-    <td>${c.UM}</td>
-    <td><a href="articulo.htm?metodo=obtener&Co_Articulo=${c.Co_Articulo}">Editar</a> - <a href="articulo.htm?metodo=eliminar&Co_Articulo=${c.Co_Articulo}">Eliminar</a> </td>
-  </tr>
-</c:forEach>
-</table>
     </body>
 </html>

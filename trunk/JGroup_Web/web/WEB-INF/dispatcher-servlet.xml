@@ -24,7 +24,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                     <prop key="usuarios_mantener.htm">usuariosController</prop>
                     <prop key="usuarios_editar.htm">usuariosController</prop>
                     <prop key="articulo.htm">articuloController</prop>
-                    <prop key="invitacion.htm">accesomenuP</prop>
+                    <prop key="invitacion.htm">invitacionController</prop>
                     <prop key="cotizaciones.htm">accesomenuP</prop>
                     <prop key="analisis.htm">accesomenuP</prop>
                     <prop key="retornaMenu.htm">accesomenuP</prop>
@@ -80,6 +80,13 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                 <ref bean="paramResolver"/>
             </property>
             <property name="articuloService" ref="articuloService"/>
+        </bean>
+
+         <bean id="invitacionController" class="proyecto.web.InvitacionController">
+            <property name="methodNameResolver">
+                <ref bean="paramResolver"/>
+            </property>
+            <property name="invitacionService" ref="invitacionService"/>
         </bean>
 
         <bean id="paramResolver"
