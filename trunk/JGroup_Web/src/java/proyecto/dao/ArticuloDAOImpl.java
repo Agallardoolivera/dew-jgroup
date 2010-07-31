@@ -22,7 +22,7 @@ public class ArticuloDAOImpl extends BaseDAO implements ArticuloDAO {
         this.dataSource = dataSource;
     }
 
-    public Collection<Articulo> buscarPorNombre(String No_Articulo)
+    public Collection<Articulo> buscarPorNombre(String nombres)
             throws DAOExcepcion {
         String query = "select Co_Articulo, No_Articulo, UM from articulo where No_Articulo like ?";
         Collection<Articulo> lista = new ArrayList<Articulo>();
@@ -32,7 +32,7 @@ public class ArticuloDAOImpl extends BaseDAO implements ArticuloDAO {
         try {
             con = dataSource.getConnection();
             stmt = con.prepareStatement(query);
-            stmt.setString(1, "%" + No_Articulo + "%");
+            stmt.setString(1, "%" + nombres + "%");
             rs = stmt.executeQuery();
             while (rs.next()) {
                 Articulo vo = new Articulo();
