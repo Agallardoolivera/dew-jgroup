@@ -40,7 +40,7 @@
                                 <option value="CJA">CJA</option>
                                 <option value="MLL">MLL</option>
                                 <option value="CTO">CTO</option>
-                              </select>
+                            </select>
                         </label></td>
                 </tr>
                 <tr>

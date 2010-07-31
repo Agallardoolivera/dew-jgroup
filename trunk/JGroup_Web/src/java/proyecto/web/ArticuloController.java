@@ -23,10 +23,10 @@ public class ArticuloController extends MultiActionController {
     }
 
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
-         return new ModelAndView("Articulo");
+        return new ModelAndView("Articulo");
     }
 
-        public ModelAndView insertar(HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView insertar(HttpServletRequest request, HttpServletResponse response) {
         Articulo vo = new Articulo();
         vo.setCo_Articulo(Integer.parseInt(request.getParameter("codigo")));
         vo.setNo_Articulo(request.getParameter("nombre"));
@@ -39,7 +39,7 @@ public class ArticuloController extends MultiActionController {
         return new ModelAndView("redirect:/articulo.htm");
     }
 
-        public ModelAndView buscar(HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView buscar(HttpServletRequest request, HttpServletResponse response) {
         String nombres = request.getParameter("nombre");
         try {
             Collection<Articulo> articulos = articuloService.buscarPorNombre(nombres);
@@ -90,5 +90,5 @@ public class ArticuloController extends MultiActionController {
         }
         return new ModelAndView("redirect:/articulo.htm");
     }
-   
+
 }
