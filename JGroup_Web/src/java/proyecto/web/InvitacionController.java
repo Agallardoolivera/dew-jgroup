@@ -36,7 +36,7 @@ public class InvitacionController extends MultiActionController{
     }
 
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
-        return new ModelAndView("invitacion");
+        return new ModelAndView("Invitacion");
     }
 
     public ModelAndView insertar(HttpServletRequest request, HttpServletResponse response) throws ParseException {

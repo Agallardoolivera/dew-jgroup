@@ -55,7 +55,7 @@
             </table>
         </form>
 
-  <form name="form1" method="post" action="articulo.htm">
+  <form name="form2" method="post" action="articulo.htm">
             <input type="hidden" name="metodo" value="buscar"/>
             Buscar:
             <label>

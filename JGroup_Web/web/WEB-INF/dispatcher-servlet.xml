@@ -44,8 +44,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
         <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"
-          p:suffix=".jsp" />
-    
+          p:suffix=".jsp" />    
     <!--
     The index controller.
     -->
@@ -53,13 +52,11 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
 
-
         <bean id="loginController" class="proyecto.web.LoginController">
             <property name="usuarioService" ref="usuarioService"/>
         </bean>
 
         <bean id="portadaController" class="proyecto.web.PortadaController">
-
         </bean>
 
         <bean id="accesomenuP" class="proyecto.web.AccesosMenuP">
@@ -70,8 +67,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
         <bean id="usuariosController" class="proyecto.web.UsuariosController">
             <property name="methodNameResolver">
                 <ref bean="paramResolver"/>
-            </property>
-            
+            </property>            
             <property name="usuarioService" ref="usuarioService"/>
         </bean>
 

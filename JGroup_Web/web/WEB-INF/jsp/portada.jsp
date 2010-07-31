@@ -165,7 +165,7 @@
                                 <c:if test='${area=="Gerencia"}'>
                                 --%>
                                 <td><div align="left">Invitacion</div></td>
-                                <td><div align="center"><a href="invitacion.htm?metodo=Invitacion" style="visibility:<? echo $visible;?>"><img src="<%=request.getContextPath()%>/images/Vista.gif" width="26" height="16" border="0" align="middle" title="Invitacion" /></a></div></td>
+                                <td><div align="center"><a href="invitacion.htm"><img src="<%=request.getContextPath()%>/images/Vista.gif" width="26" height="16" border="0" align="middle" title="Invitacion" /></a></div></td>
                            <%--   </c:if>--%>
                                 </tr>
 
