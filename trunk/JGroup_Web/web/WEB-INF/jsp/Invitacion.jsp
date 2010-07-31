@@ -43,8 +43,6 @@
                         </label></td>
                 </tr>
             </table>
-        </form>
-
-      
+        </form>      
     </body>
 </html>
