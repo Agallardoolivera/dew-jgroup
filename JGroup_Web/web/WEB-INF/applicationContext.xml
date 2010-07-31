@@ -17,22 +17,30 @@
           p:driverClassName="com.mysql.jdbc.Driver"
           p:url="jdbc:mysql://localhost:3306/jgroup"
           p:username="root"
-          p:password="root" />
+          p:password="rootroot" />
 
     <bean id="usuarioService" class="proyecto.service.UsuarioServiceImpl">
         <property name="usuarioDAO" ref="usuarioDAO"/>
     </bean>
 
- <bean id="usuarioDAO" class="proyecto.dao.UsuarioDAOImpl">
+    <bean id="usuarioDAO" class="proyecto.dao.UsuarioDAOImpl">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-     <bean id="articuloDAO" class="proyecto.dao.ArticuloDAOImpl">
+    <bean id="articuloDAO" class="proyecto.dao.ArticuloDAOImpl">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-<bean id="articuloService" class="proyecto.service.ArticuloServiceImpl">
+    <bean id="articuloService" class="proyecto.service.ArticuloServiceImpl">
         <property name="articuloDAO" ref="articuloDAO"/>
+    </bean>
+
+     <bean id="invitacionDAO" class="proyecto.dao.InvitacionDAOImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="invitacionService" class="proyecto.service.InvitacionServiceImpl">
+        <property name="invitacionDAO" ref="invitacionDAO"/>
     </bean>
 
 </beans>
