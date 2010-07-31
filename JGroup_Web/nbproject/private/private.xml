@@ -2,4 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <data xmlns="http://www.netbeans.org/ns/profiler/1" version="0.4"/>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/C:/Users/Ingeniero/Desktop/RICARDO/UPC/2010-1/entorno%20web/PROYECTO%20FINAL/JGroup_Web/web/WEB-INF/applicationContext.xml</file>
+        <file>file:/C:/Users/Ingeniero/Desktop/RICARDO/UPC/2010-1/entorno%20web/PROYECTO%20FINAL/JGroup_Web/web/WEB-INF/dispatcher-servlet.xml</file>
+        <file>file:/C:/Users/Ingeniero/Desktop/RICARDO/UPC/2010-1/entorno%20web/PROYECTO%20FINAL/JGroup_Web/nbproject/private/private.properties</file>
+        <file>file:/C:/Users/Ingeniero/Desktop/RICARDO/UPC/2010-1/entorno%20web/PROYECTO%20FINAL/JGroup_Web/src/java/proyecto/service/InvitacionService.java</file>
+        <file>file:/C:/Users/Ingeniero/Desktop/RICARDO/UPC/2010-1/entorno%20web/PROYECTO%20FINAL/JGroup_Web/src/java/proyecto/dao/InvitacionDAOImpl.java</file>
+        <file>file:/C:/Users/Ingeniero/Desktop/RICARDO/UPC/2010-1/entorno%20web/PROYECTO%20FINAL/JGroup_Web/src/java/proyecto/dao/InvitacionDAO.java</file>
+        <file>file:/C:/Users/Ingeniero/Desktop/RICARDO/UPC/2010-1/entorno%20web/PROYECTO%20FINAL/JGroup_Web/src/java/proyecto/web/ArticuloController.java</file>
+    </open-files>
 </project-private>

@@ -23,16 +23,16 @@ import java.text.*;
  *
  * @author Alfredo
  */
-public class InvitacionController {
+public class InvitacionController extends MultiActionController{
 
-    private InvitacionService InvitacionService;
+    private InvitacionService invitacionService;
 
     public InvitacionService getInvitacionService() {
-        return InvitacionService;
+        return invitacionService;
     }
 
-    public void setInvitacionService(InvitacionService InvitacionService) {
-        this.InvitacionService = InvitacionService;
+    public void setInvitacionService(InvitacionService invitacionService) {
+        this.invitacionService = invitacionService;
     }
 
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
@@ -55,7 +55,7 @@ public class InvitacionController {
         vo.setNu_OrdenCompra(Integer.parseInt(request.getParameter("OrdenCompra_Nu_Ordencompra")));
         vo.setCo_Usuario(Integer.parseInt(request.getParameter("Usuario_Co_Usuario")));
         try {
-            InvitacionService.insertar(vo);
+            invitacionService.insertar(vo);
         } catch (DAOExcepcion e) {
             System.err.println(e.toString());
         }
@@ -65,9 +65,9 @@ public class InvitacionController {
     public ModelAndView buscar(HttpServletRequest request, HttpServletResponse response) {
         String descripcion = request.getParameter("Tx_Descripcion");
         try {
-            Collection<Invitacion> Invitacions = InvitacionService.buscarPorNombre(descripcion);
-            System.out.println(Invitacions);
-            request.setAttribute("Invitacions", Invitacions);
+            Collection<Invitacion> invitacions = invitacionService.buscarPorNombre(descripcion);
+            System.out.println(invitacions);
+            request.setAttribute("Invitacions", invitacions);
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
         }
@@ -81,7 +81,7 @@ public class InvitacionController {
     public ModelAndView eliminar(HttpServletRequest request, HttpServletResponse response) {
         String nu_invitacion = request.getParameter("Nu_Invitacion");
         try {
-            InvitacionService.eliminar(Integer.parseInt(nu_invitacion));
+            invitacionService.eliminar(Integer.parseInt(nu_invitacion));
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
         }
@@ -92,7 +92,7 @@ public class InvitacionController {
         int id = Integer.parseInt(request.getParameter("Nu_Invitacion"));
         Invitacion vo;
         try {
-            vo = InvitacionService.obtener(id);
+            vo = invitacionService.obtener(id);
             request.setAttribute("Invitacion", vo);
         } catch (DAOExcepcion e) {
             System.err.println("Error");
@@ -116,7 +116,7 @@ public class InvitacionController {
         vo.setNu_OrdenCompra(Integer.parseInt(request.getParameter("OrderCompra_Co_OrdenCompra")));
         vo.setCo_Usuario(Integer.parseInt(request.getParameter("Usuario_Co_Usuario")));
         try {
-            InvitacionService.actualizar(vo);
+            invitacionService.actualizar(vo);
         } catch (DAOExcepcion e) {
             System.err.println("Error");
         }
