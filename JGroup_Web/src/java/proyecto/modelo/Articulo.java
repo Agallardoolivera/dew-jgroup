@@ -1,6 +1,7 @@
 package proyecto.modelo;
 
 public class Articulo {
+    
 private int Co_Articulo;
 private String No_Articulo;
 private String UM;

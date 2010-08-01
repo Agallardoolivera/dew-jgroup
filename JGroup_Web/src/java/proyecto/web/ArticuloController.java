@@ -36,7 +36,7 @@ public class ArticuloController extends MultiActionController {
         } catch (DAOExcepcion e) {
             System.err.println(e.toString());
         }
-        return new ModelAndView("redirect:/articulo.htm");
+        return new ModelAndView("/Articulo");
     }
 
     public ModelAndView buscar(HttpServletRequest request, HttpServletResponse response) {
@@ -44,7 +44,7 @@ public class ArticuloController extends MultiActionController {
         try {
             Collection<Articulo> articulos = articuloService.buscarPorNombre(nombres);
             System.out.println(articulos);
-            request.setAttribute("articulos", articulos);
+            request.setAttribute("datos", articulos);
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
         }
@@ -74,7 +74,7 @@ public class ArticuloController extends MultiActionController {
         } catch (DAOExcepcion e) {
             System.err.println("Error");
         }
-        return new ModelAndView("/articulo");
+        return new ModelAndView("Articulo");
     }
 
     public ModelAndView actualizar(HttpServletRequest request, HttpServletResponse response) {
