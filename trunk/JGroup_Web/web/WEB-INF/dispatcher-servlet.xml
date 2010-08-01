@@ -39,8 +39,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                     <prop key="auditoria.htm">accesomenuP</prop>
                 </props>
             </property>
-        </bean>
-    
+        </bean>   
         <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"
@@ -51,14 +50,11 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
         <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
-
         <bean id="loginController" class="proyecto.web.LoginController">
             <property name="usuarioService" ref="usuarioService"/>
         </bean>
-
         <bean id="portadaController" class="proyecto.web.PortadaController">
         </bean>
-
         <bean id="accesomenuP" class="proyecto.web.AccesosMenuP">
             <property name="methodNameResolver">
                 <ref bean="paramResolver"/>
@@ -70,7 +66,6 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
             </property>            
             <property name="usuarioService" ref="usuarioService"/>
         </bean>
-
         <bean id="articuloController" class="proyecto.web.ArticuloController">
             <property name="methodNameResolver">
                 <ref bean="paramResolver"/>
