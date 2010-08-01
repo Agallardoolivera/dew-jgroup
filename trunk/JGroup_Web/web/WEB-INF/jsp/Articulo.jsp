@@ -66,21 +66,7 @@
             <label>
                 <input name="btnenviar" type="submit" id="btnenviar" value="Buscar">
             </label>
-        </form>
-        <table width="100%" border="1">
-            <tr>
-                <th>Codigo</th>
-                <th>Nombre</th>
-                <th>Unidad de Medida</th>
-            </tr>
-            <%    java.util.Collection <proyecto.modelo.Articulo> articulos= (java.util.Collection)request.getAttribute("articulos");
-                    for (proyecto.modelo.Articulo art : articulos) {
-            %>
-            <tr>
-                <td><% out.print(art.getCo_Articulo());%></td>
-                <td><%  out.print(art.getNo_Articulo());%></td>
-                <td><%  out.print(art.getUM());}%></td>
-            </tr>
-</table>
+  </form>
+
     </body>
 </html>
