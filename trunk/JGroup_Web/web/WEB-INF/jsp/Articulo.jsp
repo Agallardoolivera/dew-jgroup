@@ -72,19 +72,15 @@
                 <th>Codigo</th>
                 <th>Nombre</th>
                 <th>Unidad de Medida</th>
-                <th>Acciones</th>
             </tr>
-
-
-
-
-<c:forEach items="${articulos}" var="a">
-   <tr>
-      <td>${a.getCo_Articulo}</td>
-      <td>${a.getNo_Articulo}</td>
-      <td>${a.getUM}</td>
-  </tr>
-</c:forEach>
+            <%    java.util.Collection <proyecto.modelo.Articulo> articulos= (java.util.Collection)request.getAttribute("articulos");
+                    for (proyecto.modelo.Articulo art : articulos) {
+            %>
+            <tr>
+                <td><% out.print(art.getCo_Articulo());%></td>
+                <td><%  out.print(art.getNo_Articulo());%></td>
+                <td><%  out.print(art.getUM());}%></td>
+            </tr>
 </table>
     </body>
 </html>
