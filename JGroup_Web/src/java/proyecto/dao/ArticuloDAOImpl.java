@@ -52,6 +52,7 @@ public class ArticuloDAOImpl extends BaseDAO implements ArticuloDAO {
         System.out.println(lista.size());
         return lista;
     }
+
  public Collection<Articulo> listar() throws DAOExcepcion {
         Collection<Articulo> c = new ArrayList<Articulo>();
         Connection con = null;

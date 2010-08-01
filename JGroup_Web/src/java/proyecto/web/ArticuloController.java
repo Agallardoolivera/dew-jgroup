@@ -48,15 +48,15 @@ public class ArticuloController extends MultiActionController {
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
         }
-        return new ModelAndView("/Articulo");
+        return new ModelAndView("Articulo");
     }
 
     public ModelAndView nuevo(HttpServletRequest request, HttpServletResponse response) {
-        return new ModelAndView("/articulo");
+        return new ModelAndView("Articulo");
     }
 
     public ModelAndView eliminar(HttpServletRequest request, HttpServletResponse response) {
-        String codigo = request.getParameter("codigo");
+        String codigo = request.getParameter("Co_Articulo");
         try {
             articuloService.eliminar(Integer.parseInt(codigo));
         } catch (DAOExcepcion ex) {
@@ -66,7 +66,7 @@ public class ArticuloController extends MultiActionController {
     }
 
     public ModelAndView obtener(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("codigo"));
+        int id = Integer.parseInt(request.getParameter("Co_Articulo"));
         Articulo vo;
         try {
             vo = articuloService.obtener(id);
@@ -78,10 +78,10 @@ public class ArticuloController extends MultiActionController {
     }
 
     public ModelAndView actualizar(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("codigo"));
+        int id = Integer.parseInt(request.getParameter("Co_Articulo"));
         Articulo vo = new Articulo();
         vo.setCo_Articulo(id);
-        vo.setNo_Articulo(request.getParameter("nombre"));
+        vo.setNo_Articulo(request.getParameter("No_Articulo"));
         vo.setUM(request.getParameter("UM"));
         try {
             articuloService.actualizar(vo);
