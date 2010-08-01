@@ -1,9 +1,3 @@
-<%-- 
-    Document   : menu
-    Created on : 17/06/2010, 02:32:03 AM
-    Author     : Oscar
---%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
     <head>

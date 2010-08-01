@@ -1,9 +1,3 @@
-<%-- 
-    Document   : menu
-    Created on : 17/06/2010, 02:32:03 AM
-    Author     : Oscar
---%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
     <head>
@@ -72,15 +66,14 @@
                 <th>Unidad de Medida</th>
                 <th>Acciones</th>
             </tr>
-            <c:forEach items="${articulos}" var="c">
-                <tr>
-                    <td>${c.codigo}</td>
-                    <td>${c.nombre}</td>
-                    <td>${c.UM}</td>
-                    <td><a href="articulo.htm?metodo=obtener&codigo=${c.codigo}">Editar</a> - <a href="articulo.htm?metodo=eliminar&codigo=${c.codigo}">Eliminar</a> </td>
-                </tr>
-            </c:forEach>
-        </table>
-
+<c:forEach items="${articulos}" var="c">
+   <tr>
+      <td>${c.Co_Articulo}</td>
+      <td>${c.No_Articulo}</td>
+      <td>${c.UM}</td>
+      <td><a href="articulo.htm?metodo=obtener&Co_Articulo=${c.Co_Articulo}">Editar</a> - <a href="articulo.htm?metodo=eliminar&Co_Articulo=${c.Co_Articulo}">Eliminar</a> </td>
+  </tr>
+</c:forEach>
+</table>
     </body>
 </html>
