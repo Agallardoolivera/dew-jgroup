@@ -10,8 +10,13 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.sql.DataSource;
 import proyecto.excepcion.DAOExcepcion;
 import proyecto.modelo.Invitacion;
@@ -97,19 +102,32 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
         return c;
     }
 
+    @SuppressWarnings("empty-statement")
     public Invitacion insertar(Invitacion vo) throws DAOExcepcion {
         String query = "INSERT INTO Invitacion(Nu_Invitacion,Fe_Invitacion,Tx_GeneradorUsuario,Tx_Descripcion,Usuario_Co_Usuario,OrdenCompra_Nu_OrdenCompra)" + " VALUES (?,?,?,?,?,?)";
         Connection con = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
+        DateFormat formatter;
+        Date date = null;
+        formatter = new SimpleDateFormat("yyyy-MM-dd");
+
+        try{
+        date = (Date) formatter.parse(vo.getFe_Invitacion().toString());
+        } catch (Exception e) {
+          }
+
         try {
+
+
             con = dataSource.getConnection();
             stmt = con.prepareStatement(query);
             stmt.setInt(1, vo.getNu_Invitacion());
-            stmt.setString(2, vo.getFe_Invitacion().toString());
+            stmt.setDate(2, date);
             stmt.setString(3, vo.getTx_GeneradorUsuario());
-            stmt.setInt(4, 1);
-            stmt.setInt(5, 1);
+            stmt.setString(4,vo.getTx_Descripcion());
+            stmt.setInt(5, vo.getCo_Usuario());
+            stmt.setInt(6, vo.getNu_OrdenCompra());
 
             int i = stmt.executeUpdate();
             if (i != 1) {
