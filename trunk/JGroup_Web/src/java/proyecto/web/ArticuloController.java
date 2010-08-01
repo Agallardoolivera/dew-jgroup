@@ -43,12 +43,16 @@ public class ArticuloController extends MultiActionController {
         String nombres = request.getParameter("nombre");
         try {
             Collection<Articulo> articulos = articuloService.buscarPorNombre(nombres);
-            System.out.println(articulos);
-            request.setAttribute("datos", articulos);
+             for(Articulo art : articulos){
+		System.out.println(art.getCo_Articulo());
+                System.out.println(art.getNo_Articulo());
+                System.out.println(art.getUM());
+              }
+            request.setAttribute("articulos", articulos);
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
         }
-        return new ModelAndView("Articulo");
+        return new ModelAndView("test");
     }
 
     public ModelAndView nuevo(HttpServletRequest request, HttpServletResponse response) {

@@ -1,4 +1,12 @@
+
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<jsp:useBean id="articulo" scope="page" class="proyecto.modelo.Articulo" />
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -66,12 +74,15 @@
                 <th>Unidad de Medida</th>
                 <th>Acciones</th>
             </tr>
-<c:forEach items="${datos}" var="c">
+
+
+
+<jsp:useBean id="a" type="proyecto.modelo.Articulo" />
+<c:forEach items="${articulos}" var="a">
    <tr>
-      <td>${c.Co_Articulo}</td>
-      <td>${c.No_Articulo}</td>
-      <td>${c.UM}</td>
-      <td><a href="articulo.htm?metodo=obtener&Co_Articulo=${c.Co_Articulo}">Editar</a> - <a href="articulo.htm?metodo=eliminar&Co_Articulo=${c.Co_Articulo}">Eliminar</a> </td>
+      <td>${a.getCo_Articulo}</td>
+      <td>${a.getNo_Articulo}</td>
+      <td>${a.getUM}</td>
   </tr>
 </c:forEach>
 </table>
