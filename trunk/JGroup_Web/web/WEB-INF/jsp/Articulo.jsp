@@ -77,7 +77,7 @@
 
 
 
-<jsp:useBean id="a" type="proyecto.modelo.Articulo" />
+
 <c:forEach items="${articulos}" var="a">
    <tr>
       <td>${a.getCo_Articulo}</td>
