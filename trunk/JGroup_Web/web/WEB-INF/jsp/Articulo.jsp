@@ -66,7 +66,7 @@
                 <th>Unidad de Medida</th>
                 <th>Acciones</th>
             </tr>
-<c:forEach items="${articulos}" var="c">
+<c:forEach items="${datos}" var="c">
    <tr>
       <td>${c.Co_Articulo}</td>
       <td>${c.No_Articulo}</td>
