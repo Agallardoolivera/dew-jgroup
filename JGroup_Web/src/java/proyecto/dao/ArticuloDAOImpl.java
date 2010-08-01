@@ -144,14 +144,14 @@ public class ArticuloDAOImpl extends BaseDAO implements ArticuloDAO {
         return vo;
     }
 
-    public void eliminar(int Co_Articulo) throws DAOExcepcion {
+    public void eliminar(int codigo) throws DAOExcepcion {
         String query = "DELETE FROM articulo WHERE Co_Articulo=?";
         Connection con = null;
         PreparedStatement stmt = null;
         try {
             con = dataSource.getConnection();
             stmt = con.prepareStatement(query);
-            stmt.setInt(1, Co_Articulo);
+            stmt.setInt(1, codigo);
             int i = stmt.executeUpdate();
             if (i != 1) {
                 throw new SQLException("No se pudo eliminar");

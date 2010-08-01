@@ -24,6 +24,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                     <prop key="usuarios_mantener.htm">usuariosController</prop>
                     <prop key="usuarios_editar.htm">usuariosController</prop>
                     <prop key="articulo.htm">articuloController</prop>
+                    <prop key="articulo_editar.htm">articuloController</prop>
                     <prop key="invitacion.htm">invitacionController</prop>
                     <prop key="cotizaciones.htm">accesomenuP</prop>
                     <prop key="analisis.htm">accesomenuP</prop>
