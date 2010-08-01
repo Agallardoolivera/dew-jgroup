@@ -45,8 +45,6 @@ public class InvitacionController extends MultiActionController{
         formatter = new SimpleDateFormat("yyyy-MM-dd");
 
         Invitacion vo = new Invitacion();
-
-
         vo.setNu_Invitacion(Integer.parseInt(request.getParameter("Nu_Invitacion")));
         date = (Date) formatter.parse(request.getParameter("Fe_Invitacion"));
         vo.setFe_Invitacion(date);
@@ -63,14 +61,14 @@ public class InvitacionController extends MultiActionController{
     }
 
     public ModelAndView buscar(HttpServletRequest request, HttpServletResponse response) {
-        String descripcion = request.getParameter("Tx_Descripcion");
+       /* String descripcion = request.getParameter("Tx_Descripcion");
         try {
             Collection<Invitacion> invitacions = invitacionService.buscarPorNombre(descripcion);
             System.out.println(invitacions);
             request.setAttribute("Invitacions", invitacions);
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
-        }
+        }*/
         return new ModelAndView("/invitacion");
     }
 
@@ -79,29 +77,29 @@ public class InvitacionController extends MultiActionController{
     }
 
     public ModelAndView eliminar(HttpServletRequest request, HttpServletResponse response) {
-        String nu_invitacion = request.getParameter("Nu_Invitacion");
+       /* String nu_invitacion = request.getParameter("Nu_Invitacion");
         try {
             invitacionService.eliminar(Integer.parseInt(nu_invitacion));
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
-        }
+        }*/
         return new ModelAndView("redirect:/invitacion.htm");
     }
 
     public ModelAndView obtener(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("Nu_Invitacion"));
+       /* int id = Integer.parseInt(request.getParameter("Nu_Invitacion"));
         Invitacion vo;
         try {
             vo = invitacionService.obtener(id);
             request.setAttribute("Invitacion", vo);
         } catch (DAOExcepcion e) {
             System.err.println("Error");
-        }
+        }*/
         return new ModelAndView("/invitacion");
     }
 
     public ModelAndView actualizar(HttpServletRequest request, HttpServletResponse response) throws ParseException {
-        DateFormat formatter;
+       /* DateFormat formatter;
         Date date;
         formatter = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -119,7 +117,7 @@ public class InvitacionController extends MultiActionController{
             invitacionService.actualizar(vo);
         } catch (DAOExcepcion e) {
             System.err.println("Error");
-        }
+        }*/
         return new ModelAndView("redirect:/invitacion.htm");
     }
 
