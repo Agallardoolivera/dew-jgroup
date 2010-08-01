@@ -24,7 +24,25 @@
                 <tr>
                     <td><div align="right"><span class="Estilo4">Descripcion</span></div></td>
                     <td><label>
-                           <input name="Tx_Descripcion" type="text" id="Tx_Descripcion">
+                            <input name="Tx_Descripcion" type="text" id="Tx_Descripcion">
+                        </label></td>
+                </tr>
+                <tr>
+                    <td><div align="right"><span class="Estilo4">Generador de Usuario</span></div></td>
+                    <td><label>
+                            <input name="Tx_GeneradorUsuario" type="text" id="Tx_GeneradorUsuario">
+                        </label></td>
+                </tr>
+                <tr>
+                    <td><div align="right"><span class="Estilo4">Codigo de Usuario</span></div></td>
+                    <td><label>
+                            <input name="Usuario_Co_Usuario" type="text" id="Usuario_Co_Usuario">
+                        </label></td>
+                </tr>
+                <tr>
+                    <td><div align="right"><span class="Estilo4">Orden de Compra</span></div></td>
+                    <td><label>
+                            <input name="OrdenCompra_Nu_OrdenCompra" type="text" id="OrdenCompra_Nu_OrdenCompra">
                         </label></td>
                 </tr>
                 <tr>
