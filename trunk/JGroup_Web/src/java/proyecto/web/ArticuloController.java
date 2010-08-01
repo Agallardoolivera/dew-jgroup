@@ -52,7 +52,7 @@ public class ArticuloController extends MultiActionController {
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
         }
-        return new ModelAndView("test");
+        return new ModelAndView("Articulo");
     }
 
     public ModelAndView nuevo(HttpServletRequest request, HttpServletResponse response) {
