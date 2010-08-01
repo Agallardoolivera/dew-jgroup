@@ -13,13 +13,13 @@
 <html>
      <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>test</title>
+        <title>Articulos Eliminar - Actualizar</title>
     </head>
     <body>
 
         <form name="form1" method="post" action="articulo_editar.htm">
     <input type="hidden" name="metodo" value="eliminar"/>
-  Buscar:
+  Eliminar:
   <label>
   <input name="codigo" type="text" id="codigo">
   </label>
