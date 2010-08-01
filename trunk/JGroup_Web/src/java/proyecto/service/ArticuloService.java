@@ -14,7 +14,7 @@ public interface ArticuloService {
 
     public Articulo obtener(int Co_Articulo) throws DAOExcepcion;
 
-    public void eliminar(int Co_Articulo) throws DAOExcepcion;
+    public void eliminar(int codigo) throws DAOExcepcion;
 
     public Articulo actualizar(Articulo vo) throws DAOExcepcion;
 

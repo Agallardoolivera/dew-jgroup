@@ -16,14 +16,26 @@
         <title>test</title>
     </head>
     <body>
+
+        <form name="form1" method="post" action="articulo_editar.htm">
+    <input type="hidden" name="metodo" value="eliminar"/>
+  Buscar:
+  <label>
+  <input name="codigo" type="text" id="codigo">
+  </label>
+  <label>
+  <input name="btneliminar" type="submit" id="btneliminar" value="Eliminar">
+  </label>
+  <label>
+  <input name="btnnuevo" type="button" id="btnnuevo" value="Regresar" onclick="window.location='articulo.htm'">
+  </label>
+</form>
         <table width="100%" border="1">
             <tr>
                 <th>Codigo</th>
                 <th>Nombre</th>
                 <th>Unidad de Medida</th>
             </tr>
-
-
             <%    java.util.Collection <proyecto.modelo.Articulo> articulos= (java.util.Collection)request.getAttribute("articulos");
                     for (proyecto.modelo.Articulo art : articulos) {
             %>

@@ -33,8 +33,8 @@ public class ArticuloServiceImpl implements ArticuloService {
         return articuloDAO.obtener(Co_Articulo);
     }
 
-    public void eliminar(int Co_Articulo) throws DAOExcepcion {
-        articuloDAO.eliminar(Co_Articulo);
+    public void eliminar(int codigo) throws DAOExcepcion {
+        articuloDAO.eliminar(codigo);
     }
 
     public Articulo actualizar(Articulo vo) throws DAOExcepcion {
