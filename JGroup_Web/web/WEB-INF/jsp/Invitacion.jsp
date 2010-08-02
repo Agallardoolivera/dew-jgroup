@@ -1,3 +1,6 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
     <head>
@@ -83,17 +86,22 @@
                 <th>Usuario</th>
                 <th>Numero de Orden</th>
             </tr>
-            <c:forEach items="${invitaciones}" var="i">
-                <tr>
-                    <td>${i.Nu_Invitacion}</td>
-                    <td>${i.Fe_Invitacion}</td>
-                    <td>${i.Tx_GeneradorUsuario}</td>
-                    <td>${i.Tx_Descripcion}</td>
-                    <td>${i.Usuario_Co_Usuario}</td>
-                    <td>${i.Orden_Nu_Orden}</td>
-                    <td><a href="invitacion.htm?metodo=obtener&Nu_Invitacion=${i.Nu_Invitacion}">Editar</a> - <a href="invitacion.htm?metodo=eliminar&Nu_Invitacion=${i.Nu_Invitacion}">Eliminar</a> </td>
-                </tr>
-            </c:forEach>
+               <% if(request.getAttribute("invitaciones")!=null) {
+                %>
+            <%    java.util.Collection <proyecto.modelo.Invitacion> invitaciones= (java.util.Collection)request.getAttribute("invitaciones");
+                    for (proyecto.modelo.Invitacion inv : invitaciones) {
+            %>
+            <tr>
+                <td><% out.print(inv.getNu_Invitacion());%></td>
+                <td><%  out.print(inv.getFe_Invitacion());%></td>
+                <td><%  out.print(inv.getTx_GeneradorUsuario());%></td>
+                <td><%  out.print(inv.getTx_Descripcion());%></td>
+                <td><%  out.print(inv.getUsuario_Co_Usuario());%></td>
+                <td><%  out.print(inv.getOrdenCompra_Nu_OrdenCompra());%></td>
+                <td><a href="invitacion.htm?metodo=obtener&Nu_Invitacion=<%=inv.getNu_Invitacion()%>">Editar</a> - <a href="invitacion.htm?metodo=eliminar&Nu_Invitacion=<%=inv.getNu_Invitacion()%>">Eliminar</a> </td>
+            </tr>
+            <% }%>
+           <% }%>
         </table>
 
     </body>
