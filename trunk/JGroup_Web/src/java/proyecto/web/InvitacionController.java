@@ -62,15 +62,14 @@ public class InvitacionController extends MultiActionController{
     }
 
     public ModelAndView buscar(HttpServletRequest request, HttpServletResponse response) {
-       /* String descripcion = request.getParameter("Tx_Descripcion");
+       String descripcion = request.getParameter("Tx_Descripcion");
         try {
-            Collection<Invitacion> invitacions = invitacionService.buscarPorNombre(descripcion);
-            System.out.println(invitacions);
-            request.setAttribute("Invitacions", invitacions);
+            Collection<Invitacion> invitaciones = invitacionService.buscarPorNombre(descripcion);
+            request.setAttribute("Invitaciones", invitaciones);
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
-        }*/
-        return new ModelAndView("/invitacion");
+        }
+        return new ModelAndView("/Invitacion");
     }
 
     public ModelAndView nuevo(HttpServletRequest request, HttpServletResponse response) {
@@ -84,7 +83,7 @@ public class InvitacionController extends MultiActionController{
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
         }*/
-        return new ModelAndView("redirect:/invitacion.htm");
+        return new ModelAndView("redirect:/Invitacion.htm");
     }
 
     public ModelAndView obtener(HttpServletRequest request, HttpServletResponse response) {
@@ -96,7 +95,7 @@ public class InvitacionController extends MultiActionController{
         } catch (DAOExcepcion e) {
             System.err.println("Error");
         }*/
-        return new ModelAndView("/invitacion");
+        return new ModelAndView("/Invitacion");
     }
 
     public ModelAndView actualizar(HttpServletRequest request, HttpServletResponse response) throws ParseException {
@@ -119,7 +118,7 @@ public class InvitacionController extends MultiActionController{
         } catch (DAOExcepcion e) {
             System.err.println("Error");
         }*/
-        return new ModelAndView("redirect:/invitacion.htm");
+        return new ModelAndView("redirect:/Invitacion.htm");
     }
 
 }

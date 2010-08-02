@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+            <title>JSP Page</title>
     </head>
     <body>
         <p><strong>Mantenimiento de Invitaciones</strong></p>
@@ -55,6 +55,46 @@
                         </label></td>
                 </tr>
             </table>
-        </form>      
+        </form>
+
+        <form name="form1" method="post" action="invitacion.htm">
+            <input type="hidden" name="metodo" value="buscar"/>
+            Buscar:
+            <label>
+                <input name="Tx_Descripcion" type="text" id="Tx_Descripcion">
+            </label>
+            <label>
+                <input name="btnenviar" type="submit" id="btnenviar" value="Buscar">
+            </label>
+            <label>
+                <input name="btnnuevo" type="button" id="btnnuevo" value="Nuevo" onclick="window.location='invitacion.htm?metodo=nuevo'">
+            </label>
+            <label>
+                <input name="btnnuevo" type="button" id="btnnuevo" value="Regresar" onclick="window.location='portada.htm'">
+            </label>
+        </form>
+        <table width="100%" border="1">
+            <tr>
+                <th>Id</th>
+                <th>Numero de Invitacion</th>
+                <th>Fecha de Invitacion</th>
+                <th>Generador de Usuario</th>
+                <th>Descripci&oacute;n</th>
+                <th>Usuario</th>
+                <th>Numero de Orden</th>
+            </tr>
+            <c:forEach items="${invitaciones}" var="i">
+                <tr>
+                    <td>${i.Nu_Invitacion}</td>
+                    <td>${i.Fe_Invitacion}</td>
+                    <td>${i.Tx_GeneradorUsuario}</td>
+                    <td>${i.Tx_Descripcion}</td>
+                    <td>${i.Usuario_Co_Usuario}</td>
+                    <td>${i.Orden_Nu_Orden}</td>
+                    <td><a href="invitacion.htm?metodo=obtener&Nu_Invitacion=${i.Nu_Invitacion}">Editar</a> - <a href="invitacion.htm?metodo=eliminar&Nu_Invitacion=${i.Nu_Invitacion}">Eliminar</a> </td>
+                </tr>
+            </c:forEach>
+        </table>
+
     </body>
 </html>
