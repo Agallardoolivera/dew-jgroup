@@ -60,7 +60,7 @@ public class ArticuloController extends MultiActionController {
     }
 
     public ModelAndView eliminar(HttpServletRequest request, HttpServletResponse response) {
-        String codigo = request.getParameter("codigo");
+        String codigo = request.getParameter("CoArticulo");
         try {
             articuloService.eliminar(Integer.parseInt(codigo));
         } catch (DAOExcepcion ex) {
