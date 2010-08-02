@@ -24,20 +24,19 @@
                 <tr>
                     <td class="Estilo4"><div align="right">C&oacute;digo</div></td>
                     <td><label>
-                            <input name="Co_Articulo" type="text" id="Co_Articulo" readonly="readonly" value="<%out.println(CoArticulo);
-%>">
+                            <input name="Co_Articulo" type="text" id="Co_Articulo" readonly="readonly" value="<%out.println(CoArticulo);%>">
                         </label></td>
                 </tr>
                 <tr>
                     <td width="28%"><div align="right"><span class="Estilo4">Nombre:</span></div></td>
                     <td width="72%"><label>
-                            <input name="nombre" type="text" id="nombre" value="${Categoria.nombre}">
+                            <input name="nombre" type="text" id="nombre" value="<%out.println(getNo_Articulo());%>">
                         </label></td>
                 </tr>
                 <tr>
                     <td><div align="right"><span class="Estilo4">Descripci&oacute;n:</span></div></td>
                     <td><label>
-                            <textarea name="descripcion" id="descripcion" >${Categoria.descripcion}</textarea>
+                            <input name="um" id="um" >${Categoria.descripcion}</textarea>
                         </label></td>
                 </tr>
                 <tr>
