@@ -86,10 +86,11 @@
                 <th>Usuario</th>
                 <th>Numero de Orden</th>
             </tr>
-               <% if(request.getAttribute("invitaciones")!=null) {
-                %>
-            <%    java.util.Collection <proyecto.modelo.Invitacion> invitaciones= (java.util.Collection)request.getAttribute("invitaciones");
-                    for (proyecto.modelo.Invitacion inv : invitaciones) {
+
+            <% if (request.getAttribute("invitaciones") != null) {
+            %>
+            <%    java.util.Collection<proyecto.modelo.Invitacion> invitaciones = (java.util.Collection) request.getAttribute("invitaciones");
+                 for (proyecto.modelo.Invitacion inv : invitaciones) {
             %>
             <tr>
                 <td><% out.print(inv.getNu_Invitacion());%></td>
@@ -101,7 +102,9 @@
                 <td><a href="invitacion.htm?metodo=obtener&Nu_Invitacion=<%=inv.getNu_Invitacion()%>">Editar</a> - <a href="invitacion.htm?metodo=eliminar&Nu_Invitacion=<%=inv.getNu_Invitacion()%>">Eliminar</a> </td>
             </tr>
             <% }%>
-           <% }%>
+            <% }%>
+
+             
         </table>
 
     </body>
