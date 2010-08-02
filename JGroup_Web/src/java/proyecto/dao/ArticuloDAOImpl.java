@@ -60,7 +60,7 @@ public class ArticuloDAOImpl extends BaseDAO implements ArticuloDAO {
         ResultSet rs = null;
         try {
             con = dataSource.getConnection();
-            String query = "SELECT * from articulo";
+            String query = "SELECT Co_Articulo,No_Articulo,UM from articulo";
             stmt = con.prepareStatement(query);
             rs = stmt.executeQuery();
             while (rs.next()) {
