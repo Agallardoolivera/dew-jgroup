@@ -73,7 +73,7 @@ public class InvitacionController extends MultiActionController{
                 System.out.println(inv.getUsuario_Co_Usuario());
                 System.out.println(inv.getOrdenCompra_Nu_OrdenCompra());
               }
-            request.setAttribute("Invitaciones", invitaciones);
+            request.setAttribute("invitaciones", invitaciones);
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
         }
@@ -85,29 +85,29 @@ public class InvitacionController extends MultiActionController{
     }
 
     public ModelAndView eliminar(HttpServletRequest request, HttpServletResponse response) {
-       /* String nu_invitacion = request.getParameter("Nu_Invitacion");
+       String Nu_Invitacion = request.getParameter("Nu_Invitacion");
         try {
-            invitacionService.eliminar(Integer.parseInt(nu_invitacion));
+            invitacionService.eliminar(Integer.parseInt(Nu_Invitacion));
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
-        }*/
+        }
         return new ModelAndView("redirect:/Invitacion.htm");
     }
 
     public ModelAndView obtener(HttpServletRequest request, HttpServletResponse response) {
-       /* int id = Integer.parseInt(request.getParameter("Nu_Invitacion"));
+       int id = Integer.parseInt(request.getParameter("Nu_Invitacion"));
         Invitacion vo;
         try {
             vo = invitacionService.obtener(id);
             request.setAttribute("Invitacion", vo);
         } catch (DAOExcepcion e) {
             System.err.println("Error");
-        }*/
+        }
         return new ModelAndView("/Invitacion");
     }
 
     public ModelAndView actualizar(HttpServletRequest request, HttpServletResponse response) throws ParseException {
-       /* DateFormat formatter;
+        DateFormat formatter;
         Date date;
         formatter = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -119,13 +119,13 @@ public class InvitacionController extends MultiActionController{
         vo.setFe_Invitacion(date);
         vo.setTx_GeneradorUsuario(request.getParameter("Tx_GeneradorUsuario"));
         vo.setTx_Descripcion(request.getParameter("Tx_descripcion"));
-        vo.setNu_OrdenCompra(Integer.parseInt(request.getParameter("OrderCompra_Co_OrdenCompra")));
-        vo.setCo_Usuario(Integer.parseInt(request.getParameter("Usuario_Co_Usuario")));
+        vo.setOrdenCompra_Nu_OrdenCompra(Integer.parseInt(request.getParameter("OrderCompra_Co_OrdenCompra")));
+        vo.setUsuario_Co_Usuario(Integer.parseInt(request.getParameter("Usuario_Co_Usuario")));
         try {
             invitacionService.actualizar(vo);
         } catch (DAOExcepcion e) {
             System.err.println("Error");
-        }*/
+        }
         return new ModelAndView("redirect:/Invitacion.htm");
     }
 
