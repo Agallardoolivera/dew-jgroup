@@ -59,15 +59,14 @@
 
   <form name="form2" method="post" action="articulo.htm">
             <input type="hidden" name="metodo" value="buscar"/>
-            Buscar:
+            Articulo:
             <label>
                 <input name="nombre" type="text" id="nombre">
             </label>
             <label>
                 <input name="btnenviar" type="submit" id="btnenviar" value="Buscar">
             </label>
-
-
+<%--
 <table width="100%" border="1">
             <tr>
                 <th>Codigo</th>
@@ -85,11 +84,13 @@
                 <td><%  out.print(art.getNo_Articulo());%></td>
                 <td><%  out.print(art.getUM());%></td>
                 <td><a href="articulo.htm?metodo=obtener&CoArticulo=<% out.print(art.getCo_Articulo());%>">Editar</a> - <a href="categorias_mantener.htm?metodo=eliminar&idCategoria=${c.idCategoria}">Eliminar</a> </td>
+                <td><a href="articulo.htm?metodo=obtener&<% = art.getCo_Articulo();%>=<% =art.getCo_Articulo();%>">Editar</a> -
+                    <a href="articulo.htm?metodo=eliminar&<% = art.getCo_Articulo();%>=<% =art.getCo_Articulo();%>">Eliminar</a> </td>
             </tr>
             <% }%>
            <% }%>
 
-</table>
+</table>--%>
       
   </form>
       
