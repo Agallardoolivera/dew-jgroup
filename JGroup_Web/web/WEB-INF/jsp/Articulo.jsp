@@ -83,7 +83,7 @@
                 <td><% out.print(art.getCo_Articulo());%></td>
                 <td><%  out.print(art.getNo_Articulo());%></td>
                 <td><%  out.print(art.getUM());%></td>
-                <td><a href="articulo.htm?metodo=obtener&CoArticulo=<% art.getCo_Articulo();%>">Editar</a> - <a href="articulo.htm?metodo=eliminar&CoArticulo=<% art.getCo_Articulo();%>">Eliminar</a> </td>
+                <td><a href="articulo.htm?metodo=obtener&CoArticulo=<%=art.getCo_Articulo()%>">Editar</a> - <a href="articulo.htm?metodo=eliminar&CoArticulo=<%=art.getCo_Articulo()%>">Eliminar</a> </td>
             </tr>
             <% }%>
            <% }%>
