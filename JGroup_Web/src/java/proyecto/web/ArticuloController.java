@@ -70,7 +70,7 @@ public class ArticuloController extends MultiActionController {
     }
 
     public ModelAndView obtener(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("Co_Articulo"));
+        int id = Integer.parseInt(request.getParameter("CoArticulo"));
         Articulo vo;
         try {
             vo = articuloService.obtener(id);
@@ -78,7 +78,7 @@ public class ArticuloController extends MultiActionController {
         } catch (DAOExcepcion e) {
             System.err.println("Error");
         }
-        return new ModelAndView("Articulo");
+        return new ModelAndView("Articulo_Editar");
     }
 
     public ModelAndView actualizar(HttpServletRequest request, HttpServletResponse response) {

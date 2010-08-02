@@ -73,6 +73,7 @@
                 <th>Codigo</th>
                 <th>Nombre</th>
                 <th>Unidad de Medida</th>
+                <th>Acciones</th>
             </tr>
             <% if(request.getAttribute("articulos")!=null) {
                 %>
@@ -82,8 +83,10 @@
             <tr>
                 <td><% out.print(art.getCo_Articulo());%></td>
                 <td><%  out.print(art.getNo_Articulo());%></td>
-                <td><%  out.print(art.getUM());}%></td>
+                <td><%  out.print(art.getUM());%></td>
+                <td><a href="articulo.htm?metodo=obtener&CoArticulo=<% out.print(art.getCo_Articulo());%>">Editar</a> - <a href="categorias_mantener.htm?metodo=eliminar&idCategoria=${c.idCategoria}">Eliminar</a> </td>
             </tr>
+            <% }%>
            <% }%>
 
 </table>
