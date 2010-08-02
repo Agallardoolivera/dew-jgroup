@@ -524,10 +524,9 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${file.reference.jstl.jar-1}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.file.reference.jstl.jar-1" todir="${dist.ear.dir}"/>
         <copyfiles files="${libs.hibernate-support.classpath}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.libs.hibernate-support.classpath" todir="${dist.ear.dir}"/>
         <copyfiles files="${libs.ejb3-persistence.classpath}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.libs.ejb3-persistence.classpath" todir="${dist.ear.dir}"/>
-        <copyfiles files="${file.reference.mysql-connector-java-5.1.6-bin.jar}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.file.reference.mysql-connector-java-5.1.6-bin.jar" todir="${dist.ear.dir}"/>
         <mkdir dir="${build.web.dir}/META-INF"/>
         <manifest file="${build.web.dir}/META-INF/MANIFEST.MF" mode="update">
-            <attribute name="Class-Path" value="${manifest.libs.spring-webmvc.classpath} ${manifest.libs.spring-framework.classpath} ${manifest.libs.struts.classpath} ${manifest.file.reference.jstl.jar} ${manifest.file.reference.standard.jar} ${manifest.file.reference.jstl.jar-1} ${manifest.libs.hibernate-support.classpath} ${manifest.libs.ejb3-persistence.classpath} ${manifest.file.reference.mysql-connector-java-5.1.6-bin.jar} "/>
+            <attribute name="Class-Path" value="${manifest.libs.spring-webmvc.classpath} ${manifest.libs.spring-framework.classpath} ${manifest.libs.struts.classpath} ${manifest.file.reference.jstl.jar} ${manifest.file.reference.standard.jar} ${manifest.file.reference.jstl.jar-1} ${manifest.libs.hibernate-support.classpath} ${manifest.libs.ejb3-persistence.classpath} "/>
         </manifest>
     </target>
     <target depends="init" name="library-inclusion-in-archive" unless="dist.ear.dir">
@@ -539,7 +538,6 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${file.reference.jstl.jar-1}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${libs.hibernate-support.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${libs.ejb3-persistence.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${file.reference.mysql-connector-java-5.1.6-bin.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
     </target>
     <target depends="init,compile,compile-jsps,-pre-dist,library-inclusion-in-manifest" if="do.tmp.war.package" name="do-ear-dist">
         <dirname file="${dist.ear.war}" property="dist.jar.dir"/>
@@ -829,8 +827,9 @@ exists or setup the property manually. For example like this:
     </target>
     <target depends="init,-pre-debug-fix,-do-debug-fix-test" if="netbeans.home" name="debug-fix-test"/>
     <!--
+                
                 CLEANUP SECTION
-    -->
+            -->
     <target depends="init" if="no.dist.ear.dir" name="deps-clean" unless="no.deps"/>
     <target depends="init" name="do-clean">
         <condition property="build.dir.to.clean" value="${build.web.dir}">

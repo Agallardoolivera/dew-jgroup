@@ -66,7 +66,7 @@ public class ArticuloController extends MultiActionController {
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
         }
-        return new ModelAndView("redirect:/articulo_editar.htm");
+        return new ModelAndView("redirect:/Articulo_Editar.htm");
     }
 
     public ModelAndView obtener(HttpServletRequest request, HttpServletResponse response) {

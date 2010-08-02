@@ -39,7 +39,9 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
 
     public Collection<Invitacion> buscarPorNombre(String Tx_Descripcion)
             throws DAOExcepcion {
-        String query = "select Nu_Invitacion, Fe_Invitacion,Tx_GeneradorUsuario,Tx_Descripcion,Usuario_Co_Usuario,OrdenCompra_Co_OrdenCompra from Invitacion where No_Invitacion like ?";
+
+
+        String query = "select Nu_Invitacion, Fe_Invitacion,Tx_GeneradorUsuario,Tx_Descripcion,Usuario_Co_Usuario,OrdenCompra_Nu_OrdenCompra from Invitacion where Tx_Descripcion= ? ";
         Collection<Invitacion> lista = new ArrayList<Invitacion>();
         Connection con = null;
         PreparedStatement stmt = null;
@@ -56,7 +58,7 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
                 vo.setTx_GeneradorUsuario(rs.getString("Tx_Generador_Usuario"));
                 vo.setTx_Descripcion(rs.getString("Tx_Descripcion"));
                 vo.setCo_Usuario(rs.getInt("Usuario_Co_Usuario"));
-                vo.setNu_OrdenCompra(rs.getInt("OrdenCompra_Co_OrdenCompra"));
+                vo.setNu_OrdenCompra(rs.getInt("OrdenCompra_Nu_OrdenCompra"));
                 lista.add(vo);
             }
         } catch (SQLException e) {
@@ -67,7 +69,7 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
             this.cerrarStatement(stmt);
             this.cerrarConexion(con);
         }
-        System.out.println(lista.size());
+        System.out.println("Tamaño =" +lista.size());
         return lista;
     }
 
