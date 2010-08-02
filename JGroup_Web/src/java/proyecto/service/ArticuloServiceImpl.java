@@ -29,8 +29,8 @@ public class ArticuloServiceImpl implements ArticuloService {
         return articuloDAO.listar();
     }
     
-    public Articulo obtener(int Co_Articulo) throws DAOExcepcion {
-        return articuloDAO.obtener(Co_Articulo);
+    public Articulo obtener(int CoArticulo) throws DAOExcepcion {
+        return articuloDAO.obtener(CoArticulo);
     }
 
     public void eliminar(int codigo) throws DAOExcepcion {
