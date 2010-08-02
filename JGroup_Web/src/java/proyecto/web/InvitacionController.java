@@ -39,20 +39,20 @@ public class InvitacionController extends MultiActionController{
         return new ModelAndView("Invitacion");
     }
 
-    public ModelAndView insertar(HttpServletRequest request, HttpServletResponse response) throws ParseException {
+    public ModelAndView insertar(HttpServletRequest request, HttpServletResponse response)
+            throws ParseException {
         DateFormat formatter;
         Date date;
-        formatter = new SimpleDateFormat("yyyy-MM-dd");
-       
+        formatter = new SimpleDateFormat("yyyy-MM-dd");       
         Invitacion vo = new Invitacion();
         vo.setNu_Invitacion(Integer.parseInt(request.getParameter("Nu_Invitacion")));
         date = (Date) formatter.parse(request.getParameter("Fe_Invitacion"));
         vo.setFe_Invitacion(date);
         vo.setTx_Descripcion(request.getParameter("Tx_Descripcion"));
         vo.setTx_GeneradorUsuario(request.getParameter("Tx_GeneradorUsuario"));
-        //vo.setNu_OrdenCompra(Integer.parseInt(request.getParameter("OrdenCompra_Nu_Ordencompra")));
-        vo.setNu_OrdenCompra(1);
-        vo.setCo_Usuario(Integer.parseInt(request.getParameter("Usuario_Co_Usuario")));
+        vo.setUsuario_Co_Usuario(Integer.parseInt(request.getParameter("Usuario_Co_Usuario")));
+        //vo.setNu_OrdenCompra(1);
+        vo.setOrdenCompra_Nu_OrdenCompra(Integer.parseInt(request.getParameter("OrdenCompra_Nu_Ordencompra")));
         try {
             invitacionService.insertar(vo);
         } catch (DAOExcepcion e) {

@@ -18,16 +18,9 @@ private String Tx_GeneradorUsuario;
 private String Tx_Descripcion;
 private int Usuario_Co_Usuario;
 private int OrdenCompra_Nu_OrdenCompra;
+
     public Invitacion(){
 
-    }
-
-    public int getCo_Usuario() {
-        return Usuario_Co_Usuario;
-    }
-
-    public void setCo_Usuario(int Co_Usuario) {
-        this.Usuario_Co_Usuario = Co_Usuario;
     }
 
     public Date getFe_Invitacion() {
@@ -46,12 +39,12 @@ private int OrdenCompra_Nu_OrdenCompra;
         this.Nu_Invitacion = Nu_Invitacion;
     }
 
-    public int getNu_OrdenCompra() {
+    public int getOrdenCompra_Nu_OrdenCompra() {
         return OrdenCompra_Nu_OrdenCompra;
     }
 
-    public void setNu_OrdenCompra(int Nu_OrdenCompra) {
-        this.OrdenCompra_Nu_OrdenCompra = Nu_OrdenCompra;
+    public void setOrdenCompra_Nu_OrdenCompra(int OrdenCompra_Nu_OrdenCompra) {
+        this.OrdenCompra_Nu_OrdenCompra = OrdenCompra_Nu_OrdenCompra;
     }
 
     public String getTx_Descripcion() {
@@ -70,5 +63,12 @@ private int OrdenCompra_Nu_OrdenCompra;
         this.Tx_GeneradorUsuario = Tx_GeneradorUsuario;
     }
 
-}
+    public int getUsuario_Co_Usuario() {
+        return Usuario_Co_Usuario;
+    }
 
+    public void setUsuario_Co_Usuario(int Usuario_Co_Usuario) {
+        this.Usuario_Co_Usuario = Usuario_Co_Usuario;
+    }
+
+}
