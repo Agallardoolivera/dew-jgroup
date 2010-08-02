@@ -41,7 +41,7 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
             throws DAOExcepcion {
 
 
-        String query = "select Nu_Invitacion, Fe_Invitacion,Tx_GeneradorUsuario,Tx_Descripcion,Usuario_Co_Usuario,OrdenCompra_Nu_OrdenCompra from Invitacion where Tx_Descripcion= ? ";
+        String query = "select Nu_Invitacion, Fe_Invitacion,Tx_GeneradorUsuario,Tx_Descripcion,Usuario_Co_Usuario,OrdenCompra_Nu_OrdenCompra from Invitacion where Tx_Descripcion like ? ";
         Collection<Invitacion> lista = new ArrayList<Invitacion>();
         Connection con = null;
         PreparedStatement stmt = null;
@@ -50,12 +50,13 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
             con = dataSource.getConnection();
             stmt = con.prepareStatement(query);
             stmt.setString(1, "%" + Tx_Descripcion + "%");
+            System.out.println("Query =" +stmt.toString());
             rs = stmt.executeQuery();
             while (rs.next()) {
                 Invitacion vo = new Invitacion();
                 vo.setNu_Invitacion(rs.getInt("Nu_Invitacion"));
                 vo.setFe_Invitacion(rs.getDate("Fe_Invitacion"));
-                vo.setTx_GeneradorUsuario(rs.getString("Tx_Generador_Usuario"));
+                vo.setTx_GeneradorUsuario(rs.getString("Tx_GeneradorUsuario"));
                 vo.setTx_Descripcion(rs.getString("Tx_Descripcion"));
                 vo.setUsuario_Co_Usuario(rs.getInt("Usuario_Co_Usuario"));
                 vo.setOrdenCompra_Nu_OrdenCompra(rs.getInt("OrdenCompra_Nu_OrdenCompra"));
