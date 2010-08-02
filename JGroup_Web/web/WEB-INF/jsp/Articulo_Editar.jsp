@@ -16,7 +16,7 @@
     <body>
 
         <p><strong>Mantenimiento de Categor&iacute;as &gt; Editar</strong></p>
-
+<% String CoArticulo = request.getParameter("CoArticulo");%>
         <form name="form1" method="post" action="articulo.htm">
             <input type="hidden" name="metodo" value="actualizar"/>
             <table width="44%" border="0">
@@ -24,7 +24,8 @@
                 <tr>
                     <td class="Estilo4"><div align="right">C&oacute;digo</div></td>
                     <td><label>
-                            <input name="CoArticulo" type="text" id="CoArticulo" readonly="readonly" value="${articulo.CoArticulo}">
+                            <input name="Co_Articulo" type="text" id="Co_Articulo" readonly="readonly" value="<%out.println(CoArticulo);
+%>">
                         </label></td>
                 </tr>
                 <tr>
