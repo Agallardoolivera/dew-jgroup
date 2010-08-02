@@ -24,7 +24,7 @@
                 <tr>
                     <td class="Estilo4"><div align="right">C&oacute;digo</div></td>
                     <td><label>
-                            <input name="CoArticulo" type="text" id="CoArticulo" readonly="readonly" value="${Categoria.idCategoria}">
+                            <input name="CoArticulo" type="text" id="CoArticulo" readonly="readonly" value="${articulo.CoArticulo}">
                         </label></td>
                 </tr>
                 <tr>
