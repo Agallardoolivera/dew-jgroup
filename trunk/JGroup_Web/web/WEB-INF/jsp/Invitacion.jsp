@@ -12,7 +12,7 @@
                 <tr>
                     <td><div align="right"><span class="Estilo4">Numero de Invitacion</span></div></td>
                     <td><label>
-                            <input name="Nu_Invitacion" id="Nu_Invitacion">
+                            <input name="Nu_Invitacion" type="text" id="Nu_Invitacion">
                         </label></td>
                 </tr>
                 <tr>

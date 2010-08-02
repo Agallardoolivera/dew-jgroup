@@ -57,8 +57,8 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
                 vo.setFe_Invitacion(rs.getDate("Fe_Invitacion"));
                 vo.setTx_GeneradorUsuario(rs.getString("Tx_Generador_Usuario"));
                 vo.setTx_Descripcion(rs.getString("Tx_Descripcion"));
-                vo.setCo_Usuario(rs.getInt("Usuario_Co_Usuario"));
-                vo.setNu_OrdenCompra(rs.getInt("OrdenCompra_Nu_OrdenCompra"));
+                vo.setUsuario_Co_Usuario(rs.getInt("Usuario_Co_Usuario"));
+                vo.setOrdenCompra_Nu_OrdenCompra(rs.getInt("OrdenCompra_Nu_OrdenCompra"));
                 lista.add(vo);
             }
         } catch (SQLException e) {
@@ -89,7 +89,7 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
                 vo.setFe_Invitacion(rs.getDate("Fe_Invitacion"));
                 vo.setTx_GeneradorUsuario(rs.getString("Tx_GeneradorUsuario"));
                 vo.setTx_Descripcion(rs.getString("Tx_Descripcion"));
-                vo.setCo_Usuario(rs.getInt("Usuario_Co_Usuario"));
+                vo.setUsuario_Co_Usuario(rs.getInt("Usuario_Co_Usuario"));
                 c.add(vo);
             }
 
@@ -106,7 +106,7 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
 
     @SuppressWarnings("empty-statement")
     public Invitacion insertar(Invitacion vo) throws DAOExcepcion {
-        String query = "INSERT INTO Invitacion(Nu_Invitacion,Fe_Invitacion,Tx_GeneradorUsuario,Tx_Descripcion,Usuario_Co_Usuario,OrdenCompra_Nu_OrdenCompra)" + " VALUES (?,?,?,?,?,?)";
+        String query = "INSERT INTO Invitacion(Nu_Invitacion,Fe_Invitacion,Tx_Descripcion,Tx_GeneradorUsuario,Usuario_Co_Usuario,OrdenCompra_Nu_OrdenCompra)" + " VALUES (?,?,?,?,?,?)";
         Connection con = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -116,20 +116,20 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
 
         try{
         date = (Date) formatter.parse(vo.getFe_Invitacion().toString());
-        } catch (Exception e) {
-          }
+        } catch (Exception e){
+            System.err.println(e.getMessage());
+            throw new DAOExcepcion(e.getMessage());
+        }
 
         try {
-
-
             con = dataSource.getConnection();
             stmt = con.prepareStatement(query);
             stmt.setInt(1, vo.getNu_Invitacion());
             stmt.setDate(2, date);
-            stmt.setString(3, vo.getTx_GeneradorUsuario());
-            stmt.setString(4,vo.getTx_Descripcion());
-            stmt.setInt(5, vo.getCo_Usuario());
-            stmt.setInt(6, vo.getNu_OrdenCompra());
+            stmt.setString(3,vo.getTx_Descripcion());
+            stmt.setString(4, vo.getTx_GeneradorUsuario());
+            stmt.setInt(5, vo.getUsuario_Co_Usuario());
+            stmt.setInt(6, vo.getOrdenCompra_Nu_OrdenCompra());
 
             int i = stmt.executeUpdate();
             if (i != 1) {
@@ -170,8 +170,8 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
             stmt.setDate(2,(Date) vo.getFe_Invitacion());
             stmt.setString(3, vo.getTx_GeneradorUsuario());
             stmt.setString(4, vo.getTx_Descripcion());
-            stmt.setInt(5, vo.getCo_Usuario());
-            stmt.setInt(6, vo.getNu_OrdenCompra());
+            stmt.setInt(5, vo.getUsuario_Co_Usuario());
+            stmt.setInt(6, vo.getOrdenCompra_Nu_OrdenCompra());
             int i = stmt.executeUpdate();
             if (i != 1) {
                 throw new SQLException("No se pudo actualizar");
@@ -225,8 +225,8 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
                 vo.setFe_Invitacion(rs.getDate("Fe_Invitacion"));
                 vo.setTx_GeneradorUsuario(rs.getString("Tx_GeneradorUsuario"));
                 vo.setTx_Descripcion(rs.getString("Tx_Descripcion"));
-                vo.setCo_Usuario(rs.getInt("Usuario_Co_Usuario"));
-                vo.setNu_OrdenCompra(rs.getInt("OrdenCompra_Co_OrdenCompra"));
+                vo.setUsuario_Co_Usuario(rs.getInt("Usuario_Co_Usuario"));
+                vo.setOrdenCompra_Nu_OrdenCompra(rs.getInt("OrdenCompra_Co_OrdenCompra"));
 
             }
         } catch (SQLException e) {
