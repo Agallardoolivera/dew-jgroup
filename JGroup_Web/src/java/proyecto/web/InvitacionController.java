@@ -65,6 +65,14 @@ public class InvitacionController extends MultiActionController{
        String descripcion = request.getParameter("Tx_Descripcion");
         try {
             Collection<Invitacion> invitaciones = invitacionService.buscarPorNombre(descripcion);
+             for(Invitacion inv : invitaciones){
+		System.out.println(inv.getNu_Invitacion());
+                System.out.println(inv.getFe_Invitacion());
+                System.out.println(inv.getTx_Descripcion());
+                System.out.println(inv.getTx_GeneradorUsuario());
+                System.out.println(inv.getUsuario_Co_Usuario());
+                System.out.println(inv.getOrdenCompra_Nu_OrdenCompra());
+              }
             request.setAttribute("Invitaciones", invitaciones);
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
