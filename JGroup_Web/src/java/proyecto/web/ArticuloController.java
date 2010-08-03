@@ -60,13 +60,13 @@ public class ArticuloController extends MultiActionController {
     }
 
     public ModelAndView eliminar(HttpServletRequest request, HttpServletResponse response) {
-        String codigo = request.getParameter("CoArticulo");
+        String codigo = request.getParameter("codigo");
         try {
             articuloService.eliminar(Integer.parseInt(codigo));
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
         }
-        return new ModelAndView("redirect:/Articulo_Editar.htm");
+        return new ModelAndView("Articulo");
     }
 
     public ModelAndView obtener(HttpServletRequest request, HttpServletResponse response) {
