@@ -30,7 +30,7 @@
                 <tr>
                     <td width="28%"><div align="right"><span class="Estilo4">Nombre:</span></div></td>
                     <td width="72%"><label>
-                            <input name="nombre" type="text" id="nombre" value="<%out.println(getNo_Articulo());%>">
+                            <input name="nombre" type="text" id="nombre" value="${Categoria.descripcion}">
                         </label></td>
                 </tr>
                 <tr>
