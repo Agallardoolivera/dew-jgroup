@@ -1,21 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
      <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-     <jsp:useBean id="proveedor" scope="page" class="proyecto.modelo.Proveedor" />
     <head>
 
       
 
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-        <title>::- Sistema de Cotizaciones -::</title>
+        <title>::- Sistema de Pedidos On Line -::</title>
         <link type="image/x-icon" href="../favicon.ico" rel="icon" />
         <link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
         <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/efc.css"/>
         <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/cf.css"/>
-        <!--<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/menus.css"/>
-        <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/grid.css"/>
-        <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/Progress.css"/>
-        <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/ext-all.css"/>-->
         <script language="JavaScript" src="../js/jquery-1.2.3.js"></script>
         <script language="JavaScript" src="../js/jquery.maskedinput-1.1.2.pack.js"  type="text/javascript"></script>
         <script language="JavaScript" src="../js/jquery.numeric.pack.js"></script>
@@ -57,7 +52,6 @@
                             <script type="text/javascript">
                                 // <![CDATA[
                                 var so = new SWFObject("logoefc_chico.swf", "EFC", "180", "95", "9", "#999999");
-                                //so.addVariable("flashVarText", "this is passed in via FlashVars for example only"); // this line is optional, but this example uses the variable and displays this text inside the flash movie
                                 so.write("logoefc");
                                 // ]]>
                             </script>
@@ -70,7 +64,8 @@
                         <td width="10%"><p align="center"><a href="retornaMenu.htm?metodo=Menu"><img src="<%=request.getContextPath()%>/images/Browser History.png" width="49" height="40" border="0" align="middle" title="Usuario"/></a></p>
                             <p align="center" class="Estilo3">Retornar al Men&uacute; </p></td>
                         <td width="0%" style=" text-align:left;">
-         </td>
+
+</td>
                     </tr>
                 </table>
             </div>
@@ -79,16 +74,9 @@
                     <div style="height:450px;">
                       <form action="" method="post" name="buscarProveedor" id="buscarProveedor">
                         <div align="center">
-                          <p>BUSCAR PROVEEDOR </p>
+                          <p>&nbsp;</p>
                         </div>
-                        <table width="273" border="1" align="center">
-                          <tr>
-                            <td width="102">Codigo</td>
-                            <td><input name="Co_Proveedor" type="text" id="Co_Proveedor" /></td>
-                            <td width="66"><input name="Buscar" type="button" id="Buscar" value="Buscar" /></td>
-                          </tr>
-                        </table>
-                      </form>
+                        </form>
                       
                         <form id="registroProveedor" name="registroProveedor" method="post" action="">
                         <div align="center">
@@ -96,34 +84,31 @@
                         </div>
                         <table width="356" border="1" align="center">
                           <tr>
+                            <td>Codigo</td>
+                            <td><input name="Co_Proveedor" type="text" id="Co_Proveedor" /></td>
+                          </tr>
+                          <tr>
                             <td width="150">Raz&oacute;n Social </td>
-                            <td width="190"><input name="razonsocial" type="text" id="razonsocial" /></td>
+                            <td width="190"><input name="razonsocial" type="text" id="No_RazonSocialProveedor" /></td>
                           </tr>
                           <tr>
                             <td>RUC</td>
-                            <td><input name="ruc" type="text" id="ruc" /></td>
+                            <td><input name="ruc" type="text" id="Nu_RucProveedor" /></td>
                           </tr>
-                          <tr>
-                            <td>Direcci&oacute;n</td>
-                            <td><input name="direccion" type="text" id="direccion" /></td>
-                          </tr>
+                          
                           <tr>
                             <td>Correo</td>
-                            <td><input name="correo" type="text" id="correo" /></td>
+                            <td><input name="correo" type="text" id="Tx_CorreoProveedor" /></td>
                           </tr>
                           <tr>
-                            <td>Tel&eacute;fono</td>
-                            <td><input name="telefono" type="text" id="telefono" /></td>
+                            <td>Clave Acceso</td>
+                            <td><input name="Clave" type="text" id="Tx_ClaveAccesoProveedor" /></td>
                           </tr>
-                          <tr>
-                            <td>Contacto</td>
-                            <td><input name="contacto" type="text" id="contacto" /></td>
-                          </tr>
+                          
                           <tr>
                               <td align="center"><input name="Limpiar" type="reset" id="Limpiar" value="Limpiar"/></td>
                               <td align="center">
-                                <input name="registrar" type="button" value="Registrar"/>
-                            </td>
+                                  <input name="registrar" type="button" value="Registrar" onclick=""/>                            </td>
                           </tr>
                         </table>
                       </form>
@@ -131,6 +116,14 @@
                         <div align="center">
                           <p>DATOS PROVEEDOR </p>
                         </div>
+                        <table width="389" height="50" border="1" align="center">
+                          <tr>
+                            <td width="102">Razon Social</td>
+                            <td><input name="Co_Proveedor2" type="text" id="Co_Proveedor2" /></td>
+                            <td width="66"><input name="Buscar" type="button" id="Buscar" value="Buscar" /></td>
+                          </tr>
+                        </table>
+                        <p>&nbsp;</p>
                         <table width="1093" border="1" align="center">
                           <tr>
                             <th width="47" scope="col">Codigo</th>
@@ -165,7 +158,44 @@
               </div>
             </div>
             <div id="foot"></div>
-    
+    </div>
+        <div id="pnlPopup" class="progress" style="position: absolute; left: 40%; bottom: 0; display: none;">
+            <div class="container">
+                <div class="header">Cargando, espere un momento por favor...</div>
+                <div class="body">
+                    <img src="../images/activity.gif">
+                </div>
+            </div>
+        </div>
+
+                <!-- para la ventana popup-->
+                <script type="text/javascript">_cf_contextpath="";</script>
+                <script type="text/javascript" src="../window/yahoo-dom-event.js"></script>
+                <script type="text/javascript" src="../window/cfmessage.js"></script>
+                <script type="text/javascript" src="../window/cfajax.js"></script>
+                <script type="text/javascript" src="../window/animation-min.js"></script>
+                <script type="text/javascript" src="../window/ext-yui-adapter.js" ></script>
+                <script type="text/javascript" src="../window/ext-core.js"></script>
+                <script type="text/javascript" src="../window/resizable.js"></script>
+                <script type="text/javascript" src="../window/dragdrop.js"></script>
+                <script type="text/javascript" src="../window/util.js"></script>
+                <script type="text/javascript" src="../window/State-min.js"></script>
+                <script type="text/javascript" src="../window/widget-core.js"></script>
+                <script type="text/javascript" src="../window/dialogs.js"></script>
+                <script type="text/javascript" src="../window/cfwindow.js"></script>
+                <script type="text/javascript">
+                    ColdFusion.Ajax.importTag('CFWINDOW');
+                </script>
+                <script type="text/javascript">
+                    var _cf_window_init_1214415540790=function()
+                    {	var _cf_window=ColdFusion.Window.create('cf_windowbartped','','',{ modal:false, closable:true, divid:'cf_windowbartped', draggable:true, resizable:false, fixedcenter:true, width:650, height:320, shadow:true, callfromtag:true, minwidth:0, minheight:0, initshow:false});
+                        var _cf_window1=ColdFusion.Window.create('cf_windowbccostoped','','',{ modal:false, closable:true, divid:'cf_windowbccostoped', draggable:true, resizable:false, fixedcenter:true, width:550, height:320, shadow:true, callfromtag:true, minwidth:0, minheight:0, initshow:false});
+                        var _cf_window3=ColdFusion.Window.create('cf_windowblistaped','','',{ modal:false, closable:true, divid:'cf_windowblistaped', draggable:true, resizable:false, fixedcenter:true, width:650, height:290, shadow:true, callfromtag:true, minwidth:0, minheight:0, initshow:false});
+                        var _cf_window2=ColdFusion.Window.create('cf_windowblistadir','','',{ modal:false, closable:true, divid:'cf_windowblistadir', draggable:true, resizable:false, fixedcenter:true, width:650, height:290, shadow:true, callfromtag:true, minwidth:0, minheight:0, initshow:false});
+                    };
+                    ColdFusion.Event.registerOnLoad(_cf_window_init_1214415540790);
+                </script>
+
               
                 </body>
                 </html>
