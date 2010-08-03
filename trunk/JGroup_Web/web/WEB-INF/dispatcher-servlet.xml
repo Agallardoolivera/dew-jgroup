@@ -29,7 +29,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                     <prop key="cotizaciones.htm">accesomenuP</prop>
                     <prop key="analisis.htm">accesomenuP</prop>
                     <prop key="retornaMenu.htm">accesomenuP</prop>
-                    <prop key=" ">proveedorController</prop>
+                    <prop key="proveedor.htm">proveedorController</prop>
                     <prop key="ofertas.htm">accesomenuP</prop>
                     <prop key="consultacotizacion.htm">accesomenuP</prop>
                     <prop key="ordenCompra.htm">accesomenuP</prop>
