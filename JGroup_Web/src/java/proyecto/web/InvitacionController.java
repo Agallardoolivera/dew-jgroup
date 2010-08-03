@@ -51,8 +51,8 @@ public class InvitacionController extends MultiActionController{
         vo.setTx_Descripcion(request.getParameter("Tx_Descripcion"));
         vo.setTx_GeneradorUsuario(request.getParameter("Tx_GeneradorUsuario"));
         vo.setUsuario_Co_Usuario(Integer.parseInt(request.getParameter("Usuario_Co_Usuario")));
-        //vo.setNu_OrdenCompra(1);
-        vo.setOrdenCompra_Nu_OrdenCompra(Integer.parseInt(request.getParameter("OrdenCompra_Nu_Ordencompra")));
+        System.out.println("Orden de Compra ="+request.getParameter("OrdenCompra_Nu_OrdenCompra"));
+        vo.setOrdenCompra_Nu_OrdenCompra(Integer.parseInt(request.getParameter("OrdenCompra_Nu_OrdenCompra")));
         try {
             invitacionService.insertar(vo);
         } catch (DAOExcepcion e) {
