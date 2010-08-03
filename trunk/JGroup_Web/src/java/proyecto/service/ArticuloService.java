@@ -12,7 +12,7 @@ public interface ArticuloService {
 
     public Collection<Articulo> listar() throws DAOExcepcion;
 
-    public Articulo obtener(int CoArticulo) throws DAOExcepcion;
+    public Articulo obtener(int codigo) throws DAOExcepcion;
 
     public void eliminar(int codigo) throws DAOExcepcion;
 

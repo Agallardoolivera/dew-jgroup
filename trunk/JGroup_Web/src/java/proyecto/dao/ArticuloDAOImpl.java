@@ -165,7 +165,7 @@ public class ArticuloDAOImpl extends BaseDAO implements ArticuloDAO {
         }
     }
 
-        public Articulo obtener(int CoArticulo) throws DAOExcepcion {
+        public Articulo obtener(int codigo) throws DAOExcepcion {
         Articulo vo = new Articulo();
         Connection con = null;
         PreparedStatement stmt = null;
@@ -174,7 +174,7 @@ public class ArticuloDAOImpl extends BaseDAO implements ArticuloDAO {
             String query = "select Co_Articulo, No_Articulo, UM from articulo where Co_Articulo=?";
             con = dataSource.getConnection();
             stmt = con.prepareStatement(query);
-            stmt.setInt(1, CoArticulo);
+            stmt.setInt(1, codigo);
             rs = stmt.executeQuery();
             if (rs.next()) {
                 vo.setCo_Articulo(rs.getInt("Co_Articulo"));

@@ -16,9 +16,11 @@
     <body>
 
         <p><strong>Mantenimiento de Categor&iacute;as &gt; Editar</strong></p>
-<% String CoArticulo = request.getParameter("CoArticulo");%>
-        <form name="form1" method="post" action="articulo.htm">
+
+<% String CoArticulo = request.getParameter("codigo");%>
+                <form name="form1" method="post" action="articulo.htm">
             <input type="hidden" name="metodo" value="actualizar"/>
+
             <table width="44%" border="0">
 
                 <tr>
@@ -30,7 +32,7 @@
                 <tr>
                     <td width="28%"><div align="right"><span class="Estilo4">Nombre:</span></div></td>
                     <td width="72%"><label>
-                            <input name="nombre" type="text" id="nombre" value="${Categoria.descripcion}">
+                            <input name="nombre" type="text" id="nombre" value="articulo.htm?metodo=buscar&codigo=<%=CoArticulo%>">
                         </label></td>
                 </tr>
                 <tr>
@@ -45,9 +47,10 @@
                             <input name="btnguardar" type="submit" id="btnguardar" value="Guardar">
                         </label>
                         <label>
-                            <input name="btnretornar" type="button" id="btnretornar" value="Regresar" onClick="window.location='categorias_mantener.htm'">
+                            <input name="btnretornar" type="button" id="btnretornar" value="Regresar" onClick="window.location='articulo.htm'">
                         </label></td>
                 </tr>
+                
             </table>
         </form>
 

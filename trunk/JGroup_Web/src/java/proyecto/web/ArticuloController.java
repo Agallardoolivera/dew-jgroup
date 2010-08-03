@@ -70,7 +70,7 @@ public class ArticuloController extends MultiActionController {
     }
 
     public ModelAndView obtener(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("CoArticulo"));
+        int id = Integer.parseInt(request.getParameter("codigo"));
         Articulo vo;
         try {
             vo = articuloService.obtener(id);
