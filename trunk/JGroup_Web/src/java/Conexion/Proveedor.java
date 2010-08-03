@@ -31,7 +31,7 @@ public class Proveedor implements Serializable {
     @Column(name = "Co_Proveedor")
     private Integer coProveedor;
     @Column(name = "Nu_RucProveedor")
-    private Integer nuRucProveedor;
+    private String nuRucProveedor;
     @Column(name = "No_RazonSocialProveedor")
     private String noRazonSocialProveedor;
     @Column(name = "Tx_CorreoProveedor")
@@ -58,11 +58,11 @@ public class Proveedor implements Serializable {
         this.coProveedor = coProveedor;
     }
 
-    public Integer getNuRucProveedor() {
+    public String getNuRucProveedor() {
         return nuRucProveedor;
     }
 
-    public void setNuRucProveedor(Integer nuRucProveedor) {
+    public void setNuRucProveedor(String nuRucProveedor) {
         this.nuRucProveedor = nuRucProveedor;
     }
 

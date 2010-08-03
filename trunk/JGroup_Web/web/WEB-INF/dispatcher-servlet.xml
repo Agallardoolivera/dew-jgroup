@@ -29,7 +29,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                     <prop key="cotizaciones.htm">accesomenuP</prop>
                     <prop key="analisis.htm">accesomenuP</prop>
                     <prop key="retornaMenu.htm">accesomenuP</prop>
-                    <prop key="proveedor.htm">accesomenuP</prop>
+                    <prop key=" ">proveedorController</prop>
                     <prop key="ofertas.htm">accesomenuP</prop>
                     <prop key="consultacotizacion.htm">accesomenuP</prop>
                     <prop key="ordenCompra.htm">accesomenuP</prop>
@@ -79,6 +79,12 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                 <ref bean="paramResolver"/>
             </property>
             <property name="invitacionService" ref="invitacionService"/>
+        </bean>
+         <bean id="proveedorController" class="proyecto.web.ProveedorController">
+            <property name="methodNameResolver">
+                <ref bean="paramResolver"/>
+            </property>
+            <property name="proveedorService" ref="proveedorService"/>
         </bean>
 
         <bean id="paramResolver"

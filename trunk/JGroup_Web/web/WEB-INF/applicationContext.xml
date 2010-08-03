@@ -42,5 +42,11 @@
     <bean id="invitacionService" class="proyecto.service.InvitacionServiceImpl">
         <property name="invitacionDAO" ref="invitacionDAO"/>
     </bean>
+     <bean id="proveedorDAO" class="proyecto.dao.ProveedorDAOImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
 
+    <bean id="proveedorService" class="proyecto.service.ProveedorServiceImpl">
+        <property name="proveedorDAO" ref="proveedorDAO"/>
+    </bean>
 </beans>
