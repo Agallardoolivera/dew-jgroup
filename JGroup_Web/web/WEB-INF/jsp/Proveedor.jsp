@@ -108,7 +108,7 @@
                           <tr>
                               <td align="center"><input name="Limpiar" type="reset" id="Limpiar" value="Limpiar"/></td>
                               <td align="center">
-                                  <input name="registrar" type="button" value="Registrar" onclick=""/>                            </td>
+                                  <input name="registrar" type="button" value="Registrar" onclick="'proveedor.htm?metodo=insertar'"/>                            </td>
                           </tr>
                         </table>
                       </form>

@@ -15,50 +15,48 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
     for the index controller we are using ParameterizableViewController, so we must
     define an explicit mapping for it.
     -->
-    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-        <property name="mappings">
-            <props>
-                <prop key="index.htm">indexController</prop>
-                <prop key="menu.htm">loginController</prop>
-                <prop key="usuarios_mantener.htm">usuariosController</prop>
-                <prop key="usuarios_editar.htm">usuariosController</prop>
-                <prop key="articulo.htm">accesomenuP</prop>
-                <prop key="invitacion.htm">accesomenuP</prop>
-                 <prop key="cotizaciones.htm">accesomenuP</prop>
-                 <prop key="analisis.htm">accesomenuP</prop>
-                 <prop key="retornaMenu.htm">accesomenuP</prop>
-                  <prop key="proveedor.htm">accesomenuP</prop>
-                  <prop key="ofertas.htm">accesomenuP</prop>
-                   <prop key="consultacotizacion.htm">accesomenuP</prop>
-                   <prop key="ordenCompra.htm">accesomenuP</prop>
-                   <prop key="consultacotizacion2.htm">accesomenuP</prop>
-                   <prop key="consultacotizacion3.htm">accesomenuP</prop>
-                   <prop key="listaofertas.htm">accesomenuP</prop>
-                   <prop key="reporteg.htm">accesomenuP</prop>
+        <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+            <property name="mappings">
+                <props>
+                    <prop key="index.htm">indexController</prop>
+                    <prop key="login.htm">loginController</prop>
+                    <prop key="portada.htm">portadaController</prop>
+                    <prop key="usuarios_mantener.htm">usuariosController</prop>
+                    <prop key="usuarios_editar.htm">usuariosController</prop>
+                    <prop key="articulo.htm">articuloController</prop>
+                    <!--prop key="articulo_editar.htm">articuloController</prop>-->
+                    <prop key="invitacion.htm">invitacionController</prop>
+                    <prop key="cotizaciones.htm">accesomenuP</prop>
+                    <prop key="analisis.htm">accesomenuP</prop>
+                    <prop key="retornaMenu.htm">accesomenuP</prop>
+                    <prop key="proveedor.htm">proveedorController</prop>
+                    <prop key="ofertas.htm">accesomenuP</prop>
+                    <prop key="consultacotizacion.htm">accesomenuP</prop>
+                    <prop key="ordenCompra.htm">accesomenuP</prop>
+                    <prop key="consultacotizacion2.htm">accesomenuP</prop>
+                    <prop key="consultacotizacion3.htm">accesomenuP</prop>
+                    <prop key="listaofertas.htm">accesomenuP</prop>
+                    <prop key="reporteg.htm">accesomenuP</prop>
                     <prop key="auditoria.htm">accesomenuP</prop>
-            </props>
-        </property>
-    </bean>
-    
-    <bean id="viewResolver"
+                </props>
+            </property>
+        </bean>   
+        <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"
-          p:suffix=".jsp" />
-    
+          p:suffix=".jsp" />    
     <!--
     The index controller.
     -->
         <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
-
-
         <bean id="loginController" class="proyecto.web.LoginController">
-            <property name="usuarioDAO" ref="usuarioDAO"/>
+            <property name="usuarioService" ref="usuarioService"/>
         </bean>
-
-
-  <bean id="accesomenuP" class="proyecto.web.AccesosMenuP">
+        <bean id="portadaController" class="proyecto.web.PortadaController">
+        </bean>
+        <bean id="accesomenuP" class="proyecto.web.AccesosMenuP">
             <property name="methodNameResolver">
                 <ref bean="paramResolver"/>
             </property>
@@ -66,8 +64,27 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
         <bean id="usuariosController" class="proyecto.web.UsuariosController">
             <property name="methodNameResolver">
                 <ref bean="paramResolver"/>
+            </property>            
+            <property name="usuarioService" ref="usuarioService"/>
+        </bean>
+        <bean id="articuloController" class="proyecto.web.ArticuloController">
+            <property name="methodNameResolver">
+                <ref bean="paramResolver"/>
             </property>
-            <property name="usuarioDAO" ref="usuarioDAO"/>
+            <property name="articuloService" ref="articuloService"/>
+        </bean>
+
+         <bean id="invitacionController" class="proyecto.web.InvitacionController">
+            <property name="methodNameResolver">
+                <ref bean="paramResolver"/>
+            </property>
+            <property name="invitacionService" ref="invitacionService"/>
+        </bean>
+         <bean id="proveedorController" class="proyecto.web.ProveedorController">
+            <property name="methodNameResolver">
+                <ref bean="paramResolver"/>
+            </property>
+            <property name="proveedorService" ref="proveedorService"/>
         </bean>
 
         <bean id="paramResolver"
@@ -77,4 +94,4 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                 <value>metodo</value>
             </property>
         </bean>
-</beans>
+        </beans>

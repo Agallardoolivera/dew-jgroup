@@ -33,7 +33,7 @@ public class ProveedorController extends MultiActionController{
     }
 
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
-        return new ModelAndView("redirect:/proveedor.htm");
+        return new ModelAndView("Proveedor");
     }
 
     public ModelAndView insertar(HttpServletRequest request, HttpServletResponse response)
@@ -43,14 +43,13 @@ public class ProveedorController extends MultiActionController{
         vo.setNu_RucProveedor(request.getParameter("Nu_RucProveedor"));
         vo.setNo_RazonSocialProveedor(request.getParameter("No_RazonSocialProveedor"));
         vo.setTx_CorreoProveedor(request.getParameter("Tx_CorreoProveedor"));
-        //vo.setNu_OrdenCompra(1);
         vo.setTx_ClaveAccesoProveedor(request.getParameter("Tx_ClaveAccesoProveedor"));
         try {
             proveedorService.insertar(vo);
         } catch (DAOExcepcion e) {
             System.err.println(e.toString());
         }
-        return new ModelAndView("redirect:/proveedor.htm");
+        return new ModelAndView("/Proveedor");
     }
 
     public ModelAndView buscar(HttpServletRequest request, HttpServletResponse response) {
@@ -68,11 +67,11 @@ public class ProveedorController extends MultiActionController{
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
         }
-        return new ModelAndView("redirect:/proveedor.htm");
+        return new ModelAndView("Proveedor");
     }
 
     public ModelAndView nuevo(HttpServletRequest request, HttpServletResponse response) {
-        return new ModelAndView("redirect:/proveedor.htm");
+        return new ModelAndView("Proveedor");
     }
 
     public ModelAndView eliminar(HttpServletRequest request, HttpServletResponse response) {
@@ -82,7 +81,7 @@ public class ProveedorController extends MultiActionController{
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
         }
-        return new ModelAndView("redirect:/proveedor.htm");
+        return new ModelAndView("Proveedor");
     }
 
     public ModelAndView obtener(HttpServletRequest request, HttpServletResponse response) {
@@ -94,7 +93,7 @@ public class ProveedorController extends MultiActionController{
         } catch (DAOExcepcion e) {
             System.err.println("Error");
         }
-        return new ModelAndView("redirect:/proveedor.htm");
+        return new ModelAndView("Proveedor");
     }
 
     public ModelAndView actualizar(HttpServletRequest request, HttpServletResponse response) throws ParseException {
