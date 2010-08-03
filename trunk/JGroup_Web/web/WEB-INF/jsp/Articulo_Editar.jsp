@@ -17,7 +17,9 @@
 
         <p><strong>Mantenimiento de Categor&iacute;as &gt; Editar</strong></p>
 
-<% String CoArticulo = request.getParameter("codigo");%>
+<% String CoArticulo = request.getParameter("codigo");
+   String NoArticulo = request.getParameter("nombre");
+%>
                 <form name="form1" method="post" action="articulo.htm">
             <input type="hidden" name="metodo" value="actualizar"/>
 
@@ -32,13 +34,13 @@
                 <tr>
                     <td width="28%"><div align="right"><span class="Estilo4">Nombre:</span></div></td>
                     <td width="72%"><label>
-                            <input name="nombre" type="text" id="nombre" value="articulo.htm?metodo=buscar&codigo=<%=CoArticulo%>">
+                            <input name="nombre" type="text" id="nombre" value="<%out.println(NoArticulo);%>">
                         </label></td>
                 </tr>
                 <tr>
                     <td><div align="right"><span class="Estilo4">Descripci&oacute;n:</span></div></td>
                     <td><label>
-                            <input name="um" id="um" >${Categoria.descripcion}</textarea>
+                            <input name="um" id="um" ></textarea>
                         </label></td>
                 </tr>
                 <tr>
