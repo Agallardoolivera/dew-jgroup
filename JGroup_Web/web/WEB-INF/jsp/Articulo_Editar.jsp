@@ -19,6 +19,7 @@
 
 <% String CoArticulo = request.getParameter("codigo");
    String NoArticulo = request.getParameter("nombre");
+   String UM = request.getParameter("um");
 %>
                 <form name="form1" method="post" action="articulo.htm">
             <input type="hidden" name="metodo" value="actualizar"/>
@@ -28,7 +29,7 @@
                 <tr>
                     <td class="Estilo4"><div align="right">C&oacute;digo</div></td>
                     <td><label>
-                            <input name="Co_Articulo" type="text" id="Co_Articulo" readonly="readonly" value="<%out.println(CoArticulo);%>">
+                            <input name="codigo" type="text" id="codigo" readonly="readonly" value="<%out.println(CoArticulo);%>">
                         </label></td>
                 </tr>
                 <tr>
@@ -40,7 +41,7 @@
                 <tr>
                     <td><div align="right"><span class="Estilo4">Descripci&oacute;n:</span></div></td>
                     <td><label>
-                            <input name="um" id="um" ></textarea>
+                            <input name="um" id="um" value="<%out.println(UM);%>">
                         </label></td>
                 </tr>
                 <tr>
