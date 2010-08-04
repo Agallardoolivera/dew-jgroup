@@ -43,7 +43,7 @@ public class ProveedorController extends MultiActionController{
     }
 
     public ModelAndView buscar(HttpServletRequest request, HttpServletResponse response) {
-       String descripcion = request.getParameter("Tx_Descripcion");
+       String descripcion = request.getParameter("razonsoc");
         try {
             Collection<Proveedor> proveedores = proveedorService.buscarPorNombre(descripcion);
              for(Proveedor inv : proveedores){

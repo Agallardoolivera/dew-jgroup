@@ -40,7 +40,7 @@ public class ProveedorDAOImpl extends BaseDAO implements ProveedorDAO {
             throws DAOExcepcion {
 
 
-        String query = "select Co_Proveedor, Nu_RucProveedor,No_RazonSocialProveedor,Tx_CorreoProveedor,Tx_ClaveAccesoProveedor from Proveedor where Tx_Descripcion like ? ";
+        String query = "select Co_Proveedor, Nu_RucProveedor,No_RazonSocialProveedor,Tx_CorreoProveedor,Tx_ClaveAccesoProveedor from Proveedor where No_RazonSocialProveedor like ? ";
         Collection<Proveedor> lista = new ArrayList<Proveedor>();
         Connection con = null;
         PreparedStatement stmt = null;
