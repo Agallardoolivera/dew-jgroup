@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class Invitacion {
 private int Nu_Invitacion;
-private Date Fe_Invitacion;
+private String Fe_Invitacion;
 private String Tx_GeneradorUsuario;
 private String Tx_Descripcion;
 private int Usuario_Co_Usuario;
@@ -23,11 +23,11 @@ private int OrdenCompra_Nu_OrdenCompra;
 
     }
 
-    public Date getFe_Invitacion() {
+    public String getFe_Invitacion() {
         return Fe_Invitacion;
     }
 
-    public void setFe_Invitacion(Date Fe_Invitacion) {
+    public void setFe_Invitacion(String Fe_Invitacion) {
         this.Fe_Invitacion = Fe_Invitacion;
     }
 
