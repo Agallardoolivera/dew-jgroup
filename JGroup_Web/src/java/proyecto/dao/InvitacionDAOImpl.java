@@ -143,7 +143,7 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
     public Invitacion actualizar(Invitacion vo) throws DAOExcepcion {
 
         String query = "update Invitacion set Nu_Invitacion=?, Fe_Invitacion=?, Tx_GeneradorUsuario=?,Tx_Descripcion=?" 
-                       + ",Usuario_Co_Usuario=?,OrdenCompra_Co_OrdenCompra=? where Nu_Invitacion=?";
+                       + ",Usuario_Co_Usuario=?,OrdenCompra_Nu_OrdenCompra=? where Nu_Invitacion=?";
         Connection con = null;
         PreparedStatement stmt = null;
         try {
@@ -155,6 +155,7 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
             stmt.setString(4, vo.getTx_Descripcion());
             stmt.setInt(5, vo.getUsuario_Co_Usuario());
             stmt.setInt(6, vo.getOrdenCompra_Nu_OrdenCompra());
+            stmt.setInt(7, vo.getNu_Invitacion());
             int i = stmt.executeUpdate();
             if (i != 1) {
                 throw new SQLException("No se pudo actualizar");
@@ -197,7 +198,7 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
-            String query = "select Nu_Invitacion, Fe_Invitacion, Tx_GeneradorUsuario,Tx_Descripcion,Usuario_Co_Usuario,OrdenCompra_Co_OrdenCompra" +
+            String query = "select Nu_Invitacion, Fe_Invitacion, Tx_GeneradorUsuario,Tx_Descripcion,Usuario_Co_Usuario,OrdenCompra_Nu_OrdenCompra" +
                     " from Invitacion where Nu_Invitacion=?";
             con = dataSource.getConnection();
             stmt = con.prepareStatement(query);
@@ -209,7 +210,7 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
                 vo.setTx_GeneradorUsuario(rs.getString("Tx_GeneradorUsuario"));
                 vo.setTx_Descripcion(rs.getString("Tx_Descripcion"));
                 vo.setUsuario_Co_Usuario(rs.getInt("Usuario_Co_Usuario"));
-                vo.setOrdenCompra_Nu_OrdenCompra(rs.getInt("OrdenCompra_Co_OrdenCompra"));
+                vo.setOrdenCompra_Nu_OrdenCompra(rs.getInt("OrdenCompra_Nu_OrdenCompra"));
 
             }
         } catch (SQLException e) {
