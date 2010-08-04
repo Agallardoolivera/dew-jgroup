@@ -19,7 +19,7 @@
                         </label></td>
                 </tr>
                 <tr>
-                    <td width="28%"><div align="right"><span class="Estilo4">Fecha de Invitacion:</span></div></td>
+                    <td width="28%"><div align="right"><span class="Estilo4">Fecha de Invitacion: (YYYY-MM-DD)</span></div></td>
                     <td width="72%"><label>
                             <input name="Fe_Invitacion" type="text" id="Fe_Invitacion">
                         </label></td>
@@ -64,7 +64,7 @@
             <input type="hidden" name="metodo" value="buscar"/>
             Buscar:
             <label>
-                <input name="Tx_Descripcion" type="text" id="Tx_Descripcion">
+                <input name="Descripcion" type="text" id="Descripcion">
             </label>
             <label>
                 <input name="btnenviar" type="submit" id="btnenviar" value="Buscar">
@@ -99,7 +99,8 @@
                 <td><%  out.print(inv.getTx_Descripcion());%></td>
                 <td><%  out.print(inv.getUsuario_Co_Usuario());%></td>
                 <td><%  out.print(inv.getOrdenCompra_Nu_OrdenCompra());%></td>
-                <td><a href="invitacion.htm?metodo=obtener&Nu_Invitacion=<%=inv.getNu_Invitacion()%>">Editar</a> - <a href="invitacion.htm?metodo=eliminar&Nu_Invitacion=<%=inv.getNu_Invitacion()%>">Eliminar</a> </td>
+                <td><a href="invitacion.htm?metodo=obtener&Nu_Invitacion=<%=inv.getNu_Invitacion()%>&Fe_Invitacion=<%=inv.getFe_Invitacion()%>&Gen_Usuario=<%=inv.getTx_GeneradorUsuario()%>&Descripcion=<%=inv.getTx_Descripcion()%>&Usuario=<%=inv.getUsuario_Co_Usuario()%>&Orden_Compra=<%=inv.getOrdenCompra_Nu_OrdenCompra()%>">Editar</a> -
+                    <a href="invitacion.htm?metodo=eliminar&Nu_Invitacion=<%=inv.getNu_Invitacion()%>">Eliminar</a> </td>
             </tr>
             <% }%>
             <% }%>

@@ -61,7 +61,7 @@ public class InvitacionController extends MultiActionController{
     }
 
     public ModelAndView buscar(HttpServletRequest request, HttpServletResponse response) {
-       String descripcion = request.getParameter("Tx_Descripcion");
+       String descripcion = request.getParameter("Descripcion");
         try {
             Collection<Invitacion> invitaciones = invitacionService.buscarPorNombre(descripcion);
              for(Invitacion inv : invitaciones){
@@ -90,7 +90,7 @@ public class InvitacionController extends MultiActionController{
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
         }
-        return new ModelAndView("redirect:/Invitacion.htm");
+        return new ModelAndView("Invitacion");
     }
 
     public ModelAndView obtener(HttpServletRequest request, HttpServletResponse response) {
@@ -102,7 +102,7 @@ public class InvitacionController extends MultiActionController{
         } catch (DAOExcepcion e) {
             System.err.println("Error");
         }
-        return new ModelAndView("/Invitacion");
+        return new ModelAndView("/Invitacion_Editar");
     }
 
     public ModelAndView actualizar(HttpServletRequest request, HttpServletResponse response) throws ParseException {
@@ -112,15 +112,19 @@ public class InvitacionController extends MultiActionController{
         vo.setNu_Invitacion(Nu_Invitacion);
         vo.setFe_Invitacion(request.getParameter("Fe_Invitacion"));
         vo.setTx_GeneradorUsuario(request.getParameter("Tx_GeneradorUsuario"));
-        vo.setTx_Descripcion(request.getParameter("Tx_descripcion"));
-        vo.setOrdenCompra_Nu_OrdenCompra(Integer.parseInt(request.getParameter("OrderCompra_Co_OrdenCompra")));
+        vo.setTx_Descripcion(request.getParameter("Tx_Descripcion"));
+        
         vo.setUsuario_Co_Usuario(Integer.parseInt(request.getParameter("Usuario_Co_Usuario")));
+        System.out.println("Orden Compra ="+request.getParameter("OrdenCompra"));
+        //vo.setOrdenCompra_Nu_OrdenCompra(Integer.parseInt(request.getParameter("OrdenCompra")));
+         vo.setOrdenCompra_Nu_OrdenCompra(1);
+        
         try {
             invitacionService.actualizar(vo);
         } catch (DAOExcepcion e) {
             System.err.println("Error");
         }
-        return new ModelAndView("redirect:/Invitacion.htm");
+        return new ModelAndView("Invitacion");
     }
 
 }
