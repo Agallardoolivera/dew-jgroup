@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyecto.web;
 
 import java.util.Collection;
@@ -13,10 +9,7 @@ import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 import proyecto.excepcion.DAOExcepcion;
 import proyecto.modelo.Proveedor;
 import proyecto.service.ProveedorService;
-/**
- *
- * @author Alfredo
- */
+
 public class ProveedorController extends MultiActionController{
 
     private ProveedorService proveedorService;

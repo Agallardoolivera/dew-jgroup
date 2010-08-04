@@ -105,7 +105,7 @@ public class ProveedorDAOImpl extends BaseDAO implements ProveedorDAO {
 
     @SuppressWarnings("empty-statement")
     public Proveedor insertar(Proveedor vo) throws DAOExcepcion {
-        String query = "INSERT INTO Proveedor(Co_Proveedor,Nu_RucProveedor,No_RazonSocialProveedor,Tx_CorreoProveedor,Tx_ClaveAccesoProveedor)" + " VALUES (?,?,?,?,?,?)";
+        String query = "INSERT INTO Proveedor(Co_Proveedor,Nu_RucProveedor,No_RazonSocialProveedor,Tx_CorreoProveedor,Tx_ClaveAccesoProveedor)" + " VALUES (?,?,?,?,?)";
         Connection con = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -123,17 +123,6 @@ public class ProveedorDAOImpl extends BaseDAO implements ProveedorDAO {
             if (i != 1) {
                 throw new SQLException("No se pudo insertar");
             }
-            // Obtener el ultimo id
-            /*
-            int id = 0;
-            query = "SELECT LAST_INSERT_ID()";
-            stmt = con.prepareStatement(query);
-            rs = stmt.executeQuery();
-            if (rs.next()) {
-            id = rs.getInt(1);
-            }
-            vo.setCo_Invitacion(id);
-             */
         } catch (SQLException e) {
             System.err.println(e.getMessage());
             throw new DAOExcepcion(e.getMessage());

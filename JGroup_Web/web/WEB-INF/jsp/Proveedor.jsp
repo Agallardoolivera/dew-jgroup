@@ -66,22 +66,16 @@
             <div id="basemedio">
                 <div id="contenido" align="center">
                     <div style="height:450px;">
-                      <form action="" method="post" name="buscarProveedor" id="buscarProveedor" >
-                        <div align="center">
-                          <p>&nbsp;</p>
-                        </div>
-                        </form>
-                      
-                        <form id="registroProveedor" name="registroProveedor" method="post" action="proveedor.htm">
+  
+                        <form name="form1" method="post" action="proveedor.htm">
                         <input type="hidden" name="metodo" value="insertar"/>
-
                         <div align="center">
                           <p>INGRESO DE PROVEEDOR </p>
                         </div>
                         <table width="356" border="1" align="center">
                           <tr>
                             <td>Codigo</td>
-                            <td><input name="Co_Proveedor" type="text" id="codigo" /></td>
+                            <td><input name="codigo" type="text" id="codigo" /></td>
                           </tr>
                           <tr>
                             <td width="150">Raz&oacute;n Social </td>
@@ -99,17 +93,11 @@
                           <tr>
                             <td>Clave Acceso</td>
                             <td><input name="Clave" type="text" id="clave" /></td>
-                          </tr>
-                          
+                          </tr>                          
                               <td align="center"><input name="Limpiar" type="reset" id="Limpiar" value="Limpiar"/>
                               </td>
-                              
-                                  <%--               <input name="registrar" type="submit" value="Registrar" />
-                                  --%>
-                             <label>
-                           <input name="btnregistrar" type="button" id="btnretornar" value="Registrar" onClick="window.location='proveedor.htm?metodo=insertar'">
-
-                        </label>
+                              <td align="center"><input name="Limpiar" type="submit" id="registrar" value="Registrar"/>
+                              </td>
                         </td>
                               
                        </table>
