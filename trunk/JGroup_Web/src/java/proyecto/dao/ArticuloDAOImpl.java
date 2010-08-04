@@ -98,17 +98,6 @@ public class ArticuloDAOImpl extends BaseDAO implements ArticuloDAO {
             if (i != 1) {
                 throw new SQLException("No se pudo insertar");
             }
-            // Obtener el ultimo id
-            /*
-            int id = 0;
-            query = "SELECT LAST_INSERT_ID()";
-            stmt = con.prepareStatement(query);
-            rs = stmt.executeQuery();
-            if (rs.next()) {
-                id = rs.getInt(1);
-            }
-            vo.setCo_Articulo(id);
-*/
         } catch (SQLException e) {
             System.err.println(e.getMessage());
             throw new DAOExcepcion(e.getMessage());
@@ -127,9 +116,9 @@ public class ArticuloDAOImpl extends BaseDAO implements ArticuloDAO {
         try {
             con = dataSource.getConnection();
             stmt = con.prepareStatement(query);
-            stmt.setInt(1, vo.getCo_Articulo());
-            stmt.setString(2, vo.getNo_Articulo());
-            stmt.setString(3, vo.getUM());
+            stmt.setString(1, vo.getNo_Articulo());
+            stmt.setString(2, vo.getUM());
+            stmt.setInt(3, vo.getCo_Articulo());
             int i = stmt.executeUpdate();
             if (i != 1) {
                 throw new SQLException("No se pudo actualizar");

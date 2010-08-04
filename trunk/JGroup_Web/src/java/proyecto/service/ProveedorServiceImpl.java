@@ -1,51 +1,44 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package proyecto.service;
+
 import java.util.Collection;
 import proyecto.dao.ProveedorDAO;
 import proyecto.excepcion.DAOExcepcion;
 import proyecto.modelo.Proveedor;
 
-/**
- *
- * @author Alfredo
- */
 public class ProveedorServiceImpl implements ProveedorService {
 
-      private ProveedorDAO ProveedorDAO;
+    private ProveedorDAO proveedorDAO;
 
-    public ProveedorDAO getProveedorDAO() {
-        return ProveedorDAO;
+    public ProveedorDAO getArticuloDAO() {
+        return proveedorDAO;
     }
 
-    public void setProveedorDAO(ProveedorDAO ProveedorDAO) {
-        this.ProveedorDAO = ProveedorDAO;
+    public void setProveedorDAO(ProveedorDAO proveedorDAO) {
+        this.proveedorDAO = proveedorDAO;
     }
 
     public Proveedor insertar(Proveedor vo) throws DAOExcepcion {
-        return ProveedorDAO.insertar(vo);
+        return proveedorDAO.insertar(vo);
     }
 
-    public Collection<Proveedor> buscarPorNombre(String No_Proveedor) throws DAOExcepcion {
-        return ProveedorDAO.buscarPorNombre(No_Proveedor);
+    public Collection<Proveedor> buscarPorNombre(String nombres) throws DAOExcepcion {
+        return proveedorDAO.buscarPorNombre(nombres);
     }
 
     public Collection<Proveedor> listar() throws DAOExcepcion {
-        return ProveedorDAO.listar();
+        return proveedorDAO.listar();
     }
 
-    public Proveedor obtener(int Co_Proveedor) throws DAOExcepcion {
-        return ProveedorDAO.obtener(Co_Proveedor);
+    public Proveedor obtener(int codigo) throws DAOExcepcion {
+        return proveedorDAO.obtener(codigo);
     }
 
-    public void eliminar(int Co_Proveedor) throws DAOExcepcion {
-        ProveedorDAO.eliminar(Co_Proveedor);
+    public void eliminar(int codigo) throws DAOExcepcion {
+        proveedorDAO.eliminar(codigo);
     }
 
     public Proveedor actualizar(Proveedor vo) throws DAOExcepcion {
-        return ProveedorDAO.actualizar(vo);
+        return proveedorDAO.actualizar(vo);
     }
+
 }

@@ -82,11 +82,11 @@ public class ArticuloController extends MultiActionController {
     }
 
     public ModelAndView actualizar(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("Co_Articulo"));
+        int id = Integer.parseInt(request.getParameter("codigo"));
         Articulo vo = new Articulo();
         vo.setCo_Articulo(id);
-        vo.setNo_Articulo(request.getParameter("No_Articulo"));
-        vo.setUM(request.getParameter("UM"));
+        vo.setNo_Articulo(request.getParameter("nombre"));
+        vo.setUM(request.getParameter("um"));
         try {
             articuloService.actualizar(vo);
         } catch (DAOExcepcion e) {
