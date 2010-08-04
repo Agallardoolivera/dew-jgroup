@@ -66,6 +66,7 @@ public class Proveedor implements Serializable {
         this.nuRucProveedor = nuRucProveedor;
     }
 
+
     public String getNoRazonSocialProveedor() {
         return noRazonSocialProveedor;
     }
