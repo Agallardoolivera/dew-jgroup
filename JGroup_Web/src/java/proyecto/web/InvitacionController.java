@@ -41,17 +41,16 @@ public class InvitacionController extends MultiActionController{
 
     public ModelAndView insertar(HttpServletRequest request, HttpServletResponse response)
             throws ParseException {
-        DateFormat formatter;
-        Date date;
-        formatter = new SimpleDateFormat("yyyy-MM-dd");       
+
+
         Invitacion vo = new Invitacion();
         vo.setNu_Invitacion(Integer.parseInt(request.getParameter("Nu_Invitacion")));
-        date = (Date) formatter.parse(request.getParameter("Fe_Invitacion"));
-        vo.setFe_Invitacion(date);
+        System.out.println("Fecha de Invitacion = "+request.getParameter("Fe_Invitacion") );
+        
+        vo.setFe_Invitacion(request.getParameter("Fe_Invitacion"));
         vo.setTx_Descripcion(request.getParameter("Tx_Descripcion"));
         vo.setTx_GeneradorUsuario(request.getParameter("Tx_GeneradorUsuario"));
         vo.setUsuario_Co_Usuario(Integer.parseInt(request.getParameter("Usuario_Co_Usuario")));
-        System.out.println("Orden de Compra ="+request.getParameter("OrdenCompra_Nu_OrdenCompra"));
         vo.setOrdenCompra_Nu_OrdenCompra(Integer.parseInt(request.getParameter("OrdenCompra_Nu_OrdenCompra")));
         try {
             invitacionService.insertar(vo);
@@ -107,16 +106,11 @@ public class InvitacionController extends MultiActionController{
     }
 
     public ModelAndView actualizar(HttpServletRequest request, HttpServletResponse response) throws ParseException {
-        DateFormat formatter;
-        Date date;
-        formatter = new SimpleDateFormat("yyyy-MM-dd");
-
         int Nu_Invitacion = Integer.parseInt(request.getParameter("Nu_Invitacion"));
         Invitacion vo = new Invitacion();
 
         vo.setNu_Invitacion(Nu_Invitacion);
-        date = (Date) formatter.parse(request.getParameter("Fe_Invitacion"));
-        vo.setFe_Invitacion(date);
+        vo.setFe_Invitacion(request.getParameter("Fe_Invitacion"));
         vo.setTx_GeneradorUsuario(request.getParameter("Tx_GeneradorUsuario"));
         vo.setTx_Descripcion(request.getParameter("Tx_descripcion"));
         vo.setOrdenCompra_Nu_OrdenCompra(Integer.parseInt(request.getParameter("OrderCompra_Co_OrdenCompra")));

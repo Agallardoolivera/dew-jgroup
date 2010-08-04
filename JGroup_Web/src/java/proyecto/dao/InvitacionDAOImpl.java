@@ -55,7 +55,7 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
             while (rs.next()) {
                 Invitacion vo = new Invitacion();
                 vo.setNu_Invitacion(rs.getInt("Nu_Invitacion"));
-                vo.setFe_Invitacion(rs.getDate("Fe_Invitacion"));
+                vo.setFe_Invitacion(rs.getString("Fe_Invitacion"));
                 vo.setTx_GeneradorUsuario(rs.getString("Tx_GeneradorUsuario"));
                 vo.setTx_Descripcion(rs.getString("Tx_Descripcion"));
                 vo.setUsuario_Co_Usuario(rs.getInt("Usuario_Co_Usuario"));
@@ -87,7 +87,7 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
             while (rs.next()) {
                 Invitacion vo = new Invitacion();
                 vo.setNu_Invitacion(rs.getInt("Nu_Invitacion"));
-                vo.setFe_Invitacion(rs.getDate("Fe_Invitacion"));
+                vo.setFe_Invitacion(rs.getString("Fe_Invitacion"));
                 vo.setTx_GeneradorUsuario(rs.getString("Tx_GeneradorUsuario"));
                 vo.setTx_Descripcion(rs.getString("Tx_Descripcion"));
                 vo.setUsuario_Co_Usuario(rs.getInt("Usuario_Co_Usuario"));
@@ -111,22 +111,14 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
         Connection con = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        DateFormat formatter;
-        Date date = null;
-        formatter = new SimpleDateFormat("yyyy-MM-dd");
+       
 
-        try{
-        date = (Date) formatter.parse(vo.getFe_Invitacion().toString());
-        } catch (Exception e){
-            System.err.println(e.getMessage());
-            throw new DAOExcepcion(e.getMessage());
-        }
-
+            
         try {
             con = dataSource.getConnection();
             stmt = con.prepareStatement(query);
             stmt.setInt(1, vo.getNu_Invitacion());
-            stmt.setDate(2, date);
+            stmt.setString(2, vo.getFe_Invitacion());
             stmt.setString(3,vo.getTx_Descripcion());
             stmt.setString(4, vo.getTx_GeneradorUsuario());
             stmt.setInt(5, vo.getUsuario_Co_Usuario());
@@ -136,17 +128,7 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
             if (i != 1) {
                 throw new SQLException("No se pudo insertar");
             }
-            // Obtener el ultimo id
-            /*
-            int id = 0;
-            query = "SELECT LAST_INSERT_ID()";
-            stmt = con.prepareStatement(query);
-            rs = stmt.executeQuery();
-            if (rs.next()) {
-            id = rs.getInt(1);
-            }
-            vo.setCo_Invitacion(id);
-             */
+           
         } catch (SQLException e) {
             System.err.println(e.getMessage());
             throw new DAOExcepcion(e.getMessage());
@@ -168,7 +150,7 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
             con = dataSource.getConnection();
             stmt = con.prepareStatement(query);
             stmt.setInt(1, vo.getNu_Invitacion());
-            stmt.setDate(2,(Date) vo.getFe_Invitacion());
+            stmt.setString(2, vo.getFe_Invitacion());
             stmt.setString(3, vo.getTx_GeneradorUsuario());
             stmt.setString(4, vo.getTx_Descripcion());
             stmt.setInt(5, vo.getUsuario_Co_Usuario());
@@ -223,7 +205,7 @@ public class InvitacionDAOImpl extends BaseDAO implements InvitacionDAO {
             rs = stmt.executeQuery();
             if (rs.next()) {
                 vo.setNu_Invitacion(rs.getInt("Nu_Invitacion"));
-                vo.setFe_Invitacion(rs.getDate("Fe_Invitacion"));
+                vo.setFe_Invitacion(rs.getString("Fe_Invitacion"));
                 vo.setTx_GeneradorUsuario(rs.getString("Tx_GeneradorUsuario"));
                 vo.setTx_Descripcion(rs.getString("Tx_Descripcion"));
                 vo.setUsuario_Co_Usuario(rs.getInt("Usuario_Co_Usuario"));
