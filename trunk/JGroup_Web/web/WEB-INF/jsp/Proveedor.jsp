@@ -96,10 +96,11 @@
                           </tr>                          
                               <td align="center"><input name="Limpiar" type="reset" id="Limpiar" value="Limpiar"/>                              </td>
                               <td align="center"><input name="Limpiar" type="submit" id="registrar" value="Registrar"/></td>
-                       </table>
-                      </form>
-                         <form name="form2" method="post" action="proveedor.htm">
-                        <input type="hidden" name="metodo" value="buscar"/>
+                        </table>
+</form>
+                        <%--
+  <form name="form2" method="post" action="proveedor.htm">
+            <input type="hidden" name="metodo" value="buscar"/>
                         <div align="center">
                           <p>DATOS PROVEEDOR </p>
                         </div>
@@ -108,9 +109,10 @@
                             <td>Razon Social</td>
                             <input name="razonsoc" type="text" id="razonsoc" />
                           </tr>
-                            <tr>
-                            <input name="Buscar" type="button" id="Buscar" value="Buscar" onclick="window.location='proveedor.htm?metodo=buscar'"/>
-                          </tr>
+                                         <label>
+                    <input name="btnenviar" type="submit" id="btnenviar" value="Buscar">
+                </label>
+
                         </table>
                         <p>&nbsp;</p>
                         <table width="1093" border="1" align="center">
@@ -195,3 +197,49 @@
               
                 </body>
                 </html>
+                        --%>
+
+  <form name="form2" method="post" action="proveedor.htm">
+            <input type="hidden" name="metodo" value="buscar"/>
+            Articulo:
+            <label>
+                <input name="nombre" type="text" id="nombre">
+            </label>
+            <label>
+                <input name="btnenviar" type="submit" id="btnenviar" value="Buscar">
+            </label>
+
+<table width="100%" border="1">
+            <tr>
+                <th>Codigo</th>
+                <th>RazonSocial</th>
+                <th>RUC</th>
+                <th>Correo</th>
+                <th>Clave</th>
+
+            </tr>
+            <% if(request.getAttribute("proveedores")!=null) {
+                %>
+            <%    java.util.Collection <proyecto.modelo.Proveedor> proveedores= (java.util.Collection)request.getAttribute("proveedores");
+                    for (proyecto.modelo.Proveedor prov: proveedores) {
+            %>
+            <tr>
+                <td><% out.print(prov.getCo_Proveedor());%></td>
+                <td><%  out.print(prov.getNo_RazonSocialProveedor());%></td>
+                <td><%  out.print(prov.getNu_RucProveedor());%></td>
+                <td><%  out.print(prov.getTx_CorreoProveedor());%></td>
+                <td><%  out.print(prov.getTx_ClaveAccesoProveedor());%></td>
+
+                <td><a href="proveedor.htm?metodo=eliminar&codigo=<%=prov.getCo_Proveedor()%>">Eliminar</a> </td>
+            </tr>
+            <% }%>
+           <% }%>
+
+</table>
+
+  </form>
+
+
+
+    </body>
+</html>
