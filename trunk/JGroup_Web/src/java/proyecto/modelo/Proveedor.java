@@ -1,14 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package proyecto.modelo;
 
-/**
- *
- * @author Angela
- */
 public class Proveedor {
 private int Co_Proveedor;
 private String Nu_RucProveedor;
@@ -17,7 +8,6 @@ private String Tx_CorreoProveedor;
 private String Tx_ClaveAccesoProveedor;
 
     public Proveedor(){
-
     }
 
     public int getCo_Proveedor() {
