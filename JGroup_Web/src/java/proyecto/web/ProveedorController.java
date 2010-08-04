@@ -43,7 +43,7 @@ public class ProveedorController extends MultiActionController{
     }
 
     public ModelAndView buscar(HttpServletRequest request, HttpServletResponse response) {
-       String descripcion = request.getParameter("razonsoc");
+       String descripcion = request.getParameter("nombre");
         try {
             Collection<Proveedor> proveedores = proveedorService.buscarPorNombre(descripcion);
              for(Proveedor inv : proveedores){
@@ -65,7 +65,7 @@ public class ProveedorController extends MultiActionController{
     }
 
     public ModelAndView eliminar(HttpServletRequest request, HttpServletResponse response) {
-       String Co_Proveedor = request.getParameter("Co_Proveedor");
+       String Co_Proveedor = request.getParameter("codigo");
         try {
             proveedorService.eliminar(Integer.parseInt(Co_Proveedor));
         } catch (DAOExcepcion ex) {
