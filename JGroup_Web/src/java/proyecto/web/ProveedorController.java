@@ -1,3 +1,7 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package proyecto.web;
 
 import java.util.Collection;
@@ -9,8 +13,11 @@ import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 import proyecto.excepcion.DAOExcepcion;
 import proyecto.modelo.Proveedor;
 import proyecto.service.ProveedorService;
-
-public class ProveedorController extends MultiActionController {
+/**
+ *
+ * @author Alfredo
+ */
+public class ProveedorController extends MultiActionController{
 
     private ProveedorService proveedorService;
 
@@ -25,16 +32,17 @@ public class ProveedorController extends MultiActionController {
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
         return new ModelAndView("Proveedor");
     }
-    /**
-    public ModelAndView insertar(HttpServletRequest request, HttpServletResponse response) {
+
+    public ModelAndView insertar(HttpServletRequest request, HttpServletResponse response)
+            {
         Proveedor vo = new Proveedor();
-        vo.setCo_Proveedor(Integer.parseInt(request.getParameter("Co_Proveedor")));
-        vo.setNu_RucProveedor(request.getParameter("Nu_RucProveedor"));
-        vo.setNo_RazonSocialProveedor(request.getParameter("No_RazonSocialProveedor"));
-        vo.setTx_CorreoProveedor(request.getParameter("Tx_CorreoProveedor"));
-        vo.setTx_ClaveAccesoProveedor(request.getParameter("Tx_ClaveAccesoProveedor"));
+        vo.setCo_Proveedor(Integer.parseInt(request.getParameter("codigo")));
+        vo.setNu_RucProveedor(request.getParameter("ruc"));
+        vo.setNo_RazonSocialProveedor(request.getParameter("rznsoc"));
+        vo.setTx_CorreoProveedor(request.getParameter("correo"));
+        vo.setTx_ClaveAccesoProveedor(request.getParameter("clave"));
         try {
-            articuloService.insertar(vo);
+            proveedorService.insertar(vo);
         } catch (DAOExcepcion e) {
             System.err.println(e.toString());
         }
@@ -42,15 +50,17 @@ public class ProveedorController extends MultiActionController {
     }
 
     public ModelAndView buscar(HttpServletRequest request, HttpServletResponse response) {
-        String nombres = request.getParameter("nombre");
+       String descripcion = request.getParameter("Tx_Descripcion");
         try {
-            Collection<Proveedor> articulos = proveedorService.buscarPorNombre(nombres);
-             for(Proveedor art : articulos){
-		System.out.println(art.getCo_Articulo());
-                System.out.println(art.getNo_Articulo());
-                System.out.println(art.getUM());
+            Collection<Proveedor> proveedores = proveedorService.buscarPorNombre(descripcion);
+             for(Proveedor inv : proveedores){
+		System.out.println(inv.getCo_Proveedor());
+                System.out.println(inv.getNu_RucProveedor());
+                System.out.println(inv.getNo_RazonSocialProveedor());
+                System.out.println(inv.getTx_CorreoProveedor());
+                System.out.println(inv.getTx_ClaveAccesoProveedor());
               }
-            request.setAttribute("articulos", articulos);
+            request.setAttribute("proveedores", proveedores);
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
         }
@@ -62,9 +72,9 @@ public class ProveedorController extends MultiActionController {
     }
 
     public ModelAndView eliminar(HttpServletRequest request, HttpServletResponse response) {
-        String codigo = request.getParameter("codigo");
+       String Co_Proveedor = request.getParameter("Co_Proveedor");
         try {
-            proveedorService.eliminar(Integer.parseInt(codigo));
+            proveedorService.eliminar(Integer.parseInt(Co_Proveedor));
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
         }
@@ -72,31 +82,33 @@ public class ProveedorController extends MultiActionController {
     }
 
     public ModelAndView obtener(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("codigo"));
-        Articulo vo;
+       int id = Integer.parseInt(request.getParameter("Co_Proveedor"));
+        Proveedor vo;
         try {
             vo = proveedorService.obtener(id);
-            request.setAttribute("Articulo", vo);
+            request.setAttribute("proveedor", vo);
         } catch (DAOExcepcion e) {
             System.err.println("Error");
         }
         return new ModelAndView("Proveedor");
     }
 
-    public ModelAndView actualizar(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("Co_Articulo"));
+    public ModelAndView actualizar(HttpServletRequest request, HttpServletResponse response)  {
+
+        int Co_Proveedor = Integer.parseInt(request.getParameter("Co_Proveedor"));
         Proveedor vo = new Proveedor();
-        vo.setCo_Articulo(id);
-        vo.setNo_Articulo(request.getParameter("No_Articulo"));
-        vo.setUM(request.getParameter("UM"));
+
+        vo.setCo_Proveedor(Co_Proveedor);
+        vo.setNu_RucProveedor(request.getParameter("Nu_RucProveedor"));
+        vo.setNo_RazonSocialProveedor(request.getParameter("No_RazonSocialProveedor"));
+        vo.setTx_CorreoProveedor(request.getParameter("Tx_CorreoProveedor"));
+        vo.setTx_ClaveAccesoProveedor(request.getParameter("Tx_ClaveAccesoProveedor"));
         try {
             proveedorService.actualizar(vo);
         } catch (DAOExcepcion e) {
             System.err.println("Error");
         }
-        return new ModelAndView("redirect:/articulo.htm");
+        return new ModelAndView("redirect:/proveedor.htm");
     }
-
- */
 
 }

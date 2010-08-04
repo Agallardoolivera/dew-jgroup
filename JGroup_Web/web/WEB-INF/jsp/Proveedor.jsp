@@ -1,6 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
      <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+     <jsp:useBean id="proveedor" scope="page" class="proyecto.modelo.Proveedor" />
+
     <head>
 
       
@@ -11,11 +13,6 @@
         <link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
         <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/efc.css"/>
         <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/cf.css"/>
-        <script language="JavaScript" src="../js/jquery-1.2.3.js"></script>
-        <script language="JavaScript" src="../js/jquery.maskedinput-1.1.2.pack.js"  type="text/javascript"></script>
-        <script language="JavaScript" src="../js/jquery.numeric.pack.js"></script>
-        <script language="JavaScript" src="../js/jquery.floatnumber.js"></script>
-        <script language="JavaScript" src="../js/jquery.tablehover.js"></script>
         <style type="text/css">
         <!--
         .Estilo1 {font-size: 24px}
@@ -40,9 +37,6 @@
       
 
 
-        <input type="hidden" name="idusuario" id="idusuario" value="" />
-        <input type="hidden" name="idempresa" id="idempresa" value="" />
-        <input type="hidden" name="idarea" id="idarea" value="" />
         <div id="basecont">
             <div id="header">
                 <table border="0" cellpadding="2" cellspacing="2" width="100%">
@@ -72,45 +66,53 @@
             <div id="basemedio">
                 <div id="contenido" align="center">
                     <div style="height:450px;">
-                      <form action="" method="post" name="buscarProveedor" id="buscarProveedor">
+                      <form action="" method="post" name="buscarProveedor" id="buscarProveedor" >
                         <div align="center">
                           <p>&nbsp;</p>
                         </div>
                         </form>
                       
-                        <form id="registroProveedor" name="registroProveedor" method="post" action="">
+                        <form id="registroProveedor" name="registroProveedor" method="post" action="proveedor.htm">
+                        <input type="hidden" name="metodo" value="insertar"/>
+
                         <div align="center">
                           <p>INGRESO DE PROVEEDOR </p>
                         </div>
                         <table width="356" border="1" align="center">
                           <tr>
                             <td>Codigo</td>
-                            <td><input name="Co_Proveedor" type="text" id="Co_Proveedor" /></td>
+                            <td><input name="Co_Proveedor" type="text" id="codigo" /></td>
                           </tr>
                           <tr>
                             <td width="150">Raz&oacute;n Social </td>
-                            <td width="190"><input name="razonsocial" type="text" id="No_RazonSocialProveedor" /></td>
+                            <td width="190"><input name="razonsocial" type="text" id="rznsoc" /></td>
                           </tr>
                           <tr>
                             <td>RUC</td>
-                            <td><input name="ruc" type="text" id="Nu_RucProveedor" /></td>
+                            <td><input name="ruc" type="text" id="ruc" /></td>
                           </tr>
                           
                           <tr>
                             <td>Correo</td>
-                            <td><input name="correo" type="text" id="Tx_CorreoProveedor" /></td>
+                            <td><input name="correo" type="text" id="correo" /></td>
                           </tr>
                           <tr>
                             <td>Clave Acceso</td>
-                            <td><input name="Clave" type="text" id="Tx_ClaveAccesoProveedor" /></td>
+                            <td><input name="Clave" type="text" id="clave" /></td>
                           </tr>
                           
-                          <tr>
-                              <td align="center"><input name="Limpiar" type="reset" id="Limpiar" value="Limpiar"/></td>
-                              <td align="center">
-                                  <input name="registrar" type="button" value="Registrar" onclick="'proveedor.htm?metodo=insertar'"/>                            </td>
-                          </tr>
-                        </table>
+                              <td align="center"><input name="Limpiar" type="reset" id="Limpiar" value="Limpiar"/>
+                              </td>
+                              
+                                  <%--               <input name="registrar" type="submit" value="Registrar" />
+                                  --%>
+                             <label>
+                           <input name="btnregistrar" type="button" id="btnretornar" value="Registrar" onClick="window.location='proveedor.htm?metodo=insertar'">
+
+                        </label>
+                        </td>
+                              
+                       </table>
                       </form>
                        <form id="DatosProveedor" name="DatosProveedor" method="get" action="">
                         <div align="center">
