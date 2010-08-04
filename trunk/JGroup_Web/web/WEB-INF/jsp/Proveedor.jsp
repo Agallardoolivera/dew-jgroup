@@ -78,8 +78,8 @@
                             <td><input name="codigo" type="text" id="codigo" /></td>
                           </tr>
                           <tr>
-                            <td width="150">Raz&oacute;n Social </td>
-                            <td width="190"><input name="razonsocial" type="text" id="rznsoc" /></td>
+                            <td>Raz&oacute;n Social </td>
+                            <td><input name="rznsoc" type="text" id="rznsoc" /></td>
                           </tr>
                           <tr>
                             <td>RUC</td>
@@ -92,13 +92,10 @@
                           </tr>
                           <tr>
                             <td>Clave Acceso</td>
-                            <td><input name="Clave" type="text" id="clave" /></td>
+                            <td><input name="clave" type="text" id="clave" /></td>
                           </tr>                          
-                              <td align="center"><input name="Limpiar" type="reset" id="Limpiar" value="Limpiar"/>
-                              </td>
-                              <td align="center"><input name="Limpiar" type="submit" id="registrar" value="Registrar"/>
-                              </td>
-                        </td>
+                              <td align="center"><input name="Limpiar" type="reset" id="Limpiar" value="Limpiar"/>                              </td>
+                              <td align="center"><input name="Limpiar" type="submit" id="registrar" value="Registrar"/></td>
                               
                        </table>
                       </form>
