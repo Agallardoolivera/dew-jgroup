@@ -96,18 +96,20 @@
                           </tr>                          
                               <td align="center"><input name="Limpiar" type="reset" id="Limpiar" value="Limpiar"/>                              </td>
                               <td align="center"><input name="Limpiar" type="submit" id="registrar" value="Registrar"/></td>
-                              
                        </table>
                       </form>
-                       <form id="DatosProveedor" name="DatosProveedor" method="get" action="">
+                         <form name="form2" method="post" action="proveedor.htm">
+                        <input type="hidden" name="metodo" value="buscar"/>
                         <div align="center">
                           <p>DATOS PROVEEDOR </p>
                         </div>
                         <table width="389" height="50" border="1" align="center">
                           <tr>
-                            <td width="102">Razon Social</td>
-                            <td><input name="Co_Proveedor2" type="text" id="Co_Proveedor2" /></td>
-                            <td width="66"><input name="Buscar" type="button" id="Buscar" value="Buscar" /></td>
+                            <td>Razon Social</td>
+                            <input name="razonsoc" type="text" id="razonsoc" />
+                          </tr>
+                            <tr>
+                            <input name="Buscar" type="button" id="Buscar" value="Buscar" onclick="window.location='proveedor.htm?metodo=buscar'"/>
                           </tr>
                         </table>
                         <p>&nbsp;</p>
@@ -116,20 +118,27 @@
                             <th width="47" scope="col">Codigo</th>
                             <th width="212" scope="col">Razon Social </th>
                             <th width="80" scope="col">RUC</th>
-                            <th width="233" scope="col">Direcci&oacute;n</th>
                             <th width="201" scope="col">Correo</th>
-                            <th width="59" scope="col">Tel&eacute;fono</th>
-                            <th width="83" scope="col">Contacto</th>
+                            <th width="83" scope="col">Clave</th>
                           </tr>
-                          <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
+                      <% if(request.getAttribute("proveedores")!=null) {
+                %>
+            <%    java.util.Collection <proyecto.modelo.Proveedor> proveedores= (java.util.Collection)request.getAttribute("proveedores");
+                    for (proyecto.modelo.Proveedor prov : proveedores) {
+            %>
+            <tr>
+                <td><% out.print(prov.getCo_Proveedor());%></td>
+                <td><%  out.print(prov.getNo_RazonSocialProveedor());%></td>
+                <td><%  out.print(prov.getNu_RucProveedor());%></td>
+                <td><%  out.print(prov.getTx_CorreoProveedor());%></td>
+                <td><%  out.print(prov.getTx_ClaveAccesoProveedor());%></td>
+
+                <td><a href="proveedor.htm?metodo=obtener&codigo=<%=prov.getCo_Proveedor()%>&rznsoc=<%=prov.getNo_RazonSocialProveedor()%>&ruc=<%=prov.getNu_RucProveedor()%>&correo=<%=prov.getTx_CorreoProveedor()%>&clave=<%=prov.getTx_ClaveAccesoProveedor()%>">Editar</a> - <a href="proveedor.htm?metodo=eliminar&codigo=<%=prov.getCo_Proveedor()%>">Eliminar</a> </td>
+            </tr>
+            <% }%>
+           <% }%>
+
+
                         </table>
                            <table width="245" align="center" border="1">
                             <tr>
