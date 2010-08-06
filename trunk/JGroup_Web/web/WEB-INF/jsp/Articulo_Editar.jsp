@@ -39,10 +39,21 @@
                         </label></td>
                 </tr>
                 <tr>
-                    <td><div align="right"><span class="Estilo4">Descripci&oacute;n:</span></div></td>
+                    <td><div align="right"><span class="Estilo4">Unidad de Medida</span></div></td>
                     <td><label>
-                            <input name="um" id="um" value="<%out.println(UM);%>">
-                        </label></td>
+                            <select name="um" size="1" id="um">
+                                <option value="<%out.println(UM);%>"><%out.println(UM);%></option>
+                                <option value="PZA">PZA</option>
+                                <option value="KGR">KGR</option>
+                                <option value="LTR">LTR</option>
+                                <option value="MTR">MTR</option>
+                                <option value="DOC">DOC</option>
+                                <option value="JGO">JGO</option>
+                                <option value="CJA">CJA</option>
+                                <option value="MLL">MLL</option>
+                                <option value="CTO">CTO</option>
+                            </select>
+                        </label></td></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
