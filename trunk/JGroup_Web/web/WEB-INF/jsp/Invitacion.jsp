@@ -78,13 +78,13 @@
         </form>
         <table width="100%" border="1">
             <tr>
-                <th>Id</th>
                 <th>Numero de Invitacion</th>
                 <th>Fecha de Invitacion</th>
                 <th>Generador de Usuario</th>
                 <th>Descripci&oacute;n</th>
                 <th>Usuario</th>
                 <th>Numero de Orden</th>
+                <th>Acciones</th>
             </tr>
 
             <% if (request.getAttribute("invitaciones") != null) {
@@ -93,14 +93,14 @@
                  for (proyecto.modelo.Invitacion inv : invitaciones) {
             %>
             <tr>
-                <td><% out.print(inv.getNu_Invitacion());%></td>
-                <td><%  out.print(inv.getFe_Invitacion());%></td>
-                <td><%  out.print(inv.getTx_GeneradorUsuario());%></td>
-                <td><%  out.print(inv.getTx_Descripcion());%></td>
-                <td><%  out.print(inv.getUsuario_Co_Usuario());%></td>
-                <td><%  out.print(inv.getOrdenCompra_Nu_OrdenCompra());%></td>
-                <td><a href="invitacion.htm?metodo=obtener&Nu_Invitacion=<%=inv.getNu_Invitacion()%>&Fe_Invitacion=<%=inv.getFe_Invitacion()%>&Gen_Usuario=<%=inv.getTx_GeneradorUsuario()%>&Descripcion=<%=inv.getTx_Descripcion()%>&Usuario=<%=inv.getUsuario_Co_Usuario()%>&Orden_Compra=<%=inv.getOrdenCompra_Nu_OrdenCompra()%>">Editar</a> -
-                    <a href="invitacion.htm?metodo=eliminar&Nu_Invitacion=<%=inv.getNu_Invitacion()%>">Eliminar</a> </td>
+                <th><% out.print(inv.getNu_Invitacion());%></th>
+                <th><%  out.print(inv.getFe_Invitacion());%></th>
+                <th><%  out.print(inv.getTx_GeneradorUsuario());%></th>
+                <th><%  out.print(inv.getTx_Descripcion());%></th>
+                <th><%  out.print(inv.getUsuario_Co_Usuario());%></th>
+                <th><%  out.print(inv.getOrdenCompra_Nu_OrdenCompra());%></th>
+                <th><a href="invitacion.htm?metodo=obtener&Nu_Invitacion=<%=inv.getNu_Invitacion()%>&Fe_Invitacion=<%=inv.getFe_Invitacion()%>&Gen_Usuario=<%=inv.getTx_GeneradorUsuario()%>&Descripcion=<%=inv.getTx_Descripcion()%>&Usuario=<%=inv.getUsuario_Co_Usuario()%>&Orden_Compra=<%=inv.getOrdenCompra_Nu_OrdenCompra()%>">Editar</a> -
+                    <a href="invitacion.htm?metodo=eliminar&Nu_Invitacion=<%=inv.getNu_Invitacion()%>">Eliminar</a> </th>
             </tr>
             <% }%>
             <% }%>

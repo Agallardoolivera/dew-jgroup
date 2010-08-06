@@ -51,7 +51,7 @@
                     <tr>
                     <td class="Estilo4"><div align="right">Generador Usuario:</div></td>
                     <td><label>
-                            <input name="Tx_GeneradorUsuario" type="text" id="Tx_GeneradorUsuario" readonly="readonly" value="<%out.println(Gen_Usuario);%>">
+                            <input name="Tx_GeneradorUsuario" type="text" id="Tx_GeneradorUsuario"  value="<%out.println(Gen_Usuario);%>">
                         </label></td>
                 </tr>
                 <tr>
@@ -63,7 +63,7 @@
                 <tr>
                     <td><div align="right"><span class="Estilo4">Numero de Orden:</span></div></td>
                      <td width="72%"><label>
-                            <input name="OrdenCompra" type="text" id="OrdenCompra" value="<%out.println(Orden_Compra);%>">
+                            <input name="OrdenCompra_Nu_OrdenCompra" type="text" id="OrdenCompra_Nu_OrdenCompra" value="<%out.println(Orden_Compra);%>">
                         </label></td>
                 </tr>
                 <tr>
