@@ -24,7 +24,7 @@ public class ArticuloDAOImpl extends BaseDAO implements ArticuloDAO {
 
     public Collection<Articulo> buscarPorNombre(String nombres)
             throws DAOExcepcion {
-        String query = "select Co_Articulo, No_Articulo, UM from articulo where No_Articulo like ?";
+        String query = "select Co_Articulo, No_Articulo, UM from articulo where No_Articulo like ? and estado='A'";
         Collection<Articulo> lista = new ArrayList<Articulo>();
         Connection con = null;
         PreparedStatement stmt = null;
@@ -60,7 +60,7 @@ public class ArticuloDAOImpl extends BaseDAO implements ArticuloDAO {
         ResultSet rs = null;
         try {
             con = dataSource.getConnection();
-            String query = "SELECT Co_Articulo,No_Articulo,UM from articulo";
+            String query = "SELECT Co_Articulo,No_Articulo,UM from articulo where estado='A'";
             stmt = con.prepareStatement(query);
             rs = stmt.executeQuery();
             while (rs.next()) {
@@ -134,7 +134,9 @@ public class ArticuloDAOImpl extends BaseDAO implements ArticuloDAO {
     }
 
     public void eliminar(int codigo) throws DAOExcepcion {
-        String query = "DELETE FROM articulo WHERE Co_Articulo=?";
+//        String query = "DELETE FROM articulo WHERE Co_Articulo=?";
+        String query = "update articulo set estado='I' WHERE Co_Articulo=?";
+
         Connection con = null;
         PreparedStatement stmt = null;
         try {
@@ -143,7 +145,7 @@ public class ArticuloDAOImpl extends BaseDAO implements ArticuloDAO {
             stmt.setInt(1, codigo);
             int i = stmt.executeUpdate();
             if (i != 1) {
-                throw new SQLException("No se pudo eliminar");
+                throw new SQLException("No se pudo dar de baja");
             }
         } catch (SQLException e) {
             System.err.println(e.getMessage());
