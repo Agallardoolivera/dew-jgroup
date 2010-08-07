@@ -1,15 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:useBean id="articulo" scope="page" class="proyecto.modelo.Articulo" />
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    
     <body>
         <p><strong>Mantenimiento de Articulos</strong></p>
         <form name="form1" method="post" action="articulo.htm">
@@ -55,7 +54,7 @@
             </table>
         </form>
 
-  <form name="form2" method="post" action="articulo.htm">
+        <form name="form2" method="post" action="articulo.htm">
             <input type="hidden" name="metodo" value="buscar"/>
             Articulo:
             <label>
@@ -81,16 +80,12 @@
                 <td><% out.print(art.getCo_Articulo());%></td>
                 <td><%  out.print(art.getNo_Articulo());%></td>
                 <td><%  out.print(art.getUM());%></td>
-                <td><a href="articulo.htm?metodo=obtener&codigo=<%=art.getCo_Articulo()%>&nombre=<%=art.getNo_Articulo()%>&um=<%=art.getUM()%>">Editar</a> - <a href="articulo.htm?metodo=eliminar&codigo=<%=art.getCo_Articulo()%>">Eliminar</a> </td>
+                <td><a href="articulo.htm?metodo=obtener&codigo=<%=art.getCo_Articulo()%>&nombre=<%=art.getNo_Articulo()%>&um=<%=art.getUM()%>">Editar</a> - <a href="articulo.htm?metodo=eliminar&codigo=<%=art.getCo_Articulo()%>">Bloquear</a> </td>
             </tr>
             <% }%>
            <% }%>
 
-</table>
-      
-  </form>
-      
-          
-
+            </table>
+       </form>
     </body>
 </html>

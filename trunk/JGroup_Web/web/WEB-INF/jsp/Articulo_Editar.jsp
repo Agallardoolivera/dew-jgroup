@@ -15,7 +15,7 @@
     </head>
     <body>
 
-        <p><strong>Mantenimiento de Categor&iacute;as &gt; Editar</strong></p>
+        <p><strong>Mantenimiento de Articulos - Editar</strong></p>
 
 <% String CoArticulo = request.getParameter("codigo");
    String NoArticulo = request.getParameter("nombre");

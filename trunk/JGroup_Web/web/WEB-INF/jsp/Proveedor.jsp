@@ -3,9 +3,7 @@
      <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
      <jsp:useBean id="proveedor" scope="page" class="proyecto.modelo.Proveedor" />
 
-    <head>
-
-      
+    <head>     
 
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <title>::- Sistema de Pedidos On Line -::</title>
@@ -34,8 +32,6 @@
         <script language="JavaScript" src="../js/funcion_cont.js"></script>
     </head>
     <body topmargin="0" leftmargin="0" rightmargin="0">
-      
-
 
         <div id="basecont">
             <div id="header">
@@ -44,10 +40,10 @@
                         <td width="1%"></td>
                         <td width="12%" align="left" id="logoefc">
                             <script type="text/javascript">
-                                // <![CDATA[
+                                
                                 var so = new SWFObject("logoefc_chico.swf", "EFC", "180", "95", "9", "#999999");
                                 so.write("logoefc");
-                                // ]]>
+                                
                             </script>
                         </td>
                         <td width="77%" align="left">
@@ -98,106 +94,6 @@
                               <td align="center"><input name="Limpiar" type="submit" id="registrar" value="Registrar"/></td>
                         </table>
 </form>
-                        <%--
-  <form name="form2" method="post" action="proveedor.htm">
-            <input type="hidden" name="metodo" value="buscar"/>
-                        <div align="center">
-                          <p>DATOS PROVEEDOR </p>
-                        </div>
-                        <table width="389" height="50" border="1" align="center">
-                          <tr>
-                            <td>Razon Social</td>
-                            <input name="razonsoc" type="text" id="razonsoc" />
-                          </tr>
-                                         <label>
-                    <input name="btnenviar" type="submit" id="btnenviar" value="Buscar">
-                </label>
-
-                        </table>
-                        <p>&nbsp;</p>
-                        <table width="1093" border="1" align="center">
-                          <tr>
-                            <th width="47" scope="col">Codigo</th>
-                            <th width="212" scope="col">Razon Social </th>
-                            <th width="80" scope="col">RUC</th>
-                            <th width="201" scope="col">Correo</th>
-                            <th width="83" scope="col">Clave</th>
-                          </tr>
-                      <% if(request.getAttribute("proveedores")!=null) {
-                %>
-            <%    java.util.Collection <proyecto.modelo.Proveedor> proveedores= (java.util.Collection)request.getAttribute("proveedores");
-                    for (proyecto.modelo.Proveedor prov : proveedores) {
-            %>
-            <tr>
-                <td><% out.print(prov.getCo_Proveedor());%></td>
-                <td><%  out.print(prov.getNo_RazonSocialProveedor());%></td>
-                <td><%  out.print(prov.getNu_RucProveedor());%></td>
-                <td><%  out.print(prov.getTx_CorreoProveedor());%></td>
-                <td><%  out.print(prov.getTx_ClaveAccesoProveedor());%></td>
-
-                <td><a href="proveedor.htm?metodo=obtener&codigo=<%=prov.getCo_Proveedor()%>&rznsoc=<%=prov.getNo_RazonSocialProveedor()%>&ruc=<%=prov.getNu_RucProveedor()%>&correo=<%=prov.getTx_CorreoProveedor()%>&clave=<%=prov.getTx_ClaveAccesoProveedor()%>">Editar</a> - <a href="proveedor.htm?metodo=eliminar&codigo=<%=prov.getCo_Proveedor()%>">Eliminar</a> </td>
-            </tr>
-            <% }%>
-           <% }%>
-
-
-                        </table>
-                           <table width="245" align="center" border="1">
-                            <tr>
-                              
-                              <td width="65"><input name="Modificar" type="submit" id="Modificar" value="Modificar" />
-                              </td>
-                              <td width="65"><input name="Eliminar" type="submit" id="Eliminar" value="Eliminar" /></td>
-                              <td width="65"><input name="Aceptar4" type="submit" id="Aceptar4" value="Aceptar" /></td>
-                            </tr>
-                          </table>
-                      </form>
-                    </div>
-              </div>
-            </div>
-            <div id="foot"></div>
-    </div>
-        <div id="pnlPopup" class="progress" style="position: absolute; left: 40%; bottom: 0; display: none;">
-            <div class="container">
-                <div class="header">Cargando, espere un momento por favor...</div>
-                <div class="body">
-                    <img src="../images/activity.gif">
-                </div>
-            </div>
-        </div>
-
-                <!-- para la ventana popup-->
-                <script type="text/javascript">_cf_contextpath="";</script>
-                <script type="text/javascript" src="../window/yahoo-dom-event.js"></script>
-                <script type="text/javascript" src="../window/cfmessage.js"></script>
-                <script type="text/javascript" src="../window/cfajax.js"></script>
-                <script type="text/javascript" src="../window/animation-min.js"></script>
-                <script type="text/javascript" src="../window/ext-yui-adapter.js" ></script>
-                <script type="text/javascript" src="../window/ext-core.js"></script>
-                <script type="text/javascript" src="../window/resizable.js"></script>
-                <script type="text/javascript" src="../window/dragdrop.js"></script>
-                <script type="text/javascript" src="../window/util.js"></script>
-                <script type="text/javascript" src="../window/State-min.js"></script>
-                <script type="text/javascript" src="../window/widget-core.js"></script>
-                <script type="text/javascript" src="../window/dialogs.js"></script>
-                <script type="text/javascript" src="../window/cfwindow.js"></script>
-                <script type="text/javascript">
-                    ColdFusion.Ajax.importTag('CFWINDOW');
-                </script>
-                <script type="text/javascript">
-                    var _cf_window_init_1214415540790=function()
-                    {	var _cf_window=ColdFusion.Window.create('cf_windowbartped','','',{ modal:false, closable:true, divid:'cf_windowbartped', draggable:true, resizable:false, fixedcenter:true, width:650, height:320, shadow:true, callfromtag:true, minwidth:0, minheight:0, initshow:false});
-                        var _cf_window1=ColdFusion.Window.create('cf_windowbccostoped','','',{ modal:false, closable:true, divid:'cf_windowbccostoped', draggable:true, resizable:false, fixedcenter:true, width:550, height:320, shadow:true, callfromtag:true, minwidth:0, minheight:0, initshow:false});
-                        var _cf_window3=ColdFusion.Window.create('cf_windowblistaped','','',{ modal:false, closable:true, divid:'cf_windowblistaped', draggable:true, resizable:false, fixedcenter:true, width:650, height:290, shadow:true, callfromtag:true, minwidth:0, minheight:0, initshow:false});
-                        var _cf_window2=ColdFusion.Window.create('cf_windowblistadir','','',{ modal:false, closable:true, divid:'cf_windowblistadir', draggable:true, resizable:false, fixedcenter:true, width:650, height:290, shadow:true, callfromtag:true, minwidth:0, minheight:0, initshow:false});
-                    };
-                    ColdFusion.Event.registerOnLoad(_cf_window_init_1214415540790);
-                </script>
-
-              
-                </body>
-                </html>
-                        --%>
 
   <form name="form2" method="post" action="proveedor.htm">
             <input type="hidden" name="metodo" value="buscar"/>
@@ -230,16 +126,12 @@
                 <td><%  out.print(prov.getTx_CorreoProveedor());%></td>
                 <td><%  out.print(prov.getTx_ClaveAccesoProveedor());%></td>
 
-                <td><a href="proveedor.htm?metodo=eliminar&codigo=<%=prov.getCo_Proveedor()%>">Eliminar</a> </td>
+                <td><a href="proveedor.htm?metodo=obtener&codigo=<%=prov.getCo_Proveedor()%>&social=<%=prov.getNo_RazonSocialProveedor()%>&ruc=<%=prov.getNu_RucProveedor()%>&correo=<%=prov.getTx_CorreoProveedor()%>&clave=<%=prov.getTx_ClaveAccesoProveedor()%>">Editar</a> - <a href="proveedor.htm?metodo=eliminar&codigo=<%=prov.getCo_Proveedor()%>">Eliminar</a> </td>
             </tr>
             <% }%>
            <% }%>
 
-</table>
-
-  </form>
-
-
-
+         </table>
+       </form>
     </body>
 </html>
