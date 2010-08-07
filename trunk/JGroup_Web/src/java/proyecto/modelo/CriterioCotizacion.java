@@ -13,6 +13,16 @@ public class CriterioCotizacion {
 private int Nu_ValorCotizacion;
 private int Co_Criterio;
 private int Co_Cotizacion;
+private double Qt_Puntaje_Especial;
+
+    public double getQt_Puntaje_Especial() {
+        return Qt_Puntaje_Especial;
+    }
+
+    public void setQt_Puntaje_Especial(double Qt_Puntaje_Especial) {
+        this.Qt_Puntaje_Especial = Qt_Puntaje_Especial;
+    }
+
     public CriterioCotizacion(){
 
     }
