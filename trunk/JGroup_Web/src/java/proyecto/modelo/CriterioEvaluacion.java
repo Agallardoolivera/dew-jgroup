@@ -27,12 +27,12 @@ private String Tipo_Dato;
         this.Co_Criterio = Co_Criterio;
     }
 
-    public Double getNu_Puntaje() {
+    public Double getQt_Puntaje_Base() {
         return Qt_Puntaje_Base;
     }
 
-    public void setNu_Puntaje(Double Nu_Puntaje) {
-        this.Qt_Puntaje_Base = Nu_Puntaje;
+    public void setQt_Puntaje_Base(Double Qt_Puntaje_Base) {
+        this.Qt_Puntaje_Base =Qt_Puntaje_Base;
     }
 
     public String getTipo_Dato() {
