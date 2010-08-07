@@ -12,7 +12,7 @@ package proyecto.modelo;
 public class CriterioEvaluacion {
 private int Co_Criterio;
 private String Tx_DescCriterioEvaluacion;
-private Double Nu_Puntaje;
+private Double Qt_Puntaje_Base;
 private String Tipo_Dato;
 
     public CriterioEvaluacion(){
@@ -28,11 +28,11 @@ private String Tipo_Dato;
     }
 
     public Double getNu_Puntaje() {
-        return Nu_Puntaje;
+        return Qt_Puntaje_Base;
     }
 
     public void setNu_Puntaje(Double Nu_Puntaje) {
-        this.Nu_Puntaje = Nu_Puntaje;
+        this.Qt_Puntaje_Base = Nu_Puntaje;
     }
 
     public String getTipo_Dato() {
