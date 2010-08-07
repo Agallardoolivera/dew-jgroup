@@ -40,7 +40,7 @@ public class ProveedorDAOImpl extends BaseDAO implements ProveedorDAO {
             throws DAOExcepcion {
 
 
-        String query = "select Co_Proveedor, Nu_RucProveedor,No_RazonSocialProveedor,Tx_CorreoProveedor,Tx_ClaveAccesoProveedor from Proveedor where No_RazonSocialProveedor like ? ";
+        String query = "select Co_Proveedor, Nu_RucProveedor,No_RazonSocialProveedor,Tx_CorreoProveedor,Tx_ClaveAccesoProveedor from Proveedor where No_RazonSocialProveedor like ?  and estado='A'";
         Collection<Proveedor> lista = new ArrayList<Proveedor>();
         Connection con = null;
         PreparedStatement stmt = null;
@@ -164,7 +164,8 @@ public class ProveedorDAOImpl extends BaseDAO implements ProveedorDAO {
     }
 
     public void eliminar(int Co_Proveedor) throws DAOExcepcion {
-        String query = "DELETE FROM Proveedor WHERE Co_Proveedor=?";
+      //  String query = "DELETE FROM Proveedor WHERE Co_Proveedor=?";
+        String query = "update Proveedor set estado='I' WHERE Co_Proveedor=?";
         Connection con = null;
         PreparedStatement stmt = null;
         try {
@@ -173,7 +174,7 @@ public class ProveedorDAOImpl extends BaseDAO implements ProveedorDAO {
             stmt.setInt(1, Co_Proveedor);
             int i = stmt.executeUpdate();
             if (i != 1) {
-                throw new SQLException("No se pudo eliminar");
+                throw new SQLException("No se pudo dar de baja");
             }
         } catch (SQLException e) {
             System.err.println(e.getMessage());
