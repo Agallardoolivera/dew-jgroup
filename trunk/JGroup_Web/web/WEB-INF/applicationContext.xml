@@ -17,7 +17,7 @@
           p:driverClassName="com.mysql.jdbc.Driver"
           p:url="jdbc:mysql://localhost:3306/jgroup"
           p:username="root"
-          p:password="root" />
+          p:password="123456" />
 
     <bean id="usuarioService" class="proyecto.service.UsuarioServiceImpl">
         <property name="usuarioDAO" ref="usuarioDAO"/>
