@@ -5,7 +5,10 @@
 
 package proyecto.web;
 
+import java.util.Collection;
+import proyecto.excepcion.DAOExcepcion;
 import java.io.IOException;
+import proyecto.excepcion.DAOExcepcion;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -48,11 +51,16 @@ public class UsuariosController extends MultiActionController {
     }
 
     public ModelAndView doInsertar(HttpServletRequest request, HttpServletResponse response) {
+
         Usuario vo = new Usuario();
-        //vo.setCo_Usuario(request.getParameter("co_Usuario"));
-        vo.setClave(request.getParameter("clave"));
-        vo.setNombres(request.getParameter("nombres"));
-//        usuarioDAO.insertar(vo);
+        vo.setCo_Usuario(Integer.parseInt(request.getParameter("usuario")));
+        vo.setClave(request.getParameter("contra"));
+        try {
+            usuarioService.insertar(vo);
+        } catch (DAOExcepcion e) {
+            System.err.println(e.toString());
+        }
+        
         return new ModelAndView(new RedirectView("usuarios_mantener.htm", true));
     }
 
@@ -61,7 +69,7 @@ public class UsuariosController extends MultiActionController {
         Usuario vo = new Usuario();
         //vo.setCo_Usuario(request.getParameter("co_Usuario"));
         vo.setClave(request.getParameter("clave"));
-        vo.setNombres(request.getParameter("nombres"));
+       
 //        usuarioDAO.insertar(vo);
         try {
             PrintWriter out = response.getWriter();
@@ -72,4 +80,55 @@ public class UsuariosController extends MultiActionController {
         }
         return null;
     }
-}
+
+    public ModelAndView buscar(HttpServletRequest request, HttpServletResponse response) {
+        String nombres = request.getParameter("nombre");
+        try {
+            Collection<Usuario> Usuarios = usuarioService.buscarPorNombre(nombres);
+             for(Usuario art : Usuarios){
+		System.out.println(art.getCo_Usuario());
+                System.out.println(art.getClave());
+              }
+                request.setAttribute("usuarios", Usuarios);
+        } catch (DAOExcepcion ex) {
+            System.err.println(ex.toString());
+        }
+        return new ModelAndView("admin/usuarios_mantener");
+    }
+
+     public ModelAndView obtener(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("codigo"));
+        Usuario vo;
+        try {
+            vo = usuarioService.obtener(id);
+            request.setAttribute("Usuario", vo);
+        } catch (DAOExcepcion e) {
+            System.err.println("Error");
+        }
+        return new ModelAndView("admin/usuarios_editar");
+    }
+
+public ModelAndView actualizar(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("usuario"));
+        Usuario vo = new Usuario();
+        vo.setCo_Usuario(id);
+        vo.setClave(request.getParameter("contra"));
+        try {
+            usuarioService.actualizar(vo);
+        } catch (DAOExcepcion e) {
+            System.err.println("Error");
+        }
+        return new ModelAndView("redirect:/usuarios_mantener.htm");
+    }
+
+ public ModelAndView eliminar(HttpServletRequest request, HttpServletResponse response) {
+        int codigo = Integer.parseInt(request.getParameter("codigo"));
+        try {
+            usuarioService.eliminar(codigo);
+        } catch (DAOExcepcion ex) {
+            System.err.println(ex.toString());
+        }
+        return new ModelAndView("admin/usuarios_mantener");
+    }
+
+    }
