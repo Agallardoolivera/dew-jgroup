@@ -27,7 +27,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                     <!--prop key="articulo_editar.htm">articuloController</prop>-->
                     <prop key="invitacion.htm">invitacionController</prop>
                     <prop key="reglas.htm">reglasNegocioController</prop>
-                    <prop key="cotizaciones.htm">accesomenuP</prop>
+                    <prop key="cotizaciones.htm">cotizacionController</prop>
                     <prop key="analisis.htm">accesomenuP</prop>
                     <prop key="retornaMenu.htm">accesomenuP</prop>
                     <prop key="proveedor.htm">proveedorController</prop>
@@ -97,7 +97,12 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
             </property>
             <property name="proveedorService" ref="proveedorService"/>
         </bean>
-
+         <bean id="cotizacionController" class="proyecto.web.CotizacionController">
+            <property name="methodNameResolver">
+                <ref bean="paramResolver"/>
+            </property>
+            <property name="cotizacionService" ref="cotizacionService"/>
+        </bean>
         <bean id="paramResolver"
           class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
             <property name="defaultMethodName" value="index"/>
