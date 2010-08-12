@@ -57,11 +57,11 @@ public class InvitacionDetalleController extends MultiActionController{
     }
 
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
-        try {
+       try {
             Collection<Articulo> articulos = articuloService.listar();
              for(Articulo inv : articulos){
 		System.out.println(inv.getCo_Articulo());
-                System.out.println(inv.getNo_Articulo());
+               System.out.println(inv.getNo_Articulo());
               }
             request.setAttribute("articulos", articulos);
         } catch (DAOExcepcion ex) {
@@ -72,7 +72,7 @@ public class InvitacionDetalleController extends MultiActionController{
 
     }
 
-    public ModelAndView insertar(HttpServletRequest request, HttpServletResponse response)
+    public ModelAndView insertar2(HttpServletRequest request, HttpServletResponse response)
             throws ParseException {
 
 
@@ -82,6 +82,12 @@ public class InvitacionDetalleController extends MultiActionController{
         vo.setCo_Articulo(Integer.parseInt(request.getParameter("articulo")));
         vo.setNu_cantidad(Integer.parseInt(request.getParameter("Tx_Cantidad")));
         vo.setTx_Observacion(request.getParameter("Tx_Obs"));
+        //vo.setNu_invitacion(2);
+   //     vo.setNu_Item(1);
+      //  vo.setCo_Articulo(3);
+    //    vo.setNu_cantidad(3);
+  //      vo.setTx_Observacion("asasas");
+
         try {
             invitacionDetalleService.insertar(vo);
         } catch (DAOExcepcion e) {

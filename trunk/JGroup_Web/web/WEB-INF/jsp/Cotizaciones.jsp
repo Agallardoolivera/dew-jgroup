@@ -55,6 +55,8 @@
                     <td><label>
                             <input name="btnguardar" type="submit" id="btnguardar" value="Grabar"onclick="window.location='cotizaciones.htm?metodo=insertar'">
                         </label>
+                            <input name="btnretornar" type="button" id="btnretornar" value="Regresar" onClick="window.location='invitacion.htm'">
+
                 </table>
     </form>
 

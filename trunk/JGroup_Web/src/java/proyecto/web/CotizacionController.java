@@ -36,11 +36,6 @@ public class CotizacionController extends MultiActionController{
         vo.setCo_Proveedor(Integer.parseInt(request.getParameter("Tx_CoProveedor")));
         vo.setTX_Observacion(request.getParameter("Tx_ObsCotizacion"));
 
-        //vo.setNu_Cotizacion(2);
-        //vo.setFe_Entrega("2010-01-01");
-        //vo.setNu_Invitacion(2);
-        //vo.setCo_Proveedor(1);
-        //vo.setTX_Observacion("212122121");
         try {
             cotizacionService.insertar(vo);
         } catch (DAOExcepcion e) {

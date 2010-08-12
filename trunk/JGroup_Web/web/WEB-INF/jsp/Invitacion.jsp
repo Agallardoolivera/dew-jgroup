@@ -55,6 +55,8 @@
                         </label>
                         <label>
                             <input name="btnretornar" type="button" id="btnretornar" value="Regresar" onClick="window.location='portada.htm'">
+                            <input name="btnretornar" type="button" id="btnretornar" value="Regresar" onClick="window.location='portada.htm'">
+
                         </label></td>
                 </tr>
             </table>
