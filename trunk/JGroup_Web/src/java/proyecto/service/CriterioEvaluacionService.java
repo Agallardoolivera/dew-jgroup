@@ -13,6 +13,8 @@ import proyecto.modelo.CriterioEvaluacion;
  */
 public interface CriterioEvaluacionService {
 
+    public Collection<CriterioEvaluacion> buscarPorNombre(String tipo) throws DAOExcepcion;
+
     public CriterioEvaluacion insertar(CriterioEvaluacion vo) throws DAOExcepcion;
 
     public Collection<CriterioEvaluacion> listar() throws DAOExcepcion;

@@ -31,6 +31,10 @@ import proyecto.modelo.CriterioEvaluacion;
         return criterioEvaluacionDAO.insertar(vo);
     }
 
+    public Collection<CriterioEvaluacion> buscarPorNombre(String tipo) throws DAOExcepcion {
+        return criterioEvaluacionDAO.buscarPorNombre(tipo);
+    }
+
     public Collection<CriterioEvaluacion> listar() throws DAOExcepcion {
         return criterioEvaluacionDAO.listar();
     }
