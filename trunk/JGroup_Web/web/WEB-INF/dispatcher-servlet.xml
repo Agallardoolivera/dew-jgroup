@@ -39,7 +39,9 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                     <prop key="listaofertas.htm">accesomenuP</prop>
                     <prop key="reporteg.htm">accesomenuP</prop>
                     <prop key="auditoria.htm">accesomenuP</prop>
-                </props>
+                    <prop key="criterio.htm">criterioEvaluacionController</prop>
+
+            </props>
             </property>
         </bean>   
         <bean id="viewResolver"
@@ -109,6 +111,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
             </property>
             <property name="invitacionService" ref="invitacionService"/>
             <property name="invitacionDetalleService" ref="invitacionDetalleService"/>
+            <property name="articuloService" ref="articuloService"/>
         </bean>
 
          <bean id="criterioEvaluacionController" class="proyecto.web.CriterioEvaluacionController">
