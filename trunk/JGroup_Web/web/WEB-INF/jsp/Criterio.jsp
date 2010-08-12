@@ -130,7 +130,7 @@ function fn_mostrar_ocultar_submenu(submenu,imagen)
                 <td><% out.print(crit.getCo_Criterio());%></td>
                 <td><%  out.print(crit.getTipo_Dato());%></td>
                 <td><%  out.print(crit.getTx_DescCriterioEvaluacion());%></td>
-                <td><a href="criterio.htm?metodo=obtener&codigo=<%=crit.getCo_Criterio()%>&tipo=<%=crit.getTipo_Dato()%>&um=<%=crit.getTx_DescCriterioEvaluacion()%>">Editar</a> - <a href="criterio.htm?metodo=eliminar&codigo=<%=crit.getCo_Criterio()%>">Eliminar</a> </td>
+                <td><a href="criterio.htm?metodo=obtener&codigo=<%=crit.getCo_Criterio()%>&tipo=<%=crit.getTipo_Dato()%>&descripcion=<%=crit.getTx_DescCriterioEvaluacion()%>">Editar</a> - <a href="criterio.htm?metodo=eliminar&codigo=<%=crit.getCo_Criterio()%>">Eliminar</a> </td>
             </tr>
             <% }%>
            <% }%>

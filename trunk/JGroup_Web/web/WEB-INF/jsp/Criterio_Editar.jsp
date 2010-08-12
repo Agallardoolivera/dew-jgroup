@@ -11,9 +11,9 @@
 
         <p><strong>Mantenimiento de Criterios - Editar</strong></p>
 
-<% String CoCriterioEvaluacion = request.getParameter("txtCodigo");
-   String TipoDato = request.getParameter("tipoDato");
-   String Descripcion = request.getParameter("txtDescripcion");
+<% String CoCriterioEvaluacion = request.getParameter("codigo");
+   String TipoDato = request.getParameter("tipo");
+   String Descripcion = request.getParameter("descripcion");
 %>
                 <form name="form1" method="post" action="criterio.htm">
             <input type="hidden" name="metodo" value="actualizar"/>
@@ -29,18 +29,18 @@
                 <tr>
                     <td><div align="right"><span class="Estilo4">Tipo de Dato</span></div></td>
                     <td><label>
-                            <select name="tipoDato" size="1" id="tipoDato">
-                                <option value="<%out.println(TipoDato);%>"><%out.println(TipoDato);%></option>
-                          <option value="2">Numerico</option>
-                          <option value="1">Fecha</option>
-                        </select>
-                        </label></td></td>
+                      <select name="tipoDato" size="1" id="tipoDato">
+                          <option value="<%out.println(TipoDato);%>"><%out.println(TipoDato);%></option>
+                          <option value="Numerico">Numerico</option>
+                          <option value="Fecha">Fecha</option>
+                      </select>
+                      </label></td></td>
                 </tr>
                 <tr>
                     <td width="28%"><div align="right"><span class="Estilo4">Descripcion:</span></div></td>
                     <td width="72%"><label>
-                            <textarea name="nombre" type="text" id="nombre" value="<%out.println(Descripcion);%>">
-                        </label></td>
+                            <textarea name="descripcion" type="text" id="descripcion" value="<%out.println(Descripcion);%>"><%out.println(Descripcion);%></textarea>
+                            </label></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
@@ -48,7 +48,7 @@
                             <input name="btnguardar" type="submit" id="btnguardar" value="Guardar">
                         </label>
                         <label>
-                            <input name="btnretornar" type="button" id="btnretornar" value="Regresar" onClick="window.location='criterios.htm'">
+                            <input name="btnretornar" type="button" id="btnretornar" value="Regresar" onClick="window.location='criterio.htm'">
                         </label></td>
                 </tr>
 
