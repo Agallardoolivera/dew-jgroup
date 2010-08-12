@@ -103,6 +103,40 @@ function fn_mostrar_ocultar_submenu(submenu,imagen)
                   </tr>
                   </form>
                 </table>
+
+                                                          <form name="form2" method="post" action="criterio.htm">
+            <input type="hidden" name="metodo" value="buscar"/>
+            Tipo de Criterio:
+            <label>
+                <input name="tipo" type="text" id="tipo">
+            </label>
+            <label>
+                <input name="btnenviar" type="submit" id="btnenviar" value="Buscar">
+            </label>
+
+<table width="100%" border="1">
+            <tr>
+                <th>Codigo</th>
+                <th>Tipo de Dato</th>
+                <th>Descripcion</th>
+                <th>Acciones</th>
+            </tr>
+            <% if(request.getAttribute("criterios")!=null) {
+                %>
+            <%    java.util.Collection <proyecto.modelo.CriterioEvaluacion> criterios= (java.util.Collection)request.getAttribute("criterios");
+                    for (proyecto.modelo.CriterioEvaluacion crit : criterios) {
+            %>
+            <tr>
+                <td><% out.print(crit.getCo_Criterio());%></td>
+                <td><%  out.print(crit.getTipo_Dato());%></td>
+                <td><%  out.print(crit.getTx_DescCriterioEvaluacion());%></td>
+                <td><a href="criterio.htm?metodo=obtener&codigo=<%=crit.getCo_Criterio()%>&tipo=<%=crit.getTipo_Dato()%>&um=<%=crit.getTx_DescCriterioEvaluacion()%>">Editar</a> - <a href="criterio.htm?metodo=eliminar&codigo=<%=crit.getCo_Criterio()%>">Eliminar</a> </td>
+            </tr>
+            <% }%>
+           <% }%>
+
+            </table>
+       </form>
               </div>
             </div>
           </div>
