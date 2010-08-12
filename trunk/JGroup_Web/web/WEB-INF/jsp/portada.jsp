@@ -115,7 +115,7 @@
                             </tr>
                             <tr>
                                 <td><div align="left">Criterios</div></td>
-                                <td><div align="center"><a href="criterios.htm?metodo=Criterios" style="visibility:<? echo $visible;?>"><img src="<%=request.getContextPath()%>/images/Avance.gif" width="26" height="16" border="0" align="middle" title="Auditoria" /></a></div></td>
+                                <td><div align="center"><a href="criterio.htm" style="visibility:<? echo $visible;?>"><img src="<%=request.getContextPath()%>/images/Avance.gif" width="26" height="16" border="0" align="middle" title="Auditoria" /></a></div></td>
                             </tr>
 
                             <tr>
