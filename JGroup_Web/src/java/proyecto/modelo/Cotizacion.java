@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class Cotizacion {
 private int Nu_Invitacion;
-private Date Fe_Cotizacion;
+private Date Fe_Entrega;
 private int Nu_puntajeobtenido;
 private String Tx_Ganadora;
 private int Nu_Cotizacion;
@@ -25,6 +25,10 @@ private String Tx_EstadoCot;
 
     }
 
+    public void setTX_Observacion(String TX_Observacion) {
+        this.TX_Observacion = TX_Observacion;
+    }
+
     public int getCo_Proveedor() {
         return Co_Proveedor;
     }
@@ -33,12 +37,12 @@ private String Tx_EstadoCot;
         this.Co_Proveedor = Co_Proveedor;
     }
 
-    public Date getFe_Cotizacion() {
-        return Fe_Cotizacion;
+    public Date getFe_Entrega() {
+        return Fe_Entrega;
     }
 
-    public void setFe_Cotizacion(Date Fe_Cotizacion) {
-        this.Fe_Cotizacion = Fe_Cotizacion;
+    public void setFe_Entrega(Date Fe_Entrega) {
+        this.Fe_Entrega = Fe_Entrega;
     }
 
     public int getNu_Cotizacion() {
@@ -67,10 +71,6 @@ private String Tx_EstadoCot;
 
     public String getTX_Observacion() {
         return TX_Observacion;
-    }
-
-    public void setTX_Observacion(String TX_Observacion) {
-        this.TX_Observacion = TX_Observacion;
     }
 
     public String getTx_EstadoCot() {
