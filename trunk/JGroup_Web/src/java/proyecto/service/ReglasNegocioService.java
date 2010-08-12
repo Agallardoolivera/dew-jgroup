@@ -7,6 +7,7 @@ package proyecto.service;
 import java.util.Collection;
 import proyecto.excepcion.DAOExcepcion;
 import proyecto.modelo.Cotizacion;
+import proyecto.modelo.DetalleCotizacion;
 
 
 /**
@@ -16,4 +17,6 @@ import proyecto.modelo.Cotizacion;
 public interface ReglasNegocioService {
 
      public Collection<Cotizacion> ListarCotizacions(int Nu_Invitacion) throws DAOExcepcion ;
+
+     public DetalleCotizacion Detalle_por_Cotizacion(int Cotizacion_Nu_Cotizacion) throws DAOExcepcion;
 }
