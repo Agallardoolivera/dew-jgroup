@@ -31,7 +31,38 @@ public class CriterioEvaluacionDAOImpl extends BaseDAO implements CriterioEvalua
         this.dataSource = dataSource;
     }
 
- public Collection<CriterioEvaluacion> listar() throws DAOExcepcion {
+        public Collection<CriterioEvaluacion> buscarPorNombre(String tipo)
+            throws DAOExcepcion {
+        String query = "select Co_Criterio, Tipo_Dato, Tx_DescCriterioEvaluacion from criterioevaluacion where Tipo_Dato like ? ";
+        Collection<CriterioEvaluacion> lista = new ArrayList<CriterioEvaluacion>();
+        Connection con = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            con = dataSource.getConnection();
+            stmt = con.prepareStatement(query);
+            stmt.setString(1, "%" + tipo + "%");
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                CriterioEvaluacion vo = new CriterioEvaluacion();
+                vo.setCo_Criterio(rs.getInt("Co_Criterio"));
+                vo.setTipo_Dato(rs.getString("Tipo_Dato"));
+                vo.setTx_DescCriterioEvaluacion(rs.getString("Tx_DescCriterioEvaluacion"));
+                lista.add(vo);
+            }
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            throw new DAOExcepcion(e.getMessage());
+        } finally {
+            this.cerrarResultSet(rs);
+            this.cerrarStatement(stmt);
+            this.cerrarConexion(con);
+        }
+        System.out.println(lista.size());
+        return lista;
+    }
+
+    public Collection<CriterioEvaluacion> listar() throws DAOExcepcion {
         Collection<CriterioEvaluacion> c = new ArrayList<CriterioEvaluacion>();
         Connection con = null;
         PreparedStatement stmt = null;
