@@ -59,7 +59,7 @@ public class CotizacionCabDAOImpl extends BaseDAO implements CotizacionCabDAO {
             while (rs.next()) {
                 ConsultacotiCab1 vo = new ConsultacotiCab1();
                 vo.setNu_Cotizacion(rs.getInt("Nu_Cotizacion"));
-                vo.setFe_Cotizacion(rs.getDate("Invitacion_Nu_Invitacion"));
+                vo.setFe_Entrega(rs.getString("Fe_Entrega"));
                 vo.setNo_RazonSocialProveedor(rs.getString("No_RazonSocialProveedor"));
                 vo.setNu_Invitacion(rs.getInt("Nu_Invitacion"));
                 vo.setTX_Observacion(rs.getString("TX_Observacion"));
@@ -96,7 +96,7 @@ public class CotizacionCabDAOImpl extends BaseDAO implements CotizacionCabDAO {
                 ConsultacotiCab1 vo = new ConsultacotiCab1();
 
                 vo.setNu_Cotizacion(rs.getInt("Nu_Cotizacion"));
-                vo.setFe_Cotizacion(rs.getDate("Invitacion_Nu_Invitacion"));
+                vo.setFe_Entrega(rs.getString("Fe_Entrega"));
                 vo.setNo_RazonSocialProveedor(rs.getString("No_RazonSocialProveedor"));
                 vo.setNu_Invitacion(rs.getInt("Nu_Invitacion"));
                 vo.setTX_Observacion(rs.getString("TX_Observacion"));
@@ -117,7 +117,7 @@ public class CotizacionCabDAOImpl extends BaseDAO implements CotizacionCabDAO {
 
     @SuppressWarnings("empty-statement")
     public Cotizacion insertar(Cotizacion vo) throws DAOExcepcion {
-        String query = "INSERT INTO cotizacion(Fe_Cotizacion,Invitacion_Nu_Invitacion,Proveedor_Co_Proveedor,TX_Observacion)" + " VALUES (?,?,?,?)";
+        String query = "INSERT INTO cotizacion(Nu_Cotizacion,Fe_Entrega,Invitacion_Nu_Invitacion,Proveedor_Co_Proveedor,TX_Observacion)" + " VALUES (?,?,?,?)";
         Connection con = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -125,10 +125,11 @@ public class CotizacionCabDAOImpl extends BaseDAO implements CotizacionCabDAO {
         try {
             con = dataSource.getConnection();
             stmt = con.prepareStatement(query);
-            stmt.setString(1, vo.getFe_Cotizacion().toString());
-            stmt.setInt(2,vo.getNu_Invitacion());
-            stmt.setInt(3, vo.getCo_Proveedor());
-            stmt.setString(4, vo.getTX_Observacion());
+            stmt.setInt(1, vo.getNu_Cotizacion());
+            stmt.setString(2, vo.getFe_Entrega().toString());
+            stmt.setInt(3,vo.getNu_Invitacion());
+            stmt.setInt(4, vo.getCo_Proveedor());
+            stmt.setString(5, vo.getTX_Observacion());
 
             int i = stmt.executeUpdate();
             if (i != 1) {
@@ -212,7 +213,7 @@ public class CotizacionCabDAOImpl extends BaseDAO implements CotizacionCabDAO {
             if (rs.next()) {
 
                 vo.setNu_Cotizacion(rs.getInt("Nu_Cotizacion"));
-                vo.setFe_Cotizacion(rs.getDate("Invitacion_Nu_Invitacion"));
+                vo.setFe_Entrega(rs.getString("Fe_Entrega"));
                 vo.setNo_RazonSocialProveedor(rs.getString("No_RazonSocialProveedor"));
                 vo.setNu_Invitacion(rs.getInt("Nu_Invitacion"));
                 vo.setTX_Observacion(rs.getString("TX_Observacion"));

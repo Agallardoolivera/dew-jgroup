@@ -76,6 +76,9 @@
                     </tr>
                 </table>
             </div>
+        <form id="form1" name="form1" method="post" action="cotizaciones.htm">
+        <input type="hidden" name="metodo" value="insertar"/>
+
             <div style="background:#99CC33;">&nbsp;<?php //include("menu.php");?></div>
             <div id="basemedio">
                 <div id="contenido" align="center">
@@ -83,11 +86,10 @@
                       <table width="575" border="0">
                         <!--DWLayoutTable-->
                         <tr>
-                          <td width="89" height="24" valign="top"><span class="Estilo11">N&uacute;mero</span></td>
-                          <td width="148" valign="top"><input type="text" name="Tx_NumCot" /></td>
-                          <td width="32"></td>
-                          <td width="264" valign="top"><!-- #BeginDate format:fcSw1a -->Mi&eacute;rcoles, 11 Agosto, 2010 11:05 PM<!-- #EndDate --></td>
-                        <td width="20"></td>
+                          <td width="96" height="38"><span class="Estilo11">N&uacute;mero</span></td>
+                          <td width="144"><input type="text" name="Tx_NumCot" /></td>
+                          <td width="299">&nbsp;</td>
+                          <td colspan="2"  width="144"><input type="text" name="Tx_Feccot" /></td>
                         </tr>
                         <tr>
                           <td height="34" valign="top" class="Estilo11">Invitaci&oacute;n</td>
@@ -107,8 +109,6 @@
                         <tr>
                           <td width="94" height="56" class="Estilo11">Observaci&oacute;n</td>
                           <td colspan="2" bordercolor="0">
-                              <form id="form1" name="form1" method="post" action="cotizaciones.htm">
-                               <input type="hidden" name="metodo" value="insertar"/>
                               <textarea name="Tx_ObsCotizacion" cols="72.5" wrap="soft"></textarea>
                           </form></td>
                           <td>&nbsp;</td>

@@ -16,15 +16,15 @@ public class ConsultacotiCab1 {
     private int Nu_Invitacion ;
     private String Tx_Descripcion;
     private String No_RazonSocialProveedor;
-    private Date Fe_Cotizacion;
+    private String Fe_Entrega;
     private String TX_Observacion;
 
-    public Date getFe_Cotizacion() {
-        return Fe_Cotizacion;
+    public String getFe_Entrega() {
+        return Fe_Entrega;
     }
 
-    public void setFe_Cotizacion(Date Fe_Cotizacion) {
-        this.Fe_Cotizacion = Fe_Cotizacion;
+    public void setFe_Entrega(String Fe_Entrega) {
+        this.Fe_Entrega = Fe_Entrega;
     }
 
     public String getNo_RazonSocialProveedor() {
