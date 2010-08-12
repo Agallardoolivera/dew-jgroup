@@ -61,7 +61,7 @@ public class CriterioEvaluacionDAOImpl extends BaseDAO implements CriterioEvalua
     }
 
     public CriterioEvaluacion insertar(CriterioEvaluacion vo) throws DAOExcepcion {
-        String query = "INSERT INTO CriterioEvaluacion(Co_Criterio,Tx_DescCriterioEvaluacion, TipoDato) VALUES (?,?,?)";
+        String query = "INSERT INTO criterioevaluacion(Co_Criterio, Tx_DescCriterioEvaluacion, Tipo_Dato) VALUES (?,?,?)";
         Connection con = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
