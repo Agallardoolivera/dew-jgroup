@@ -17,6 +17,7 @@ import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 import proyecto.excepcion.DAOExcepcion;
 import proyecto.service.ReglasNegocioService;
 import proyecto.modelo.Cotizacion;
+import proyecto.modelo.CriterioInvitacion;
 import proyecto.modelo.DetalleCotizacion;
 
 /**
@@ -45,18 +46,22 @@ public class ReglasNegocioController extends MultiActionController{
 
     public ModelAndView AnalisisPropuestas(HttpServletRequest request, HttpServletResponse response) throws ParseException {
 
-            int indice=0,campo=0,indiceMejorMonto=0,indiceMejorFecha=0;
+            int indice=0,campo=0,indiceMejorMonto=0,indiceMejorFecha=0,indiceCriterio=0;
             Double monto=0.0;
-            String Co_MejorMonto=null,Co_MejorFecha=null;
+            int puntajeMejorMonto=0,puntajeMejorFecha=0;
+
 
             DetalleCotizacion dCotizacion;
             Collection<Cotizacion> cotizaciones;
+          
 
             String nu_invitacion = request.getParameter("Nu_Invitacion");
 
-            String [][] Proveedor = new String [1000][30];
+            String  [][] Proveedor = new String [1000][30];
+           
+
             try {
-                 cotizaciones = reglasNegocioService.ListarCotizacions(Integer.parseInt(nu_invitacion));
+                 cotizaciones = reglasNegocioService.ListarCotizaciones(Integer.parseInt(nu_invitacion));
 
                 for (Cotizacion cot : cotizaciones) {
                   
@@ -90,11 +95,19 @@ public class ReglasNegocioController extends MultiActionController{
                         System.out.println(Proveedor[indice][campo]);
                         indice++;campo=0;
                     }
+
                     indiceMejorMonto=Calcular_MejorMonto(Proveedor,indice);
                     indiceMejorFecha=Calcular_MejorFecha(Proveedor,indice) ;
 
                     System.out.println("Mejor Monto ="+Proveedor[indiceMejorMonto][0]);
                     System.out.println("Mejor Fecha ="+Proveedor[indiceMejorFecha][0]);
+
+                    //Criterios
+                    puntajeMejorMonto = reglasNegocioService.buscarPuntajePorNombre("Monto",Integer.parseInt(nu_invitacion));
+                    puntajeMejorFecha = reglasNegocioService.buscarPuntajePorNombre("Fecha",Integer.parseInt(nu_invitacion));
+                    System.out.println("Puntaje Monto ="+puntajeMejorMonto);
+                    System.out.println("Puntaje Fecha =" +puntajeMejorFecha);
+
                     
             } catch (DAOExcepcion ex) {
                 System.err.println(ex.toString());
@@ -102,6 +115,8 @@ public class ReglasNegocioController extends MultiActionController{
             
             return new ModelAndView("ReglasNegocio");
         }
+
+
 
 
         public int Calcular_MejorMonto(String [][] Proveedor,int indice){

@@ -19,7 +19,9 @@ import java.util.logging.Logger;
 import javax.sql.DataSource;
 import proyecto.excepcion.DAOExcepcion;
 import proyecto.modelo.Cotizacion;
+import proyecto.modelo.CriterioEvaluacion;
 import proyecto.modelo.DetalleCotizacion;
+import proyecto.modelo.CriterioInvitacion;
 
 /**
  *
@@ -37,7 +39,7 @@ public class ReglasNegocioDAOImpl extends BaseDAO implements ReglasNegocioDAO {
         this.dataSource = dataSource;
     }
 
-    public Collection<Cotizacion> ListarCotizacions(int Nu_Invitacion) throws DAOExcepcion {
+    public Collection<Cotizacion> ListarCotizaciones(int Nu_Invitacion) throws DAOExcepcion {
         Collection<Cotizacion> c = new ArrayList<Cotizacion>();
         Connection con = null;
         PreparedStatement stmt = null;
@@ -71,6 +73,71 @@ public class ReglasNegocioDAOImpl extends BaseDAO implements ReglasNegocioDAO {
         return c;
     }
 
+
+         public int buscarPuntajePorNombre(String Tx_CriterioDescripcion,int Nu_Invitacion)
+            throws DAOExcepcion {
+
+        int puntaje=0;
+        String query = "select nu_puntaje from criterioinvitacion ci inner join criterioevaluacion ce"+
+                       " on ce.co_criterio=ci.criterioevaluacion_co_criterio where invitacion_nu_invitacion=?"+
+                       " and ce.tx_desccriterioevaluacion like ?";
+        
+        Connection con = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            con = dataSource.getConnection();
+            stmt = con.prepareStatement(query);
+            stmt.setInt(1, Nu_Invitacion);
+            stmt.setString(2, "%" + Tx_CriterioDescripcion + "%");
+
+            System.out.println("Query =" +stmt.toString());
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                puntaje=rs.getInt("nu_puntaje");
+            }
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            throw new DAOExcepcion(e.getMessage());
+        } finally {
+            this.cerrarResultSet(rs);
+            this.cerrarStatement(stmt);
+            this.cerrarConexion(con);
+        }
+       
+        return puntaje;
+    }
+
+
+        public Collection<CriterioInvitacion> ListarCriterios(int Nu_Invitacion) throws DAOExcepcion {
+        Collection<CriterioInvitacion> c = new ArrayList<CriterioInvitacion>();
+        Connection con = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            con = dataSource.getConnection();
+            String query = "SELECT * from CriterioInvitacion where invitacion_Nu_Invitacion=?";
+            stmt = con.prepareStatement(query);
+            stmt.setInt(1, Nu_Invitacion );
+            System.out.println("Query =" + stmt.toString());
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                CriterioInvitacion vo = new CriterioInvitacion();
+                vo.setCriterioevaluacion_Co_Criterio(rs.getInt("criterioevaluacion_Co_Criterio"));
+                vo.setNu_puntaje(rs.getInt("Nu_Puntaje"));
+                c.add(vo);
+            }
+
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            throw new DAOExcepcion(e.getMessage());
+        } finally {
+            this.cerrarResultSet(rs);
+            this.cerrarStatement(stmt);
+            this.cerrarConexion(con);
+        }
+        return c;
+    }
 
      public DetalleCotizacion Detalle_por_Cotizacion(int Nu_Cotizacion) throws DAOExcepcion {
         DetalleCotizacion vo = new DetalleCotizacion();
