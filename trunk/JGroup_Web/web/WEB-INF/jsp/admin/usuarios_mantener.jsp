@@ -3,9 +3,10 @@
     Created on : 09/06/2010, 08:20:17 PM
     Author     : pcsidrod
 --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<jsp:useBean id="usuario" scope="page" class="proyecto.modelo.Usuario" />
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -51,12 +52,7 @@
     </head>
     <body topmargin="0" leftmargin="0" rightmargin="0">
 
-
-
-        <input type="hidden" name="idusuario" id="idusuario" value="" />
-        <input type="hidden" name="idempresa" id="idempresa" value="" />
-        <input type="hidden" name="idarea" id="idarea" value="" />
-        <div id="basecont">
+  <div id="basecont">
             <div id="header">
                 <table border="0" cellpadding="2" cellspacing="2" width="100%">
                     <tr>
@@ -91,61 +87,53 @@
                         </head>
                         <body>
                             <h1>Usuarios mantener</h1>
-                            <form method="post" action="usuarios_mantener.htm?metodo=insertar">
+                            <form method="post" action="usuarios_mantener.htm?metodo=doInsertar">
+                                
                                 <input type="hidden" name="metodo" value="doInsertar"/>
                                 <table width="450" border="1" align="center">
                                     <tr><td width="127" align="left"><span class="Estilo3">Ingrese Nombres</span></td>
-                                        <td colspan="3" align="left"><input type="text" name="txt_nom" id="txt_nom" size="40"/></td>
-                                    <tr><td align="left"><span class="Estilo3">Ingrese Apellidos</span></td>
-                                        <td colspan="3" align="left"><input type="text" name="txt_ape" id="txt_ape" size="40"/></td>
-                                    <tr><td align="left"><span class="Estilo3">Ingrese DNI</span></td>
-                                        <td colspan="3" align="left"><input type="text" name="txt_dni" id="txt_dni" maxlength="8"/></td>
-                                    <tr><td align="left"><span class="Estilo3">Ingrese Usuario</span></td>
-                                        <td colspan="3" align="left"><input type="text" name="txt_usu" id="txt_usu" maxlength="20"/></td>
+                                        <td colspan="3" align="left"><input type="text" name="usuario" id="usuario" size="40"/></td>
                                     <tr><td align="left"><span class="Estilo3">Ingrese Contrasena</span></td>
-                                        <td colspan="3" align="left"><input type="password" name="txt_contra" id="txt_contra" maxlength="20"/></td>
-                                    <tr><td align="left"><span class="Estilo3">Tipo Usuario</span></td>
-                                        <td width="114">Administrador:
-                                            <input name="rbttipusu" type="radio" value="1"/>
-                                        </td>
-                                        <td width="101">Avanzado:
-                                            <input name="rbttipusu" type="radio" value="2" />
-                                        </td>
-                                        <td width="104">Usuario:
-                                            <input name="rbttipusu" type="radio" value="3" checked="checked"/>
-                                        </td>
+                                        <td colspan="3" align="left"><input type="password" name="contra" id="contra" maxlength="20"/></td>
                                 </table>
                                 <table width="450" border="1" align="center">
-                                    <tr><td width="260" align="center"><input type="button" value="Insertar" onclick="usuarioInsertar();"/></td>
+                                    <tr><td width="260" align="center"><input name="btnguardar" type="submit" value="Insertar"/></td>
                                         <td width="224" align="center"><input type="submit" name="btn_canc" value="Cancelar" /></td></tr>
                                 </table>
 
 
                             </form>
+                            <form name="form2" method="post" action="usuarios_mantener.htm">
+            <input type="hidden" name="metodo" value="buscar"/>
+            Usuarios:
+            <label>
+                <input name="nombre" type="text" id="nombre">
+            </label>
+            <label>
+                <input name="btnenviar" type="submit" id="btnenviar" value="Buscar">
+            </label>
                             <table border="1" width="450" class="subtitleing">
                                 <tr class="Estilo3">
                                     <td width="93">Nombres</td>
-                                    <td width="93">Apellidos</td>
-                                    <td width="50">Dni</td>
-                                    <td width="93">Usuario</td>
                                     <td width="93">Password</td>
                                     <td width="93">Editar</td>
                                     <td width="93">Eliminar</td>
                                 </tr>
-                                <tr>
-                                    <td width="93"><div id="tablanombre"></td>
-                                    <td width="93"><div id="tablaapellido"></td>
-                                    <td width="20"><div id="tabladni"></td>
-                                    <td width="93"><div id="tablausu"></td>
-                                    <td width="93"><div id="tablacontra"></td>
-                                    <td><div><a href='usuarios_editar.htm?metodo=editar&dni=txt_dni'>Editar</a></div></td>
-                                    <td><a href="usuarios_eliminar.htm">Eliminar</a></td>
-
-                                </tr>
+                                 <% if(request.getAttribute("usuarios")!=null) {
+                %>
+            <%    java.util.Collection <proyecto.modelo.Usuario> usuarios= (java.util.Collection)request.getAttribute("usuarios");
+                    for (proyecto.modelo.Usuario art : usuarios) {
+            %>
+            <tr>
+                <td><% out.print(art.getCo_Usuario());%></td>
+                <td><%  out.print(art.getClave());%></td>
+           
+                <td><a href="usuarios_editar.htm?metodo=obtener&codigo=<%=art.getCo_Usuario()%>&clave=<%=art.getClave()%>">Editar</a></td><td><a href="usuarios_mantener.htm?metodo=eliminar&codigo=<%=art.getCo_Usuario()%>">Eliminar</a> </td>
+            </tr>
+            <% }%>
+           <% }%>
                             </table>
-                            <c:forEach items="${usuarios}" var="u">
-                                ${u.nombres} <br/>
-                            </c:forEach>
-
+                            
+                            </form>
                         </body>
                         </html>

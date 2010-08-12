@@ -8,6 +8,10 @@ import java.util.Collection;
 import java.util.ArrayList;
 import javax.sql.DataSource;
 import proyecto.excepcion.DAOExcepcion;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import org.apache.catalina.connector.Request;
 import proyecto.excepcion.LoginExcepcion;
 import proyecto.modelo.Usuario;
 
@@ -39,9 +43,7 @@ public class UsuarioDAOImpl extends BaseDAO implements UsuarioDAO {
 
             if (rs.next()) {
                
-                vo.setClave(rs.getString("clave"));
-                
-               
+                vo.setClave(rs.getString("clave"));               
             } else {
                 throw new LoginExcepcion("No existe");
             }

@@ -78,7 +78,7 @@
                             <span class="textlogo" style="font-size:11px;">Soluciones integrales de Abastecimiento</span>
                         </td>
 
-                        <td width="10%"><p align="center"><a href="menu.htm"><img src="<%=request.getContextPath()%>/images/Browser History.png" width="49" height="40" border="0" align="middle" title="Usuario"/></a></p>
+                        <td width="10%"><p align="center"><a href="retornaMenu.htm?metodo=Menu"><img src="<%=request.getContextPath()%>/images/Browser History.png" width="49" height="40" border="0" align="middle" title="Usuario"/></a></p>
                             <p align="center" class="Estilo3">Retornar al Men&uacute; </p></td>
                         <td width="0%" style=" text-align:left;">
  </td>
@@ -91,43 +91,23 @@
                     <div style="height:450px;">
     </head>
     <body>
+        <% String CoUsuario = request.getParameter("codigo");
+   String clave = request.getParameter("clave");
+%>
         <h1>Usuarios mantener</h1>
-        <form method="post" action="usuarios_mantener.htm?metodo=insertar">
-             <input type="hidden" name="metodo" value="doInsertar"/>
+        <form name="form2" method="post" action="usuarios_mantener.htm">
+             <input type="hidden" name="metodo" value="actualizar"/>
                         <table width="450" border="1" align="center">
                             <tr><td width="127" align="left"><span class="Estilo3">Ingrese Nombres</span></td>
-                                <td colspan="3" align="left"><input type="text" name="txt_nom" id="txt_nom" size="40"/></td>
-                            <tr><td align="left"><span class="Estilo3">Ingrese Apellidos</span></td>
-    <td colspan="3" align="left"><input type="text" name="txt_ape" id="txt_ape" size="40"/></td>
-<tr><td align="left"><span class="Estilo3">Ingrese DNI</span></td>
-    <td colspan="3" align="left"><input type="text" name="txt_dni" id="txt_dni" maxlength="8"/></td>
-<tr><td align="left"><span class="Estilo3">Ingrese Usuario</span></td>
-    <td colspan="3" align="left"><input type="text" name="txt_usu" id="txt_usu" maxlength="20"/></td>
+                                <td colspan="3" align="left"><input type="text" name="usuario" id="usuario" value="<%out.println(CoUsuario);%>" size="40"/></td>
 <tr><td align="left"><span class="Estilo3">Ingrese Contrasena</span></td>
-    <td colspan="3" align="left"><input type="password" name="txt_contra" id="txt_contra" maxlength="20"/></td>
-<tr><td align="left"><span class="Estilo3">Tipo Usuario</span></td>
-	<td width="114">Administrador:
-	  <input name="rbttipusu" type="radio" value="1"/>
-</td>
-	<td width="101">Avanzado:
-  <input name="rbttipusu" type="radio" value="2" />
-</td>
-<td width="104">Usuario:
-  <input name="rbttipusu" type="radio" value="3" checked="checked"/>
-</td>
+    <td colspan="3" align="left"><input type="text" name="contra" id="contra" value="<%out.println(clave);%>" maxlength="20"/></td>
 </table>
             <table width="450" border="1" align="center">
-<tr><td width="260" align="center"><input type="button" value="Insertar" onclick="usuarioInsertar();"/></td>
-    <td width="260" align="center"><input type="button" value="Editar" onclick="usuarioEditar();"/></td>
+                <tr><td width="260" align="center"><input type="submit" value="Actualizar" name="btnguardar" id="btnguardar"/></td>
 <td width="224" align="center"><input type="submit" name="btn_canc" value="Cancelar" /></td></tr>
 </table>
         </form>
-
-    <c:forEach items="${usuarios}" var="u">
-        ${u.nombres} <br/>
-    </c:forEach>
-    <% String dni = request.getParameter("dni");
-         out.println(dni);%>
 
 </body>
 </html>

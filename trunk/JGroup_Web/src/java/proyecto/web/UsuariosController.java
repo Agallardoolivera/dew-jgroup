@@ -8,12 +8,20 @@ package proyecto.web;
 import java.util.Collection;
 import proyecto.excepcion.DAOExcepcion;
 import java.io.IOException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import proyecto.excepcion.DAOExcepcion;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.hibernate.Session;
+import java.util.logging.Logger;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 import org.springframework.web.servlet.view.RedirectView;
@@ -43,6 +51,7 @@ public class UsuariosController extends MultiActionController {
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
 //        System.out.println(usuarioDAO.listar().size());
 //        request.setAttribute("usuarios", usuarioDAO.listar());
+        
         return new ModelAndView("/admin/usuarios_mantener");
     }
 
@@ -57,6 +66,7 @@ public class UsuariosController extends MultiActionController {
         vo.setClave(request.getParameter("contra"));
         try {
             usuarioService.insertar(vo);
+            
         } catch (DAOExcepcion e) {
             System.err.println(e.toString());
         }
@@ -101,6 +111,7 @@ public class UsuariosController extends MultiActionController {
         Usuario vo;
         try {
             vo = usuarioService.obtener(id);
+            
             request.setAttribute("Usuario", vo);
         } catch (DAOExcepcion e) {
             System.err.println("Error");
