@@ -116,9 +116,7 @@ public class InvitacionController extends MultiActionController{
         
         vo.setUsuario_Co_Usuario(Integer.parseInt(request.getParameter("Usuario_Co_Usuario")));
         System.out.println("Orden Compra ="+request.getParameter("OrdenCompra_Nu_OrdenCompra"));
-        vo.setOrdenCompra_Nu_OrdenCompra(Integer.parseInt(request.getParameter("OrdenCompra_Nu_OrdenCompra")));
-        // vo.setOrdenCompra_Nu_OrdenCompra(1);
-        
+        vo.setOrdenCompra_Nu_OrdenCompra(Integer.parseInt(request.getParameter("OrdenCompra_Nu_OrdenCompra")));  
         try {
             invitacionService.actualizar(vo);
         } catch (DAOExcepcion e) {
@@ -126,5 +124,7 @@ public class InvitacionController extends MultiActionController{
         }
         return new ModelAndView("Invitacion");
     }
+
+
 
 }
