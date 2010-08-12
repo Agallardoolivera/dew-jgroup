@@ -35,6 +35,22 @@ public class CriterioEvaluacionController extends MultiActionController {
         return new ModelAndView("Criterio");
     }
 
+    public ModelAndView buscar(HttpServletRequest request, HttpServletResponse response) {
+        String tipo = request.getParameter("tipo");
+        try {
+            Collection<CriterioEvaluacion> tipos = criterioEvaluacionService.buscarPorNombre (tipo);
+             for(CriterioEvaluacion tip : tipos){
+		System.out.println(tip.getCo_Criterio());
+                System.out.println(tip.getTipo_Dato());
+                System.out.println(tip.getTx_DescCriterioEvaluacion());
+              }
+            request.setAttribute("criterios", tipos);
+        } catch (DAOExcepcion ex) {
+            System.err.println(ex.toString());
+        }
+        return new ModelAndView("Criterio");
+    }
+
     public ModelAndView insertar(HttpServletRequest request, HttpServletResponse response) {
         CriterioEvaluacion vo = new CriterioEvaluacion();
         vo.setCo_Criterio(Integer.parseInt(request.getParameter("txtCodigo")));
