@@ -144,7 +144,7 @@
                             </tr>
                             <tr>
                                 <td><div align="left">Reglas</div></td>
-                                <td><div align="center"><a href="cotizaciones.htm?metodo=Cotizaciones" style="visibility:<? echo $visible;?>"><img src="<%=request.getContextPath()%>/images/Diferencias.gif" width="26" height="16" border="0" align="middle" title="cotizacion" /></a></div></td>
+                                <td><div align="center"><a href="reglas.htm" style="visibility:<? echo $visible;?>"><img src="<%=request.getContextPath()%>/images/Diferencias.gif" width="26" height="16" border="0" align="middle" title="reglas" /></a></div></td>
                             </tr>
                             <tr>                            </tr>
                             <tr> </tr>
