@@ -44,10 +44,11 @@ public class ReglasNegocioDAOImpl extends BaseDAO implements ReglasNegocioDAO {
         ResultSet rs = null;
         try {
             con = dataSource.getConnection();
-            String query = "SELECT * from Cotizacion C inner join Invitacion I on  " +
-                    "on C.Nu_Invitacion = I.Nu_Invitacion where Nu_Invitacion=?";
+            String query = "SELECT * from Cotizacion C inner join Invitacion I   " +
+                    "on C.Invitacion_Nu_Invitacion = I.Nu_Invitacion where I.Nu_Invitacion=?";
             stmt = con.prepareStatement(query);
-            stmt.setString(1, "%" + Nu_Invitacion + "%");
+            stmt.setInt(1, Nu_Invitacion );
+            System.out.println("Query =" + stmt.toString());
             rs = stmt.executeQuery();
             while (rs.next()) {
                 Cotizacion vo = new Cotizacion();
@@ -72,22 +73,24 @@ public class ReglasNegocioDAOImpl extends BaseDAO implements ReglasNegocioDAO {
 
 
      public DetalleCotizacion Detalle_por_Cotizacion(int Nu_Cotizacion) throws DAOExcepcion {
-        DetalleCotizacion c = new DetalleCotizacion();
+        DetalleCotizacion vo = new DetalleCotizacion();
         Connection con = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
+            
             con = dataSource.getConnection();
             String query = "SELECT * from DetalleCotizacion where Cotizacion_Nu_Cotizacion=?";
             stmt = con.prepareStatement(query);
-            stmt.setString(1, "%" + Nu_Cotizacion + "%");
+            stmt.setInt(1,  Nu_Cotizacion);
+            System.out.println("Query =");
             rs = stmt.executeQuery();
-
-            DetalleCotizacion vo = new DetalleCotizacion();
-            vo.setCo_Articulo(rs.getInt("Articulo_Co_Articulo"));
-            vo.setCotizacion_Nu_Cotizacion(rs.getInt("Cotizacion_Nu_Cotizacion"));
-            vo.setNu_Cantidad(rs.getInt("Nu_Cantidad"));
-            vo.setSs_PrecioUnitario(rs.getInt("Ss_PrecioUnitario"));
+            while (rs.next()) {
+                vo.setCo_Articulo(rs.getInt("Articulo_Co_Articulo"));
+                vo.setCotizacion_Nu_Cotizacion(rs.getInt("Cotizacion_Nu_Cotizacion"));
+                vo.setNu_Cantidad(rs.getInt("Nu_Cantidad"));
+                vo.setSs_PrecioUnitario(rs.getInt("Ss_PrecioUnitario"));
+            }
             
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -97,6 +100,6 @@ public class ReglasNegocioDAOImpl extends BaseDAO implements ReglasNegocioDAO {
             this.cerrarStatement(stmt);
             this.cerrarConexion(con);
         }
-        return c;
+        return vo;
     }
 }
