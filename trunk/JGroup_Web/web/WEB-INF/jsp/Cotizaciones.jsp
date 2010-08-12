@@ -70,44 +70,7 @@
                             <p align="center" class="Estilo3">Retornar al Men&uacute; </p></td>
                         <td width="0%" style=" text-align:left;">
 
-                            <!--<img src="../iconos/nombrepeq.gif" />
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-            	<tr>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">Datos de Usuario</td>
-                                </tr>
-                                <tr>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;"></td>
-                                </tr>
-                                <tr>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                                </tr>
-                            </table>
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                <tr>
-                	<td style="text-align:right; width:10px;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                	<td style="text-align:rleft; color:#FFFFFF; font-weight:bold;">Datos de Empresa</td>
-                	<td style="text-align:right; color:#FFFFFF; width:70px; font-weight:bold;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                                </tr>
-            	<tr>
-                	<td style="text-align:right; width:10px;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                	<td style="text-align:left; color:#FFFFFF;">Raz.Soc: </td>
-                                    <td style="text-align:right; color:#FFFFFF; width:70px; font-weight:bold;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                                </tr>
-                                <tr>
-                	<td style="text-align:right; width:10px;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                	<td style="text-align:left; color:#FFFFFF;">Direcci&oacute;n: </td>
-                                    <td style="text-align:right; color:#FFFFFF; width:70px; font-weight:bold;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                                </tr>
-                            </table>-->            </td>
+  </td>
                     </tr>
                 </table>
             </div>
@@ -120,7 +83,7 @@
                           <td width="96" height="38"><span class="Estilo11">N&uacute;mero</span></td>
                           <td width="144"><input type="text" name="Tx_NumCot" /></td>
                           <td width="299">&nbsp;</td>
-                          <td colspan="2"><!-- #BeginDate format:fcSw1a -->Tuesday, 29 June, 2010 11:54 PM<!-- #EndDate --></td>
+                          <td colspan="2"><!-- #BeginDate format:fcSw1a -->Wednesday, 11 August, 2010 8:10 PM<!-- #EndDate --></td>
                         </tr>
                         <tr>
                           <td height="34" class="Estilo11">Invitaci&oacute;n</td>
@@ -136,12 +99,16 @@
                         </tr>
                         <tr>
                           <td width="94" class="Estilo11">Observaci&oacute;n</td>
-                          <td width="683" bordercolor="0"><form id="form1" name="form1" method="post" action="">
+                          <td width="683" bordercolor="0">
+                              <form id="form1" name="form1" method="post" action="cotizaciones.htm">
+                               <input type="hidden" name="metodo" value="insertar"/>
                               <textarea name="Tx_ObsCotizacion" cols="72.5" wrap="soft"></textarea>
                           </form></td>
                         </tr>
                       </table>
-                      <p>&nbsp;</p>
+                      <p>
+                        <input name="Cmd_NuevoItem2" type="button" value="Grabar" size="" />
+                      </p>
                       <table width="640" border="1">
                         <tr>
                           <th width="53" scope="col">Item</th>
@@ -211,11 +178,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- ventanas de busqueda con CFWINDOW -->
-        <!--<DIV class="yuiextdlg" id="cf_window1214415540789">
-        <DIV class="x-dlg-hd"  id="cf_window1214415540789_title">Buscar Art&iacute;culos</DIV>
-        <DIV class="x-dlg-bd"  id="cf_window1214415540789_body">-->
 
         <!-- para buscar articulos -->
         <div class="yuiextdlg" id="cf_windowbartped" style="display:none;">
@@ -291,36 +253,9 @@
         </div>
 
         <!-- para buscar lista -->
-        <div class="yuiextdlg" id="cf_windowblistaped" style="display:none;">
-            <div class="x-dlg-hd"  id="cf_windowblistaped_title">Mi Lista</div>
-            <div class="x-dlg-bd"  id="cf_windowblistaped_body">
-                <table border="0" cellpadding="0" cellspacing="0" width="102%">
-                    <tr>
-                        <td style="padding-left:5px; padding-right:5px;">
-                            <div class="contenedor">
-                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                    <thead>
-                                        <tr>
-                                            <th width="5%">#</th>
-                                            <th width="48%">C.Costo</th>
-                                            <th width="30%">Nombre</th>
-                                            <th width="15%">Fecha</th>
-                                            <th width="2%">&nbsp;</th>
-                                        </tr>
-                                    </thead>
-                                </table>
-                            </div>
-                            <div id="cuerpolista" style="height:200px; background:#F5F5F5; overflow:scroll;">
-                                <table border="0" cellpadding="0" cellspacing="0" width="98%" id="tbldatos">
-
-                                </table>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-
-                <!-- para buscar lista de direccion -->
-                <div class="yuiextdlg" id="cf_windowblistadir" style="display:none;">
+        <div class="yuiextdlg" id="cf_windowblistaped" style="display:none;"><div class="x-dlg-bd"  id="cf_windowblistaped_body">
+    <!-- para buscar lista de direccion -->
+<div class="yuiextdlg" id="cf_windowblistadir" style="display:none;">
                     <div class="x-dlg-hd"  id="cf_windowblistadir_title">Mi Lista</div>
                     <div class="x-dlg-bd"  id="cf_windowblistadir_body">
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
