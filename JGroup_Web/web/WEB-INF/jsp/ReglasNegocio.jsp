@@ -14,6 +14,16 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+
+          <form name="form1" method="post" action="reglas.htm">
+              <input type="hidden" name="metodo" value="AnalisisPropuestas"/>
+            Testear:
+            <label>
+                <input name="Nu_Invitacion" type="text" id="Nu_Invitacion">
+            </label>
+            <label>
+                <input name="btnenviar" type="submit" id="btnenviar" value="Enviar">
+            </label>
+        </form>
     </body>
 </html>
