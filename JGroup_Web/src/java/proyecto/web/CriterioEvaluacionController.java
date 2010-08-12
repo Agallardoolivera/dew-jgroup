@@ -69,7 +69,7 @@ public class CriterioEvaluacionController extends MultiActionController {
     }
 
     public ModelAndView eliminar(HttpServletRequest request, HttpServletResponse response) {
-        String codigo = request.getParameter("txtCodigo");
+        String codigo = request.getParameter("codigo");
         try {
             criterioEvaluacionService.eliminar(Integer.parseInt(codigo));
         } catch (DAOExcepcion ex) {
@@ -79,7 +79,7 @@ public class CriterioEvaluacionController extends MultiActionController {
     }
 
     public ModelAndView obtener(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("txtCodigo"));
+        int id = Integer.parseInt(request.getParameter("codigo"));
         CriterioEvaluacion vo;
         try {
             vo = criterioEvaluacionService.obtener(id);
@@ -91,11 +91,11 @@ public class CriterioEvaluacionController extends MultiActionController {
     }
 
     public ModelAndView actualizar(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("txtCodigo"));
+        int id = Integer.parseInt(request.getParameter("codigo"));
         CriterioEvaluacion vo = new CriterioEvaluacion();
         vo.setCo_Criterio(id);
         vo.setTipo_Dato(request.getParameter("tipoDato"));
-        vo.setTx_DescCriterioEvaluacion(request.getParameter("txtDescripcion"));
+        vo.setTx_DescCriterioEvaluacion(request.getParameter("descripcion"));
         try {
             criterioEvaluacionService.actualizar(vo);
         } catch (DAOExcepcion e) {
