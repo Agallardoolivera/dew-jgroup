@@ -12,7 +12,6 @@ package proyecto.modelo;
 public class CriterioEvaluacion {
 private int Co_Criterio;
 private String Tx_DescCriterioEvaluacion;
-private Double Qt_Puntaje_Base;
 private String Tipo_Dato;
 
     public CriterioEvaluacion(){
@@ -25,14 +24,6 @@ private String Tipo_Dato;
 
     public void setCo_Criterio(int Co_Criterio) {
         this.Co_Criterio = Co_Criterio;
-    }
-
-    public Double getQt_Puntaje_Base() {
-        return Qt_Puntaje_Base;
-    }
-
-    public void setQt_Puntaje_Base(Double Qt_Puntaje_Base) {
-        this.Qt_Puntaje_Base =Qt_Puntaje_Base;
     }
 
     public String getTipo_Dato() {
