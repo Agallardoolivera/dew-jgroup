@@ -16,6 +16,9 @@ import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 import proyecto.excepcion.DAOExcepcion;
 import proyecto.modelo.Invitacion;
 import proyecto.service.InvitacionService;
+import proyecto.modelo.Articulo;
+import proyecto.service.ArticuloService;
+
 import java.util.*;
 import java.text.*;
 
@@ -23,35 +26,40 @@ import java.text.*;
  *
  * @author Alfredo
  */
-public class InvitacionController extends MultiActionController{
+public class InvitacionDetalleController extends MultiActionController{
 
     private InvitacionService invitacionService;
+    private ArticuloService articuloService;
 
     public InvitacionService getInvitacionService() {
         return invitacionService;
+    }
+
+    public ArticuloService getArticuloService() {
+        return articuloService;
     }
 
     public void setInvitacionService(InvitacionService invitacionService) {
         this.invitacionService = invitacionService;
     }
 
+    public void setArticuloService(ArticuloService articuloService) {
+        this.articuloService = articuloService;
+    }
+
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
         try {
-            Collection<Invitacion> invitaciones = invitacionService.listar();
-             for(Invitacion inv : invitaciones){
-		System.out.println(inv.getNu_Invitacion());
-                System.out.println(inv.getFe_Invitacion());
-                System.out.println(inv.getTx_Descripcion());
-                System.out.println(inv.getTx_GeneradorUsuario());
-                System.out.println(inv.getUsuario_Co_Usuario());
-                System.out.println(inv.getOrdenCompra_Nu_OrdenCompra());
+            Collection<Articulo> articulos = articuloService.listar();
+             for(Articulo inv : articulos){
+		System.out.println(inv.getCo_Articulo());
+                System.out.println(inv.getNo_Articulo());
               }
-            request.setAttribute("invitaciones", invitaciones);
+            request.setAttribute("articulos", articulos);
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
         }
 
-        return new ModelAndView("Invitacion");
+        return new ModelAndView("DetalleInvitacion");
 
     }
 

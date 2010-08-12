@@ -30,19 +30,19 @@
                     <td><div align="right"><span class="Estilo4">Invitaci&oacute;n</span></div></td>
                     <td><label>
                             <input name="Tx_NumInvitacion" type="text" id="Tx_NumInvitacion" value="<%out.println(Nu_Invitacion);%>" >
-                        </label></td>
+                            <input name="Tx_DesCortaInv" type="text" id="Tx_DesCortaInv" size="50" value="<%out.println(Des_Invitacion);%>" />
+                  </label></td>
                 </tr>
                 <tr>
-                    <td><label>
-                            <input name="Tx_DesCortaInv" type="text" id="Tx_DesCortaInv" size="50" value="<%out.println(Des_Invitacion);%>" />>
-                        </label></td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td><div align="right"><span class="Estilo4">Proveedor</span></div></td>
                     <td><label>
                             <input name="Tx_CoProveedor" type="text" id="Tx_CoProveedor">
-                        </label></td>
-                        <td width="327" valign="top"><input name="Tx_NomProveedor" id="Tx_NomProveedor"  type="text" size="50"/></td>
+                            <input name="Tx_NomProveedor" id="Tx_NomProveedor"  type="text" size="50"/>
+                    </label></td>
+                        <td width="327" valign="top">&nbsp;</td>
                 </tr>
                 <tr>
                     <td><div align="right"><span class="Estilo4">Observaci&oacute;n</span></div></td>
@@ -55,9 +55,8 @@
                     <td><label>
                             <input name="btnguardar" type="submit" id="btnguardar" value="Grabar"onclick="window.location='cotizaciones.htm?metodo=insertar'">
                         </label>
-                  tr>
-            </table>
-        </form>
+                </table>
+    </form>
 
     </body>
 </html>

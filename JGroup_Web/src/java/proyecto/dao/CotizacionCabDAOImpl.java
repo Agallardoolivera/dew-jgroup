@@ -117,7 +117,7 @@ public class CotizacionCabDAOImpl extends BaseDAO implements CotizacionCabDAO {
 
     @SuppressWarnings("empty-statement")
     public Cotizacion insertar(Cotizacion vo) throws DAOExcepcion {
-        String query = "INSERT INTO cotizacion(Nu_Cotizacion,Fe_Entrega,Invitacion_Nu_Invitacion,Proveedor_Co_Proveedor,TX_Observacion)" + " VALUES (?,?,?,?)";
+        String query = "INSERT INTO cotizacion(Nu_Cotizacion,Fe_Entrega,Invitacion_Nu_Invitacion,Proveedor_Co_Proveedor,TX_Observacion)" + " VALUES (?,?,?,?,?)";
         Connection con = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;

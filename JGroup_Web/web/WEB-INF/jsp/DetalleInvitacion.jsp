@@ -6,11 +6,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <title>Sistema de Cotizaciones On Line </title>
+            <script src="SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
+            <link href="SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <p><strong>Mantenimiento de Invitaciones</strong></p>
-        <form name="form1" method="post" action="invitacion.htm">
-            <input type="hidden" name="metodo" value="insertar"/>
+            <form name="form1" method="post" action="detalleinvitacion.htm">
             <table width="44%" border="0">
                 <tr>
                     <td><div align="right"><span class="Estilo4">Numero de Invitacion</span></div></td>
@@ -19,34 +20,44 @@
                         </label></td>
                 </tr>
                 <tr>
-                    <td width="28%"><div align="right"><span class="Estilo4">Fecha de Invitacion: (YYYY-MM-DD)</span></div></td>
+                    <td width="28%"><div align="right"><span class="Estilo4">Item</span></div></td>
                     <td width="72%"><label>
                             <input name="Fe_Invitacion" type="text" id="Fe_Invitacion">
                         </label></td>
                 </tr>
                 <tr>
-                    <td><div align="right"><span class="Estilo4">Descripcion</span></div></td>
-                    <td><label>
-                            <input name="Tx_Descripcion" type="text" id="Tx_Descripcion">
-                        </label></td>
+                    <td height="27"><div align="right"><span class="Estilo4"> Articulo</span></div></td>
+                  <td><label><span id="spryselect1">
+                  <select name="articulo" id="articulo">
+                          <option>Seleccione Articulo</option>
+           <% if (request.getAttribute("articulos") != null) {
+            %>
+            <%    java.util.Collection<proyecto.modelo.Articulo> articulos = (java.util.Collection) request.getAttribute("articulos");
+                 for (proyecto.modelo.Articulo inv : articulos) {
+            %>
+            <option value=<% out.print(inv.getCo_Articulo());%>><% out.print(inv.getNo_Articulo());%></option>
+            <% }%>
+            <% }%>
+                  </select>
+                  </label></td>
                 </tr>
                 <tr>
-                    <td><div align="right"><span class="Estilo4">Generador de Usuario</span></div></td>
+                    <td><div align="right"><span class="Estilo4">Cantidad</span></div></td>
                     <td><label>
                             <input name="Tx_GeneradorUsuario" type="text" id="Tx_GeneradorUsuario">
                         </label></td>
                 </tr>
                 <tr>
-                    <td><div align="right"><span class="Estilo4">Codigo de Usuario</span></div></td>
+                    <td><div align="right"><span class="Estilo4">Preu</span></div></td>
                     <td><label>
                             <input name="Usuario_Co_Usuario" type="text" id="Usuario_Co_Usuario">
                         </label></td>
                 </tr>
                 <tr>
-                    <td><div align="right"><span class="Estilo4">Orden de Compra</span></div></td>
+                    <td><div align="right"><span class="Estilo4">Observacion</span></div></td>
                     <td><label>
-                            <input name="OrdenCompra_Nu_OrdenCompra" type="text" id="OrdenCompra_Nu_OrdenCompra">
-                        </label></td>
+                    <textarea name="Tx_ObsCotizacion" id="Tx_ObsCotizacion"  cols="72.5" wrap="soft"></textarea>
+                  </label></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
@@ -58,7 +69,7 @@
                         </label></td>
                 </tr>
             </table>
-        </form>
+    </form>
 
         <form name="form1" method="post" action="invitacion.htm">
             <input type="hidden" name="metodo" value="buscar"/>
@@ -75,7 +86,6 @@
             <label>
                 <input name="btnnuevo" type="button" id="btnnuevo" value="Regresar" onclick="window.location='portada.htm'">
             </label>
-            <input name="btnnuevo2" type="button" id="btnnuevo2" value="Detalle" onclick="window.location='detalleinvitacion.htm'" />
     </form>
         <table width="100%" border="1">
             <tr>
@@ -109,5 +119,10 @@
              
         </table>
 
-    </body>
+        <script type="text/javascript">
+<!--
+var spryselect1 = new Spry.Widget.ValidationSelect("spryselect1");
+//-->
+        </script>
+</body>
 </html>

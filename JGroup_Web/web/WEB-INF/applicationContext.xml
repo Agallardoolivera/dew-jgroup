@@ -17,7 +17,7 @@
           p:driverClassName="com.mysql.jdbc.Driver"
           p:url="jdbc:mysql://localhost:3306/jgroup"
           p:username="root"
-          p:password="rootroot" />
+          p:password="root" />
 
 
 
