@@ -22,11 +22,11 @@ td {
 }
 
 th {
-	color:#009900;
+	color:#FFFFFF;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size:10px;
 	border-right: #D6CBA0 1px solid; 
-	background:#00CC00 url(../iconos/cabgrid.gif) repeat-x top; 
+	background:#003366 url(../iconos/cabgrid.gif) repeat-x top;
 	border-left: #FFFFFF 1px solid; 
 	border-bottom:#D6CBA0 1px solid; 
 	text-align: left;

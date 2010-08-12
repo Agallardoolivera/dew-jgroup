@@ -3,30 +3,13 @@
      <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
      <jsp:useBean id="proveedor" scope="page" class="proyecto.modelo.Proveedor" />
 
-    <head>     
+    <head>
 
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <title>::- Sistema de Pedidos On Line -::</title>
         <link type="image/x-icon" href="../favicon.ico" rel="icon" />
         <link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
         <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/efc.css"/>
-        <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/cf.css"/>
-        <style type="text/css">
-        <!--
-        .Estilo1 {font-size: 24px}
-        .Estilo2 {
-                font-size: 16px;
-                font-style: italic;
-                color: #000033;
-        }
-        .Estilo3 {
-                font-size: 12px;
-                font-style: italic;
-                font-weight: bold;
-        }
-        -->
-        </style>
-        -
         <script language="JavaScript" src="../js/graphs.js"></script>
         <script language="JavaScript" src="../js/swfobject.js"></script>
         <script language="JavaScript" src="../js/funcion_cont.js"></script>
@@ -37,32 +20,30 @@
             <div id="header">
                 <table border="0" cellpadding="2" cellspacing="2" width="100%">
                     <tr>
-                        <td width="1%"></td>
-                        <td width="12%" align="left" id="logoefc">
+                        <td width="3%"></td>
+                        <td width="3%" align="left" id="logoefc">
                             <script type="text/javascript">
-                                
+
                                 var so = new SWFObject("logoefc_chico.swf", "EFC", "180", "95", "9", "#999999");
                                 so.write("logoefc");
-                                
-                            </script>
-                        </td>
-                        <td width="77%" align="left">
-                            <span class="titlelogo">proveedores <br />
-                                &nbsp;industriales</span><br /><br />
-                            <span class="textlogo" style="font-size:11px;">Soluciones integrales de Abastecimiento</span>
-                        </td>
-                        <td width="10%"><p align="center"><a href="retornaMenu.htm?metodo=Menu"><img src="<%=request.getContextPath()%>/images/Browser History.png" width="49" height="40" border="0" align="middle" title="Usuario"/></a></p>
-                            <p align="center" class="Estilo3">Retornar al Men&uacute; </p></td>
-                        <td width="0%" style=" text-align:left;">
 
-</td>
+                            </script>
+                      </td>
+                        <td width="82%" align="left">
+                            <span class="titlelogo">proveedores <br />
+                          &nbsp;industriales</span><br /><br />
+                            <span class="textlogo" style="font-size:11px;">Soluciones integrales de Abastecimiento</span>
+                      </td>
+                        <td width="9%"><p align="center"><a href="retornaMenu.htm?metodo=Menu"><img src="<%=request.getContextPath()%>/images/Browser History.png" width="49" height="40" border="0" align="middle" title="Usuario"/></a></p>
+                      <p align="center" class="Estilo3">Retornar al Men&uacute; </p></td>
+                        <td width="3%" style=" text-align:left;"></td>
                     </tr>
                 </table>
             </div>
             <div id="basemedio">
                 <div id="contenido" align="center">
-                    <div style="height:450px;">
-  
+                    <div style="height:390px;">
+
                         <form name="form1" method="post" action="proveedor.htm">
                         <input type="hidden" name="metodo" value="insertar"/>
                         <div align="center">
@@ -70,49 +51,61 @@
                         </div>
                         <table width="356" border="1" align="center">
                           <tr>
-                            <td>Codigo</td>
-                            <td><input name="codigo" type="text" id="codigo" /></td>
+                            <td width="148"><div align="left">Codigo</div></td>
+                            <td width="150"><div align="left">
+                              <input name="codigo" type="text" id="codigo" />
+                            </div></td>
                           </tr>
                           <tr>
-                            <td>Raz&oacute;n Social </td>
-                            <td><input name="rznsoc" type="text" id="rznsoc" /></td>
+                            <td><div align="left">Raz&oacute;n Social </div></td>
+                            <td><div align="left">
+                              <input name="rznsoc" type="text" id="rznsoc" />
+                            </div></td>
                           </tr>
                           <tr>
-                            <td>RUC</td>
-                            <td><input name="ruc" type="text" id="ruc" /></td>
+                            <td><div align="left">RUC</div></td>
+                            <td><div align="left">
+                              <input name="ruc" type="text" id="ruc" />
+                            </div></td>
                           </tr>
-                          
+
                           <tr>
-                            <td>Correo</td>
-                            <td><input name="correo" type="text" id="correo" /></td>
+                            <td><div align="left">Correo</div></td>
+                            <td><div align="left">
+                              <input name="correo" type="text" id="correo" />
+                            </div></td>
                           </tr>
                           <tr>
-                            <td>Clave Acceso</td>
-                            <td><input name="clave" type="text" id="clave" /></td>
-                          </tr>                          
-                              <td align="center"><input name="Limpiar" type="reset" id="Limpiar" value="Limpiar"/>                              </td>
-                              <td align="center"><input name="Limpiar" type="submit" id="registrar" value="Registrar"/></td>
-                        </table>
+                            <td><div align="left">Clave Acceso</div></td>
+                            <td><div align="left">
+                              <input name="clave" type="text" id="clave" />
+                            </div></td>
+                          </tr>
+                              <td align="center"><input name="Limpiar2" type="submit" id="registrar" value="Registrar"/></td>
+                                <td align="center"><input name="Limpiar" type="reset" id="Limpiar" value="Limpiar"/></td>
+                              </table>
 </form>
 
   <form name="form2" method="post" action="proveedor.htm">
             <input type="hidden" name="metodo" value="buscar"/>
-            Articulo:
-            <label>
-                <input name="nombre" type="text" id="nombre">
-            </label>
-            <label>
-                <input name="btnenviar" type="submit" id="btnenviar" value="Buscar">
-            </label>
+            <label></label>
+            <label></label>
 
-<table width="100%" border="1">
+            <table width="352" border="1" align="center">
+              <tr>
+                <th scope="col">Articulo:</th>
+                <th scope="col"><input name="nombre" type="text" id="nombre" /></th>
+                <th scope="col"><input name="btnenviar" type="submit" id="btnenviar" value="Buscar" /></th>
+              </tr>
+            </table>
+    <table width="75%" border="1" align="center">
             <tr>
-                <th>Codigo</th>
-                <th>RazonSocial</th>
-                <th>RUC</th>
-                <th>Correo</th>
-                <th>Clave</th>
-
+                <th width="10%">Codigo</th>
+                <th width="25%">RazonSocial</th>
+                <th width="12%">RUC</th>
+                <th width="22%">Correo</th>
+                <th width="17%">Clave</th>
+                <th width="14%">Acciones</th>
             </tr>
             <% if(request.getAttribute("proveedores")!=null) {
                 %>
@@ -126,12 +119,12 @@
                 <td><%  out.print(prov.getTx_CorreoProveedor());%></td>
                 <td><%  out.print(prov.getTx_ClaveAccesoProveedor());%></td>
 
-                <td><a href="proveedor.htm?metodo=obtener&codigo=<%=prov.getCo_Proveedor()%>&social=<%=prov.getNo_RazonSocialProveedor()%>&ruc=<%=prov.getNu_RucProveedor()%>&correo=<%=prov.getTx_CorreoProveedor()%>&clave=<%=prov.getTx_ClaveAccesoProveedor()%>">Editar</a> - <a href="proveedor.htm?metodo=eliminar&codigo=<%=prov.getCo_Proveedor()%>">Eliminar</a> </td>
+                <td><a href="proveedor.htm?metodo=eliminar&codigo=<%=prov.getCo_Proveedor()%>">Dar de Baja</a> </td>
             </tr>
             <% }%>
            <% }%>
 
-         </table>
-       </form>
+    </table>
+    </form>
     </body>
 </html>

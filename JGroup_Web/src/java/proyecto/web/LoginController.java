@@ -32,6 +32,8 @@ public class LoginController extends SimpleFormController {
         String p = request.getParameter("clave");
         System.out.println(u);
         System.out.println(p);
+        
+        
         if (p==null) {
            
             mv = new ModelAndView("error");
