@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class Cotizacion {
 private int Nu_Invitacion;
-private Date Fe_Entrega;
+private String Fe_Entrega;
 private int Nu_puntajeobtenido;
 private String Tx_Ganadora;
 private int Nu_Cotizacion;
@@ -37,11 +37,11 @@ private String Tx_EstadoCot;
         this.Co_Proveedor = Co_Proveedor;
     }
 
-    public Date getFe_Entrega() {
+    public String getFe_Entrega() {
         return Fe_Entrega;
     }
 
-    public void setFe_Entrega(Date Fe_Entrega) {
+    public void setFe_Entrega(String Fe_Entrega) {
         this.Fe_Entrega = Fe_Entrega;
     }
 

@@ -16,17 +16,17 @@ private int Nu_OrdenCompra;
 private int Nu_Cotizacion;
 private Double Ss_SubTotal;
 private String Tx_CondicionPago;
-private Date Fe_Entrega;
+private String Fe_Entrega;
 private String Tx_Observacion;
     public OrdenCompra(){
 
     }
 
-    public Date getFe_Entrega() {
+    public String getFe_Entrega() {
         return Fe_Entrega;
     }
 
-    public void setFe_Entrega(Date Fe_Entrega) {
+    public void setFe_Entrega(String Fe_Entrega) {
         this.Fe_Entrega = Fe_Entrega;
     }
 
