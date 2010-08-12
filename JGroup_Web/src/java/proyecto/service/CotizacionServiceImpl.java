@@ -6,6 +6,7 @@ import proyecto.dao.CotizacionCabDAO;
 import proyecto.excepcion.DAOExcepcion;
 import proyecto.modelo.Cotizacion;
 import proyecto.modelo.ConsultacotiCab1;
+
 public class CotizacionServiceImpl implements CotizacionService {
 
     private CotizacionCabDAO cotizacionCabDAO;
