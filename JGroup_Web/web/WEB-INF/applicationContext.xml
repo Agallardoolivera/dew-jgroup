@@ -17,7 +17,7 @@
           p:driverClassName="com.mysql.jdbc.Driver"
           p:url="jdbc:mysql://localhost:3306/jgroup"
           p:username="root"
-          p:password="rootroot" />
+          p:password="root" />
 
 
 
@@ -67,7 +67,15 @@
     <bean id="cotizacionService" class="proyecto.service.CotizacionServiceImpl">
         <property name="cotizacionCabDAO" ref="cotizacionCabDAO"/>
     </bean>
-    <bean id="invitacionDetalleDAO" class="proyecto.dao.InvitacionDetalleDAOImpl">
+
+    <bean id="criterioEvaluacionDAO" class="proyecto.dao.CriterioEvaluacionDAOImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="criterioEvaluacionService" class="proyecto.service.CriterioEvaluacionServiceImpl">
+        <property name="criterioEvaluacionDAO" ref="criterioEvaluacionDAO"/>
+    </bean>
+        <bean id="invitacionDetalleDAO" class="proyecto.dao.InvitacionDetalleDAOImpl">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 <bean id="invitacionDetalleService" class="proyecto.service.InvitacionDetalleServiceImpl">
