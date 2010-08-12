@@ -24,10 +24,10 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                     <prop key="usuarios_mantener.htm">usuariosController</prop>
                     <prop key="usuarios_editar.htm">usuariosController</prop>
                     <prop key="articulo.htm">articuloController</prop>
-                    <!--prop key="articulo_editar.htm">articuloController</prop>-->
                     <prop key="invitacion.htm">invitacionController</prop>
+                    <prop key="criterio.htm">criterioEvaluacionController</prop>
+                    <prop key="criterio_editar.htm">criterioEvaluacionController</prop>
                     <prop key="detalleinvitacion.htm">invitacionDetalleController</prop>
-
                     <prop key="reglas.htm">reglasNegocioController</prop>
                     <prop key="cotizaciones.htm">cotizacionController</prop>
                     <prop key="analisis.htm">accesomenuP</prop>
@@ -109,10 +109,15 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
             <property name="methodNameResolver">
                 <ref bean="paramResolver"/>
             </property>
- <!--           <property name="invitacionService" ref="invitacionService"/>-->
             <property name="invitacionDetalleService" ref="invitacionDetalleService"/>
-            <property name="articuloService" ref="articuloService"/>
         </bean>
+
+         <bean id="criterioEvaluacionController" class="proyecto.web.CriterioEvaluacionController">
+            <property name="methodNameResolver">
+                <ref bean="paramResolver"/>
+            </property>
+            <property name="criterioEvaluacionService" ref="criterioEvaluacionService"/>
+        </bean>        
 
         <bean id="paramResolver"
           class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
