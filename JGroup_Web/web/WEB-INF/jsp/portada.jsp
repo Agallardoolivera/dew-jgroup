@@ -140,18 +140,18 @@
                                 <td><div align="left">Auditoria</div></td>
                                 <td><div align="center"><a href="auditoria.htm?metodo=Auditoria" style="visibility:<? echo $visible;?>"><img src="<%=request.getContextPath()%>/images/Avance.gif" width="26" height="16" border="0" align="middle" title="Auditoria" /></a></div></td>
                             </tr>
+
                             <tr>
-                                 <%--
-                                <c:set var="area" value="${user.area}"/>
-                                <c:if test='${area=="Gerencia"}'>
-                                  --%>
-                                        <td><div align="left">Reporte Gerencia </div></td>
-                                        <td><div align="center"><a href="reporteg.htm?metodo=ReporteG" style="">
-                                                    <img src="<%=request.getContextPath()%>/images/Busqueda.gif" width="26" height="16" border="0" align="middle" title="Reporte" /></a>
-                                            </div>                                        </td>
-                                <%-- </c:if>--%>
+                                <td><div align="left">Reporte Gerencia </div></td>
+                                <td><div align="center"><a href="reporteg.htm?metodo=ReporteG" style="">
+                                    <img src="<%=request.getContextPath()%>/images/Busqueda.gif" width="26" height="16" border="0" align="middle" title="Reporte" /></a>
+                                </div></td>
                             </tr>
-                            <tr>                            </tr>
+                            <tr>
+                                <td><div align="left">Criterios</div></td>
+                                <td><div align="center"><a href="criterios.htm?metodo=Criterios" style="visibility:<? echo $visible;?>"><img src="<%=request.getContextPath()%>/images/Avance.gif" width="26" height="16" border="0" align="middle" title="Auditoria" /></a></div></td>
+                            </tr>
+
                             <tr>
                                 <td rowspan="3"><img src="<%=request.getContextPath()%>/images/AreaRango.png" width="75" height="68" border="0" title="Delimitacion" /></td>
 
