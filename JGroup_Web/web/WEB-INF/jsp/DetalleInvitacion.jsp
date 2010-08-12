@@ -22,7 +22,7 @@
                 <tr>
                     <td width="28%"><div align="right"><span class="Estilo4">Item</span></div></td>
                     <td width="72%"><label>
-                            <input name="Fe_Invitacion" type="text" id="Fe_Invitacion">
+                            <input name="Nu_Item" type="text" id="Nu_Item">
                         </label></td>
                 </tr>
                 <tr>
@@ -44,19 +44,14 @@
                 <tr>
                     <td><div align="right"><span class="Estilo4">Cantidad</span></div></td>
                     <td><label>
-                            <input name="Tx_GeneradorUsuario" type="text" id="Tx_GeneradorUsuario">
+                            <input name="Tx_Cantidad" type="text" id="Tx_Cantidad">
                         </label></td>
                 </tr>
-                <tr>
-                    <td><div align="right"><span class="Estilo4">Preu</span></div></td>
-                    <td><label>
-                            <input name="Usuario_Co_Usuario" type="text" id="Usuario_Co_Usuario">
-                        </label></td>
-                </tr>
+                
                 <tr>
                     <td><div align="right"><span class="Estilo4">Observacion</span></div></td>
                     <td><label>
-                    <textarea name="Tx_ObsCotizacion" id="Tx_ObsCotizacion"  cols="72.5" wrap="soft"></textarea>
+                    <textarea name="Tx_Obs" id="Tx_Obs"  cols="72.5" wrap="soft"></textarea>
                   </label></td>
                 </tr>
                 <tr>

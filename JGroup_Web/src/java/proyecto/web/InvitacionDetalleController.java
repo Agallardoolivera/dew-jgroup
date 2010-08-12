@@ -18,8 +18,8 @@ import proyecto.modelo.Invitacion;
 import proyecto.service.InvitacionService;
 import proyecto.modelo.Articulo;
 import proyecto.service.ArticuloService;
-//import proyecto.modelo.DetalleInvitacion;
-
+import proyecto.modelo.DetalleInvitacion;
+import proyecto.service.InvitacionDetalleService;
 import java.util.*;
 import java.text.*;
 
@@ -31,7 +31,7 @@ public class InvitacionDetalleController extends MultiActionController{
 
     private InvitacionService invitacionService;
     private ArticuloService articuloService;
-
+    private InvitacionDetalleService invitacionDetalleService;
     public InvitacionService getInvitacionService() {
         return invitacionService;
     }
@@ -40,12 +40,20 @@ public class InvitacionDetalleController extends MultiActionController{
         return articuloService;
     }
 
+    public InvitacionDetalleService getInvitacionDetalleService() {
+        return invitacionDetalleService;
+    }
+
     public void setInvitacionService(InvitacionService invitacionService) {
         this.invitacionService = invitacionService;
     }
 
     public void setArticuloService(ArticuloService articuloService) {
         this.articuloService = articuloService;
+    }
+
+    public void setInvitacionDetalleService(InvitacionDetalleService invitacionDetalleService) {
+        this.invitacionDetalleService = invitacionDetalleService;
     }
 
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
@@ -68,21 +76,18 @@ public class InvitacionDetalleController extends MultiActionController{
             throws ParseException {
 
 
-        Invitacion vo = new Invitacion();
-        vo.setNu_Invitacion(Integer.parseInt(request.getParameter("Nu_Invitacion")));
-        System.out.println("Fecha de Invitacion = "+request.getParameter("Fe_Invitacion") );
-        
-        vo.setFe_Invitacion(request.getParameter("Fe_Invitacion"));
-        vo.setTx_Descripcion(request.getParameter("Tx_Descripcion"));
-        vo.setTx_GeneradorUsuario(request.getParameter("Tx_GeneradorUsuario"));
-        vo.setUsuario_Co_Usuario(Integer.parseInt(request.getParameter("Usuario_Co_Usuario")));
-        vo.setOrdenCompra_Nu_OrdenCompra(Integer.parseInt(request.getParameter("OrdenCompra_Nu_OrdenCompra")));
+        DetalleInvitacion vo = new DetalleInvitacion();
+        vo.setNu_invitacion(Integer.parseInt(request.getParameter("Nu_Invitacion")));
+        vo.setNu_Item(Integer.parseInt(request.getParameter("Nu_Item")));
+        vo.setCo_Articulo(Integer.parseInt(request.getParameter("articulo")));
+        vo.setNu_cantidad(Integer.parseInt(request.getParameter("Tx_Cantidad")));
+        vo.setTx_Observacion(request.getParameter("Tx_Obs"));
         try {
-            invitacionService.insertar(vo);
+            invitacionDetalleService.insertar(vo);
         } catch (DAOExcepcion e) {
             System.err.println(e.toString());
         }
-        return new ModelAndView("redirect:/invitacion.htm");
+        return new ModelAndView("redirect:/detalleinvitacion.htm");
     }
 
     public ModelAndView buscar(HttpServletRequest request, HttpServletResponse response) {
@@ -105,29 +110,29 @@ public class InvitacionDetalleController extends MultiActionController{
     }
 
     public ModelAndView nuevo(HttpServletRequest request, HttpServletResponse response) {
-        return new ModelAndView("/Invitacion");
+        return new ModelAndView("/DetalleInvitacion");
     }
 
     public ModelAndView eliminar(HttpServletRequest request, HttpServletResponse response) {
        String Nu_Invitacion = request.getParameter("Nu_Invitacion");
         try {
-            invitacionService.eliminar(Integer.parseInt(Nu_Invitacion));
+            invitacionDetalleService.eliminar(Integer.parseInt(Nu_Invitacion));
         } catch (DAOExcepcion ex) {
             System.err.println(ex.toString());
         }
-        return new ModelAndView("Invitacion");
+        return new ModelAndView("DetalleInvitacion");
     }
 
     public ModelAndView obtener(HttpServletRequest request, HttpServletResponse response) {
        int id = Integer.parseInt(request.getParameter("Nu_Invitacion"));
-        Invitacion vo;
+        DetalleInvitacion vo;
         try {
-            vo = invitacionService.obtener(id);
-            request.setAttribute("Invitacion", vo);
+            vo = invitacionDetalleService.obtener(id);
+            request.setAttribute("detalleInvitacion", vo);
         } catch (DAOExcepcion e) {
             System.err.println("Error");
         }
-        return new ModelAndView("/Invitacion_Editar");
+        return new ModelAndView("/DetalleInvitacion");
     }
 
 

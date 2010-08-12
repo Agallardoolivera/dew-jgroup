@@ -109,8 +109,8 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
             <property name="methodNameResolver">
                 <ref bean="paramResolver"/>
             </property>
-            <property name="invitacionService" ref="invitacionService"/>
-
+ <!--           <property name="invitacionService" ref="invitacionService"/>-->
+            <property name="invitacionDetalleService" ref="invitacionDetalleService"/>
             <property name="articuloService" ref="articuloService"/>
         </bean>
 

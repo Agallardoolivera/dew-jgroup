@@ -13,36 +13,36 @@ import proyecto.modelo.DetalleInvitacion;
  *
  * @author Alfredo
  */
-public class InvitacionDetalleServiceImpl implements InvitacionDetalleService {
+public class InvitacionDetalleServiceImpl implements InvitacionDetalleService{
 
-      private InvitacionDetalleDAO InvitacionDetalleDAO;
+      private InvitacionDetalleDAO invitacionDetalleDAO;
 
     public InvitacionDetalleDAO getInvitacionDetalleDAO() {
-        return InvitacionDetalleDAO;
+        return invitacionDetalleDAO;
     }
 
-    public void setInvitacionDAO(InvitacionDetalleDAO InvitacionDetalleDAO) {
-        this.InvitacionDetalleDAO = InvitacionDetalleDAO;
+    public void setInvitacionDetalleDAO(InvitacionDetalleDAO invitacionDetalleDAO) {
+        this.invitacionDetalleDAO = invitacionDetalleDAO;
     }
 
     public DetalleInvitacion insertar(DetalleInvitacion vo) throws DAOExcepcion {
-        return InvitacionDetalleDAO.insertar(vo);
+        return invitacionDetalleDAO.insertar(vo);
     }
 
     public Collection<DetalleInvitacion> buscarPorNombre(int No_Invitacion) throws DAOExcepcion {
-        return InvitacionDetalleDAO.buscarPorNombre(No_Invitacion);
+        return invitacionDetalleDAO.buscarPorNombre(No_Invitacion);
     }
 
     public Collection<DetalleInvitacion> listar() throws DAOExcepcion {
-        return InvitacionDetalleDAO.listar();
+        return invitacionDetalleDAO.listar();
     }
 
     public DetalleInvitacion obtener(int Co_Invitacion) throws DAOExcepcion {
-        return InvitacionDetalleDAO.obtener(Co_Invitacion);
+        return invitacionDetalleDAO.obtener(Co_Invitacion);
     }
 
     public void eliminar(int Co_Invitacion) throws DAOExcepcion {
-        InvitacionDetalleDAO.eliminar(Co_Invitacion);
+        invitacionDetalleDAO.eliminar(Co_Invitacion);
     }
 
 }
