@@ -83,7 +83,6 @@ public class ReglasNegocioDAOImpl extends BaseDAO implements ReglasNegocioDAO {
             String query = "SELECT * from DetalleCotizacion where Cotizacion_Nu_Cotizacion=?";
             stmt = con.prepareStatement(query);
             stmt.setInt(1,  Nu_Cotizacion);
-            System.out.println("Query =");
             rs = stmt.executeQuery();
             while (rs.next()) {
                 vo.setCo_Articulo(rs.getInt("Articulo_Co_Articulo"));
