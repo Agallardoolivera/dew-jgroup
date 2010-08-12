@@ -100,7 +100,7 @@
                 <th><%  out.print(inv.getUsuario_Co_Usuario());%></th>
                 <th><%  out.print(inv.getOrdenCompra_Nu_OrdenCompra());%></th>
                 <th><a href="invitacion.htm?metodo=obtener&Nu_Invitacion=<%=inv.getNu_Invitacion()%>&Fe_Invitacion=<%=inv.getFe_Invitacion()%>&Gen_Usuario=<%=inv.getTx_GeneradorUsuario()%>&Descripcion=<%=inv.getTx_Descripcion()%>&Usuario=<%=inv.getUsuario_Co_Usuario()%>&Orden_Compra=<%=inv.getOrdenCompra_Nu_OrdenCompra()%>">Editar</a> -
-                    <a href="invitacion.htm?metodo=eliminar&Nu_Invitacion=<%=inv.getNu_Invitacion()%>">Eliminar</a> </th>
+                    <a href="invitacion.htm?metodo=eliminar&Nu_Invitacion=<%=inv.getNu_Invitacion()%>">Eliminar</a> - <a href="cotizaciones.htm?metodo=Cotizaciones&Nu_Invitacion=<%=inv.getNu_Invitacion()%>&Des_Invitacion=<%=inv.getTx_Descripcion()%>">Generar Cotizacion</a> </th>
             </tr>
             <% }%>
             <% }%>
