@@ -55,44 +55,8 @@ function fn_mostrar_ocultar_submenu(submenu,imagen)
                   <span class="textlogo" style="font-size:11px;">Soluciones integrales de Abastecimiento</span> </td>
                 <td width="10%"><p align="center"><a href="retornaMenu.htm?metodo=Menu"><img src="<%=request.getContextPath()%>/images/Browser History.png" alt="" width="49" height="40" border="0" align="middle" title="Usuario"/></a></p>
                     <p align="center" class="Estilo31">Retornar al Men&uacute; </p></td>
-                <td width="0%" style=" text-align:left;"><!--<img src="../iconos/nombrepeq.gif" />
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-            	<tr>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">Datos de Usuario</td>
-                                </tr>
-                                <tr>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;"></td>
-                                </tr>
-                                <tr>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                                </tr>
-                            </table>
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                <tr>
-                	<td style="text-align:right; width:10px;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                	<td style="text-align:rleft; color:#FFFFFF; font-weight:bold;">Datos de Empresa</td>
-                	<td style="text-align:right; color:#FFFFFF; width:70px; font-weight:bold;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                                </tr>
-            	<tr>
-                	<td style="text-align:right; width:10px;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                	<td style="text-align:left; color:#FFFFFF;">Raz.Soc: </td>
-                                    <td style="text-align:right; color:#FFFFFF; width:70px; font-weight:bold;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                                </tr>
-                                <tr>
-                	<td style="text-align:right; width:10px;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                	<td style="text-align:left; color:#FFFFFF;">Direcci&oacute;n: </td>
-                                    <td style="text-align:right; color:#FFFFFF; width:70px; font-weight:bold;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                                </tr>
-                            </table>-->
+                <td width="0%" style=" text-align:left;">
+
                 </td>
               </tr>
             </table>
@@ -105,6 +69,8 @@ function fn_mostrar_ocultar_submenu(submenu,imagen)
               <div style="height:350px;">
                 <p></p>
                 <table width="922" border="0">
+                    <form id="form1" name="form1" method="post" action="criterios.htm">
+                    <input type="hidden" name="metodo" value="insertar"/>
                   <tr>
                     <td width="296" align="left">&nbsp;</td>
                     <td width="193" align="left">Codigo de Criterio</td>
@@ -115,39 +81,27 @@ function fn_mostrar_ocultar_submenu(submenu,imagen)
                   <tr>
                     <td align="right">&nbsp;</td>
                     <td align="left">Tipo de dato</td>
-                    <td align="left"><form id="form2" name="form2" method="post" action="">
+                    <td align="left">
                         <label>
-                        <select name="1" id="1">
+                        <select name="tipoDato" id="tipoDato">
                           <option value="2">Numerico</option>
-                          <option value="3">Si/No</option>
                           <option value="1">Fecha</option>
                         </select>
-                        </label>
-                      </form>
-                        <label for="txtCodigo"></label></td>
+                        </label>                      
+                    </td>
                   </tr>
                   <tr>
                     <td align="right">&nbsp;</td>
                     <td height="74" align="left">Descripci&oacute;n</td>
-                    <td align="left"><form id="form1" name="form1" method="post" action="">
+                    <td align="left">
                         <label for="txtDescripcion"></label>
                         <textarea name="txtDescripcion" id="txtDescripcion" cols="21" rows="5"></textarea>
-                      </form>
-                        <label for="txtRUC"></label></td>
-                  </tr>
-                  <tr>
-                    <td align="right">&nbsp;</td>
-                    <td align="left">Puntaje</td>
-                    <td align="left"><label for="txtRazonsocial"></label>
-                        <input name="txtRazonsocial" type="text" id="txtRazonsocial" size="4" /></td>
+                      </td>
                   </tr>
                   <tr align="center">
-                    <td colspan="3">&nbsp;</td>
+                    <td colspan="3"><input type="submit" name="btnIngresarCriterios" id="btnIngresarCriterios" value="Registrar" />
                   </tr>
-                  <tr align="center">
-                    <td colspan="3"><input type="submit" name="btnIngresarProveedor" id="btnIngresarProveedor" value="Registrar" />
-                        <label for="txtClave"></label></td>
-                  </tr>
+                  </form>
                 </table>
               </div>
             </div>
