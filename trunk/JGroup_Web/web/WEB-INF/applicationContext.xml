@@ -67,4 +67,10 @@
     <bean id="cotizacionService" class="proyecto.service.CotizacionServiceImpl">
         <property name="cotizacionCabDAO" ref="cotizacionCabDAO"/>
     </bean>
+    <bean id="invitacionDetalleDAO" class="proyecto.dao.InvitacionDetalleDAOImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+<bean id="invitacionDetalleService" class="proyecto.service.InvitacionDetalleServiceImpl">
+        <property name="invitacionDetalleDAO" ref="invitacionDetalleDAO"/>
+    </bean>
 </beans>
