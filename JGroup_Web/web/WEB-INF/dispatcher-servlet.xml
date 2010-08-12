@@ -49,7 +49,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
           p:prefix="/WEB-INF/jsp/"
           p:suffix=".jsp" />    
     <!--
-    The index controller.
+    The index controller.....
     -->
         <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
@@ -110,6 +110,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                 <ref bean="paramResolver"/>
             </property>
             <property name="invitacionService" ref="invitacionService"/>
+
             <property name="articuloService" ref="articuloService"/>
                <property name="" ref="articuloService"/>
         </bean>
