@@ -38,7 +38,7 @@ public class CriterioEvaluacionDAOImpl extends BaseDAO implements CriterioEvalua
         ResultSet rs = null;
         try {
             con = dataSource.getConnection();
-            String query = "select Co_Criterio,Tx_DescCriterioEvaluacion, TipoDato,Qt_Puntaje_Base from CriterioEvaluacion";
+            String query = "select Co_Criterio,Tx_DescCriterioEvaluacion, TipoDato from criterioevaluacion";
             stmt = con.prepareStatement(query);
             rs = stmt.executeQuery();
             while (rs.next()) {
@@ -61,7 +61,7 @@ public class CriterioEvaluacionDAOImpl extends BaseDAO implements CriterioEvalua
     }
 
     public CriterioEvaluacion insertar(CriterioEvaluacion vo) throws DAOExcepcion {
-        String query = "INSERT INTO CriterioEvaluacion(Co_Criterio,Tx_DescCriterioEvaluacion, TipoDato,Qt_Puntaje_Base) VALUES (?,?,?,?)";
+        String query = "INSERT INTO CriterioEvaluacion(Co_Criterio,Tx_DescCriterioEvaluacion, TipoDato) VALUES (?,?,?)";
         Connection con = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -114,7 +114,7 @@ public class CriterioEvaluacionDAOImpl extends BaseDAO implements CriterioEvalua
     }
 
     public void eliminar(int codigo) throws DAOExcepcion {
-        String query = "DELETE FROM CriterioEvaluacion WHERE Co_Criterio=?";
+        String query = "DELETE FROM criterioevaluacion WHERE Co_Criterio=?";
         Connection con = null;
         PreparedStatement stmt = null;
         try {
@@ -140,7 +140,7 @@ public class CriterioEvaluacionDAOImpl extends BaseDAO implements CriterioEvalua
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
-            String query = "select Co_Criterio,Tx_DescCriterioEvaluacion, TipoDato,Qt_Puntaje_Base from CriterioEvaluacion where Co_criterio=?";
+            String query = "select Co_Criterio,Tx_DescCriterioEvaluacion, TipoDato from CriterioEvaluacion where Co_criterio=?";
             con = dataSource.getConnection();
             stmt = con.prepareStatement(query);
             stmt.setInt(1, codigo);
