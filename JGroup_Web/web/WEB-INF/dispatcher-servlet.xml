@@ -26,6 +26,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                     <prop key="articulo.htm">articuloController</prop>
                     <!--prop key="articulo_editar.htm">articuloController</prop>-->
                     <prop key="invitacion.htm">invitacionController</prop>
+                    <prop key="reglas.htm">reglasNegocioController</prop>
                     <prop key="cotizaciones.htm">accesomenuP</prop>
                     <prop key="analisis.htm">accesomenuP</prop>
                     <prop key="retornaMenu.htm">accesomenuP</prop>
@@ -67,6 +68,15 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
             </property>            
             <property name="usuarioService" ref="usuarioService"/>
         </bean>
+
+        <bean id="reglasNegocioController" class="proyecto.web.ReglasNegocioController">
+            <property name="methodNameResolver">
+                <ref bean="paramResolver"/>
+            </property>
+            <property name="reglasNegocioService" ref="reglasService"/>
+        </bean>
+
+
         <bean id="articuloController" class="proyecto.web.ArticuloController">
             <property name="methodNameResolver">
                 <ref bean="paramResolver"/>
@@ -80,6 +90,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
             </property>
             <property name="invitacionService" ref="invitacionService"/>
         </bean>
+
          <bean id="proveedorController" class="proyecto.web.ProveedorController">
             <property name="methodNameResolver">
                 <ref bean="paramResolver"/>
