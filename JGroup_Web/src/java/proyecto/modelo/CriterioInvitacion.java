@@ -10,45 +10,38 @@ package proyecto.modelo;
  * @author Angela
  */
 public class CriterioInvitacion {
-private int Nu_ValorCotizacion;
-private int Co_Criterio;
-private int Co_Cotizacion;
-private double Qt_Puntaje_Especial;
 
-    public double getQt_Puntaje_Especial() {
-        return Qt_Puntaje_Especial;
-    }
 
-    public void setQt_Puntaje_Especial(double Qt_Puntaje_Especial) {
-        this.Qt_Puntaje_Especial = Qt_Puntaje_Especial;
-    }
+    private int criterioevaluacion_Co_Criterio;
+    private int invitacion_Nu_Invitacion;
+    private Double Nu_puntaje;
 
+    
     public CriterioInvitacion(){
 
     }
 
-    public int getCo_Cotizacion() {
-        return Co_Cotizacion;
+     public int getInvitacion_Nu_Invitacion() {
+        return invitacion_Nu_Invitacion;
     }
 
-    public void setCo_Cotizacion(int Co_Cotizacion) {
-        this.Co_Cotizacion = Co_Cotizacion;
+    public void setInvitacion_Nu_Invitacion(int invitacion_Nu_Invitacion) {
+        this.invitacion_Nu_Invitacion = invitacion_Nu_Invitacion;
     }
 
     public int getCo_Criterio() {
-        return Co_Criterio;
+        return criterioevaluacion_Co_Criterio;
     }
 
     public void setCo_Criterio(int Co_Criterio) {
-        this.Co_Criterio = Co_Criterio;
+        this.criterioevaluacion_Co_Criterio = Co_Criterio;
     }
 
-    public int getNu_ValorCotizacion() {
-        return Nu_ValorCotizacion;
+    public Double getNu_puntaje() {
+        return Nu_puntaje;
     }
 
-    public void setNu_ValorCotizacion(int Nu_ValorCotizacion) {
-        this.Nu_ValorCotizacion = Nu_ValorCotizacion;
+    public void setNu_puntaje(Double Nu_puntaje) {
+        this.Nu_puntaje = Nu_puntaje;
     }
-
 }
