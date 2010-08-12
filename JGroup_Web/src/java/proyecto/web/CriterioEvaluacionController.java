@@ -27,7 +27,7 @@ public class CriterioEvaluacionController extends MultiActionController {
         return criterioEvaluacionService;
     }
 
-    public void setArticuloService(CriterioEvaluacionService criterioEvaluacionService) {
+    public void setCriterioEvaluacionService(CriterioEvaluacionService criterioEvaluacionService) {
         this.criterioEvaluacionService = criterioEvaluacionService;
     }
 
@@ -49,7 +49,7 @@ public class CriterioEvaluacionController extends MultiActionController {
     }
 
     public ModelAndView nuevo(HttpServletRequest request, HttpServletResponse response) {
-        return new ModelAndView("Articulo");
+        return new ModelAndView("Criterio");
     }
 
     public ModelAndView eliminar(HttpServletRequest request, HttpServletResponse response) {
@@ -85,7 +85,7 @@ public class CriterioEvaluacionController extends MultiActionController {
         } catch (DAOExcepcion e) {
             System.err.println("Error");
         }
-        return new ModelAndView("redirect:/criterios.htm");
+        return new ModelAndView("redirect:/criterio.htm");
     }
 
 }
