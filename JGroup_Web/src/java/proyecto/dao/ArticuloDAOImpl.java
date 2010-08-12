@@ -134,7 +134,6 @@ public class ArticuloDAOImpl extends BaseDAO implements ArticuloDAO {
     }
 
     public void eliminar(int codigo) throws DAOExcepcion {
-//        String query = "DELETE FROM articulo WHERE Co_Articulo=?";
         String query = "update articulo set estado='I' WHERE Co_Articulo=?";
 
         Connection con = null;
