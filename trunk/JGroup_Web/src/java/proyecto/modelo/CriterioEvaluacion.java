@@ -10,13 +10,10 @@ package proyecto.modelo;
  * @author Angela
  */
 public class CriterioEvaluacion {
+
 private int Co_Criterio;
 private String Tx_DescCriterioEvaluacion;
 private String Tipo_Dato;
-
-    public CriterioEvaluacion(){
-
-    }
 
     public int getCo_Criterio() {
         return Co_Criterio;
