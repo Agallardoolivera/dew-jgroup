@@ -5,6 +5,7 @@
 
 package proyecto.web;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
@@ -42,7 +43,7 @@ public class ReglasNegocioController extends MultiActionController{
         return new ModelAndView("ReglasNegocio");
     }
 
-    public ModelAndView AnalisisPropuestas(HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView AnalisisPropuestas(HttpServletRequest request, HttpServletResponse response) throws ParseException {
 
             DetalleCotizacion dCotizacion;
             Collection<Cotizacion> cotizaciones;
@@ -111,14 +112,13 @@ public class ReglasNegocioController extends MultiActionController{
             return cod_ganador;
         }
 
-    public int Calcular_MejorFecha(String[][] Proveedor, int indice) {
+    public int Calcular_MejorFecha(String[][] Proveedor, int indice) throws ParseException {
         int cod_ganador = 0;
-        Date fecha_mayor = null;
-        String DATE_FORMAT = "dd/MM/yyyy";
+        //Date fecha_menor=null;
+        String DATE_FORMAT = "yyyy-MM-dd";
         SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
-
+        Date fecha_menor=sdf.parse("2050-10-10");
         /*
-
         Date c1= sdf.parse("12/12/2001");
         Date c2= sdf.parse("13/01/2002");
 
@@ -134,14 +134,13 @@ public class ReglasNegocioController extends MultiActionController{
         */
         for (int i = 0; i < indice; i++) {
             System.out.println("Fechas = " + Proveedor[i][4]);
-            /*if (Double.parseDouble(Proveedor[i][8]) > monto_mayor){
-            monto_mayor=Double.parseDouble(Proveedor[i][8]);
-            cod_ganador=i;
+            Date c=sdf.parse(Proveedor[i][4]);
+            if (c.before(fecha_menor)){
+                 fecha_menor =  c;
+                 cod_ganador=i;
+             }
             }
-            }
-            System.out.println("Codigo Ganador = "+cod_ganador + "- Monto Mayor= "+monto_mayor);*/
-
-        }
+            System.out.println("Codigo Ganador = "+cod_ganador + "- Fecha Menor= "+Proveedor[cod_ganador][4]);
          return cod_ganador;
     }
 }
