@@ -69,7 +69,7 @@ function fn_mostrar_ocultar_submenu(submenu,imagen)
               <div style="height:350px;">
                 <p></p>
                 <table width="922" border="0">
-                    <form id="form1" name="form1" method="post" action="criterios.htm">
+                    <form id="form1" name="form1" method="post" action="criterio.htm">
                     <input type="hidden" name="metodo" value="insertar"/>
                   <tr>
                     <td width="296" align="left">&nbsp;</td>
