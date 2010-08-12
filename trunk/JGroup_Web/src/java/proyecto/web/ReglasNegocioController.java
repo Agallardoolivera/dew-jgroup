@@ -5,7 +5,9 @@
 
 package proyecto.web;
 
+import java.text.SimpleDateFormat;
 import java.util.Collection;
+import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -83,12 +85,63 @@ public class ReglasNegocioController extends MultiActionController{
                         Proveedor[indice][campo]=Double.toString(monto);
                         System.out.println(Proveedor[indice][campo]);
                         indice++;campo=0;
-                        System.out.println("Fin ="+indice);
                     }
+                    //Calcular_MejorMonto(Proveedor,indice);
+                    Calcular_MejorFecha(Proveedor,indice) ;
             } catch (DAOExcepcion ex) {
                 System.err.println(ex.toString());
             }
-
+            
             return new ModelAndView("Reglas");
         }
+
+
+        public int Calcular_MejorMonto(String [][] Proveedor,int indice){
+            int cod_ganador=0;
+            Double monto_mayor=0.0;
+
+            for (int i=0;i < indice;i++)  {
+                System.out.println("Montos = "+Proveedor[i][8]);
+                if (Double.parseDouble(Proveedor[i][8]) > monto_mayor){
+                    monto_mayor=Double.parseDouble(Proveedor[i][8]);
+                    cod_ganador=i;
+                }
+            }
+            System.out.println("Codigo Ganador = "+cod_ganador + "- Monto Mayor= "+monto_mayor);
+            return cod_ganador;
+        }
+
+    public int Calcular_MejorFecha(String[][] Proveedor, int indice) {
+        int cod_ganador = 0;
+        Date fecha_mayor = null;
+        String DATE_FORMAT = "dd/MM/yyyy";
+        SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
+
+        /*
+
+        Date c1= sdf.parse("12/12/2001");
+        Date c2= sdf.parse("13/01/2002");
+
+        if (c1.before(c2)) {
+        System.out.print(" es antes ");
+        }
+        if (c1.after(c2)) {
+        System.out.print(" es despues ");
+        }
+        if (c1.equals(c2)) {
+        System.out.print(" es el mismo ");
+        }
+        */
+        for (int i = 0; i < indice; i++) {
+            System.out.println("Fechas = " + Proveedor[i][4]);
+            /*if (Double.parseDouble(Proveedor[i][8]) > monto_mayor){
+            monto_mayor=Double.parseDouble(Proveedor[i][8]);
+            cod_ganador=i;
+            }
+            }
+            System.out.println("Codigo Ganador = "+cod_ganador + "- Monto Mayor= "+monto_mayor);*/
+
+        }
+         return cod_ganador;
+    }
 }
