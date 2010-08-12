@@ -44,27 +44,47 @@ public class ReglasNegocioController extends MultiActionController{
 
             DetalleCotizacion dCotizacion;
             Collection<Cotizacion> cotizaciones;
-
-
+            int indice=0,campo=0;
+            Double monto=0.0;
             String nu_invitacion = request.getParameter("Nu_Invitacion");
+
+            String [][] Proveedor = new String [1000][30];
             try {
                  cotizaciones = reglasNegocioService.ListarCotizacions(Integer.parseInt(nu_invitacion));
 
                 for (Cotizacion cot : cotizaciones) {
-                    System.out.println(cot.getNu_Cotizacion());
-                    System.out.println(cot.getCo_Proveedor());
-                    System.out.println(cot.getNu_Invitacion());
-                    System.out.println(cot.getTx_EstadoCot());
-                    System.out.println(cot.getFe_Entrega());
-
-                    dCotizacion =  reglasNegocioService.Detalle_por_Cotizacion(cot.getNu_Cotizacion());
-                    System.out.println(dCotizacion.getArticulo_Co_Articulo());
-                    System.out.println(dCotizacion.getNu_Cantidad());
-                    System.out.println(dCotizacion.getSs_PrecioUnitario());
-                    System.out.println(dCotizacion.getArticulo_Co_Articulo());
-
-
-                }
+                  
+                        Proveedor[indice][campo] = Integer.toString(cot.getNu_Cotizacion());
+                        System.out.println(Proveedor[indice][campo]);
+                        campo++;
+                        Proveedor[indice][campo]=Integer.toString(cot.getCo_Proveedor());
+                        System.out.println(Proveedor[indice][campo]);
+                        campo++;
+                        Proveedor[indice][campo]=Integer.toString(cot.getNu_Invitacion());
+                        System.out.println(Proveedor[indice][campo]);
+                        campo++;
+                        Proveedor[indice][campo]=cot.getTx_EstadoCot();
+                        System.out.println(Proveedor[indice][campo]);
+                        campo++;
+                        Proveedor[indice][campo]=cot.getFe_Entrega();
+                        System.out.println(Proveedor[indice][campo]);
+                        campo++;
+                        dCotizacion = reglasNegocioService.Detalle_por_Cotizacion(cot.getNu_Cotizacion());
+                        Proveedor[indice][campo]=Integer.toString(dCotizacion.getArticulo_Co_Articulo());
+                        System.out.println(Proveedor[indice][campo]);
+                        campo++;
+                        Proveedor[indice][campo]=Integer.toString(dCotizacion.getNu_Cantidad());
+                        System.out.println(Proveedor[indice][campo]);
+                        campo++;
+                        Proveedor[indice][campo]=Double.toString(dCotizacion.getSs_PrecioUnitario());
+                        System.out.println(Proveedor[indice][campo]);
+                        campo++;
+                        monto= dCotizacion.getSs_PrecioUnitario() * dCotizacion.getNu_Cantidad();
+                        Proveedor[indice][campo]=Double.toString(monto);
+                        System.out.println(Proveedor[indice][campo]);
+                        indice++;campo=0;
+                        System.out.println("Fin ="+indice);
+                    }
             } catch (DAOExcepcion ex) {
                 System.err.println(ex.toString());
             }
