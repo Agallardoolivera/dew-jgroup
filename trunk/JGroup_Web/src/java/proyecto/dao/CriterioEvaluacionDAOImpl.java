@@ -120,16 +120,15 @@ public class CriterioEvaluacionDAOImpl extends BaseDAO implements CriterioEvalua
     }
 
         public CriterioEvaluacion actualizar(CriterioEvaluacion vo) throws DAOExcepcion {
-        String query = "update CriterioEvaluacion set Co_Criterio=?,Tx_DescCriterioEvaluacion=?, TipoDato=?,Qt_Puntaje_Base=? where Co_Criterio=?";
+        String query = "update criterioevaluacion set Tx_DescCriterioEvaluacion=?, Tipo_Dato=? where Co_Criterio=?";
         Connection con = null;
         PreparedStatement stmt = null;
         try {
             con = dataSource.getConnection();
             stmt = con.prepareStatement(query);
-            stmt.setInt(1, vo.getCo_Criterio());
-            stmt.setString(2, vo.getTx_DescCriterioEvaluacion());
-            stmt.setString(3, vo.getTipo_Dato());
-            stmt.setInt(5, vo.getCo_Criterio());
+            stmt.setString(1, vo.getTx_DescCriterioEvaluacion());
+            stmt.setString(2, vo.getTipo_Dato());
+            stmt.setInt(3, vo.getCo_Criterio());
             int i = stmt.executeUpdate();
             if (i != 1) {
                 throw new SQLException("No se pudo actualizar");
@@ -171,7 +170,7 @@ public class CriterioEvaluacionDAOImpl extends BaseDAO implements CriterioEvalua
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
-            String query = "select Co_Criterio,Tx_DescCriterioEvaluacion, TipoDato from CriterioEvaluacion where Co_criterio=?";
+            String query = "select Co_Criterio, Tx_DescCriterioEvaluacion, Tipo_Dato from criterioevaluacion where Co_Criterio=?";
             con = dataSource.getConnection();
             stmt = con.prepareStatement(query);
             stmt.setInt(1, codigo);
@@ -179,7 +178,7 @@ public class CriterioEvaluacionDAOImpl extends BaseDAO implements CriterioEvalua
             if (rs.next()) {
                 vo.setCo_Criterio(rs.getInt("Co_Criterio"));
                 vo.setTx_DescCriterioEvaluacion(rs.getString("Tx_DescCriterioEvaluacion"));
-                vo.setTipo_Dato(rs.getString("TipoDato"));
+                vo.setTipo_Dato(rs.getString("Tipo_Dato"));
             }
         } catch (SQLException e) {
             System.err.println(e.getMessage());
