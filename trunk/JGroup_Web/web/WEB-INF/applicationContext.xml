@@ -60,4 +60,11 @@
     <bean id="proveedorService" class="proyecto.service.ProveedorServiceImpl">
         <property name="proveedorDAO" ref="proveedorDAO"/>
     </bean>
+    <bean id="cotizacionCabDAO" class="proyecto.dao.CotizacionCabDAOImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="cotizacionService" class="proyecto.service.CotizacionServiceImpl">
+        <property name="cotizacionCabDAO" ref="cotizacionCabDAO"/>
+    </bean>
 </beans>
