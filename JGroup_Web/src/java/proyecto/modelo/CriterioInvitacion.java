@@ -14,18 +14,18 @@ public class CriterioInvitacion {
 
     private int criterioevaluacion_Co_Criterio;
     private int invitacion_Nu_Invitacion;
-    private Double Nu_puntaje;
+    private int Nu_puntaje;
 
     
     public CriterioInvitacion(){
 
     }
 
-    public Double getNu_puntaje() {
+    public int getNu_puntaje() {
         return Nu_puntaje;
     }
 
-    public void setNu_puntaje(Double Nu_puntaje) {
+    public void setNu_puntaje(int Nu_puntaje) {
         this.Nu_puntaje = Nu_puntaje;
     }
 
