@@ -18,6 +18,7 @@ import proyecto.modelo.Invitacion;
 import proyecto.service.InvitacionService;
 import proyecto.modelo.Articulo;
 import proyecto.service.ArticuloService;
+//import proyecto.modelo.DetalleInvitacion;
 
 import java.util.*;
 import java.text.*;
@@ -127,26 +128,6 @@ public class InvitacionDetalleController extends MultiActionController{
             System.err.println("Error");
         }
         return new ModelAndView("/Invitacion_Editar");
-    }
-
-    public ModelAndView actualizar(HttpServletRequest request, HttpServletResponse response) throws ParseException {
-        int Nu_Invitacion = Integer.parseInt(request.getParameter("Nu_Invitacion"));
-        Invitacion vo = new Invitacion();
-
-        vo.setNu_Invitacion(Nu_Invitacion);
-        vo.setFe_Invitacion(request.getParameter("Fe_Invitacion"));
-        vo.setTx_GeneradorUsuario(request.getParameter("Tx_GeneradorUsuario"));
-        vo.setTx_Descripcion(request.getParameter("Tx_Descripcion"));
-        
-        vo.setUsuario_Co_Usuario(Integer.parseInt(request.getParameter("Usuario_Co_Usuario")));
-        System.out.println("Orden Compra ="+request.getParameter("OrdenCompra_Nu_OrdenCompra"));
-        vo.setOrdenCompra_Nu_OrdenCompra(Integer.parseInt(request.getParameter("OrdenCompra_Nu_OrdenCompra")));  
-        try {
-            invitacionService.actualizar(vo);
-        } catch (DAOExcepcion e) {
-            System.err.println("Error");
-        }
-        return new ModelAndView("Invitacion");
     }
 
 

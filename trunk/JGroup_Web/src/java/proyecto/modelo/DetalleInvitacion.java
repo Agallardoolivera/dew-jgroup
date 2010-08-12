@@ -13,6 +13,15 @@ public class DetalleInvitacion {
 private int Nu_Item;
 private String Co_DetalleInvitacion;
 private int Nu_cantidad;
+private String Tx_Observacion;
+
+    public String getTx_Observacion() {
+        return Tx_Observacion;
+    }
+
+    public void setTx_Observacion(String Tx_Observacion) {
+        this.Tx_Observacion = Tx_Observacion;
+    }
 private int  Nu_invitacion;
 private int Co_Articulo;
     public DetalleInvitacion(){
