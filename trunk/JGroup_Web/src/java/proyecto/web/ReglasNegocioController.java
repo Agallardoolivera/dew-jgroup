@@ -45,10 +45,13 @@ public class ReglasNegocioController extends MultiActionController{
 
     public ModelAndView AnalisisPropuestas(HttpServletRequest request, HttpServletResponse response) throws ParseException {
 
+            int indice=0,campo=0,indiceMejorMonto=0,indiceMejorFecha=0;
+            Double monto=0.0;
+            String Co_MejorMonto=null,Co_MejorFecha=null;
+
             DetalleCotizacion dCotizacion;
             Collection<Cotizacion> cotizaciones;
-            int indice=0,campo=0;
-            Double monto=0.0;
+
             String nu_invitacion = request.getParameter("Nu_Invitacion");
 
             String [][] Proveedor = new String [1000][30];
@@ -87,13 +90,17 @@ public class ReglasNegocioController extends MultiActionController{
                         System.out.println(Proveedor[indice][campo]);
                         indice++;campo=0;
                     }
-                    //Calcular_MejorMonto(Proveedor,indice);
-                    Calcular_MejorFecha(Proveedor,indice) ;
+                    indiceMejorMonto=Calcular_MejorMonto(Proveedor,indice);
+                    indiceMejorFecha=Calcular_MejorFecha(Proveedor,indice) ;
+
+                    System.out.println("Mejor Monto ="+Proveedor[indiceMejorMonto][0]);
+                    System.out.println("Mejor Fecha ="+Proveedor[indiceMejorFecha][0]);
+                    
             } catch (DAOExcepcion ex) {
                 System.err.println(ex.toString());
             }
             
-            return new ModelAndView("Reglas");
+            return new ModelAndView("ReglasNegocio");
         }
 
 
