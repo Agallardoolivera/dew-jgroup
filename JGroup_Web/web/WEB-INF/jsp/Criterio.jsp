@@ -84,8 +84,8 @@ function fn_mostrar_ocultar_submenu(submenu,imagen)
                     <td align="left">
                         <label>
                         <select name="tipoDato" id="tipoDato">
-                          <option value="2">Numerico</option>
-                          <option value="1">Fecha</option>
+                          <option value="Numerico">Numerico</option>
+                          <option value="Fecha">Fecha</option>
                         </select>
                         </label>                      
                     </td>
