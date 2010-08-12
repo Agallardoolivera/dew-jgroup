@@ -1,6 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
      <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+ 
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <title>::- Sistema de Pedidos On Line -::</title>
@@ -69,44 +72,7 @@
                             <p align="center" class="Estilo3">Logearse de nuevo</p></td>
                         <td width="0%" style=" text-align:left;">
 
-                            <!--<img src="../iconos/nombrepeq.gif" />
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-            	<tr>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">Datos de Usuario</td>
-                                </tr>
-                                <tr>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;"></td>
-                                </tr>
-                                <tr>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                                </tr>
-                            </table>
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                <tr>
-                	<td style="text-align:right; width:10px;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                	<td style="text-align:rleft; color:#FFFFFF; font-weight:bold;">Datos de Empresa</td>
-                	<td style="text-align:right; color:#FFFFFF; width:70px; font-weight:bold;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                                </tr>
-            	<tr>
-                	<td style="text-align:right; width:10px;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                	<td style="text-align:left; color:#FFFFFF;">Raz.Soc: </td>
-                                    <td style="text-align:right; color:#FFFFFF; width:70px; font-weight:bold;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                                </tr>
-                                <tr>
-                	<td style="text-align:right; width:10px;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                	<td style="text-align:left; color:#FFFFFF;">Direcci&oacute;n: </td>
-                                    <td style="text-align:right; color:#FFFFFF; width:70px; font-weight:bold;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                                </tr>
-                            </table>-->            </td>
+     </td>
                     </tr>
                 </table>
             </div>
@@ -121,7 +87,7 @@
                                     <p class="Estilo1"><em>DE </em></p>
                                     <p class="Estilo1"><em>SISTEMA</em></p>
                                     <p class="Estilo2">Sistemas de Cotizaciones </p></td>
-
+<%out.println("Usuario en sesion: " + usuario);%>
                                 <td width="17%" rowspan="3"><img src="<%=request.getContextPath()%>/images/Menu.png" width="75" height="68" border="0" title="Mantenimientos"/></td>
                                 <td width="26%"><div align="left">Articulos</div></td>
                                 <td width="8%"><div align="center"><a href="articulo.htm"><img src="<%=request.getContextPath()%>/images/kate.gif" width="26" height="16" border="0" align="middle" title="Articulo"/></a></div></td>
@@ -177,7 +143,7 @@
                                 <td><div align="center"><a href="ordenCompra.htm?metodo=OrdenCompra" style="visibility:<? echo $visible;?>"><img src="Images/Diferencias.gif" width="26" height="16" border="0" align="middle" title="Orden" /></a></div></td>
                             </tr>
                             <tr>
-                                <td><div align="left">Cotizacion</div></td>
+                                <td><div align="left">Reglas</div></td>
                                 <td><div align="center"><a href="cotizaciones.htm?metodo=Cotizaciones" style="visibility:<? echo $visible;?>"><img src="<%=request.getContextPath()%>/images/Diferencias.gif" width="26" height="16" border="0" align="middle" title="cotizacion" /></a></div></td>
                             </tr>
                             <tr>                            </tr>
