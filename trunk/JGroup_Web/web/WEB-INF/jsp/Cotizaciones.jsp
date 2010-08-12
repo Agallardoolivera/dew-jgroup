@@ -1,9 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
      <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+     <%String Nu_Invitacion = request.getParameter("Nu_Invitacion"); %>
+     <%String Des_Invitacion = request.getParameter("Des_Invitacion"); %>
     <head>
 
-      
+
 
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <title>::- Sistema de Pedidos On Line -::</title>
@@ -41,7 +43,7 @@
         <script language="JavaScript" src="../js/funcion_cont.js"></script>
     </head>
     <body topmargin="0" leftmargin="0" rightmargin="0">
-      
+
 
 
         <input type="hidden" name="idusuario" id="idusuario" value="" />
@@ -49,7 +51,7 @@
         <input type="hidden" name="idarea" id="idarea" value="" />
         <div id="basecont">
             <div id="header">
-                <table border="0" cellpadding="2" cellspacing="2" width="100%">
+                <table border="0" cellpadding="2" cellspacing="2" width="80%">
                     <tr>
                         <td width="1%"></td>
                         <td width="12%" align="left" id="logoefc">
@@ -78,32 +80,38 @@
             <div id="basemedio">
                 <div id="contenido" align="center">
                     <div style="height:350px;">
-                      <table width="792" border="0">
+                      <table width="575" border="0">
+                        <!--DWLayoutTable-->
                         <tr>
-                          <td width="96" height="38"><span class="Estilo11">N&uacute;mero</span></td>
-                          <td width="144"><input type="text" name="Tx_NumCot" /></td>
-                          <td width="299">&nbsp;</td>
-                          <td colspan="2"><!-- #BeginDate format:fcSw1a -->Wednesday, 11 August, 2010 8:10 PM<!-- #EndDate --></td>
+                          <td width="89" height="24" valign="top"><span class="Estilo11">N&uacute;mero</span></td>
+                          <td width="148" valign="top"><input type="text" name="Tx_NumCot" /></td>
+                          <td width="32"></td>
+                          <td width="264" valign="top"><!-- #BeginDate format:fcSw1a -->Mi&eacute;rcoles, 11 Agosto, 2010 11:05 PM<!-- #EndDate --></td>
+                        <td width="20"></td>
                         </tr>
                         <tr>
-                          <td height="34" class="Estilo11">Invitaci&oacute;n</td>
-                          <td><input type="text" name="Tx_NumInvitacion" /></td>
-                          <td colspan="2"><input name="Tx_DesCortaInv" type="text" size="50" /></td>
-                          <td width="223">&nbsp;</td>
+                          <td height="34" valign="top" class="Estilo11">Invitaci&oacute;n</td>
+                          <td valign="top"><input type="text" name="Tx_NumInvitacion" value="<%out.println(Nu_Invitacion);%>" /></td>
+                          <td colspan="2" valign="top"><input name="Tx_DesCortaInv" type="text" size="50" value="<%out.println(Des_Invitacion);%>" /></td>
+                          <td></td>
                         </tr>
                       </table>
-                      <table width="787" border="0">
+                      <table width="576" border="0">
+                        <!--DWLayoutTable-->
                         <tr>
-                          <td class="Estilo11">Proveedor</td>
-                          <td bordercolor="0"><input name="Tx_NomProveedor" type="text" size="75" /></td>
+                          <td height="24" class="Estilo11">Proveedor</td>
+                          <td width="123" valign="top"><input name="Tx_CoProveedor" type="text" size="20"/></td>
+                          <td width="327" valign="top"><input name="Tx_NomProveedor" type="text" size="50"/></td>
+                        <td width="3">&nbsp;</td>
                         </tr>
                         <tr>
-                          <td width="94" class="Estilo11">Observaci&oacute;n</td>
-                          <td width="683" bordercolor="0">
+                          <td width="94" height="56" class="Estilo11">Observaci&oacute;n</td>
+                          <td colspan="2" bordercolor="0">
                               <form id="form1" name="form1" method="post" action="cotizaciones.htm">
                                <input type="hidden" name="metodo" value="insertar"/>
                               <textarea name="Tx_ObsCotizacion" cols="72.5" wrap="soft"></textarea>
                           </form></td>
+                          <td>&nbsp;</td>
                         </tr>
                       </table>
                       <p>
@@ -311,6 +319,6 @@
                     ColdFusion.Event.registerOnLoad(_cf_window_init_1214415540790);
                 </script>
 
-              
+
                 </body>
                 </html>
