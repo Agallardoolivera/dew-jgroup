@@ -14,13 +14,12 @@ import java.util.Date;
 public class Cotizacion {
 private int Nu_Invitacion;
 private Date Fe_Cotizacion;
-private String Tx_ResponsableProveedor;
-private String Tx_EstadoProveedor;
 private int Nu_puntajeobtenido;
 private String Tx_Ganadora;
 private int Nu_Cotizacion;
 private int Co_Proveedor;
-
+private String TX_Observacion;
+private String Tx_EstadoCot;
 
     public Cotizacion(){
 
@@ -66,12 +65,20 @@ private int Co_Proveedor;
         this.Nu_puntajeobtenido = Nu_puntajeobtenido;
     }
 
-    public String getTx_EstadoProveedor() {
-        return Tx_EstadoProveedor;
+    public String getTX_Observacion() {
+        return TX_Observacion;
     }
 
-    public void setTx_EstadoProveedor(String Tx_EstadoProveedor) {
-        this.Tx_EstadoProveedor = Tx_EstadoProveedor;
+    public void setTX_Observacion(String TX_Observacion) {
+        this.TX_Observacion = TX_Observacion;
+    }
+
+    public String getTx_EstadoCot() {
+        return Tx_EstadoCot;
+    }
+
+    public void setTx_EstadoCot(String Tx_EstadoCot) {
+        this.Tx_EstadoCot = Tx_EstadoCot;
     }
 
     public String getTx_Ganadora() {
@@ -80,14 +87,6 @@ private int Co_Proveedor;
 
     public void setTx_Ganadora(String Tx_Ganadora) {
         this.Tx_Ganadora = Tx_Ganadora;
-    }
-
-    public String getTx_ResponsableProveedor() {
-        return Tx_ResponsableProveedor;
-    }
-
-    public void setTx_ResponsableProveedor(String Tx_ResponsableProveedor) {
-        this.Tx_ResponsableProveedor = Tx_ResponsableProveedor;
     }
 
 }
