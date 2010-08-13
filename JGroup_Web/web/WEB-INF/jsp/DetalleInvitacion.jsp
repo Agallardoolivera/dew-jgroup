@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%String Nu_Invitacion = request.getParameter("Nu_Invitacion"); %>
 
 
 
@@ -17,7 +18,7 @@
                 <tr>
                     <td><div align="right"><span class="Estilo4">Numero de Invitacion</span></div></td>
                     <td><label>
-                            <input name="Nu_Invitacion" type="text" id="Nu_Invitacion">
+                            <input name="Nu_Invitacion" type="text" id="Nu_Invitacion" value="<%out.println(Nu_Invitacion);%>">
                         </label></td>
                 </tr>
                 <tr>
