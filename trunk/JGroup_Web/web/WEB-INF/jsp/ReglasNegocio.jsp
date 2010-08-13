@@ -95,22 +95,28 @@
             </label>
         </form>
 
-         <table width="100%" border="1">
-            <tr>
-                <th>Numero de Cotizacion</th>
-                <th>Codigo del Proveedor</th>
-                <th>Fecha de Entrega</th>
-            </tr>
+       
 
             <% if (request.getAttribute("cotizaciones") != null) {
             %>
-            <%    java.util.Collection<proyecto.modelo.Cotizacion> cotizaciones = (java.util.Collection) request.getAttribute("cotizaciones");
-                 for (proyecto.modelo.Cotizacion cot : cotizaciones) {
+              <table width="100%" border="1">
+            <tr>
+                <th>Numero de Cotizacion</th>
+                <th>RUC del Proveedor</th>
+                <th>Razon Social</th>
+                <th>Fecha de Entrega</th>
+                <th>Monto</th>
+            </tr>
+            <%    java.util.Collection<proyecto.modelo.CotizacionProveedor> cotizaciones = (java.util.Collection) request.getAttribute("cotizaciones");
+                 for (proyecto.modelo.CotizacionProveedor cot : cotizaciones) {
             %>
+            
             <tr>
                 <th><% out.print(cot.getNu_Cotizacion());%></th>
-                <th><%  out.print(cot.getCo_Proveedor());%></th>
+                <th><%  out.print(cot.getNu_RucProveedor());%></th>
+                <th><%  out.print(cot.getNo_RazonSocialProveedor());%></th>
                 <th><%  out.print(cot.getFe_Entrega());%></th>
+                <th><%  out.print(cot.getMonto());%></th>
             </tr>
             <% }%>
             <% }%>
@@ -127,22 +133,21 @@
                 <input name="Nu_Invitacion" type="text" id="Nu_Invitacion">
             </label>
             <label>
-                <input name="btnenviar" type="submit" id="btnenviar" value="Enviar">
+                <input name="btnenviar" type="submit" id="btnenviar" value="Elegir Ganador">
             </label>
         </form>
 
-         <table width="100%" border="1">
-            <tr>
-                <th>Proveedor Ganador</th>
+        
             
 
             <% if (request.getAttribute("ProveedorGanador") != null) {
             %>
             <%    String proveedor = request.getAttribute("ProveedorGanador").toString();
             %>
-           
-                <th><% out.print(proveedor);%></th>
-            
+            <table width="100%" border="1">
+            <tr>
+                <th>Proveedor Ganador</th>
+                <th><% out.print(proveedor);%></th> 
                 </th>
             <% }%>
 

@@ -9,7 +9,7 @@ import proyecto.excepcion.DAOExcepcion;
 import proyecto.modelo.Cotizacion;
 import proyecto.modelo.DetalleCotizacion;
 import proyecto.modelo.CriterioInvitacion;
-
+import proyecto.modelo.CotizacionProveedor;
 
 /**
  *
@@ -23,4 +23,5 @@ public interface ReglasNegocioService {
      public int buscarPuntajePorNombre(String Tx_CriterioDescripcion,int Nu_Invitacion) throws DAOExcepcion;
      public void AsignarPuntaje(int co_cotizacion,int puntaje) throws DAOExcepcion;
      public String ProveedorGanador(int Nu_Invitacion) throws DAOExcepcion ;
+     public Collection<CotizacionProveedor> ListarCotizacion_Proveedor(int Nu_Invitacion) throws DAOExcepcion;
 }

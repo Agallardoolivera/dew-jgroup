@@ -22,7 +22,7 @@ import proyecto.modelo.Cotizacion;
 import proyecto.modelo.CriterioEvaluacion;
 import proyecto.modelo.DetalleCotizacion;
 import proyecto.modelo.CriterioInvitacion;
-
+import proyecto.modelo.CotizacionProveedor;
 /**
  *
  * @author Alfredo
@@ -225,4 +225,46 @@ public class ReglasNegocioDAOImpl extends BaseDAO implements ReglasNegocioDAO {
         }
         return ProveedorGanador;
     }
+
+
+     
+    public Collection<CotizacionProveedor> ListarCotizacion_Proveedor(int Nu_Invitacion) throws DAOExcepcion {
+        Collection<CotizacionProveedor> c = new ArrayList<CotizacionProveedor>();
+        Connection con = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            con = dataSource.getConnection();
+            String query = "select Nu_Cotizacion,NU_RucProveedor,No_RazonSocialProveedor,Fe_Entrega,nu_cantidad*ss_preciounitario as Monto " +
+                           " from cotizacion c " +
+                           " inner join proveedor p on c.proveedor_co_proveedor=p.co_proveedor "+
+                           " inner join invitacion i on i.nu_invitacion=c.invitacion_nu_invitacion "+
+                           " inner join detallecotizacion dc on dc.cotizacion_nu_cotizacion=c.nu_cotizacion"+
+                           " where i.nu_invitacion=? ";
+
+            stmt = con.prepareStatement(query);
+            stmt.setInt(1, Nu_Invitacion);
+            System.out.println("Query =" + stmt.toString());
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                CotizacionProveedor vo = new CotizacionProveedor();
+                vo.setNu_Cotizacion(rs.getInt("Nu_Cotizacion"));
+                vo.setNu_RucProveedor(rs.getString("NU_RucProveedor"));
+                vo.setNo_RazonSocialProveedor(rs.getString("No_RazonSocialProveedor"));
+                vo.setFe_Entrega(rs.getString("Fe_Entrega"));
+                vo.setMonto(rs.getInt("Monto"));
+                c.add(vo);
+            }
+
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            throw new DAOExcepcion(e.getMessage());
+        } finally {
+            this.cerrarResultSet(rs);
+            this.cerrarStatement(stmt);
+            this.cerrarConexion(con);
+        }
+        return c;
+    }
+
 }
