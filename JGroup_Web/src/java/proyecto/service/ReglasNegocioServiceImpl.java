@@ -10,6 +10,7 @@ import proyecto.excepcion.DAOExcepcion;
 import proyecto.modelo.Cotizacion;
 import proyecto.modelo.DetalleCotizacion;
 import proyecto.modelo.CriterioInvitacion;
+import proyecto.modelo.CotizacionProveedor;
 /**
  *
  * @author Alfredo
@@ -51,4 +52,7 @@ public class ReglasNegocioServiceImpl implements ReglasNegocioService {
         return reglasNegocioDAO.ProveedorGanador(Nu_Invitacion);
     }
 
+     public Collection<CotizacionProveedor> ListarCotizacion_Proveedor(int Nu_Invitacion) throws DAOExcepcion{
+         return reglasNegocioDAO.ListarCotizacion_Proveedor(Nu_Invitacion);
+     }
 }

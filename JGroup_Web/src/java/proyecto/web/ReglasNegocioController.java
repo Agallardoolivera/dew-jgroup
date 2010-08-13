@@ -17,6 +17,7 @@ import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 import proyecto.excepcion.DAOExcepcion;
 import proyecto.service.ReglasNegocioService;
 import proyecto.modelo.Cotizacion;
+import proyecto.modelo.CotizacionProveedor;
 import proyecto.modelo.CriterioInvitacion;
 import proyecto.modelo.DetalleCotizacion;
 
@@ -46,7 +47,7 @@ public class ReglasNegocioController extends MultiActionController{
 
     public ModelAndView AnalisisPropuestas(HttpServletRequest request, HttpServletResponse response) throws ParseException {
 
-            int indice=0,campo=0,indiceMejorMonto=0,indiceMejorFecha=0,indiceCriterio=0;
+            int indice=0,campo=0,indiceMejorMonto=0,indiceMejorFecha=0;
             Double monto=0.0;
             int puntajeMejorMonto=0,puntajeMejorFecha=0;
             String ProveedorGanador=null;
@@ -175,13 +176,15 @@ public class ReglasNegocioController extends MultiActionController{
 
      public ModelAndView ListarPropuestas(HttpServletRequest request, HttpServletResponse response) {
        String nu_invitacion = request.getParameter("N_Invitacion");
-       Collection<Cotizacion> cotizaciones;
+       Collection<CotizacionProveedor> cotizaciones;
         try {
-             cotizaciones = reglasNegocioService.ListarCotizaciones(Integer.parseInt(nu_invitacion));
-             for(Cotizacion cot : cotizaciones){
-		System.out.println(cot.getFe_Entrega());
-                System.out.println(cot.getCo_Proveedor());
-                System.out.println(cot.getNu_Cotizacion());
+             cotizaciones = reglasNegocioService.ListarCotizacion_Proveedor(Integer.parseInt(nu_invitacion));
+             for(CotizacionProveedor cot : cotizaciones){
+		System.out.println(cot.getNu_Cotizacion());
+                System.out.println(cot.getNu_RucProveedor());
+                System.out.println(cot.getNo_RazonSocialProveedor());
+                System.out.println(cot.getFe_Entrega());
+                System.out.println(cot.getMonto());
               }
             request.setAttribute("cotizaciones", cotizaciones);
         } catch (DAOExcepcion ex) {
