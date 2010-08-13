@@ -55,7 +55,6 @@
                         </label>
                         <label>
                             <input name="btnretornar" type="button" id="btnretornar" value="Regresar" onClick="window.location='portada.htm'">
-                            <input name="btnretornar" type="button" id="btnretornar" value="Regresar" onClick="window.location='portada.htm'">
 
                         </label></td>
                 </tr>
@@ -74,11 +73,6 @@
             <label>
                 <input name="btnnuevo" type="button" id="btnnuevo" value="Nuevo" onclick="window.location='invitacion.htm?metodo=nuevo'">
             </label>
-            <label>
-                <input name="btnnuevo" type="button" id="btnnuevo" value="Regresar" onclick="window.location='portada.htm'">
-            </label>
-            <input name="btnnuevo2" type="button" id="btnnuevo2" value="Detalle" onclick="window.location='detalleinvitacion.htm'" />
-    </form>
         <table width="100%" border="1">
             <tr>
                 <th>Numero de Invitacion</th>
@@ -103,7 +97,7 @@
                 <th><%  out.print(inv.getUsuario_Co_Usuario());%></th>
                 <th><%  out.print(inv.getOrdenCompra_Nu_OrdenCompra());%></th>
                 <th><a href="invitacion.htm?metodo=obtener&Nu_Invitacion=<%=inv.getNu_Invitacion()%>&Fe_Invitacion=<%=inv.getFe_Invitacion()%>&Gen_Usuario=<%=inv.getTx_GeneradorUsuario()%>&Descripcion=<%=inv.getTx_Descripcion()%>&Usuario=<%=inv.getUsuario_Co_Usuario()%>&Orden_Compra=<%=inv.getOrdenCompra_Nu_OrdenCompra()%>">Editar</a> -
-                    <a href="invitacion.htm?metodo=eliminar&Nu_Invitacion=<%=inv.getNu_Invitacion()%>">Eliminar</a> - <a href="cotizaciones.htm?metodo=index&Nu_Invitacion=<%=inv.getNu_Invitacion()%>&Des_Invitacion=<%=inv.getTx_Descripcion()%>">Generar Cotizacion</a> </th>
+                    <a href="invitacion.htm?metodo=eliminar&Nu_Invitacion=<%=inv.getNu_Invitacion()%>">Eliminar</a> - <a href="detalleinvitacion.htm?metodo=index&Nu_Invitacion=<%=inv.getNu_Invitacion()%>">Agregar Detalle Invitacion</a> - <a href="cotizaciones.htm?metodo=index&Nu_Invitacion=<%=inv.getNu_Invitacion()%>&Des_Invitacion=<%=inv.getTx_Descripcion()%>">Generar Cotizacion</a> </th>
             </tr>
             <% }%>
             <% }%>
