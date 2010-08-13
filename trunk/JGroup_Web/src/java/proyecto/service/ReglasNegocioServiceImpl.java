@@ -46,4 +46,9 @@ public class ReglasNegocioServiceImpl implements ReglasNegocioService {
     public void AsignarPuntaje(int co_cotizacion,int puntaje) throws DAOExcepcion {
          reglasNegocioDAO.AsignarPuntaje(co_cotizacion, puntaje);
     }
+
+    public String ProveedorGanador(int Nu_Invitacion) throws DAOExcepcion{
+        return reglasNegocioDAO.ProveedorGanador(Nu_Invitacion);
+    }
+
 }

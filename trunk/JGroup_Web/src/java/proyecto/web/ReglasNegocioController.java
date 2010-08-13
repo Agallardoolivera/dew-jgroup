@@ -49,7 +49,7 @@ public class ReglasNegocioController extends MultiActionController{
             int indice=0,campo=0,indiceMejorMonto=0,indiceMejorFecha=0,indiceCriterio=0;
             Double monto=0.0;
             int puntajeMejorMonto=0,puntajeMejorFecha=0;
-
+            String ProveedorGanador=null;
 
             DetalleCotizacion dCotizacion;
             Collection<Cotizacion> cotizaciones;
@@ -108,9 +108,9 @@ public class ReglasNegocioController extends MultiActionController{
                     System.out.println("Mejor Monto ="+Proveedor[indiceMejorMonto][0]);
                     System.out.println("Mejor Fecha ="+Proveedor[indiceMejorFecha][0]);
 
+                    ProveedorGanador=reglasNegocioService.ProveedorGanador(Integer.parseInt(nu_invitacion));
 
-
-                    
+                    System.out.println("Proveedor Ganador =" +ProveedorGanador );
 
                     
             } catch (DAOExcepcion ex) {
