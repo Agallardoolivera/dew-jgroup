@@ -111,7 +111,7 @@ public class ReglasNegocioController extends MultiActionController{
                     ProveedorGanador=reglasNegocioService.ProveedorGanador(Integer.parseInt(nu_invitacion));
 
                     System.out.println("Proveedor Ganador =" +ProveedorGanador );
-
+                    request.setAttribute("ProveedorGanador", ProveedorGanador);
                     
             } catch (DAOExcepcion ex) {
                 System.err.println(ex.toString());
