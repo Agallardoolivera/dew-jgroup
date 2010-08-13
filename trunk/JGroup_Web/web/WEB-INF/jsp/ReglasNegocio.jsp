@@ -16,8 +16,44 @@
     <body>
 
           <form name="form1" method="post" action="reglas.htm">
+              <input type="hidden" name="metodo" value="ListarPropuestas"/>
+            Numero de Invitacion:
+            <label>
+                <input name="N_Invitacion" type="text" id="N_Invitacion">
+            </label>
+            <label>
+                <input name="btnlistar" type="submit" id="btnlistar" value="Listar">
+            </label>
+        </form>
+
+         <table width="100%" border="1">
+            <tr>
+                <th>Numero de Cotizacion</th>
+                <th>Codigo del Proveedor</th>
+                <th>Fecha de Entrega</th>
+            </tr>
+
+            <% if (request.getAttribute("cotizaciones") != null) {
+            %>
+            <%    java.util.Collection<proyecto.modelo.Cotizacion> cotizaciones = (java.util.Collection) request.getAttribute("cotizaciones");
+                 for (proyecto.modelo.Cotizacion cot : cotizaciones) {
+            %>
+            <tr>
+                <th><% out.print(cot.getNu_Cotizacion());%></th>
+                <th><%  out.print(cot.getCo_Proveedor());%></th>
+                <th><%  out.print(cot.getFe_Entrega());%></th>
+            </tr>
+            <% }%>
+            <% }%>
+
+
+        </table>
+
+
+
+          <form name="form2" method="post" action="reglas.htm">
               <input type="hidden" name="metodo" value="AnalisisPropuestas"/>
-            Testear:
+            Elegir Ganador:
             <label>
                 <input name="Nu_Invitacion" type="text" id="Nu_Invitacion">
             </label>
