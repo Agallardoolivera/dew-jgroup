@@ -96,17 +96,21 @@ public class ReglasNegocioController extends MultiActionController{
                         indice++;campo=0;
                     }
 
-                    indiceMejorMonto=Calcular_MejorMonto(Proveedor,indice);
-                    indiceMejorFecha=Calcular_MejorFecha(Proveedor,indice) ;
-
-                    System.out.println("Mejor Monto ="+Proveedor[indiceMejorMonto][0]);
-                    System.out.println("Mejor Fecha ="+Proveedor[indiceMejorFecha][0]);
-
                     //Criterios
                     puntajeMejorMonto = reglasNegocioService.buscarPuntajePorNombre("Monto",Integer.parseInt(nu_invitacion));
                     puntajeMejorFecha = reglasNegocioService.buscarPuntajePorNombre("Fecha",Integer.parseInt(nu_invitacion));
                     System.out.println("Puntaje Monto ="+puntajeMejorMonto);
                     System.out.println("Puntaje Fecha =" +puntajeMejorFecha);
+
+                    indiceMejorMonto=Calcular_MejorMonto(Proveedor,indice,puntajeMejorMonto);
+                    indiceMejorFecha=Calcular_MejorFecha(Proveedor,indice,puntajeMejorFecha) ;
+
+                    System.out.println("Mejor Monto ="+Proveedor[indiceMejorMonto][0]);
+                    System.out.println("Mejor Fecha ="+Proveedor[indiceMejorFecha][0]);
+
+
+
+                    
 
                     
             } catch (DAOExcepcion ex) {
@@ -119,7 +123,7 @@ public class ReglasNegocioController extends MultiActionController{
 
 
 
-        public int Calcular_MejorMonto(String [][] Proveedor,int indice){
+        public int Calcular_MejorMonto(String [][] Proveedor,int indice,int puntaje) throws DAOExcepcion{
             int cod_ganador=0;
             Double monto_mayor=0.0;
 
@@ -131,10 +135,11 @@ public class ReglasNegocioController extends MultiActionController{
                 }
             }
             System.out.println("Codigo Ganador = "+cod_ganador + "- Monto Mayor= "+monto_mayor);
+            reglasNegocioService.AsignarPuntaje(Integer.parseInt(Proveedor[cod_ganador][0]), puntaje);
             return cod_ganador;
         }
 
-    public int Calcular_MejorFecha(String[][] Proveedor, int indice) throws ParseException {
+    public int Calcular_MejorFecha(String[][] Proveedor, int indice,int puntaje) throws ParseException, DAOExcepcion {
         int cod_ganador = 0;
         //Date fecha_menor=null;
         String DATE_FORMAT = "yyyy-MM-dd";
@@ -161,8 +166,9 @@ public class ReglasNegocioController extends MultiActionController{
                  fecha_menor =  c;
                  cod_ganador=i;
              }
-            }
-            System.out.println("Codigo Ganador = "+cod_ganador + "- Fecha Menor= "+Proveedor[cod_ganador][4]);
+        }
+        System.out.println("Codigo Ganador = "+cod_ganador + "- Fecha Menor= "+Proveedor[cod_ganador][4]);
+        reglasNegocioService.AsignarPuntaje(Integer.parseInt(Proveedor[cod_ganador][0]), puntaje);
          return cod_ganador;
     }
 }
