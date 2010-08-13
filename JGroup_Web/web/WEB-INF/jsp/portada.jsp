@@ -141,8 +141,8 @@
                                 <td><div align="center"><a href="ordenCompra.htm?metodo=OrdenCompra" style="visibility:<? echo $visible;?>"><img src="Images/Diferencias.gif" width="26" height="16" border="0" align="middle" title="Orden" /></a></div></td>
                             </tr>
                             <tr>
-                                <td><div align="left">Reglas</div></td>
-                                <td><div align="center"><a href="reglas.htm" style="visibility:<? echo $visible;?>"><img src="<%=request.getContextPath()%>/images/Diferencias.gif" width="26" height="16" border="0" align="middle" title="reglas" /></a></div></td>
+                                <td><div align="left">Concurso</div></td>
+                                <td><div align="center"><a href="reglas.htm" style="visibility:<? echo $visible;?>"><img src="<%=request.getContextPath()%>/images/Diferencias.gif" width="26" height="16" border="0" align="middle" title=Concurso" /></a></div></td>
                             </tr>
                             <tr>                            </tr>
                             <tr> </tr>
