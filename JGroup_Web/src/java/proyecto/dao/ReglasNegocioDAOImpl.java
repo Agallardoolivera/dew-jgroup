@@ -49,7 +49,7 @@ public class ReglasNegocioDAOImpl extends BaseDAO implements ReglasNegocioDAO {
             String query = "SELECT * from Cotizacion C inner join Invitacion I   " +
                     "on C.Invitacion_Nu_Invitacion = I.Nu_Invitacion where I.Nu_Invitacion=?";
             stmt = con.prepareStatement(query);
-            stmt.setInt(1, Nu_Invitacion );
+            stmt.setInt(1, Nu_Invitacion);
             System.out.println("Query =" + stmt.toString());
             rs = stmt.executeQuery();
             while (rs.next()) {
@@ -73,15 +73,14 @@ public class ReglasNegocioDAOImpl extends BaseDAO implements ReglasNegocioDAO {
         return c;
     }
 
-
-         public int buscarPuntajePorNombre(String Tx_CriterioDescripcion,int Nu_Invitacion)
+    public int buscarPuntajePorNombre(String Tx_CriterioDescripcion, int Nu_Invitacion)
             throws DAOExcepcion {
 
-        int puntaje=0;
-        String query = "select nu_puntaje from criterioinvitacion ci inner join criterioevaluacion ce"+
-                       " on ce.co_criterio=ci.criterioevaluacion_co_criterio where invitacion_nu_invitacion=?"+
-                       " and ce.tx_desccriterioevaluacion like ?";
-        
+        int puntaje = 0;
+        String query = "select nu_puntaje from criterioinvitacion ci inner join criterioevaluacion ce" +
+                " on ce.co_criterio=ci.criterioevaluacion_co_criterio where invitacion_nu_invitacion=?" +
+                " and ce.tx_desccriterioevaluacion like ?";
+
         Connection con = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -91,10 +90,10 @@ public class ReglasNegocioDAOImpl extends BaseDAO implements ReglasNegocioDAO {
             stmt.setInt(1, Nu_Invitacion);
             stmt.setString(2, "%" + Tx_CriterioDescripcion + "%");
 
-            System.out.println("Query =" +stmt.toString());
+            System.out.println("Query =" + stmt.toString());
             rs = stmt.executeQuery();
             while (rs.next()) {
-                puntaje=rs.getInt("nu_puntaje");
+                puntaje = rs.getInt("nu_puntaje");
             }
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -104,12 +103,11 @@ public class ReglasNegocioDAOImpl extends BaseDAO implements ReglasNegocioDAO {
             this.cerrarStatement(stmt);
             this.cerrarConexion(con);
         }
-       
+
         return puntaje;
     }
 
-
-        public Collection<CriterioInvitacion> ListarCriterios(int Nu_Invitacion) throws DAOExcepcion {
+    public Collection<CriterioInvitacion> ListarCriterios(int Nu_Invitacion) throws DAOExcepcion {
         Collection<CriterioInvitacion> c = new ArrayList<CriterioInvitacion>();
         Connection con = null;
         PreparedStatement stmt = null;
@@ -118,7 +116,7 @@ public class ReglasNegocioDAOImpl extends BaseDAO implements ReglasNegocioDAO {
             con = dataSource.getConnection();
             String query = "SELECT * from CriterioInvitacion where invitacion_Nu_Invitacion=?";
             stmt = con.prepareStatement(query);
-            stmt.setInt(1, Nu_Invitacion );
+            stmt.setInt(1, Nu_Invitacion);
             System.out.println("Query =" + stmt.toString());
             rs = stmt.executeQuery();
             while (rs.next()) {
@@ -139,17 +137,17 @@ public class ReglasNegocioDAOImpl extends BaseDAO implements ReglasNegocioDAO {
         return c;
     }
 
-     public DetalleCotizacion Detalle_por_Cotizacion(int Nu_Cotizacion) throws DAOExcepcion {
+    public DetalleCotizacion Detalle_por_Cotizacion(int Nu_Cotizacion) throws DAOExcepcion {
         DetalleCotizacion vo = new DetalleCotizacion();
         Connection con = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
-            
+
             con = dataSource.getConnection();
             String query = "SELECT * from DetalleCotizacion where Cotizacion_Nu_Cotizacion=?";
             stmt = con.prepareStatement(query);
-            stmt.setInt(1,  Nu_Cotizacion);
+            stmt.setInt(1, Nu_Cotizacion);
             rs = stmt.executeQuery();
             while (rs.next()) {
                 vo.setCo_Articulo(rs.getInt("Articulo_Co_Articulo"));
@@ -157,7 +155,7 @@ public class ReglasNegocioDAOImpl extends BaseDAO implements ReglasNegocioDAO {
                 vo.setNu_Cantidad(rs.getInt("Nu_Cantidad"));
                 vo.setSs_PrecioUnitario(rs.getInt("Ss_PrecioUnitario"));
             }
-            
+
         } catch (SQLException e) {
             System.err.println(e.getMessage());
             throw new DAOExcepcion(e.getMessage());
@@ -167,5 +165,30 @@ public class ReglasNegocioDAOImpl extends BaseDAO implements ReglasNegocioDAO {
             this.cerrarConexion(con);
         }
         return vo;
+    }
+
+
+
+     public void AsignarPuntaje(int co_cotizacion,int puntaje) throws DAOExcepcion {
+
+        String query = "update cotizacion set nu_puntajeobtenido=nu_puntajeobtenido + ? where nu_cotizacion=?";
+        Connection con = null;
+        PreparedStatement stmt = null;
+        try {
+            con = dataSource.getConnection();
+            stmt = con.prepareStatement(query);
+            stmt.setInt(1, puntaje);
+            stmt.setInt(2, co_cotizacion);
+            int i = stmt.executeUpdate();
+            if (i != 1) {
+                throw new SQLException("No se pudo actualizar");
+            }
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            throw new DAOExcepcion(e.getMessage());
+        } finally {
+            this.cerrarStatement(stmt);
+            this.cerrarConexion(con);
+        }
     }
 }

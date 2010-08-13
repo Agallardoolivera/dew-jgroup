@@ -42,4 +42,8 @@ public class ReglasNegocioServiceImpl implements ReglasNegocioService {
     public int buscarPuntajePorNombre(String Tx_CriterioDescripcion,int Nu_Invitacion) throws DAOExcepcion{
         return reglasNegocioDAO.buscarPuntajePorNombre(Tx_CriterioDescripcion, Nu_Invitacion);
     }
+
+    public void AsignarPuntaje(int co_cotizacion,int puntaje) throws DAOExcepcion {
+         reglasNegocioDAO.AsignarPuntaje(co_cotizacion, puntaje);
+    }
 }
