@@ -61,5 +61,23 @@
                 <input name="btnenviar" type="submit" id="btnenviar" value="Enviar">
             </label>
         </form>
+
+         <table width="100%" border="1">
+            <tr>
+                <th>Proveedor Ganador</th>
+            
+
+            <% if (request.getAttribute("ProveedorGanador") != null) {
+            %>
+            <%    String proveedor = request.getAttribute("ProveedorGanador").toString();
+            %>
+           
+                <th><% out.print(proveedor);%></th>
+            
+                </th>
+            <% }%>
+
+            </tr>
+        </table>
     </body>
 </html>
