@@ -191,4 +191,38 @@ public class ReglasNegocioDAOImpl extends BaseDAO implements ReglasNegocioDAO {
             this.cerrarConexion(con);
         }
     }
+
+
+
+      public String ProveedorGanador(int Nu_Invitacion) throws DAOExcepcion {
+
+          String ProveedorGanador=null;
+
+        Connection con = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            con = dataSource.getConnection();
+            String query = "select No_RazonSocialProveedor from proveedor where co_proveedor= "
+                           + "(select proveedor_co_proveedor from cotizacion "
+                           +" where nu_puntajeobtenido=(select max(nu_puntajeobtenido) "
+                           +" from cotizacion where invitacion_nu_invitacion=?))";
+            stmt = con.prepareStatement(query);
+            stmt.setInt(1, Nu_Invitacion);
+            System.out.println("Query =" + stmt.toString());
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+               ProveedorGanador = rs.getString("No_RazonSocialProveedor");
+            }
+
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            throw new DAOExcepcion(e.getMessage());
+        } finally {
+            this.cerrarResultSet(rs);
+            this.cerrarStatement(stmt);
+            this.cerrarConexion(con);
+        }
+        return ProveedorGanador;
+    }
 }

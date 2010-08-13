@@ -21,4 +21,5 @@ public interface ReglasNegocioDAO {
     public Collection<CriterioInvitacion> ListarCriterios(int Nu_Invitacion) throws DAOExcepcion ;
     public int buscarPuntajePorNombre(String Tx_CriterioDescripcion,int Nu_Invitacion) throws DAOExcepcion ;
     public void AsignarPuntaje(int co_cotizacion,int puntaje) throws DAOExcepcion ;
+    public String ProveedorGanador(int Nu_Invitacion) throws DAOExcepcion ;
 }
