@@ -171,4 +171,22 @@ public class ReglasNegocioController extends MultiActionController{
         reglasNegocioService.AsignarPuntaje(Integer.parseInt(Proveedor[cod_ganador][0]), puntaje);
          return cod_ganador;
     }
+
+
+     public ModelAndView ListarPropuestas(HttpServletRequest request, HttpServletResponse response) {
+       String nu_invitacion = request.getParameter("N_Invitacion");
+       Collection<Cotizacion> cotizaciones;
+        try {
+             cotizaciones = reglasNegocioService.ListarCotizaciones(Integer.parseInt(nu_invitacion));
+             for(Cotizacion cot : cotizaciones){
+		System.out.println(cot.getFe_Entrega());
+                System.out.println(cot.getCo_Proveedor());
+                System.out.println(cot.getNu_Cotizacion());
+              }
+            request.setAttribute("cotizaciones", cotizaciones);
+        } catch (DAOExcepcion ex) {
+            System.err.println(ex.toString());
+        }
+        return new ModelAndView("/ReglasNegocio");
+    }
 }
