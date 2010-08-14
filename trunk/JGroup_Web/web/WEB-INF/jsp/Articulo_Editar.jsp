@@ -80,7 +80,7 @@
             <div style="background:#99CC33;"></div>
             <div id="basemedio">
                 <div id="contenido" align="center">
-                    <div style="height:450px;">
+                    <div style="height:350px;">
     </head>
     <body>
 

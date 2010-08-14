@@ -9,10 +9,6 @@
         <link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
         <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/efc.css"/>
         <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/cf.css"/>
-        <!--<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/menus.css"/>
-        <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/grid.css"/>
-        <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/Progress.css"/>
-        <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/ext-all.css"/>-->
         <script language="JavaScript" src="../js/jquery-1.2.3.js"></script>
         <script language="JavaScript" src="../js/jquery.maskedinput-1.1.2.pack.js"  type="text/javascript"></script>
         <script language="JavaScript" src="../js/jquery.numeric.pack.js"></script>

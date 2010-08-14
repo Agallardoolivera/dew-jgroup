@@ -13,10 +13,6 @@
         <link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
         <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/efc.css"/>
         <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/cf.css"/>
-        <!--<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/menus.css"/>
-        <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/grid.css"/>
-        <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/Progress.css"/>
-        <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/ext-all.css"/>-->
         <script language="JavaScript" src="../js/jquery-1.2.3.js"></script>
         <script language="JavaScript" src="../js/jquery.maskedinput-1.1.2.pack.js"  type="text/javascript"></script>
         <script language="JavaScript" src="../js/jquery.numeric.pack.js"></script>
@@ -50,7 +46,12 @@
                 <table border="0" cellpadding="2" cellspacing="2" width="100%">
                     <tr>
                         <td width="1%"></td>
-                        <td width="12%" align="left" id="logoefc">
+                        <td width="12%" align="left" id="logoefc"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="130" height="85">
+                          <param name="movie" value="images/logoefc_chico.swf" />
+                          <param name="quality" value="high" />
+                          <embed src="images/logoefc_chico.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="111" height="66"></embed>
+                        </object>
+                        <td width="3%" align="left" id="logoefc">
                             <script type="text/javascript">
                                 // <![CDATA[
                                 var so = new SWFObject("logoefc_chico.swf", "EFC", "180", "95", "9", "#999999");
@@ -66,7 +67,7 @@
                             <span class="textlogo" style="font-size:11px;">Soluciones integrales de Abastecimiento</span>
                         </td>
 
-                        <td width="10%"><p align="center"><a href="retornaMenu.htm?metodo=Menu"><img src="<%=request.getContextPath()%>/images/Browser History.png" width="49" height="40" border="0" align="middle" title="Usuario"/></a></p>
+                        <td width="10%"><p align="center"><a href="retornaMenu.htm?metodo=Menu"><img src="<%=request.getContextPath()%>/images/Browser History.png" width="70" height="40" border="0" align="middle" title="Usuario"/></a></p>
                             <p align="center" class="Estilo3">Retornar al Men&uacute; </p></td>
                         <td width="0%" style=" text-align:left;">
                         </td>
@@ -76,7 +77,7 @@
             <div style="background:#99CC33;"></div>
             <div id="basemedio">
                 <div id="contenido" align="center">
-                    <div style="height:450px;">
+                    <div style="height:350px;">
                         </head>
                         
     <body>

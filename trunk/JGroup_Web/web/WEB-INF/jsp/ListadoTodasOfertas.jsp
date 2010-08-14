@@ -11,11 +11,7 @@
         <link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
         <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/efc.css"/>
         <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/cf.css"/>
-        <!--<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/menus.css"/>
-        <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/grid.css"/>
-        <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/Progress.css"/>
-        <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/ext-all.css"/>-->
-        <script language="JavaScript" src="../js/jquery-1.2.3.js"></script>
+           <script language="JavaScript" src="../js/jquery-1.2.3.js"></script>
         <script language="JavaScript" src="../js/jquery.maskedinput-1.1.2.pack.js"  type="text/javascript"></script>
         <script language="JavaScript" src="../js/jquery.numeric.pack.js"></script>
         <script language="JavaScript" src="../js/jquery.floatnumber.js"></script>
@@ -69,52 +65,14 @@
                         <td width="10%"><p align="center"><a href="analisis.htm?metodo=Analisis"><img src="<%=request.getContextPath()%>/images/Browser History.png" width="49" height="40" border="0" align="middle" title="Usuario"/></a></p>
                             <p align="center" class="Estilo3">Retornar al Men&uacute; </p></td>
                         <td width="0%" style=" text-align:left;">
-
-                            <!--<img src="../iconos/nombrepeq.gif" />
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-            	<tr>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">Datos de Usuario</td>
-                                </tr>
-                                <tr>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;"></td>
-                                </tr>
-                                <tr>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                	<td colspan="2" style="text-align:right; color:#FFFFFF; font-weight:bold;">&nbsp;</td>
-                                </tr>
-                            </table>
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                <tr>
-                	<td style="text-align:right; width:10px;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                	<td style="text-align:rleft; color:#FFFFFF; font-weight:bold;">Datos de Empresa</td>
-                	<td style="text-align:right; color:#FFFFFF; width:70px; font-weight:bold;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                                </tr>
-            	<tr>
-                	<td style="text-align:right; width:10px;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                	<td style="text-align:left; color:#FFFFFF;">Raz.Soc: </td>
-                                    <td style="text-align:right; color:#FFFFFF; width:70px; font-weight:bold;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                                </tr>
-                                <tr>
-                	<td style="text-align:right; width:10px;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                	<td style="text-align:left; color:#FFFFFF;">Direcci&oacute;n: </td>
-                                    <td style="text-align:right; color:#FFFFFF; width:70px; font-weight:bold;"></td>
-                                    <td style="text-align:right; width:10px;"></td>
-                                </tr>
-                            </table>-->            </td>
+</td>
                     </tr>
                 </table>
             </div>
             <div style="background:#99CC33;">&nbsp;<?php //include("menu.php");?></div>
             <div id="basemedio">
                 <div id="contenido" align="center">
-                    <div style="height:600px;">
+                    <div style="height:350px;">
                       <p>&nbsp;</p>
                       <hr />
                       <br />
