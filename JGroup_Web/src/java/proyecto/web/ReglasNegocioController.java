@@ -123,7 +123,7 @@ public class ReglasNegocioController extends MultiActionController{
 
 
 
-
+       /*
         public int Calcular_MejorMonto(String [][] Proveedor,int indice,int puntaje) throws DAOExcepcion{
             int cod_ganador=0;
             Double monto_mayor=0.0;
@@ -138,7 +138,25 @@ public class ReglasNegocioController extends MultiActionController{
             System.out.println("Codigo Ganador = "+cod_ganador + "- Monto Mayor= "+monto_mayor);
             reglasNegocioService.AsignarPuntaje(Integer.parseInt(Proveedor[cod_ganador][0]), puntaje);
             return cod_ganador;
-        }
+        }*/
+
+      public int Calcular_MejorMonto(String [][] Proveedor,int indice,int puntaje) throws DAOExcepcion{
+            int cod_ganador=0;
+            Double monto_menor=10000000.00;
+
+            for (int i=0;i < indice;i++)  {
+                System.out.println("Montos = "+Proveedor[i][8]);
+                if (Double.parseDouble(Proveedor[i][8]) < monto_menor){
+                    monto_menor=Double.parseDouble(Proveedor[i][8]);
+                    cod_ganador=i;
+                }
+            }
+            System.out.println("Codigo Ganador = "+cod_ganador + "- Monto Mayor= "+monto_menor);
+            reglasNegocioService.AsignarPuntaje(Integer.parseInt(Proveedor[cod_ganador][0]), puntaje);
+            return cod_ganador;
+      }
+
+
 
     public int Calcular_MejorFecha(String[][] Proveedor, int indice,int puntaje) throws ParseException, DAOExcepcion {
         int cod_ganador = 0;
