@@ -8,10 +8,6 @@
         <link type="image/x-icon" href="../favicon.ico" rel="shortcut icon" />
         <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/efc.css"/>
         <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/cf.css"/>
-        <!--<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/menus.css"/>
-        <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/grid.css"/>
-        <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/Progress.css"/>
-        <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/style/ext-all.css"/>-->
         <script language="JavaScript" src="../js/jquery-1.2.3.js"></script>
         <script language="JavaScript" src="../js/jquery.maskedinput-1.1.2.pack.js"  type="text/javascript"></script>
         <script language="JavaScript" src="../js/jquery.numeric.pack.js"></script>
@@ -38,9 +34,6 @@
         <script language="JavaScript" src="../js/funcion_cont.js"></script>
     </head>
     <body topmargin="0" leftmargin="0" rightmargin="0">
-
-
-
         <input type="hidden" name="idusuario" id="idusuario" value="" />
         <input type="hidden" name="idempresa" id="idempresa" value="" />
         <input type="hidden" name="idarea" id="idarea" value="" />
@@ -49,7 +42,12 @@
                 <table border="0" cellpadding="2" cellspacing="2" width="100%">
                     <tr>
                         <td width="1%"></td>
-                        <td width="12%" align="left" id="logoefc">
+                        <td width="12%" align="left" id="logoefc"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="130" height="85">
+                          <param name="movie" value="images/logoefc_chico.swf" />
+                          <param name="quality" value="high" />
+                          <embed src="images/logoefc_chico.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="100" height="66"></embed>
+                        </object>
+                        <td width="7%" align="left" id="logoefc">
                             <script type="text/javascript">
                                 // <![CDATA[
                                 var so = new SWFObject("logoefc_chico.swf", "EFC", "180", "95", "9", "#999999");
@@ -65,7 +63,7 @@
                             <span class="textlogo" style="font-size:11px;">Soluciones integrales de Abastecimiento</span>
                         </td>
 
-                        <td width="10%"><p align="center"><a href="index.htm"><img src="<%=request.getContextPath()%>/images/Browser History.png" width="49" height="40" border="0" align="middle"/></a></p>
+                        <td width="20%"><p align="center"><a href="index.htm"><img src="<%=request.getContextPath()%>/images/Browser History.png" width="70" height="40" border="0" align="middle"/></a></p>
                             <p align="center" class="Estilo3">Logearse de nuevo</p></td>
                         <td width="0%" style=" text-align:left;">
 
@@ -168,12 +166,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- ventanas de busqueda con CFWINDOW -->
-        <!--<DIV class="yuiextdlg" id="cf_window1214415540789">
-        <DIV class="x-dlg-hd"  id="cf_window1214415540789_title">Buscar Art&iacute;culos</DIV>
-        <DIV class="x-dlg-bd"  id="cf_window1214415540789_body">-->
-
         <!-- para buscar articulos -->
         <div class="yuiextdlg" id="cf_windowbartped" style="display:none;">
             <div class="x-dlg-hd"  id="cf_windowbartped_title">Buscar Art&iacute;culos</div>
@@ -332,7 +324,5 @@
                     };
                     ColdFusion.Event.registerOnLoad(_cf_window_init_1214415540790);
                 </script>
-
-
-                </body>
+               </body>
                 </html>
