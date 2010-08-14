@@ -10,10 +10,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <title>Sistema de Cotizaciones On Line </title>
     </head>
+                  <td width="10%"><p align="center"><a href="invitacion.htm"><img src="<%=request.getContextPath()%>/images/Browser History.png" width="49" height="40" border="0" align="middle" title="Usuario"/></a></p>
+                            <p align="center" class="Estilo3">Retornar al Men&uacute; </p></td>
+                        <td width="0%" style=" text-align:left;">
+
     <body>
         <p><strong>Detalle de Invitacion</strong></p>
         <form name="form1" method="post" action="detalleinvitacion.htm?metodo=insertar2">
-            <input type="hidden" name="metodo" value="insertar2"/>
+            <%--           <input type="hidden" name="metodo" value="insertar2"/>--%>
             <table width="44%" border="0">
                 <tr>
                     <td><div align="right"><span class="Estilo4">Numero de Invitacion</span></div></td>
@@ -61,8 +65,7 @@
                     <td>&nbsp;</td>
                     <td><label>
                             <input name="btnguardar" type="submit" id="btnguardar" value="Grabar"onclick="window.location='detalleinvitacion.htm?metodo=insertar2'">
-                            <input name="btnretornar" type="button" id="btnretornar" value="Regresar" onClick="window.location='invitacion.htm'">
-
+     
                         </label>
                 </table>
     </form>
