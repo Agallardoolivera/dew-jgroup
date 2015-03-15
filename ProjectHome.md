@@ -1,0 +1,1 @@
+Este software va a virtualizar el concurso de proveedores para elegir la mejor propuesta de acuerdo al requerimiento de algún producto. Una vez iniciado el proceso de selección, se evaluaran según criterios administrados por los responsables del proceso, los cuales asignaran puntajes a los diferentes items y le serviran al sistema para elegir al ganador.
